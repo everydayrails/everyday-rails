@@ -1,25 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
-   "http://www.w3.org/TR/html4/strict.dtd">
-
-<html lang="en">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>{{ page.title }}</title>
-	<meta name="author" content="Aaron Sumner" />
-	<!-- Framework CSS -->
-	<link rel="stylesheet" href="/css/blueprint/screen.css" type="text/css" media="screen, projection" />
-	<link rel="stylesheet" href="/css/blueprint/print.css" type="text/css" media="print" />
-  <!--[if lt IE 8]><link rel="stylesheet" href="../../blueprint/ie.css" type="text/css" media="screen, projection" /><![endif]-->
-  <link rel="stylesheet" href="/css/site.css" type="text/css" media="all" />
-</head>
-<body>
-
-  <div id="container" class="container">
-    <div id="banner" class="span-24">
-      <h1><a href="/">Everyday Rails</a></h1>
-    </div>
+{% include header.html %}
     
-    <div  class="span-18" id="content">
+    <div  class="span-17 append-1" id="content">
 
       {{ content }}
 
