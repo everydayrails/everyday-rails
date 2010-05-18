@@ -35,6 +35,13 @@ ul {
 	margin: 5px auto 20px -30px;
 }
 
+#content a {
+	text-decoration: underline;
+}
+#content a:hover {
+	text-decoration: none;
+}
+
 #footer {
 	margin-top: 50px;
 	text-align: center;
