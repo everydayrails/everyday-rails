@@ -52,8 +52,8 @@ ul {
 
 .box {
 	background-color: #FFF0FF;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
 }
 
 .box ul {
