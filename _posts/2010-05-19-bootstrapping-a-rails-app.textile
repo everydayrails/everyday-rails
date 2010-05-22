@@ -6,7 +6,7 @@ excerpt: "The process of creating a new Rails application is straight from Rails
 
 Let's kick off this series with a quick look at the process I follow every time I start a new Rails project. Generally speaking, I know this is remedial course material for Rails developers. However, I've been asked about my approach to starting a Rails app by more than one person, so I figured others would benefit as well. I'm going to assume that you've got Ruby and Rails installed and configured on your computer, and that hopefully you've created an application already to verify that your setup is working.
 
-So let's get started and create that app. For what it's worth, on my Mac I keep all of my application development in my <code>Sites/Rails</code> folder.
+So let's get started and create that app (which, in this example, will use Rails 2.3.5). For what it's worth, on my Mac I keep all of my application development in my <code>Sites/Rails</code> folder.
 
 {% highlight bash %}
   $ rails -d mysql appname
