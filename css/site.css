@@ -48,13 +48,17 @@ ul {
 }
 
 #footer ul {
-	margin: 0;
+	margin: 0 auto 20px auto;
 	list-style-type: none;
 }
 
 #footer ul li {
 	display: inline;
 	margin: 0 10px;
+}
+
+#footer img {
+	border-style none;
 }
 
 .box {
