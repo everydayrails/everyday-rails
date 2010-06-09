@@ -1,6 +1,7 @@
 ---
 layout: default
 title: About Everyday Rails
+excerpt: "A blog about using the Ruby on Rails web application framework to get stuff done as a web developer. New content a few times a week."
 ---
 
 h2. Some background

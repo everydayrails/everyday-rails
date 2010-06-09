@@ -80,3 +80,7 @@ ul {
 code, .highlight {
 	font-size: 14px;
 }
+
+.code {
+	font-weight: bold;
+}
