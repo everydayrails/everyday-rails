@@ -1,0 +1,23 @@
+---
+layout: post
+title: "Adding authorization to your Rails app with RESTful_ACL, part 2:"
+excerpt: "write it up"
+---
+
+OK, let's add ACL settings to a model in a Rails application. In the interest of simplicity and familiarity, we'll go with a basic blogging app with categories, posts, and comments. Let's say that admins can create and edit categories, regular users can write posts and edit posts they've written, and guests (users who aren't logged in) can add comments but not edit or delete them.
+
+model stuff
+
+controller stuff
+
+view stuff
+
+logical parent stuff
+
+how to test
+
+conclusion
+
+<div class="box">
+  Next time I'll talk about how I use RESTful_ACL in tandem with a basic user-to-group relationship to give group membership its privileges, using RESTful_ACL. 
+</div>
