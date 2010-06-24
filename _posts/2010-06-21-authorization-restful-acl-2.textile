@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-wide
 title: "Adding authorization to your Rails app with RESTful_ACL, part 2: Basic ACLs"
 excerpt: "Here's how to protect your application's data through an easy-to-apply access control layer."
 ---
