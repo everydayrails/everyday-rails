@@ -98,6 +98,12 @@ to install the current pre-release version of Rails.
 
 Read the "RVM documentation on gemsets":http://rvm.beginrescueend.com/gemsets/basics/ for more usage examples for gemsets--but for all intents and purposes, we're ready to roll with Rails 3.
 
+*Update:* Reader Sutto points out that you can create and switch to a new gemset in one fell swoop with
+
+{% highlight bash %}
+  $ rvm use 1.8.7@rails3 --create
+{% endhighlight %}
+
 h2. 4. Passenger setup (optional)
 
 If you're using Passenger on your development computer, and want to keep using it with RVM, you'll need to make a few tweaks to your web server configuration. In my case, I'm using the default installation of Apache in Mac OS X. Looking at the "documentation on integrating Passenger with RVM":http://rvm.beginrescueend.com/integration/passenger/, you'll see there are a few steps involved here. It confused me a little the first time I ran through it, but here's the rundown:
