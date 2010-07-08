@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Authenticated attachments in Rails with Paperclip"
-excerpt: "Thoughtbot's Paperclip gem makes uploading files through web forms a breeze, but sometimes you need to keep those files protected from the general public. Here's how I require authorized access to uploaded files in my Rails apps."
+excerpt: "Thoughtbot's Paperclip gem makes uploading files through web forms a breeze, but sometimes you need to keep those files protected from the general public. Here's how I require authenticated access to uploaded files in my Rails apps."
 ---
 
 Since Thoughtbot released it a couple of years ago, Paperclip has practically become synonymous with _file upload_ for many Rails developers. Out of the box, Paperclip saves uploaded files in your application's <code>public</code> directory, which makes good sense for files that should be accessible to everyone&mdash;by storing them there, you can serve them without the additional overhead of Rails. But what if you don't want the world at large to access uploaded files? In that case, that additional overhead becomes an asset. With a couple of additional parameters sent to Paperclip, and some modified controller code, you'll be able to keep uploaded files safe from prying eyes.
