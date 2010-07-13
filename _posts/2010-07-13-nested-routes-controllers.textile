@@ -61,8 +61,8 @@ The second part of the trick happens in <code>posts_controller.rb</code>. What y
   class PostsController < ApplicationController
 
     def index
-      if params[:group_id]
-        @posts = Group.find(params[:group_id]).posts
+      if params[:category_id]
+        @posts = Category.find(params[:category_id]).posts
       elsif params[:author_id]
         @posts = Author.find(params[:author_id]).posts
       else
