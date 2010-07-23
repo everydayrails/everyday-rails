@@ -1,68 +1,48 @@
 ---
 layout: post
 title: "Know your Rails command line tools"
-excerpt: "todo"
+excerpt: "There's no getting around the command line when it comes to developing Rails applications. Here are several resources to help you get the most out of the Rails command line experience."
 ---
 
 In a keynote at last week's "Ruby Midwest":http://www.rubymidwest.com/ conference in Kansas City, Rails core contributor Yehuda Katz talked about the attention the Rails team puts into the experience of the developer. A large part of this experience is the command line, and Yehuda pointed to the efforts that have been put into making sure that interface to Rails and the software you write with it is as useful as possible. The goal is to keep you from having to refer to a manual or stack trace as little as possible.
 
-If Rails is your first real exposure to the command line&mdash;and I know a few people for whom this is true&mdash;you may think that command lines aren't what we use to interact with computers anymore (especially on Macs). With a bit of practice, though, you may discover that the command line is a much quicker and more powerful way to get things done on your computer than a graphical interface and a mouse. Here are a few tips to get you started with the command line in Rails.
+If Rails is your first real exposure to the command line&mdash;and I know a few people for whom this is true&mdash;you may think that command lines aren't what we use to interact with computers anymore (especially on Macs). With a bit of practice, though, you may discover that the command line is a much quicker and more powerful way to get things done on your computer than a graphical interface and a mouse. Here are some resources to get you started with the command line in Rails.
 
-h2. The Rails 2.3 command line
+h2. The basics
 
-You're probably familiar with the following command&mdash;it's what you type to get a new Rails project started:
+* RailsGuides has documentation on "the Rails 2.3 command line":http://guides.rubyonrails.org/command_line.html and "the Rails 3 command line":http://guides.rails.info/command_line.html. As usual with RailsGuides, these are very thorough and well-written.
+* The Rails 3 screencast series has a good video outlining "what's new in the Rails 3 command line":http://rubyonrails.org/screencasts/rails3/getting-started-action-dispatch. In particular, there are new flags to <code>rails</code> when setting up your application, and changes to the contents of the <code>script/</code> directory in a Rails application.
 
-{% highlight bash %}
-  $ rails my_rails_project
-{% endhighlight %}
+h2. Generators
 
-There are options, or *flags*, you can pass to the <code>rails</code> command to create it with different settings. For example, to use MySQL instead of the default SQLite3 database, you'd pass the <code>-d</code> flag like this:
+Rails has default generators like <code>scaffold</code>, <code>model</code> and the like; various gems and plugins add generators of their own to help you quickly get your applications up and running. See the RailsGuides above for the defaults and the documentation of your installed gems and plugins for what they provide.
 
-{% highlight bash %}
-  $ rails my_rails_project -d mysql 
-{% endhighlight %}
+For Rails 2.3:
 
-If you're using a Rails template to set up your new application, refer to it like this:
+* Pat Shaughnessy has a good "writeup on writing generators":http://patshaughnessy.net/2009/8/23/tutorial-how-to-write-a-rails-generator (see also "part two":http://patshaughnessy.net/2009/9/2/rails-generator-tutorial-part-2-writing-a-custom-manifest-action).
+* Railscasts has an episode on "creating your own generators":http://railscasts.com/episodes/58-how-to-make-a-generator
 
-{% highlight bash %}
-  $ rails my_rails_project -m path/to/template.rb
-{% endhighlight %}
+When it comes to generators, everything changes in Rails 3. 
 
-(Of course, replace <code>path/to/template.rb</code> with the location of your own Rails template. I've "written about Rails templates in the past":http://everydayrails.com/2010/05/22/bootstrapping-rails-template.html if you need a refresher.)
-
-And you can chain them together like this:
-
-{% highlight bash %}
-  $ rails my_rails_project -d mysql -m path/to/template.rb
-{% endhighlight %}
-
-Inside your app, you've got more command line power in the <code>script</code> folder. Here's a look at some you're apt to use more frequently:
-
-|. Command |. What it does |
-| <code>script/about</code> | Provides some general information about your app, such as the version of Rails and Ruby it's using |
-| <code>script/server</code> | Runs your application locally via the built-in webbrick server |
-| <code>script/generate</code> | Adds code to your application to make it do the things you want, including scaffolds and controllers. Some gems you have installed on your system may install code via <code>generate</code> as well. |
-| <code>script/destroy</code> | Removes code you've added using script/generate |
-| <code>script/plugin</code> | Manages your application's plugins |
-| <code>script/console</code> | Gives you interactive access to the inner Ruby workings of your application |
-| <code>script/dbconsole</code> | Gives you interactive access to your database |
-
-Type in any of these as they're listed above. Some like <code>script/server</code> work as-is. Others expect a little more input. In the spirit of making the Rails command line experience as painless as possible, they will return a list of options and expected inputs. 
-
-h2. The Rails 3 command line
-
-Of course, the Rails command line gets a major overhaul with Rails 3.
+* Ryan Bates covers the "changes to generators in Rails 3":http://railscasts.com/episodes/216-generators-in-rails-3 in Railscasts;
+* He's also got an episode on "writing generators in Rails 3":http://railscasts.com/episodes/218-making-generators-in-rails-3
+* Ben Scofield has written a good series on Rails 3 generators that gives a line-by-line comparison of the Rails 2 way to the Rails 3 way of using generators&mdash;see "the standard generators":http://www.viget.com/extend/rails-3-generators-the-old-faithful/, some "less common generators like mailers, helpers, and observers":http://www.viget.com/extend/rails-3-generators-the-unusuals-part-1/, some "more testing-specific generators":http://www.viget.com/extend/rails-3-generators-the-unusuals-part-2/.
 
 h2. Rake
 
-To see a list of Rake tasks accessible within your application:
+Rake, Ruby's build tool, is essential to Rails development. Rake is discussed in the RailsGuides referenced above. You're not limited to the tasks Rails provides&mdash;the gems and plugins your app uses may add tasks, and you can create your own.
 
-{% highlight bash %}
-  $ rake -T
-{% endhighlight %}
-
-h2. Git
-
-h2. TextMate
+* Type <code>rake -T</code> to view the tasks you have access to within your application.
+* This Railscasts episode on "writing your own Rake tasks":http://railscasts.com/episodes/66-custom-rake-tasks is essential viewing.
+* Jason Siefer has also written a good "guide to writing Rake tasks":http://jasonseifer.com/2010/04/06/rake-tutorial.
 
 h2. Unix
+
+These last links aren't specific to Rails, but a general grasp of the Unix command line is going to make your life as a Rails developer much easier, and can help you get other things done on your computer that are cumbersome (or impossible) via a graphical interface. Seriously, if you're using a Mac or Linux-based computer, learn the command line.
+
+<div class="box">
+  If you _really_ want to get hands-on exposure to command line-only computing, install "Ubuntu Server Edition":http://www.ubuntu.com/server a computer or virtual machine. This version of Ubuntu Linux is optimized for server use so it doesn't include a GUI out of the box. You can install one if you want, but you'll need to use the command line to do so.
+</div>
+
+* The "Unix/Linux tutorial for beginners":http://www.ee.surrey.ac.uk/Teaching/Unix/ is a good start, especially if the day you installed Rails was the first time you'd opened Terminal.
+* Here's a "summary of Unix commands":http://www.math.utah.edu/lab/unix/unix-commands.html for quick reference.
