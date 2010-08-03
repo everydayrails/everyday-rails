@@ -18,6 +18,11 @@ ul {
 	list-style-type: square;
 }
 
+#container {
+	background-color: white;
+	margin: 100px auto;
+}
+
 #banner {
   @include column(24);
   margin-top: 10px;

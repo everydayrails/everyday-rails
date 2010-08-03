@@ -35,6 +35,12 @@ ul {
 }
 
 /* line 21, ../src/site.scss */
+#container {
+  background-color: white;
+  margin: 100px auto;
+}
+
+/* line 26, ../src/site.scss */
 #banner {
   display: inline;
   float: left;
@@ -47,17 +53,17 @@ ul {
   overflow-x: hidden;
 }
 
-/* line 26, ../src/site.scss */
+/* line 31, ../src/site.scss */
 #banner h1 {
   font-size: 600%;
 }
 
-/* line 30, ../src/site.scss */
+/* line 35, ../src/site.scss */
 #banner-print {
   display: none;
 }
 
-/* line 34, ../src/site.scss */
+/* line 39, ../src/site.scss */
 #content {
   display: inline;
   float: left;
@@ -70,28 +76,28 @@ ul {
   overflow-x: hidden;
 }
 
-/* line 39, ../src/site.scss */
+/* line 44, ../src/site.scss */
 #content h2, #content h3, #content h4 {
   margin: 0 0 3px 0;
   padding: 0;
 }
 
-/* line 44, ../src/site.scss */
+/* line 49, ../src/site.scss */
 #content ul {
   margin: 5px auto 20px -30px;
 }
 
-/* line 48, ../src/site.scss */
+/* line 53, ../src/site.scss */
 #content a {
   text-decoration: underline;
 }
 
-/* line 51, ../src/site.scss */
+/* line 56, ../src/site.scss */
 #content a:hover {
   text-decoration: none;
 }
 
-/* line 55, ../src/site.scss */
+/* line 60, ../src/site.scss */
 .wide-content {
   display: inline;
   float: left;
@@ -103,7 +109,7 @@ ul {
   overflow-x: hidden;
 }
 
-/* line 59, ../src/site.scss */
+/* line 64, ../src/site.scss */
 #sidebar {
   display: inline;
   float: left;
@@ -116,7 +122,7 @@ ul {
   overflow-x: hidden;
 }
 
-/* line 64, ../src/site.scss */
+/* line 69, ../src/site.scss */
 #footer {
   display: inline;
   float: left;
@@ -130,25 +136,25 @@ ul {
   overflow-x: hidden;
 }
 
-/* line 70, ../src/site.scss */
+/* line 75, ../src/site.scss */
 #footer ul {
   margin: 0 auto 20px auto;
   list-style-type: none;
   padding: 0;
 }
 
-/* line 76, ../src/site.scss */
+/* line 81, ../src/site.scss */
 #footer ul li {
   display: inline;
   margin: 0 20px 0 0;
 }
 
-/* line 81, ../src/site.scss */
+/* line 86, ../src/site.scss */
 #footer img {
   border-style: none;
 }
 
-/* line 85, ../src/site.scss */
+/* line 90, ../src/site.scss */
 .box {
   background-color: #fff0ff;
   -moz-border-radius: 10px;
@@ -156,24 +162,24 @@ ul {
   margin: 10px auto;
 }
 
-/* line 92, ../src/site.scss */
+/* line 97, ../src/site.scss */
 .box ul {
   margin-left: -35px;
   margin-bottom: 0;
 }
 
-/* line 97, ../src/site.scss */
+/* line 102, ../src/site.scss */
 code, .highlight {
   font-size: 14px;
   overflow: auto;
 }
 
-/* line 102, ../src/site.scss */
+/* line 107, ../src/site.scss */
 .code {
   font-weight: bold;
 }
 
-/* line 106, ../src/site.scss */
+/* line 111, ../src/site.scss */
 .post, .archives-link {
   margin-bottom: 1.5em;
 }
