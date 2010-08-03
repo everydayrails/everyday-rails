@@ -165,7 +165,7 @@ ul {
 /* line 97, ../src/site.scss */
 code, .highlight {
   font-size: 14px;
-  overflow: scroll;
+  overflow: auto;
 }
 
 /* line 102, ../src/site.scss */
