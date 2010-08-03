@@ -5,7 +5,7 @@ excerpt: "A blog about using the Ruby on Rails web application framework to get 
 ---
 
 {% for post in site.posts limit:10 %}
-  <div class="post append-bottom">
+  <div class="post">
     <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
 
     {{ post.excerpt }}
@@ -15,7 +15,7 @@ excerpt: "A blog about using the Ruby on Rails web application framework to get 
   </div>
 {% endfor %}
 
-<div class="append-bottom">
+<div id="archives-link">
   <a href="/archives.html">More in the archives</a>
 </div>
   
