@@ -22,8 +22,10 @@ Next, install the new Passenger gem (at 3.0.2 as I write this). This is "very we
 Now run the Passenger module installer:
 
 {% highlight bash %}
-  $ rvmsudo passenger-install-apache2-module
+  $ rvm passenger-install-apache2-module
 {% endhighlight %}
+
+(Note: Earlier I'd incorrectly listed the above command as <code>rvmsudo</code>. This isn't necessary. Thank you to Oldřich Vetešník for pointing this out.)
 
 Follow the instructions, including making sure you copy the Apache configuration directives provided into your own Apache config files. The good news here is these lines already point to your RVM-specified Ruby (the Ruby you were using when you installed the Passenger gem), so Apache is all set.
 
