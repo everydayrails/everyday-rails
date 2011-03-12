@@ -69,7 +69,7 @@ run "echo '--format documentation' >> .rspec"
 generate "devise:install"
 generate "devise User"
 generate "devise:views"
-run "db:migrate"
+rake "db:migrate"
 generate "cancan:ability"
 
 # clean up rails defaults
