@@ -1,0 +1,60 @@
+---
+layout: post
+title: "Install Rails 3.1 beta with RVM gemsets (a public service announcement)"
+excerpt: "Don't forget, RVM gemsets are great for trying out pre-release versions of Rails without interfering with other work. Here's a reminder on how to set that up."
+---
+
+Last summer, as the early releases of Rails 3.0 began rolling out, I shared "how to use RVM to create sandboxes for experimenting with new versions of gems":http://everydayrails.com/2010/06/28/rvm-gemsets-rails3.html. Fast forward to now&mdash;Rails 3.1 is coming our way soon, with some major changes under the hood. These changes are well documented and debated elsewhere, so I won't get into them here. Once again, there's no need to wait until 3.1 goes final to see what's different. Here's a quick rundown of how to install your own Rails 3.1 sandbox.
+
+First, if you haven't updated RVM in awhile, it doesn't hurt to do so now.
+
+{% highlight bash %}
+  $ rvm update
+{% endhighlight %}
+
+At this writing, RVM is at version 1.6.5. Don't forget, you'll need to open a new terminal window to begin using the new version.
+
+Create a gemset for the beta software:
+
+{% highlight bash %}
+  $ rvm gemset create rails31beta
+{% endhighlight %}
+
+Switch to the newly-minted gemset with
+
+{% highlight bash %}
+  $ rvm use @rails31beta
+{% endhighlight %}
+
+Now install Rails 3.1 beta:
+
+{% highlight bash %}
+  $ gem install rails --pre
+{% endhighlight %}
+
+and create a test application:
+
+{% highlight bash %}
+  $ rails new mytestapp
+{% endhighlight %}
+
+We're almost done. Next create a <code>.rvmrc</code> file to tell RVM which gemset to use in the new application. Note that I'm using Ruby 1.9.2, which I believe is now a requirement in Rails 3.1.
+
+{% highlight bash %}
+  $ echo "rvm use 192@rails31beta" > mytestapp/.rvmrc
+{% endhighlight %}
+
+Open the application's directory, run <code>bundle</code> to install the default gems, and you're off to the races.
+
+{% highlight bash %}
+  $ cd mytestapp
+  $ bundle
+{% endhighlight %}
+
+As you look around the application structure, take a look at your <code>Gemfile</code> and the new <code>assets</code> directory inside <code>app/</code>. This is where most of the new features that will affect Rails developers at all levels are located.
+
+h3. Where to go from here?
+
+* There are plenty of jQuery tutorials out there; I don't have one in particular I recommend over others. This will really only affect you if you use the Prototype/scriptaculous Javascript framework in your Rails apps.
+* The "Sass tutorial":http://sass-lang.com/tutorial.html should get you up and running with replacing your CSS. I've been using Sass for awhile now and love it&mdash;if you haven't checked it out yet, you owe it to yourself to do so.
+* Charles Max Wood at "Teach Me To Code":http://teachmetocode.com/screencasts/ has been showing the basics of CoffeeScript in his screencasts. I will admit to being kind of green in this area, but am looking forward to getting Javascript functionality in my apps without having to deal with old-school RJS.

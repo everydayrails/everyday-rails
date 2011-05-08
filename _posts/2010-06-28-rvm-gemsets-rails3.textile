@@ -4,6 +4,10 @@ title: "Stop procrastinating and install Rails 3 now with RVM"
 excerpt: "Worried about Rails 3 disrupting your workflow? Here's how I use RVM's gemsets feature to keep my day-to-day development environment and Rails 3 distinct."
 ---
 
+<div class="box note">
+  I've written a follow-up to this post for using the "Rails 3.1 beta with RVM":/2011/05/08/rails-3.1-beta-rvm.html.
+</div>
+
 A couple of weeks ago at a get-together of local developers, someone mentioned he hadn't checked out Rails 3 yet because he didn't want pre-release software mucking up his usual development environment. I don't blame him--this is a reason I also put off checking out earlier releases of Rails 3. That was before I got a new computer and set up Ruby from scratch, using the why-didn't-someone-think-of-this-sooner "Ruby Version Manager":http://rvm.beginrescueend.com/ (RVM). Simply put, RVM lets you have multiple versions of Ruby on your computer, and keeps these Rubies and any gems you install in your user account. No root access or <code>sudo</code> is required to install.
 
 In addition to managing Ruby versions, RVM gives you a second killer feature--the ability to create _gemsets_, which are exactly what they sound like. Each Ruby version managed with RVM has its own set of gems configured to work with it, and each Ruby version can have multiple gemsets applied to it. Each gemset is distinct, so you can experiment with different versions of Ruby and different versions of gems without affecting your go-to configurations. In other words, you've got no excuses to not be tinkering with Rails 3 _right now_.
