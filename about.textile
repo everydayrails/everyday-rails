@@ -14,4 +14,4 @@ However, I feel like there's something missing in the multitude of existing Rail
 
 h2. The plan
 
-My goal is to share a couple of general, pragmatic tips each week to show how I use Rails (almost) every day to get stuff done on the job. I'll focus mostly on making things using Ruby on Rails, attempting to glean a better understanding of why the plugins, gems, and other Ruby parts do what they do to help me make as good an application as I can. If you learn something in the process, all the better.
+My goal is to share a general, pragmatic tip every week or two to show how I use Rails (almost) every day to get stuff done on the job. I'll focus mostly on making things using Ruby on Rails, attempting to glean a better understanding of why the plugins, gems, and other Ruby parts do what they do to help me make as good an application as I can. If you learn something in the process, all the better.
