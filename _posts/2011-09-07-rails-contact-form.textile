@@ -10,7 +10,7 @@ h3. What is it?
 
 "MailForm":https://github.com/plataformatec/mail_form is a dead-simple, customizable gem to deliver mail to designated recipients from a Rails app via a web form. It was developed by Jos&#233; Valim and Carlos Antonio da Silva of Platforma Tec, makers of the popular Devise authentication gem. (Jos&#233; is also a core contributor to Rails.)
 
-By the way, if you're interested in learning more about the internals of this gem, check out Jos&#233;'s "Crafting Rails Applications&#058; Expert Practices for Everyday Rails Development":http://pragprog.com/book/jvrails/crafting-rails-applications (no relation to this blog). It's a great way to get a better understanding of Ruby and Rails internals.
+By the way, if you're interested in learning more about the internals of this gem, check out Jos&#233;'s "Crafting Rails Applications&#058; Expert Practices for Everyday Rails Development":http://amzn.to/nS90ZU (no relation to this blog). It's a great way to get a better understanding of Ruby and Rails internals.
 
 h3. Who's it for?
 
