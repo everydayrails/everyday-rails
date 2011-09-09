@@ -111,3 +111,12 @@ code, .highlight {
 .post, .archives-link {
   @include append-bottom;
 }
+
+.cover {
+  float: right;
+  margin-left: 10px;
+}
+
+h4 {
+  clear: both;
+}

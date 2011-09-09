@@ -183,3 +183,14 @@ code, .highlight {
 .post, .archives-link {
   margin-bottom: 1.5em;
 }
+
+/* line 115, ../src/site.scss */
+.cover {
+  float: right;
+  margin-left: 10px;
+}
+
+/* line 120, ../src/site.scss */
+h4 {
+  clear: both;
+}
