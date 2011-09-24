@@ -37,7 +37,7 @@ ul {
 }
 
 #content {
-  @include column(17);
+  @include column(16);
   @include append(1);
 }
 
@@ -62,7 +62,7 @@ ul {
 }
 
 #sidebar {
-  @include column(6, true);
+  @include column(7, true);
   @include last;
 }
 
