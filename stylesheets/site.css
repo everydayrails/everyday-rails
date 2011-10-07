@@ -98,6 +98,11 @@ ul {
 }
 
 /* line 60, ../src/site.scss */
+#bottom_ads {
+  margin: 20px auto;
+}
+
+/* line 64, ../src/site.scss */
 .wide-content {
   display: inline;
   float: left;
@@ -109,7 +114,7 @@ ul {
   overflow-x: hidden;
 }
 
-/* line 64, ../src/site.scss */
+/* line 68, ../src/site.scss */
 #sidebar {
   display: inline;
   float: left;
@@ -122,7 +127,7 @@ ul {
   overflow-x: hidden;
 }
 
-/* line 69, ../src/site.scss */
+/* line 73, ../src/site.scss */
 #footer {
   display: inline;
   float: left;
@@ -136,25 +141,25 @@ ul {
   overflow-x: hidden;
 }
 
-/* line 75, ../src/site.scss */
+/* line 79, ../src/site.scss */
 #footer ul {
   margin: 0 auto 20px auto;
   list-style-type: none;
   padding: 0;
 }
 
-/* line 81, ../src/site.scss */
+/* line 85, ../src/site.scss */
 #footer ul li {
   display: inline;
   margin: 0 20px 0 0;
 }
 
-/* line 86, ../src/site.scss */
+/* line 90, ../src/site.scss */
 #footer img {
   border-style: none;
 }
 
-/* line 90, ../src/site.scss */
+/* line 94, ../src/site.scss */
 .box {
   background-color: #eeeeee;
   -moz-border-radius: 10px;
@@ -162,35 +167,35 @@ ul {
   margin: 10px auto;
 }
 
-/* line 97, ../src/site.scss */
+/* line 101, ../src/site.scss */
 .box ul {
   margin-left: -35px;
   margin-bottom: 0;
 }
 
-/* line 102, ../src/site.scss */
+/* line 106, ../src/site.scss */
 code, .highlight {
   font-size: 14px;
   overflow: auto;
 }
 
-/* line 107, ../src/site.scss */
+/* line 111, ../src/site.scss */
 .code {
   font-weight: bold;
 }
 
-/* line 111, ../src/site.scss */
+/* line 115, ../src/site.scss */
 .post, .archives-link {
   margin-bottom: 1.5em;
 }
 
-/* line 115, ../src/site.scss */
+/* line 119, ../src/site.scss */
 .cover {
   float: right;
   margin-left: 10px;
 }
 
-/* line 120, ../src/site.scss */
+/* line 124, ../src/site.scss */
 h4 {
   clear: both;
 }

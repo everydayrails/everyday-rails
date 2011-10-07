@@ -57,6 +57,10 @@ ul {
 	text-decoration: none;
 }
 
+#bottom_ads {
+  margin: 20px auto;
+}
+
 .wide-content {
   @include column(24, true);
 }
