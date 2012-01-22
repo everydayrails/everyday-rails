@@ -114,5 +114,5 @@ h4. "MacBook Pro":http://www.amazon.com/gp/product/B000EPJOX0/ref=as_li_ss_il?ie
 I develop using a 13" MacBook Pro. The latest models are a little speedier than mine. It's not as hip or super-lightweight as the MacBook Air, but if you want something with a small footprint and lots of on-board storage&mdash;along with a reasonable pricetag as far as Mac laptops go&mdash;the 13" model is a fine way to go.
 
 <div class="box">
-  There are also a number of "free books on Ruby and Rails":http://localhost:4000/2010/07/28/free-ruby-rails-books.html you might like.
+  There are also a number of "free books on Ruby and Rails":/2010/07/28/free-ruby-rails-books.html you might like.
 </div>
