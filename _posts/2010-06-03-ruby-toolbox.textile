@@ -12,6 +12,6 @@ My Google search found a page that ranked "four tagging projects":http://www.rub
 
 Ruby Toolbox has also helped me find gems to solve problems I had but didn't realize I had. For example, I have an app that relies heavily on "recurring events":http://www.ruby-toolbox.com/categories/recurring_events.html. At the moment I have basic code for writing and duplicating events in a calendar-like application (I tell people it's not a calendar; it's a data collection system that looks like a calendar). The next time I put my app through a round of updates I've got several options to consider for (hopefully) cleaning up my code. Take a look at the "list of gem categories":http://www.ruby-toolbox.com/ to get a top-level view of add-ons for your application--this is a great way to find tools to help get uncommon tasks (say, not authentication or tagging) into your app and out of the way.
 
-<div class="box">
-  Thanks again to those of you who are following <em>Everyday Rails</em> on Twitter or left feedback since I shared a link to the site on "RubyFlow":http://www.rubyflow.com/. New content is coming next week--look for a series on how I do authentication and authorization in Rails apps to begin.
+<div class="panel">
+  <p>Thanks again to those of you who are following <em>Everyday Rails</em> on Twitter or left feedback since I shared a link to the site on "RubyFlow":http://www.rubyflow.com/. New content is coming next week--look for a series on how I do authentication and authorization in Rails apps to begin.</p>
 </div>

@@ -1,100 +1,13 @@
-/* line 34, ../../../../.rvm/gems/ruby-1.8.7-p299@jekyll/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
-body {
-  text-align: center;
-}
-/* line 48, ../../../../.rvm/gems/ruby-1.8.7-p299@jekyll/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
-* html body legend {
-  margin: 0px -8px 16px 0;
-  padding: 0;
-}
-/* line 52, ../../../../.rvm/gems/ruby-1.8.7-p299@jekyll/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
-html > body p code {
-  *white-space: normal;
-}
+/* Foundation v2.2 http://foundation.zurb.com */
+/* This is for all IE specfific style less than IE9. We hate IE. */
 
-/* line 67, ../../../../.rvm/gems/ruby-1.8.7-p299@jekyll/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
-.container {
-  text-align: left;
-}
-
-/* line 69, ../../../../.rvm/gems/ruby-1.8.7-p299@jekyll/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
-sup {
-  vertical-align: text-top;
-}
-
-/* line 71, ../../../../.rvm/gems/ruby-1.8.7-p299@jekyll/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
-sub {
-  vertical-align: text-bottom;
-}
-
-/* line 73, ../../../../.rvm/gems/ruby-1.8.7-p299@jekyll/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
-hr {
-  margin: -8px auto 11px;
-}
-
-/* line 75, ../../../../.rvm/gems/ruby-1.8.7-p299@jekyll/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
-img {
-  -ms-interpolation-mode: bicubic;
-}
-
-/* line 77, ../../../../.rvm/gems/ruby-1.8.7-p299@jekyll/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
-fieldset {
-  padding-top: 0;
-}
-
-/* line 79, ../../../../.rvm/gems/ruby-1.8.7-p299@jekyll/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
-textarea {
-  overflow: auto;
-}
-
-/* line 82, ../../../../.rvm/gems/ruby-1.8.7-p299@jekyll/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
-input.text {
-  margin: 0.5em 0;
-  background-color: white;
-  border: 1px solid #bbbbbb;
-}
-/* line 86, ../../../../.rvm/gems/ruby-1.8.7-p299@jekyll/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
-input.text:focus {
-  border: 1px solid #666666;
-}
-/* line 88, ../../../../.rvm/gems/ruby-1.8.7-p299@jekyll/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
-input.title {
-  margin: 0.5em 0;
-  background-color: white;
-  border: 1px solid #bbbbbb;
-}
-/* line 92, ../../../../.rvm/gems/ruby-1.8.7-p299@jekyll/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
-input.title:focus {
-  border: 1px solid #666666;
-}
-/* line 94, ../../../../.rvm/gems/ruby-1.8.7-p299@jekyll/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
-input.checkbox {
-  position: relative;
-  top: 0.25em;
-}
-/* line 97, ../../../../.rvm/gems/ruby-1.8.7-p299@jekyll/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
-input.radio {
-  position: relative;
-  top: 0.25em;
-}
-/* line 100, ../../../../.rvm/gems/ruby-1.8.7-p299@jekyll/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
-input.button {
-  position: relative;
-  top: 0.25em;
-}
-
-/* line 103, ../../../../.rvm/gems/ruby-1.8.7-p299@jekyll/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
-textarea {
-  margin: 0.5em 0;
-}
-
-/* line 105, ../../../../.rvm/gems/ruby-1.8.7-p299@jekyll/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
-select {
-  margin: 0.5em 0;
-}
-
-/* line 107, ../../../../.rvm/gems/ruby-1.8.7-p299@jekyll/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_ie.scss */
-button {
-  position: relative;
-  top: 0.25em;
-}
+	div.panel { border: 1px solid #ccc; }
+	.lt-ie8 .nav-bar li.has-flyout a { padding-right: 20px; }
+	.lt-ie8 .nav-bar li.has-flyout a:after { border-top: none; }
+	
+	/* Correct IE7 button padding */
+	.lt-ie8 input[type=submit].nice.button { filter:chroma(color=#000000); position: relative; top: -2px; }
+	.lt-ie8 input[type=submit].tiny.button		{ padding: 5px 5px 7px; }
+	.lt-ie8 input[type=submit].small.button		{ padding: 8px 7px 9px; }
+	.lt-ie8 input[type=submit].medium.button	{ padding: 9px 13px 9px; }
+	.lt-ie8 input[type=submit].large.button		{ padding: 9px 18px 10px; }

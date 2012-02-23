@@ -28,8 +28,8 @@ h2. 3. Use Passenger in development mode
 
 If you've deployed a Rails application&mdash;that is, installed your code on a server to share it with the world&mdash;then you may be familiar with Passenger, an add-on to common web servers like Apache and Nginx to make deployment as easy as adding a few lines to your web server configuration. (If you ever deployed an application in Rails' early, early days, you know this is not something to take for granted!) However, Passenger greatly simplifies work on the development side by letting you run multiple Rails applications simultaneously without the need to juggle ports.
 
-<div class="box">
-  Sorry, Passenger doesn't work with Windows&mdash;you'll need to use a Mac or the Linux distribution of your choice.
+<div class="panel">
+  <p>Sorry, Passenger doesn't work with Windows&mdash;you'll need to use a Mac or the Linux distribution of your choice.</p>
 </div>
 
 The "Passenger installation instructions":http://www.modrails.com/install.html provided by Phusion are straightforward and, as long as you pay attention to the instructions provided during the installation process, should work for you just fine. The "Railscast on Passenger":http://railscasts.com/episodes/122-passenger-in-development is another good primer. If you use a Mac for development, do yourself a favor and grab the "Passenger Preference Pane":http://www.fngtps.com/passenger-preference-pane to add a GUI for managing your development-side applications.

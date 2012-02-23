@@ -4,8 +4,10 @@ title: Everyday Rails
 excerpt: "A blog about using the Ruby on Rails web application framework to get stuff done as a web developer. New content every week or so."
 ---
 
-<div class="box">
-  Support Everyday Rails by shopping from <a href="http://astore.amazon.com/everrail-20" target="_blank">my reading list of recommended books on Ruby and Rails development</a>. Thank you!
+<div class="panel">
+  <p class="blurb">
+    Everyday Rails is about using the Ruby on Rails web application framework to get stuff done as a web developer. <a href="/about.html">Learn more.</a>
+  </p>
 </div>
 
 {% for post in site.posts limit:10 %}
@@ -20,7 +22,5 @@ excerpt: "A blog about using the Ruby on Rails web application framework to get 
 {% endfor %}
 
 <div id="archives-link">
-  <a href="/archives.html">More in the archives</a>
+  <a href="/archives.html" class="maroon button radius">More in the archives »</a>
 </div>
-
-{% include bottom_ads.html %}

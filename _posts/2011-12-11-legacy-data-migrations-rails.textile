@@ -13,8 +13,8 @@ A few months back I shared "how I used Trucker to migrate data from a legacy Rai
 
 These issues, combined with a much more complex data structure (basically a total re-engineering of the data layer), led me to look into other options for legacy data migration for my next project. As it turns out, it's not terrifically difficult&mdash;it's just a matter of setting up some Rake tasks, mapping old data to new, and paying attention to the details.
 
-<div class="box">
-  <strong>New to creating your own Rake tasks?</strong> "Review this Railscasts episode":http://railscasts.com/episodes/66-custom-rake-tasks on developing your own custom Rake tasks. It's an important skill for any Rails developer.
+<div class="panel">
+  <p><strong>New to creating your own Rake tasks?</strong> "Review this Railscasts episode":http://railscasts.com/episodes/66-custom-rake-tasks on developing your own custom Rake tasks. It's an important skill for any Rails developer.</p>
 </div>
 
 h3. Getting started

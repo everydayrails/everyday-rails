@@ -1,0 +1,94 @@
+body {
+	font-family: 'Signika Negative', sans-serif;
+	font-size: 16px;
+}
+
+a {
+	color: #990000;
+}
+
+a:visited {
+	color: #990000;
+}
+
+a:active {
+	color: #990000;
+}
+
+a:hover {
+	color: #b0b0b0;
+}
+
+a.maroon {
+	color: #fff !important;
+	background-color: #990000;
+}
+a.maroon:hover {
+	color: #900 !important;
+	background-color: #b0b0b0;
+}
+
+#header {
+	margin: 30px auto 30px auto;
+}
+
+#content {
+	margin-bottom: 50px;
+	font-size: 16px !important;
+}
+
+#content * {
+	font-size: 100%;
+}
+
+#content h1 {
+	font-size: 200%;
+}
+
+#content h2 {
+	margin-top: 20px;
+	font-size: 160%;
+}
+
+#content h3 {
+	margin-top: 20px;
+	font-size: 120%;
+}
+
+#content ul {
+	list-style-type: square;
+	margin-left: 20px;
+}
+
+#datestamp {
+	margin: 20px auto;
+	color: #b0b0b0;
+}
+
+.blurb {
+	font-size: 200%;
+}
+
+.post {
+	margin-bottom: 50px;
+}
+
+code, .highlight {
+	font-family: 'andale mono', 'lucida console', monospace;
+	font-size: 14px !important;
+  overflow: auto;
+}
+
+.highlight {
+	padding: 10px;
+	margin: 10px auto;
+}
+
+#footer {
+	margin-top: 50px;
+}
+
+#header ul li, #footer ul li {
+	display: inline;
+	margin-right: 20px;
+}

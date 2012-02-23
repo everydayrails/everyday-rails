@@ -10,8 +10,8 @@ A little about my server setup: I've got several Linux-based virtual private ser
 
 Traditionally, I've used a hodgepodge set of bash scripts to dump MySQL databases and copy data directories over to another server, but with the "Backup":https://github.com/meskyanichi/backup gem by Michael van Rooijen my setup is a little less hodgepodge and a lot more elegant. Here's a quick look at how to get things set up.
 
-<div class="box">
-  As mentioned in the README, Backup won't work on Windows computers.
+<div class="panel">
+  <p>As mentioned in the README, Backup won't work on Windows computers.</p>
 </div>
 
 The Backup gem is incredibly easy to install, assuming you've got shell access to your server (I haven't tried this on the likes of Heroku or Engine Yard). Follow the instructions in the "README":https://github.com/meskyanichi/backup/blob/develop/README.md and the "project wiki":https://github.com/meskyanichi/backup/wiki to get going; assuming you've got data to back up and somewhere to back it up to you'll be up and running in no more than 15 minutes. My only problem: I selected scp as a file transfer option, since I have an existing backup server, and had to install a couple of extra dependencies to get things to work. The good news is the Backup gem does a nice job reporting missing dependencies and setting you on the right path (and I like that it doesn't install a bunch of gems I wouldn't have otherwise used). Afterward I noticed there's a convenient way to see what your configuration's dependencies will be:

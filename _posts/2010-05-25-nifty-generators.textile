@@ -43,8 +43,10 @@ That makes up pretty much all of my use of <code>nifty_layout</code>, but there'
 
 That's it for <code>nifty_layout</code>--next time I'll talk about how I use its parter, <code>nifty_config</code>, to simplify my apps' global settings.
 
-<div class="box">
+<div class="panel">
+  <p>
   <strong>Tip:</strong>
   
   When using generated code like that from <code>nifty_layout</code>, take time to look over the code to familiarize yourself with what it does and how it works. Not only will this practice help make sure you use the generated code as intended, it also gives you the chance to see how a seasoned developer like Ryan Bates writes code. In this case, you can pick up some tips on refactoring your view code into helpers and layouts.
+  </p>
 </div>

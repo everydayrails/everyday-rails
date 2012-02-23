@@ -1,23 +1,39 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
-   "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html>
 
-<html lang="en">
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta charset="utf-8" />
+
+	<!-- Set the viewport width to device width for mobile -->
+	<meta name="viewport" content="width=device-width" />
+
 	<title>{{ page.title }}</title>
 	<meta name="author" content="Aaron Sumner" />
 	<meta name="description" content="{{ page.excerpt }}">
-  <link href='http://fonts.googleapis.com/css?family=News+Cycle' rel='stylesheet' type='text/css'>
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
-  <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
-  <!--[if lt IE 8]>
-      <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
-  <![endif]-->
-  <link href="/stylesheets/site.css" media="screen, projection" rel="stylesheet" type="text/css" />
-  <link href="/stylesheets/syntax.css" media="screen, projection, print" rel="stylesheet" type="text/css" />
   
+	<!-- Included CSS Files -->
+  <link href='http://fonts.googleapis.com/css?family=Signika+Negative:600,400' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="/stylesheets/foundation.css">
+	<link rel="stylesheet" href="/stylesheets/app.css">
+	<link rel="stylesheet" href="/stylesheets/syntax.css">
+
+	<!--[if lt IE 9]>
+		<link rel="stylesheet" href="/stylesheets/ie.css">
+	<![endif]-->
+
+
+	<!-- IE Fix for HTML5 Tags -->
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
   <link href="{{ site.feed }}" rel="alternate" title="RSS" type="application/rss+xml" />
 </head>
+
 <body>
   
   <script type="text/javascript">
@@ -35,9 +51,19 @@
   </script>
 
   <div id="container" class="container">
-    <div id="banner">
-      <h1><a href="/"><img src="/images/banner.png" alt="Everyday Rails, by Aaron Sumner" width="955" height="216"></a></h1>
-    </div>
-    <div id="banner-print">
-      <h1><a href="http://everydayrails.com/">Everyday Rails: Get stuff done as a web developer.</a></h1>
+    <div class="row">
+      <div id="header" class="twelve columns">
+        <h1><a href="/"><img src="/images/banner.png" alt="Everyday Rails, by Aaron Sumner" width="500" height="113"></a></h1>
+        
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/archives.html">Archives</a></li>
+          <li><a href="http://astore.amazon.com/everrail-20" target="new">Reading List</a></li>
+          <li><a href="{{ site.feed }}">Feed</a></li>
+          <li><a href="{{ site.twitter }}">Twitter</a></li>
+          <li><a href="{{ site.facebook }}">Facebook</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </div>
     </div>

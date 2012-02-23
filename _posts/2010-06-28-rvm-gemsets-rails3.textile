@@ -60,8 +60,8 @@ And pick a default Ruby interpreter with
   $ rvm 1.8.7 --default
 {% endhighlight %}
 
-<div class="box">
-  <strong>Which Rubies should I install?</strong> That depends on your particular development needs. I have 1.8.7, 1.9.1, and REE (Ruby Enterprise Edition) installed.
+<div class="panel">
+  <p><strong>Which Rubies should I install?</strong> That depends on your particular development needs. I have 1.8.7, 1.9.1, and REE (Ruby Enterprise Edition) installed.</p>
 </div>
 
 h2. 3. Rails 3 gemset
@@ -76,8 +76,8 @@ The basic syntax to get started is
 
 where <code>rails3</code> is your gemset's name. You can use another version of Ruby if you'd prefer&mdash;in fact, it might not be a bad idea to start getting familiar with Ruby 1.9.1 as long as you're enabling your computer to handle multiple Rubies and Rails versions.
 
-<div class="box">
-  You can copy gemsets from Ruby to Ruby; see the "RVM documentation":http://rvm.beginrescueend.com/gemsets/copying/ for details.
+<div class="panel">
+  <p>You can copy gemsets from Ruby to Ruby; see the "RVM documentation":http://rvm.beginrescueend.com/gemsets/copying/ for details.</p>
 </div>
 
 Now type
@@ -124,8 +124,8 @@ Finally, edit your web server configuration file (in the case of Apache on OS X,
   PassengerRuby /Users/everydayrails/.rvm/bin/passenger_ruby
 {% endhighlight %}
 
-<div class="box">
-  Did you copy and paste the above and it didn't work? Remember, RVM installs Rubies and gems inside _your home folder_, so these settings point to those files. Unless your account name is also <code>everydayrails</code> you'll need to update these paths accordingly.
+<div class="panel">
+  <p>Did you copy and paste the above and it didn't work? Remember, RVM installs Rubies and gems inside _your home folder_, so these settings point to those files. Unless your account name is also <code>everydayrails</code> you'll need to update these paths accordingly.</p>
 </div>
 
 Reboot Apache and you should be good to go. For the record, I'm about to switch my server settings to use REE instead of 1.8.7, to better reflect a production environment.
@@ -148,7 +148,7 @@ And install the MySQL Ruby gem via:
 
 (Adjust your path to MySQL's <code>bin</code> directory if needed; what's above is the default installation.)
 
-<div class="box">
+<div class="panel">
 h2. Don't forget!
 
 * Aside from integrating Passenger with your web server, _you won't use <code>sudo</code> to install gems anymore_.

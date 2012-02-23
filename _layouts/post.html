@@ -1,49 +1,52 @@
 {% include header.html %}
+  
+<div class="row">
+  <div  id="content" class="eight columns">
+
+    <h1>{{ page.title }}</h1>
+
+    <div id="datestamp"><strong>{{ page.date | date: "%B %d, %Y"  }}</strong></div>
+
+    {{ content }}
     
-    <div  id="content">
-
-      <h1>{{ page.title }}</h1>
-
-      <strong>{{ page.date | date: "%B %d, %Y"  }}</strong>
-
-      {{ content }}
-      
-      
-      <div id="disqus_thread"></div>
-      <script type="text/javascript">
-        /**
-          * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread] 
-          */
-        (function() {
-         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-         dsq.src = 'http://everydayrails.disqus.com/embed.js';
-         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-      </script>
-      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=everydayrails">comments powered by Disqus.</a></noscript>
-      <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-      
-      {% include bottom_ads.html %}
+    <div class="panel">
+      <p>
+        If you found this article useful, please let me know by leaving a comment or
+        consider supporting Everyday Rails by purchasing something from the 
+        <a href="http://astore.amazon.com/everrail-20">recommended books and gear list</a>.
+        Thanks!
+      </p>
     </div>
     
-    <div id="sidebar">
-      <div class="box">
-        Possibly related:
-        <ul>
-        {% for post in site.related_posts limit:5 %}
-          <li><a href="{{post.url}}">{{ post.title }}</a> ({{ post.date | date: "%B %d, %Y"  }})</li>
-        {% endfor %}
-        </ul>
-      </div>
-      
-      <div>
-        {% include ads.html %}
-      </div>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      /**
+        * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread] 
+        */
+      (function() {
+       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+       dsq.src = 'http://everydayrails.disqus.com/embed.js';
+       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=everydayrails">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
     </div>
-
-    {% include footer.html %}
-
+  
+  <div id="sidebar" class="four columns">
+    <div class="panel">
+      <h4>Possibly related:</h4>
+      <ul>
+      {% for post in site.related_posts limit:5 %}
+        <li><a href="{{post.url}}">{{ post.title }}</a> ({{ post.date | date: "%B %d, %Y"  }})</li>
+      {% endfor %}
+      </ul>
+    </div>
   </div>
+</div>
+
+{% include footer.html %}
+
 
 </body>
 </html>

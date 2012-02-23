@@ -48,8 +48,10 @@ Here's what a completed <code>config.yml</code> file might look like for me:
     email: help@mygreatapp.com
 {% endhighlight %}
 
-<div class="box">
+<div class="panel">
+  <p>
   <strong>Don't forget:</strong> The values in your <code>app_config.yml</code> file are loaded when your application starts, so you'll need to restart your application after you first create the file or whenever you make changes to its values.
+  </p>
 </div>
 
 From there, it's just a matter of calling up your values wherever they're needed. All you need to do is refer to <code>APP_CONFIG[:value]</code> within your application's code to use whatever you assigned to <code>value</code> in your <code>config.yml</code> file, for the environment in which your app is currently running. For example, given the above configuration file, <code>APP_CONFIG[:email]</code> would return <code>devaccount@mygreatapp.com</code> if I were running the code in development mode; it would return <code>help@mygreatapp.com</code> if I were in production.
@@ -97,6 +99,6 @@ Here's a simple example of using APP_CONFIG values outside of view-type files. I
 
 That's all for Nifty Generators' nifty_config feature. These are my uses for it, but I recommend experimenting with it in your own apps. Next time I'll close out my series on Nifty Generators with <code>nifty_scaffold</code>, the real meat of this very useful gem.
 
-<div class="box">
-  <strong>How am I doing?</strong> I'm still getting a feel for this blog and how to write for it. If you're reading (thanks, by the way) I'd love to hear what you think of what I've written so far. Please leave a comment with any input you care to share.
+<div class="panel">
+  <p><strong>How am I doing?</strong> I'm still getting a feel for this blog and how to write for it. If you're reading (thanks, by the way) I'd love to hear what you think of what I've written so far. Please leave a comment with any input you care to share.</p>
 </div>
