@@ -43,4 +43,4 @@ In the end, though, the most important thing is that you'll have tests--and reli
 
 And that's the approach we'll take in this series.
 
-Ready to go? We'll start in part two by configuring a Rails application to use RSpec.
+Ready to go? We'll start in part two by "configuring a Rails application to use RSpec":http://everydayrails.com/2012/03/12/testing-series-rspec-setup.html.
