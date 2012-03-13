@@ -1,0 +1,166 @@
+---
+layout: post
+title: "How I learned to test my Rails applications, Part 2: Setting up RSpec"
+excerpt: "Our series on getting comfortable with Rails testing continues as we set up RSpec for an existing application."
+---
+
+<div class="panel">
+  This is part two of an ongoing "series on getting started and comfortable with testing Rails applications":http://everydayrails.com/2012/03/12/testing-series-intro.html. I appreciate your feedback along the way.
+</div>
+
+In this post, we'll complete the following tasks:
+
+* Use Bundler to install RSpec and other gems useful in testing
+* Install a test database, if necessary
+* Configure RSpec
+* Configure our Rails application to automatically generate files for testing as we add new features
+
+h2. Our application
+
+In this book, I'll be working from a basic Rails 3.2 contact manager. The application currently has the following features:
+
+* Anyone can view contacts' information (in other words, not the most private contact manager in the world)
+* Users may log in to enter contacts
+* Contacts may have multiple phone numbers, via nested form attributes
+
+OK, it's probably not going to replace your current address book--but it does have enough functionality to demonstrate some simple techniques to practice testing (and eventually, test-driven development) with RSpec and Rails. It's also worth noting that I'm leaving out some useful gems I'd normally use in Rails application development, such as Simple Form and Haml, so I can focus on RSpec-specific code (I *am*, however, using Devise for a turnkey authentication solution--it's not necessarily the simplest way to go about handling logins, but by and large it gets out of our way and lets us focus on the contact manager's core functionality).
+
+We just have one problem--so far I haven't been doing any testing in my application! So far it hasn't come back to haunt me, but with every method I add to my project the likelihood of errors increases. At the very least, it becomes increasingly difficult to test my application the old fashioned way by clicking each and every link in development.
+
+Let's fix that now. Before I dive into specs, though, I need to do some configuring.
+
+h2. Gemfile
+
+First things first: Since RSpec isn't included in a default Rails 3.x application, we'll need to take a moment to install it and a few helpers. We'll use Bundler to add these dependencies. In your application, open <code>Gemfile</code> and add the following code:
+
+{% highlight ruby %}
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+end
+
+group :test do
+  gem 'faker'
+  gem 'capybara'
+  gem 'guard-rspec'
+  gem 'launchy'
+end
+{% endhighlight %}
+
+*Why install in two separate groups?* <code>rspec-rails</code> and <code>factory_girl_rails</code> are used in both the development and test environments. Specifically, they are used in development by generators we'll be utilizing shortly. The remaining gems are only used when you actually run your specs, so they're not necessary to load in development. This also ensures that gems used solely for generating code or running tests aren't installed in your production environment when you deploy to your server.
+
+Run bundle from your command line to install the gems onto your system:
+
+{% highlight bash %}
+$ bundle
+{% endhighlight %}
+
+So what did we just install?
+
+* *rspec-rails* includes RSpec itself in a wrapper to make it play nicely with Rails 3.
+* *factory_girl_rails* replaces Rails' default fixtures for feeding test data to the test suite with much more preferable factories.
+* *faker* generates names, email addresses, and other placeholders for factories.
+* *capybara* makes it easy to programatically simulate your users' interactions with your application.
+* *launchy* does one thing, but does it well: It opens your default web browser upon failed integration specs to show you what your application is rendering.
+* *guard-rspec* watches your application and tests and runs specs for you automatically when it detects changes.
+
+I'll cover each of these in more detail in future posts, but in the meantime our application has access to all the supports necessary to build a solid test suite. Next up: Creating our test database.
+
+h2. Test database
+
+If you're adding specs to an existing Rails application, there's a chance you've already got a test database on your computer. If not, we'll add one now.
+
+Open the file <code≥config/database.yml</code> to see which databases your application is ready to talk to. If you haven't made any changes to the file, you should see something like the following if you're using SQLite:
+
+{% highlight yaml %}
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  adapter: sqlite3
+  database: db/test.sqlite3
+  pool: 5
+  timeout: 5000
+{% endhighlight %}
+
+Or this if you're using MySQL:
+
+{% highlight yaml %}
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: myapp_test
+  pool: 5
+  username: root
+  password:
+  socket: /tmp/mysql.sock
+{% endhighlight %}
+
+If not, add the code to <code>config/database.yml</code> now, replacing *myapp_test* with the appropriate name for your application.
+
+Finally, to ensure we've got a database to talk to, run the following rake task:
+
+{% highlight bash %}
+$ rake db:create:all
+{% endhighlight %}
+
+If you didn't yet have a test database, you do now. If you did, the rake task politely informs you that the database already exists--no need to worry about accidentally deleting a previous database. Now let's configure RSpec itself.
+
+h2. RSpec configuration
+
+Now we can add a spec folder to our application and add some basic RSpec configuration. On your command line, install RSpec with the following:
+
+{% highlight bash %}
+$ rails g rspec:install
+{% endhighlight %}
+
+As the generator dutifully reports, we've now got a configuration file for RSpec (<code>.rspec</code>), a directory for our spec files as we create them, and a helper file where we'll further customize how RSpec will interact with our code. Let's do that customization now.
+
+First, let's go ahead and add Capybara support to our setup. Open the newly-created <code>spec/spec_helper.rb</code> file; then, underneath the other require statements, add
+
+{% highlight ruby %}
+require "capybara/rspec"
+{% endhighlight %}
+
+We'll actually put this to use when we get into integration testing.
+
+Next--and this is optional--I like to change RSpec's output from the default format to the easy-to-read documentation format. This makes it easier to see which specs are passing and which are failing; it also provides an attractive outline of your specs for--you guessed it--documentation purposes. Open <code>.rspec</code> to add the following line:
+
+{% highlight yaml %}
+--format documentation
+{% endhighlight %}
+
+One last setup step: Telling Rails to generate spec files for us.
+
+h2. Generators
+
+Now that we've got RSpec installed and configured, let's tell Rails to use it to generate starter files for our application's test suite (instead of the default TestUnit). While we're at it, we'll tell Rails to create a factory corresponding to each new model we create with Rails' generate command.
+
+Open <code>config/application.rb</code> and include the following code inside the Application class:
+
+{% highlight ruby %}
+config.generators do |g|
+  g.test_framework :rspec,
+    :fixtures => true,
+    :view_specs => false,
+    :helper_specs => false,
+    :routing_specs => false,
+    :controller_specs => true,
+    :request_specs => true
+  g.fixture_replacement :factory_girl, :dir => "spec/factories"
+end
+{% endhighlight %}
+
+Can you guess what this code is doing? Here's a rundown:
+
+* <code>:fixtures => true</code> specifies to generate a fixture for each model (using a Factory Girl factory, instead of an actual fixture)
+* <code>:view_specs => false</code> says to skip generating view specs. I won't cover them in this book; instead we'll use request specs to test interface elements.
+* <code>:helper_specs => false</code> skips generating specs for the helper files Rails generates with each controller. As your comfort level with RSpec improves, consider changing this option to true and testing these files.
+* <code>:routing_specs => false</code> omits a spec file for your <code>config/routes.rb</code> file. If your application is simple, as the one in this book will be, you're probably safe skipping these specs. As your application grows, however, and takes on more complex routing, it's a good idea to incorporate routing specs.
+* And finally, <code>g.fixture_replacement :factory_girl</code> tells Rails to generate factories instead of fixtures, and to save them in the <code>spec/factories</code> directory.
+
+Our application is now configured to test with RSpec! Time to get started building functionality. Look for model specs in the next post in this series.
