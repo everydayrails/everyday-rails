@@ -163,4 +163,4 @@ Can you guess what this code is doing? Here's a rundown:
 * <code>:routing_specs => false</code> omits a spec file for your <code>config/routes.rb</code> file. If your application is simple, as the one in this book will be, you're probably safe skipping these specs. As your application grows, however, and takes on more complex routing, it's a good idea to incorporate routing specs.
 * And finally, <code>g.fixture_replacement :factory_girl</code> tells Rails to generate factories instead of fixtures, and to save them in the <code>spec/factories</code> directory.
 
-Our application is now configured to test with RSpec! Time to get started building functionality. Look for model specs in the next post in this series.
+Our application is now configured to test with RSpec! Time to get started building functionality. Let's begin by "adding tests for an application's models":http://everydayrails.com/2012/03/19/testing-series-rspec-models-factory-girl.html.
