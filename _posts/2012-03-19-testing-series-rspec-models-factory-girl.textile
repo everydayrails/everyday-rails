@@ -31,7 +31,6 @@ To get started, a model spec should include tests for the following:
 This is a good time to look at the basic structure of an RSpec model spec. I find it helpful to think of them as individual outlines. For example, let's look at our main <code>Contact</code> model's requirements:
 
 {% highlight ruby %}
-# spec/models/contact_spec.rb
 describe Contact
   it "has a valid factory"
   it "is invalid without a firstname"

@@ -1,0 +1,331 @@
+---
+layout: post
+title: "How I learned to test my Rails applications, Part 4: Controller specs"
+excerpt: "Controllers are the glue in a Rails application, and should be tested just like any other code. This primer will guide you to better coverage in your own apps' controllers."
+---
+
+Poor controllers. As Rails developers we keep them skinny (which is a good thing) and often don't give them due attention in our tests (which is a bad thing; more on that in a moment). As you continue to improve your application's test coverage, though, controllers are the next logical chunk of code to tackle.
+
+<div class="panel">
+  <p>
+    If you're new to RSpec or Rails testing in general, I recommend reading through the previous posts in this series first:
+  </p>
+
+* "Introduction":http://everydayrails.com/2012/03/12/testing-series-intro.html
+* "Setup":http://everydayrails.com/2012/03/12/testing-series-rspec-setup.html
+* "Models":http://everydayrails.com/2012/03/19/testing-series-rspec-models-factory-girl.html
+  
+</div>
+
+h2. Why test controllers?
+
+Following the lead of some prominent Ruby developers I stopped working on controller specs for awhile, in favor of covering this functionality in my request specs (integration tests). At the time I liked this idea a lot--using tests that more closely mirrored _how_ controller actions are accessed made good sense--but since then I've come back to testing controllers more explicitly, for a couple of primary reasons:
+
+# Controllers are models too, as "Piotr Solnica indicated in an excellent blog post":http://solnic.eu/2012/02/02/yes-you-should-write-controller-tests.html. And in Rails applications, they're pretty important models--so it's a good idea to put them on equal footing, spec-wise, as your Rails models.
+# Controller specs can be written more quickly than their integration spec counterparts. For me, this becomes critical when I encounter a bug that's residing at the controller level, or I want to add additional specs to verify some refactoring. Writing a solid controller spec is a comparatively straightforward process, since I can generate very specific input to the method I'm testing without the overhead of request specs. This also means that
+# Controller specs run more quickly than request specs, making them very valuable during bug fixing and checking the bad paths your users can take (in addition to the good ones, of course).
+
+h2. Controller testing basics
+
+Scaffolds, when done correctly, are a great way to learn coding techniques. The spec files generated for controllers, at least as of RSpec 2.8, are pretty nice and provide a good template to help you build your own specs. "Look at the scaffold generator in rspec-rails' source":https://github.com/rspec/rspec-rails/tree/master/lib/generators/rspec/scaffold, or generate a scaffold in your properly configured Rails application to begin getting a sense of these tests. (Another generator to look at is the one in "Nifty Generator's scaffolds":https://github.com/ryanb/nifty-generators/tree/master/rails_generators/nifty_scaffold).
+
+A controller spec is broken down by controller method&mdash;each example is based off of a single action and, optionally, any params passed to it. Here's a simple example:
+
+{% highlight ruby %}
+it "redirects to the home page upon save" do
+  post :create, contact: Factory.attributes_for(:contact)
+  response.should redirect_to root_url
+end
+{% endhighlight %}
+
+If you've been following along with this series, you may notice similarities to earlier specs we've written:
+
+* The description of the example is written in explicit, active language.
+* The example only expects one thing: After the post request is processed, a redirect should be returned to the browser.
+* A factory generates test data to pass to the controller method; note the use of Factory Girl's <code>attributes_for</code> option, which generates a hash of values as opposed to a Ruby object.
+
+However, there are also a couple of new things to look at:
+
+* The basic syntax of a controller spec&mdash;it's REST method (<code>post</code>), controller method (<code>:create</code>), and, optionally, parameters being passed to the method.
+* The aforementioned <code>attributes_for</code> call to Factory Girl&mdash;not rocket science, but worth mentioning again because I had a habit early on of forgetting to use it versus default factories.
+
+h2. Organization
+
+Let's start with a top-down approach. As I mentioned in the previous post on model specs, it's helpful to think about a spec as an outline. Continuing our use of an address book app as an example, here are some things I might need to test:
+
+{% highlight ruby %}
+# spec/controllers/contacts_controller_spec.rb
+require 'spec_helper'
+
+describe ContactsController do
+  describe "GET #index" do
+    it "populates an array of contacts"
+    it "renders the :index view"
+  end
+  
+  describe "GET #show" do
+    it "assigns the requested contact to @contact"
+    it "renders the :show template"
+  end
+  
+  describe "GET #new" do
+    it "assigns a new Contact to @contact"
+    it "renders the :new template"
+  end
+  
+  describe "POST #create" do
+    context "with valid attributes" do
+      it "saves the new contact in the database"
+      it "redirects to the home page"
+    end
+    
+    context "with invalid attributes" do
+      it "does not save the new contact in the database"
+      it "re-renders the :new template"
+    end
+  end
+end
+{% endhighlight %}
+
+And so on. As in our model specs, we can use RSpec's <code>describe</code> and <code>context</code> blocks to organize examples into a clean hierarchy, based on a controller's actions and the context we're testing&mdash;in this case, the happy path (a user passed valid attributes to the controller) and the unhappy path (a user passed invalid or incomplete attributes). If your application includes an authentication or authorization layer, you can include these as additional contexts&mdash;say, testing with and without a logged-in user, or testing based on a user's assigned role within the app.
+
+With some organization in place, let's go over some things you might want to test in your application and how those tests would actually work.
+
+h3. Setting up data
+
+Just as in model specs, controller specs need data. Here again we'll use factories to get started&mdash;once you've got the hang of it you can swap these out with more efficient means of creating test data, but for our purposes (and this small app) factories will work great.
+
+We've already got a factory to generate a valid contact:
+
+{% highlight ruby %}
+# spec/factories/contacts.rb
+factory :contact do |f|
+  f.firstname { Faker::Name.first_name }
+  f.lastname { Faker::Name.last_name }
+end
+{% endhighlight %}
+
+Now let's add one to return an _invalid_ contact:
+
+{% highlight ruby %}
+factory :invalid_contact, parent: :contact do |f|
+  f.firstname nil
+end
+{% endhighlight %}
+
+Notice the subtle difference: The <code>:invalid_contact</code> factory uses the <code>:contact</code> factory as a _parent_. It replaces the specified attributes (in this case, <code>firstname</code> with its own; everything else will defer to the original <code>:contact</code> factory.
+
+<div class="panel">
+h4. Setting up session data
+
+To date, the little address book app we've built is pretty basic. It doesn't even require a user to log in to view it or make changes. I'll revisit this in a future post; for now I want to focus on general controller testing practices.
+</div>
+
+h3. Testing GET methods
+
+A standard Rails controller is going to have four GET-based methods: <code>#index</code>, <code>#show</code>, <code>#new</code>, and <code>#edit</code>. Looking at the outline started above we can add the following tests:
+
+{% highlight ruby %}
+# spec/controllers/contacts_controller_spec.rb
+
+# ... other describe blocks omitted omitted
+describe "GET #index" do
+  it "populates an array of contacts" do
+    contact = Factory(:contact)
+    get :index
+    assigns(:contacts).should eq([contact])
+  end
+  
+  it "renders the :index view" do
+    get :index
+    response.should render_template :index
+  end
+end
+
+describe "GET #show" do
+  it "assigns the requested contact to @contact" do
+    contact = Factory(:contact)
+    get :show, id: contact
+    assigns(:contact).should eq(contact)
+  end
+  
+  it "renders the #show view" do
+    get :show, id: Factory(:contact)
+    response.should render_template :show
+  end
+end
+{% endhighlight %}
+
+Pretty simple stuff for the methods that, typically, have the lightest load to carry in controllers. In this address book app, the <code>new</code> method is a little more complicated, though&mdash;it's building some new phones to be nested in the contact information form:
+
+{% highlight ruby %}
+# app/controllers/contacts_controller.rb
+
+# ... other code omitted
+
+def new
+  @contact = Contact.new
+  %w(home office mobile).each do |phone|
+    @contact.phones.build(phone_type: phone)
+  end
+end
+{% endhighlight %}
+
+How to test iterating through those phone types? Maybe something like this:
+
+{% highlight ruby %}
+# spec/controllers/contacts_controller_spec.rb
+
+# ... other specs omitted
+
+describe "GET #new" do
+  it "assigns a home, office, and mobile phone to the new contact" do
+    get :new
+    assigns(:contact).phones.map{ |p| p.phone_type }.should eq %w(home office mobile)
+  end
+end
+
+{% endhighlight %}
+
+The point here is if your controller methods are doing things besides what a generator might yield, be sure to test those additional steps, too.
+
+h3. Testing POST methods
+
+Let's move on to our controller's <code>:create</code> method. Referring back to our outline, we've got two contexts to test: When a user passes in attributes for a valid contact, and when an invalid contact is entered. The resulting examples look something like this:
+
+{% highlight ruby %}
+# spec/controllers/contacts_controller_spec.rb
+
+# rest of spec omitted ...
+
+describe "POST create" do
+  context "with valid attributes" do
+    it "creates a new contact" do
+      expect{
+        post :create, contact: Factory.attributes_for(:contact)
+      }.to change(Contact,:count).by(1)
+    end
+    
+    it "redirects to the new contact" do
+      post :create, contact: Factory.attributes_for(:contact)
+      response.should redirect_to Contact.last
+    end
+  end
+  
+  context "with invalid attributes" do
+    it "does not save the new contact" do
+      expect{
+        post :create, contact: Factory.attributes_for(:invalid_contact)
+      }.to_not change(Contact,:count)
+    end
+    
+    it "re-renders the new method" do
+      post :create, contact: Factory.attributes_for(:invalid_contact)
+      response.should render_template :new
+    end
+  end 
+end
+
+# rest of spec omitted ...
+
+{% endhighlight %}
+
+Let's talk about that <code>expect {}</code> Proc for a minute. RSpec's readability shines here&mdash;except this code to (or to not) do something. This one little example succinctly tests that an object is created and stored. (If Proc objects seem magical to you, refer to "this post by Alan Skorkin":http://www.skorks.com/2010/05/ruby-procs-and-lambdas-and-the-difference-between-them/ and "this one by Robert Sosinski":http://www.robertsosinski.com/2008/12/21/understanding-ruby-blocks-procs-and-lambdas/ to learn more.) Become familiar with this technique, as it'll be very useful in testing a variety of methods in controllers, models, and eventually at the integration level.
+
+h3. Testing PUT methods
+
+On to our controller's <code>update</code> method, where we need to check on a couple of  things&mdash;first, that the attributes passed into the method get assigned to the model we want to update; and second, that the redirect works as we want. Then we need to test that those things _don't_ happen if invalid attributes are passed through the params:
+
+{% highlight ruby %}
+# spec/controllers/contacts_controller_spec.rb
+
+# rest of spec omitted ...
+describe 'PUT update' do
+  before :each do
+    @contact = Factory(:contact, firstname: "Lawrence", lastname: "Smith")
+  end
+  
+  context "valid attributes" do
+    it "located the requested @contact" do
+      put :update, id: @contact, contact: Factory.attributes_for(:contact)
+      assigns(:contact).should eq(@contact)      
+    end
+  
+    it "changes @contact's attributes" do
+      put :update, id: @contact, 
+        contact: Factory.attributes_for(:contact, firstname: "Larry", lastname: "Smith")
+      @contact.reload
+      @contact.firstname.should eq("Larry")
+      @contact.lastname.should eq("Smith")
+    end
+  
+    it "redirects to the updated contact" do
+      put :update, id: @contact, contact: Factory.attributes_for(:contact)
+      response.should redirect_to @contact
+    end
+  end
+  
+  context "invalid attributes" do
+    it "locates the requested @contact" do
+      put :update, id: @contact, contact: Factory.attributes_for(:invalid_contact)
+      assigns(:contact).should eq(@contact)      
+    end
+    
+    it "does not change @contact's attributes" do
+      put :update, id: @contact, 
+        contact: Factory.attributes_for(:contact, firstname: "Larry", lastname: nil)
+      @contact.reload
+      @contact.firstname.should_not eq("Larry")
+      @contact.lastname.should eq("Smith")
+    end
+    
+    it "re-renders the edit method" do
+      put :update, id: @contact, contact: Factory.attributes_for(:invalid_contact)
+      response.should render_template :edit
+    end
+  end
+end
+
+# rest of spec omitted ...
+{% endhighlight %}
+
+The examples I want to point out here are the two that verify whether or not an object's attributes are actually changed by the <code>update</code> method. Note that we have to call <code>reload</code> on <code>@contact</code> to check that our updates are actually persisted.
+
+h3. Testing DELETE methods
+
+Testing <code>destroy</code> is relatively straightforward:
+
+{% highlight ruby %}
+# spec/controllers/contacts_controller_spec.rb
+
+# rest of spec omitted ...
+
+describe 'DELETE destroy' do
+  before :each do
+    @contact = Factory(:contact)
+  end
+  
+  it "deletes the contact" do
+    expect{
+      delete :destroy, id: @contact        
+    }.to change(Contact,:count).by(-1)
+  end
+    
+  it "redirects to contacts#index" do
+    delete :destroy, id: @contact
+    response.should redirect_to contacts_url
+  end
+end
+
+# rest of spec omitted ...
+{% endhighlight %}
+
+By now you should be able to correctly guess what everything's doing. The first expectation checks to see if the <code>destroy</code> method in the controller actually deleted the object; the second expectation confirms that the user is redirected back to the index upon success.
+
+h2. Summary
+
+Now that I've shared some of the many things you can test in your controllers, let me be honest with you&mdash;it wasn't until recently that I began testing at this level of my apps with such thoroughness. In fact, for a long time my controller specs just tested a few basics. But as you can see from RSpec's generated examples, there are several things you can&mdash;and should&mdash;test at the controller level.
+
+And with thoroughly tested controllers, you're well on your way to thorough test coverage in your application as a whole. By now (between this post and the one on testing Rails models) you should be getting a handle on good practices and techniques for the practical use of RSpec, Factory Girl, and other helpers to make your tests and code more reliable.
+
+In the MVC triumvarate, we've now covered the Model and Controller layers. Next time we'll integrate the two&mdash;along with view&mdash;with RSpec request specs. Thanks as always for reading, and let me know what you think in the comments.
