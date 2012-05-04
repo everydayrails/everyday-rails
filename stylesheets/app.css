@@ -92,3 +92,10 @@ code, .highlight {
 	display: inline;
 	margin-right: 20px;
 }
+
+#sharing {
+	height: 40px;
+	font-size: 11px !important;
+	vertical-align: middle;
+	margin: 20px auto;
+}

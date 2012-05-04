@@ -1,5 +1,5 @@
 {% include header.html %}
-  
+
 <div class="row">
   <div  id="content" class="eight columns">
 
@@ -9,13 +9,11 @@
 
     {{ content }}
     
-    <div class="panel">
-      <p>
-        If you found this article useful, please let me know by leaving a comment or
-        consider supporting Everyday Rails by purchasing something from the 
-        <a href="http://astore.amazon.com/everrail-20">recommended books and gear list</a>.
-        Thanks!
-      </p>
+    <div id="sharing">
+      <span class='st_twitter_hcount' displayText='Tweet'></span>
+      <span class='st_facebook_hcount' displayText='Facebook'></span>
+      <span class='st_reddit_hcount' displayText='Reddit'></span>
+      <span class='st_plusone_hcount' displayText='Google +1'></span>
     </div>
     
     <div id="disqus_thread"></div>
@@ -62,7 +60,6 @@
 </div>
 
 {% include footer.html %}
-
 
 </body>
 </html>
