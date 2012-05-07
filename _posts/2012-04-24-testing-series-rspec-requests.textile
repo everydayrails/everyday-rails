@@ -148,4 +148,4 @@ There's a lot we haven't covered, though:
 * What it means to be a _test-driven developer_
 * Other things we could be testing (email, routes, etc.)
 
-I'm happy to announce that *I'm working on a book* to cover these topics! There will be more details in the coming days, but I'm self-publishing to keep it affordable (under 10 American bucks) and intend to provide a complete source example and updates through Rails 4.0. More details soon. In the meantime, thanks for reading.
+I'm happy to announce that *I'm working on a book* to cover these topics! There will be more details in the coming days, but I'm self-publishing to keep it affordable (under 10 American bucks) and intend to provide a complete source example and updates through Rails 4.0. "Get early access now!":http://leanpub.com/everydayrailsrspec

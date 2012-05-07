@@ -16,6 +16,21 @@
       <span class='st_plusone_hcount' displayText='Google +1'></span>
     </div>
     
+    <div class="panel book">
+      <h2>Everyday Rails Testing with RSpec: The book</h2>
+
+      <a href="http://leanpub.com/everydayrailsrspec"><img src="/images/rspec_book.jpg" alt=""></a>
+      <p>
+      If you liked my series on practical advice for adding reliable tests to your Rails apps,
+      check out the new, expanded ebook version. Lots of additional, exclusive content and a complete
+      sample Rails application.
+      <strong><a href="http://leanpub.com/everydayrailsrspec">Get early access to my new book for only $9.</a></strong>
+      </p>
+      <p>
+        <a href="http://leanpub.com/everydayrailsrspec" class="maroon button radius">Buy now</a>
+      </p>
+    </div>
+    
     <div id="disqus_thread"></div>
     <script type="text/javascript">
       /**
@@ -32,8 +47,23 @@
     </div>
   
   <div id="sidebar" class="four columns">
+    <div class="panel book">
+      <h3>My new RSpec book</h3>
+      <a href="http://leanpub.com/everydayrailsrspec"><img src="/images/rspec_book.jpg" alt=""></a>
+      <p>
+        Practical advice for adding reliable tests to your Rails apps with RSpec.
+        Includes expanded, exclusive content and a complete sample Rails application.
+        <strong><a href="http://leanpub.com/everydayrailsrspec">Get early access to my new book for only $9.</a></strong>
+        Available now from Leanpub.
+      </p>
+      
+      <p>
+        <a href="http://leanpub.com/everydayrailsrspec" class="maroon button radius">Buy now</a>
+      </p>
+    </div>
+    
     <div class="panel">
-      <h4>Possibly related:</h4>
+      <h4>Possibly related posts:</h4>
       <ul>
       {% for post in site.related_posts limit:5 %}
         <li><a href="{{post.url}}">{{ post.title }}</a> ({{ post.date | date: "%B %d, %Y"  }})</li>
