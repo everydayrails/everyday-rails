@@ -60,6 +60,12 @@ a.maroon:hover {
 	margin-left: 20px;
 }
 
+#content img {
+	float: right;
+	border: 1px solid #ccc;
+	margin: 20px 0 20px 20px !important;
+}
+
 #datestamp {
 	margin: 20px auto;
 	color: #b0b0b0;
