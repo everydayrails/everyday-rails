@@ -44,7 +44,7 @@
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=everydayrails">comments powered by Disqus.</a></noscript>
     <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-    </div>
+  </div>
   
   <div id="sidebar" class="four columns">
     <div class="panel book">
@@ -62,28 +62,25 @@
     </div>
     
     <div class="panel">
+      <h3>Free newsletter</h3>
+
+      <p>
+        Ruby on Rails news and tips, and other ideas and surprises from Aaron at Everyday Rails.
+        Delivered about once a month to your inbox.
+      </p>
+
+      <p>
+        <a href="http://eepurl.com/nRW0z" class="maroon button radius">Subscribe for free</a>
+      </p>
+    </div>
+    
+    <div class="panel">
       <h4>Possibly related posts:</h4>
       <ul>
       {% for post in site.related_posts limit:5 %}
         <li><a href="{{post.url}}">{{ post.title }}</a> ({{ post.date | date: "%B %d, %Y"  }})</li>
       {% endfor %}
       </ul>
-    </div>
-    
-    <div class="panel">
-      <h3>Reading List</h3>
-      <p>Support Everyday Rails by checking out my 
-        <a href="http://astore.amazon.com/everrail-20" target="new">recommended Ruby books and gear</a>.
-      </p>
-
-      <script type="text/javascript"><!--
-      amazon_ad_tag="everrail-20"; 
-      amazon_ad_width="180"; 
-      amazon_ad_height="150"; 
-      amazon_color_border="990000"; 
-      amazon_color_logo="FFFFFF"; 
-      amazon_color_link="990000"; //--></script>
-      <script type="text/javascript" src="http://www.assoc-amazon.com/s/asw.js"></script>
     </div>
   </div>
 </div>
