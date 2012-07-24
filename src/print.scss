@@ -1,8 +1,0 @@
-@import "blueprint";
-
-// Generate the blueprint print styles:
-@include blueprint-print;
-
-#banner {
-  display: none;
-}

@@ -1,87 +1,116 @@
+@font-face {
+	font-family: 'Socialico';
+	src: url('Socialico.otf');
+	font-weight: normal;
+	font-style: normal;
+}
+
 body {
-	font-family: georgia, serif;
+	font-family: 'Signika Negative', sans-serif;
 	font-size: 16px;
+	color: #555;
 }
 
-a { text-decoration: none; }
-a:link { color: #900; }
-a:visited {color: #900; }
-a:hover { text-decoration: underline; }
-a:active { color: #900; }
-
-ul {
-	list-style-type: square;
+#content a, footer a {
+	color: #990000;
 }
 
-#container {
-	background-color: white;
-	margin: 100px auto;
+#content a:visited, footer a:visited {
+	color: #990000;
 }
 
-#banner-print {
-	display: none;
+#content a:active, footer a:active {
+	color: #990000;
 }
 
-#banner {
-	margin-top: 10px;
+#content a:hover, footer a:hover {
+	color: #b0b0b0;
 }
 
-#banner h1 {
-	font-size: 600%;
+#datestamp {
+	margin: 20px auto;
+	color: #b0b0b0;
 }
 
-#content h2, #content h3, #content h4 {
-	margin: 0 0 3px 0;
-	padding: 0;
+.blurb {
+	margin-bottom: 20px;
 }
 
-#content ul {
-	margin: 5px auto 20px -30px;
-}
-
-#content a {
-	text-decoration: underline;
-}
-#content a:hover {
-	text-decoration: none;
-}
-
-#footer {
-	margin-top: 50px;
-	text-align: left;
-}
-
-#footer ul {
-	margin: 0 auto 20px auto;
-	list-style-type: none;
-	padding: 0;
-}
-
-#footer ul li {
-	display: inline;
-	margin: 0 20px 0 0;
-}
-
-#footer img {
-	border-style none;
-}
-
-.box {
-	background-color: #FFF0FF;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	margin: 10px auto;
-}
-
-.box ul {
-	margin-left: -35px;
-	margin-bottom: 0;
+.post {
+	margin-bottom: 50px;
 }
 
 code, .highlight {
-	font-size: 14px;
+	font-family: 'andale mono', 'lucida console', monospace;
+	font-size: 14px !important;
+  overflow: auto;
 }
 
-.code {
-	font-weight: bold;
+.highlight {
+	padding: 10px;
+	margin: 10px auto;
+}
+
+#content {
+	margin-bottom: 50px;
+	font-size: 16px !important;
+}
+
+#content * {
+	font-size: 100%;
+}
+
+#content h1 {
+	font-size: 200%;
+}
+
+#content h2 {
+	margin-top: 20px;
+	font-size: 160%;
+}
+
+#content h3 {
+	margin-top: 20px;
+	font-size: 120%;
+}
+
+#content ul {
+	list-style-type: square;
+	margin-left: 20px;
+}
+
+.content_img {
+	float: right;
+	border: 1px solid #ccc;
+	margin: 20px 0 20px 20px !important;
+}
+
+footer {
+	margin-top: 40px;
+}
+
+#social {
+	font-family: 'Socialico' !important;
+	text-align: right;
+	font-size: 48px;
+}
+
+#social a:hover {
+	text-decoration: none;
+}
+
+.hero-unit img {
+	
+}
+
+#sharing {
+	height: 40px;
+	font-size: 11px !important;
+	vertical-align: middle;
+	margin: 20px auto;
+}
+
+.book img {
+	float: right;
+	border: 1px solid #ccc;
 }
