@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: main
 title: Everyday Rails
 excerpt: "A blog about using the Ruby on Rails web application framework to get stuff done as a web developer. New content every week or so."
 ---
@@ -10,11 +10,11 @@ excerpt: "A blog about using the Ruby on Rails web application framework to get 
 
     {{ post.excerpt }}
 
-    ({{ post.date | date: "%B %d, %Y"  }})
+    ({{ post.date | date: "%B %d, %Y" }})
 
   </div>
 {% endfor %}
 
 <div id="archives-link">
-  <a href="/archives.html" class="maroon button radius">More in the archives »</a>
+  <a href="/archives.html" class="btn btn-primary">More in the archives »</a>
 </div>

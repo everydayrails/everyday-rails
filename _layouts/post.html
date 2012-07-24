@@ -1,91 +1,91 @@
 {% include header.html %}
 
-<div class="row">
-  <div  id="content" class="eight columns">
+<div class="container">
+  <div class="row">
+    <div id="content" class="span8">
 
-    <h1>{{ page.title }}</h1>
+      <h1>{{ page.title }}</h1>
 
-    <div id="datestamp"><strong>{{ page.date | date: "%B %d, %Y"  }}</strong></div>
+      <div id="datestamp"><strong>{{ page.date | date: "%B %d, %Y" }}</strong></div>
 
-    {{ content }}
+      {{ content }}
     
-    <div id="sharing">
-      <span class='st_twitter_hcount' displayText='Tweet'></span>
-      <span class='st_facebook_hcount' displayText='Facebook'></span>
-      <span class='st_reddit_hcount' displayText='Reddit'></span>
-      <span class='st_plusone_hcount' displayText='Google +1'></span>
-    </div>
+      <div id="sharing">
+        <span class='st_twitter_hcount' displayText='Tweet'></span>
+        <span class='st_facebook_hcount' displayText='Facebook'></span>
+        <span class='st_reddit_hcount' displayText='Reddit'></span>
+        <span class='st_plusone_hcount' displayText='Google +1'></span>
+      </div>
     
-    <div class="panel book">
-      <h2>Everyday Rails Testing with RSpec: The book</h2>
-
-      <a href="http://leanpub.com/everydayrailsrspec"><img src="/images/rspec_book.jpg" alt=""></a>
-      <p>
-      If you liked my series on practical advice for adding reliable tests to your Rails apps,
-      check out the new, expanded ebook version. Lots of additional, exclusive content and a complete
-      sample Rails application.
-      <strong><a href="http://leanpub.com/everydayrailsrspec">Get it now for only $9.</a></strong>
-      </p>
-      <p>
-        <a href="http://leanpub.com/everydayrailsrspec" class="maroon button radius">Buy now</a>
-      </p>
-    </div>
-    
-    <div id="disqus_thread"></div>
-    <script type="text/javascript">
-      /**
-        * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread] 
-        */
-      (function() {
-       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-       dsq.src = 'http://everydayrails.disqus.com/embed.js';
-       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=everydayrails">comments powered by Disqus.</a></noscript>
-    <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-  </div>
-  
-  <div id="sidebar" class="four columns">
-    <div class="panel book">
-      <h3>My new RSpec book</h3>
-      <a href="http://leanpub.com/everydayrailsrspec"><img src="/images/rspec_book.jpg" alt=""></a>
-      <p>
-        Practical advice for adding reliable tests to your Rails apps with RSpec.
-        Includes expanded, exclusive content and a complete sample Rails application.
+      <div class="well book">
+        <a href="http://leanpub.com/everydayrailsrspec"><img src="/images/rspec_book.jpg" alt=""></a>
+        <h2>Everyday Rails Testing with RSpec: The book</h2>
+        <p>
+        If you liked my series on practical advice for adding reliable tests to your Rails apps,
+        check out the new, expanded ebook version. Lots of additional, exclusive content and a complete
+        sample Rails application.
         <strong><a href="http://leanpub.com/everydayrailsrspec">Get it now for only $9.</a></strong>
-      </p>
+        </p>
+        <p>
+          <a href="http://leanpub.com/everydayrailsrspec" class="btn btn-primary">Buy now</a>
+        </p>
+      </div>
+    
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        /**
+          * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread] 
+          */
+        (function() {
+         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+         dsq.src = 'http://everydayrails.disqus.com/embed.js';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=everydayrails">comments powered by Disqus.</a></noscript>
+      <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+  
+    <div id="sidebar" class="span4">
+      <div class="well book">
+        <h3>My new RSpec book</h3>
+        <a href="http://leanpub.com/everydayrailsrspec"><img src="/images/rspec_book.jpg" alt=""></a>
+        <p>
+          Practical advice for adding reliable tests to your Rails apps with RSpec.
+          Includes expanded, exclusive content and a complete sample Rails application.
+          <strong><a href="http://leanpub.com/everydayrailsrspec">Get it now for only $9.</a></strong>
+        </p>
       
-      <p>
-        <a href="http://leanpub.com/everydayrailsrspec" class="maroon button radius">Buy now</a>
-      </p>
-    </div>
+        <p>
+          <a href="http://leanpub.com/everydayrailsrspec" class="btn btn-primary">Buy now</a>
+        </p>
+      </div>
     
-    <div class="panel">
-      <h3>Free newsletter</h3>
+      <div class="well">
+        <h3>Free newsletter</h3>
 
-      <p>
-        Ruby on Rails news and tips, and other ideas and surprises from Aaron at Everyday Rails.
-        Delivered about once a month to your inbox.
-      </p>
+        <p>
+          Ruby on Rails news and tips, and other ideas and surprises from Aaron at Everyday Rails.
+          Delivered about once a month to your inbox.
+        </p>
 
-      <p>
-        <a href="http://eepurl.com/nRW0z" class="maroon button radius">Subscribe for free</a>
-      </p>
-    </div>
+        <p>
+          <a href="http://eepurl.com/nRW0z" class="btn btn-primary">Subscribe for free</a>
+        </p>
+      </div>
     
-    <div class="panel">
-      <h4>Possibly related posts:</h4>
-      <ul>
-      {% for post in site.related_posts limit:5 %}
-        <li><a href="{{post.url}}">{{ post.title }}</a> ({{ post.date | date: "%B %d, %Y"  }})</li>
-      {% endfor %}
-      </ul>
+      <div class="well">
+        <h4>Possibly related posts:</h4>
+        <ul>
+        {% for post in site.related_posts limit:5 %}
+          <li><a href="{{post.url}}">{{ post.title }}</a> ({{ post.date | date: "%B %d, %Y"  }})</li>
+        {% endfor %}
+        </ul>
+      </div>
     </div>
   </div>
+
+  {% include footer.html %}
 </div>
-
-{% include footer.html %}
-
 </body>
 </html>

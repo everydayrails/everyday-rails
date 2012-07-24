@@ -1,0 +1,35 @@
+{% include header.html %}
+
+<div class="container">
+  <div class="hero-unit">
+    <div class="row">
+      <div class="span7">
+        <h1>A practical guide to testing in Rails</h1>
+        <p>
+          Learn how to test the way I (eventually) learned to test.
+          Practical advice for adding reliable tests to your Rails
+          apps with RSpec. Includes expanded, exclusive content and a
+          complete sample Rails application. Available today from Leanpub.
+        </p>
+        
+        <p>
+          <a class="btn btn-primary btn-large" href="http://leanpub.com/everydayrspec">Buy now for only $9 &raquo;</a>
+        </p>
+      </div>
+      <div class="span3">
+        <a href="http://leanpub.com/everydayrailsrspec"><img src="images/rspec_book_large.jpg" alt=""></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div id="content" class="span8">
+      {{ content }}
+    </div>
+    {% include sidebar.html %}
+  </div>
+
+  {% include footer.html %}
+</div>
+</body>
+</html>
