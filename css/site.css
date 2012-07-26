@@ -11,22 +11,6 @@ body {
 	color: #555;
 }
 
-#content a, footer a {
-	color: #990000;
-}
-
-#content a:visited, footer a:visited {
-	color: #990000;
-}
-
-#content a:active, footer a:active {
-	color: #990000;
-}
-
-#content a:hover, footer a:hover {
-	color: #b0b0b0;
-}
-
 #datestamp {
 	margin: 20px auto;
 	color: #b0b0b0;
@@ -58,6 +42,7 @@ code, .highlight {
 
 #content * {
 	font-size: 100%;
+	line-height: 150%;
 }
 
 #content h1 {
@@ -89,25 +74,20 @@ footer {
 	margin-top: 40px;
 }
 
-#social {
-	font-family: 'Socialico' !important;
-	text-align: right;
-	font-size: 48px;
-}
-
-#social a:hover {
-	text-decoration: none;
-}
-
-.hero-unit img {
-	
-}
-
 #sharing {
 	height: 40px;
 	font-size: 11px !important;
 	vertical-align: middle;
 	margin: 20px auto;
+}
+
+.hero-unit img {
+	border: 1px solid #ccc;
+}
+
+.hero-unit p {
+	font-size: 160%;
+	line-height: 180%;
 }
 
 .book img {
