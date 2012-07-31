@@ -125,9 +125,9 @@ The remaining expectations will pass when we set up a basic view in `app/views/d
       <li><%= link_to 'Manage Articles' %></li>
     </ul>
 
-And sure enough, our first spec passes! However, we've got a couple of pending specs from what the controller generator gave us a few minutes ago, and one that's passing even though we haven't written anything. Let's leave  `spec/controllers/admin/dashboard_controller.rb` as we'll come back to it in awhile. The other pending spec files can be deleted. In fact, I typically configure RSpec to not even generate these specs, and create them as needed when testing my apps.
+And sure enough, our first spec passes! However, if you've been following along with the TDD, you may see a couple of pending specs from what the controller generator gave us a few minutes ago, and one that's passing even though we haven't written anything. Let's leave  `spec/controllers/admin/dashboard_controller.rb` as we'll come back to it in awhile. The other pending spec files can be deleted. In fact, I typically configure RSpec to not even generate these specs, and create them as needed when testing my apps.
 
-Let's add a second request spec to confirm that people who *aren't* logged in can't access the dashboard:
+We're not done testing yet--we've verified that a successfully logged-in user can get to the dashboard, but what about a user who's not logged in? Let's add a second request spec to test that:
 
     # spec/requests/admin_spec.rb
 
