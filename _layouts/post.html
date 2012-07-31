@@ -47,7 +47,7 @@
     </div>
   
     <div id="sidebar" class="span4">
-      <div class="well book">
+      <!-- <div class="well book">
         <h3>My new RSpec book</h3>
         <a href="http://leanpub.com/everydayrailsrspec"><img src="/images/rspec_book.jpg" alt=""></a>
         <p>
@@ -59,7 +59,7 @@
         <p>
           <a href="http://leanpub.com/everydayrailsrspec" class="btn btn-primary">Buy now</a>
         </p>
-      </div>
+      </div> -->
     
       <div class="well">
         <h3>Free newsletter</h3>
@@ -75,7 +75,7 @@
       </div>
     
       <div class="well">
-        <h4>Possibly related posts:</h4>
+        <h3>Possibly related posts</h3>
         <ul>
         {% for post in site.related_posts limit:5 %}
           <li><a href="{{post.url}}">{{ post.title }}</a> ({{ post.date | date: "%B %d, %Y"  }})</li>

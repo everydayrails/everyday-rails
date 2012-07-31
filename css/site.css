@@ -64,6 +64,11 @@ code, .highlight {
 	margin-left: 20px;
 }
 
+.well ul li {
+	list-style-type: square;
+	margin-bottom: 15px;
+}
+
 .content_img {
 	float: right;
 	border: 1px solid #ccc;
