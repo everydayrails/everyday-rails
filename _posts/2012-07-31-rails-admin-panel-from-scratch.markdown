@@ -14,6 +14,12 @@ So why not just use them, rather than build something from scratch? Three big re
 
 In this series, I want to walk through creating a custom administration panel for a Rails application. For beginners, it should be a good deviation from the basic approach to application-via-scaffolds, including namespacing and creating some files without generators. Intermediate Rails developers can get exposure to test-driven development.
 
+---
+
+Note: This isn't super-complicated, but explaining all the steps can be a little details--thus, a multipart series.
+
+---
+
 This post assumes you know how to create Rails 3.x applications, either via scaffold generators, hand-editing of MVC-type files, or a combination of the above. (For the record, I typically use generators to create bare controllers and models, and add views and other files by hand as I need them.) This implies you've got the basic command line chops, know how to manage gem dependencies with Bundler, and so on.
 
 We're going to use RSpec to do a little test-driving in this project. Strictly speaking, you don't *need* to know RSpec, but you should probably at least grasp some of the concepts behind testing if you want to follow along with that aspect of the series. You can [check out my earlier series on RSpec](http://everydayrails.com/2012/03/12/testing-series-intro.html) for a short primer, or (shameless plug alert) get a bit deeper introduction by [purchasing my self-published book on RSpec](http://leanpub.com/everydayrailsrspec) for $9.
@@ -28,7 +34,7 @@ As we work through this project we'll work up some request specs for the followi
 * Allow registered users to manage articles via the administration panel
 * Allow registered users to manage user accounts via the administration panel
 
-You can get the complete application from Github at TODO:GITHUB LINK
+You can get the complete application from [Github](https://github.com/ruralocity/admin_demo).
 
 ## The dashboard
 
