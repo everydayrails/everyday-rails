@@ -27,12 +27,10 @@ body {
 code, .highlight {
 	font-family: 'andale mono', 'lucida console', monospace;
 	font-size: 14px !important;
-  overflow: auto;
 }
 
-.highlight {
-	padding: 10px;
-	margin: 10px auto;
+.highlight, pre, code {
+  overflow: auto !important;
 }
 
 #content {
