@@ -34,7 +34,7 @@ As we work through this project we'll work up some request specs for the followi
 * Allow registered users to manage articles via the administration panel
 * Allow registered users to manage user accounts via the administration panel
 
-You can get the complete application from [Github](https://github.com/ruralocity/admin_demo).
+You can get the complete application from [Github](https://github.com/ruralocity/admin_demo)--specifically, check out the [dashboard branch](https://github.com/ruralocity/admin_demo/tree/dashboard).
 
 ## The dashboard
 

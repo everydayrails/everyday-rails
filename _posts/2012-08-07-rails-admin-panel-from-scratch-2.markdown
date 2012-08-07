@@ -8,7 +8,7 @@ In the first part of this series on creating Rails administration panels, we cre
 
 As a review, this simple blog-type application allows users to log in, then add, edit, and delete articles. We're working on a namespaced administration section for the site, accessible only to people with accounts, to accomplish this. So far the application has an admin dashboard set up, but no further functionality. That's what we'll tackle in this tutorial. Specifically, we're going to take a controller and views that were previously generated with Rails' `scaffold` generator, move them into the `admin` namespace, and make them work in our admin panel.
 
-We'll also be using RSpec request specs to drive this process. If this is a new process for you, you might want to go through the work we did in part one, or, of course, pick up a copy of my book on learning how to test Rails apps with RSpec. And with that shameless plug out of the way, let's get on with our task. You can [follow along with the complete source on GitHub](https://github.com/ruralocity/admin_demo); the relevant stuff is located in the `scaffold` branch.
+We'll also be using RSpec request specs to drive this process. If this is a new process for you, you might want to go through the work we did in part one, or, of course, pick up a copy of my book on learning how to test Rails apps with RSpec. And with that shameless plug out of the way, let's get on with our task. You can [follow along with the complete source on GitHub](https://github.com/ruralocity/admin_demo); the relevant stuff is located in the [scaffold branch](https://github.com/ruralocity/admin_demo/tree/scaffold).
 
 ## A little spec refactoring
 
@@ -377,7 +377,7 @@ Yes, another incorrect route in one of the pre-generated views.
 
 ## Next steps
 
-One administration activity down, two to go--we can create articles, but we still want to be able to edit and delete them. I'm going to leave that as an exercise for you. [Take a look at the source on GitHub](https://github.com/ruralocity/admin_demo) to see how I've implemented this.
+One administration activity down, two to go--we can create articles, but we still want to be able to edit and delete them. I'm going to leave that as an exercise for you. [Take a look at the scaffold branch in the source on GitHub](https://github.com/ruralocity/admin_demo/tree/scaffold) to see how I've implemented this.
 
 ## Summary
 
