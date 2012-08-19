@@ -62,6 +62,14 @@ code, .highlight {
 	margin-left: 20px;
 }
 
+#content a {
+	text-decoration: underline;
+}
+
+#content .well a {
+	text-decoration: none;
+}
+
 .well ul li {
 	list-style-type: square;
 	margin-bottom: 15px;
