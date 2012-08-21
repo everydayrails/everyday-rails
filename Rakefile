@@ -12,4 +12,9 @@ task :post do
   end
 end
 
-task :default => :post
+desc "Rebuild static files"
+task :rebuild do
+  exec "jekyll --no-auto"
+end
+
+task :default => :rebuild
