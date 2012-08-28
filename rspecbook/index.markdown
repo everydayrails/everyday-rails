@@ -22,15 +22,35 @@ The Rails testing ecosystem is vast--trying to wrap your head around Test::Unit,
 
 That's right! You may not believe it, but I can attest that writing tests and making them pass can make web application development more fun--maybe even addictive. That's not just me saying so; readers of [Everday Rails Testing with RSpec](https://leanpub.com/everydayrailsrspec) and readers like you have told me that once they got the core concepts down and started writing tests, they had **more fun developing software**.
 
-## You.should get_a_good_deal
-
-I've read more than my share of programming books over the years. I know they're not cheap, and I know they can become obsolete quickly. I don't want [Everday Rails Testing with RSpec](https://leanpub.com/everydayrailsrspec) to be another outdated book on your (virtual) bookshelf, so **here's what I'm offering to everyone who purchases the book now through Leanpub**:
-
-- 100-plus **DRM-free** pages in EPUB, MOBI, and PDF formats.
-- **Regular updates** as changes are made to the core testing tools.
-- A **free copy of the second edition** of the book, to be available as soon as possible after Rails 4.0 is stable and released.
-- A **sample Rails application** with tests at every level of the process.
-- My **eternal appreciation** as a self-published author.
+<div class="row">
+  <div class="span8">
+    <h2>You.should get_a_good_deal</h2>
+    <p>
+    I've read more than my share of programming books over the years. I know they're not cheap, and I know they can become obsolete quickly. I don't want <a href="https://leanpub.com/everydayrailsrspec">Everday Rails Testing with RSpec</a> to be another outdated book on your (virtual) bookshelf, so <strong>here's what I'm offering to everyone who purchases the book now through Leanpub</strong>:
+    </p>
+    <ul>
+      <li>100-plus <strong>DRM-free</strong> pages in EPUB, MOBI, and PDF formats.</li>
+      <li><strong>Regular updates</strong> as changes are made to the core testing tools.</li>
+      <li>A <strong>free copy of the second edition</strong> of the book, to be available as soon as possible after Rails 4.0 is stable and released.</li>
+      <li>A <strong>sample Rails application</strong> with tests at every level of the process.</li>
+      <li>My <strong>eternal appreciation</strong> as a self-published author.</li>
+    </ul>
+  </div>
+  <div class="span4">
+    <div class="well">
+      <h3>What's covered?</h3>
+      <ul>
+        <li>Rails 3.2</li>
+        <li>RSpec 2.10</li>
+        <li>Factory Girl 3.2</li>
+        <li>Capybara 1.1</li>
+      </ul>
+      <p>
+        <a href="https://leanpub.com/everydayrailsrspec">Buy now</a> and get a <strong>free update</strong> when Rails 4 is released!
+      </p>
+    </div>
+  </div>
+</div>
 
 ## And did I mention that it's **still only $9 USD?**
 
