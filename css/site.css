@@ -53,6 +53,7 @@ code, .highlight {
 }
 
 #content h3 {
+	clear: both;
 	margin-top: 20px;
 	font-size: 120%;
 }
