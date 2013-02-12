@@ -4,13 +4,13 @@ title: "Everyday Rails Testing with RSpec: A Practical Approach to Test-Driven D
 excerpt: "A simple approach to cutting through the confusion and testing your Rails applications."
 ---
 
-## YourRailsApp.should_not go_untested
+## expect(YourRailsApp).to_not go_untested
 
 If you're anything like I was, you've developed a Rails application or two, and maybe even deployed it to users. But you're operating without the safety net of a reliable test suite--and in spite of what some may think, not taking the time to write tests is *adding* to your workload over time, not reducing it.
 
 Like I said, I've been there--and in [Everyday Rails Testing with RSpec](https://leanpub.com/everydayrailsrspec) I want to help you build your Rails safety net the way I did, using popular tools and a simple but effective approach.
 
-## RailsAppTesting.should be_simple
+## expect(RailsAppTesting).to be_simple
 
 The Rails testing ecosystem is vast--trying to wrap your head around Test::Unit, MiniTest, Cucumber, mocks and stubs, and the rest can make for a daunting task, to say the least. My approach is to simplify: In [Everyday Rails Testing with RSpec](https://leanpub.com/everydayrailsrspec), I **focus on three popular tools within that ecosystem** to help you build complete test suites for your Rails applications:
 
@@ -18,13 +18,13 @@ The Rails testing ecosystem is vast--trying to wrap your head around Test::Unit,
 - **Factory Girl:** You need test data in order to run relevant tests; Factory Girl makes this simple.
 - **Capybara:** How can you simulate your applications' users' interactions? Capybara's easy-to-write, easy-to-follow syntax makes writing integration tests a breeze.
 
-## RailsAppTesting.should be_fun
+## expect(RailsAppTesting).to be_fun
 
 That's right! You may not believe it, but I can attest that writing tests and making them pass can make web application development more fun--maybe even addictive. That's not just me saying so; readers of [Everyday Rails Testing with RSpec](https://leanpub.com/everydayrailsrspec) and readers like you have told me that once they got the core concepts down and started writing tests, they had **more fun developing software**.
 
 <div class="row">
   <div class="span8">
-    <h2>You.should get_a_good_deal</h2>
+    <h2>expect(You).to get_a_good_deal</h2>
     <p>
     I've read more than my share of programming books over the years. I know they're not cheap, and I know they can become obsolete quickly. I don't want <a href="https://leanpub.com/everydayrailsrspec">Everyday Rails Testing with RSpec</a> to be another outdated book on your (virtual) bookshelf, so <strong>here's what I'm offering to everyone who purchases the book now through Leanpub</strong>:
     </p>
@@ -41,9 +41,9 @@ That's right! You may not believe it, but I can attest that writing tests and ma
       <h3>What's covered?</h3>
       <ul>
         <li>Rails 3.2</li>
-        <li>RSpec 2.10</li>
-        <li>Factory Girl 3.2</li>
-        <li>Capybara 1.1</li>
+        <li>RSpec 2.12</li>
+        <li>Factory Girl 4.2</li>
+        <li>Capybara 2.0</li>
       </ul>
       <p>
         <a href="https://leanpub.com/everydayrailsrspec">Buy now</a> and get a <strong>free update</strong> when Rails 4 is released!

@@ -1,32 +1,32 @@
 @font-face {
-	font-family: 'Socialico';
-	src: url('Socialico.otf');
-	font-weight: normal;
-	font-style: normal;
+  font-family: 'Socialico';
+  src: url('Socialico.otf');
+  font-weight: normal;
+  font-style: normal;
 }
 
 body {
-	font-family: 'Signika Negative', sans-serif;
-	font-size: 16px;
-	color: #555;
+  font-family: 'Signika Negative', sans-serif;
+  font-size: 16px;
+  color: #555;
 }
 
 #datestamp {
-	margin: 20px auto;
-	color: #b0b0b0;
+  margin: 20px auto;
+  color: #b0b0b0;
 }
 
 .blurb {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .post {
-	margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 code, .highlight {
-	font-family: 'andale mono', 'lucida console', monospace;
-	font-size: 14px !important;
+  font-family: 'andale mono', 'lucida console', monospace;
+  font-size: 14px !important;
 }
 
 .highlight, pre, code {
@@ -34,78 +34,82 @@ code, .highlight {
 }
 
 #content {
-	margin-bottom: 50px;
-	font-size: 16px !important;
+  margin-bottom: 50px;
+  font-size: 16px !important;
 }
 
 #content * {
-	font-size: 100%;
-	line-height: 150%;
+  font-size: 100%;
+  line-height: 150%;
 }
 
 #content h1 {
-	font-size: 200%;
+  font-size: 200%;
 }
 
 #content h2 {
-	margin-top: 20px;
-	font-size: 160%;
+  margin-top: 20px;
+  font-size: 160%;
 }
 
 #content h3 {
-	clear: both;
-	margin-top: 20px;
-	font-size: 120%;
+  clear: both;
+  margin-top: 20px;
+  font-size: 120%;
 }
 
 #content ul {
-	list-style-type: square;
-	margin-left: 20px;
+  list-style-type: square;
+  margin-left: 20px;
 }
 
 #content a {
-	text-decoration: underline;
+  text-decoration: underline;
 }
 
 #content .well a {
-	text-decoration: none;
+  text-decoration: none;
 }
 
 .well ul li {
-	list-style-type: square;
-	margin-bottom: 15px;
+  list-style-type: square;
+  margin-bottom: 15px;
 }
 
 .content_img {
-	float: right;
-	border: 1px solid #ccc;
-	margin: 20px 0 20px 20px !important;
+  float: right;
+  border: 1px solid #ccc;
+  margin: 20px 0 20px 20px !important;
 }
 
 footer {
-	margin-top: 40px;
+  margin-top: 40px;
 }
 
 #sharing {
-	height: 40px;
-	font-size: 11px !important;
-	vertical-align: middle;
-	margin: 20px auto;
+  height: 40px;
+  font-size: 11px !important;
+  vertical-align: middle;
+  margin: 20px auto;
 }
 
 .hero-unit img {
-	border: 1px solid #ccc;
-	-webkit-box-shadow: 7px 7px 5px rgba(50, 50, 50, 0.75);
-	-moz-box-shadow:    7px 7px 5px rgba(50, 50, 50, 0.75);
-	box-shadow:         7px 7px 5px rgba(50, 50, 50, 0.75);
+  border: 1px solid #ccc;
+  -webkit-box-shadow: 7px 7px 5px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    7px 7px 5px rgba(50, 50, 50, 0.75);
+  box-shadow:         7px 7px 5px rgba(50, 50, 50, 0.75);
 }
 
 .hero-unit p {
-	font-size: 160%;
-	line-height: 180%;
+  font-size: 160%;
+  line-height: 180%;
 }
 
 .book img {
-	float: right;
-	border: 1px solid #ccc;
+  float: right;
+  border: 1px solid #ccc;
+}
+
+.small {
+  font-size: 80%;
 }
