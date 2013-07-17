@@ -14,7 +14,7 @@ end
 
 desc "Rebuild static files"
 task :rebuild do
-  exec "jekyll --no-auto"
+  exec "jekyll build"
 end
 
 task :default => :rebuild

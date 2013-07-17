@@ -1,7 +1,5 @@
 source 'http://rubygems.org'
 
-gem 'jekyll'
+gem 'jekyll', '~> 1.1.0'
 gem 'RedCloth'
-gem 'gsl'
-
-gem "guard-less", "~> 0.1.2"
+gem 'gsl', '~> 1.15.3'
