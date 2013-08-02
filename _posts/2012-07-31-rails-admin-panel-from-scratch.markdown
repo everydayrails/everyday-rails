@@ -22,7 +22,7 @@ Note: This isn't super-complicated, but explaining all the steps can be a little
 
 This post assumes you know how to create Rails 3.x applications, either via scaffold generators, hand-editing of MVC-type files, or a combination of the above. (For the record, I typically use generators to create bare controllers and models, and add views and other files by hand as I need them.) This implies you've got the basic command line chops, know how to manage gem dependencies with Bundler, and so on.
 
-We're going to use RSpec to do a little test-driving in this project. Strictly speaking, you don't *need* to know RSpec, but you should probably at least grasp some of the concepts behind testing if you want to follow along with that aspect of the series. You can [check out my earlier series on RSpec](http://everydayrails.com/2012/03/12/testing-series-intro.html) for a short primer, or (shameless plug alert) get a bit deeper introduction by [purchasing my self-published book on RSpec](http://leanpub.com/everydayrailsrspec) for $9.
+We're going to use RSpec to do a little test-driving in this project. Strictly speaking, you don't *need* to know RSpec, but you should probably at least grasp some of the concepts behind testing if you want to follow along with that aspect of the series. You can [check out my earlier series on RSpec](http://everydayrails.com/2012/03/12/testing-series-intro.html) for a short primer, or (shameless plug alert) get a bit deeper introduction by [purchasing my self-published book on RSpec](http://leanpub.com/everydayrailsrspec) for $12.
 
 ### The application
 
@@ -54,7 +54,7 @@ Let's start with a request spec for the dashboard itself. This dashboard will al
       fill_in 'Email', with: 'user@example.com'
       fill_in 'Password', with: 'secret'
       click_button 'Sign In'
-  
+
       current_path.should eq admin_dashboard_path
       within 'h1' do
         page.should have_content 'Administration'
@@ -74,10 +74,10 @@ I'm a big fan of using Guard to automatically run specs as they're added or edit
 We're using a *namespace* in our routes definition to create a group of related URIs. In this case, they'll all be namespaced under *admin*. The dashboard is the first step. The above route allows us to access `/admin` in our app via `admin_path`. We'll add more routes to it in a moment, but first we've got another failing test to fix:
 
     Failure/Error: current_path.should eq admin_path
-  
+
       expected: "/admin"
            got: "/"
-  
+
       (compared using ==)
     # ./spec/requests/admin_spec.rb:17:in `block (2 levels) in <top (required)>'
 
@@ -177,7 +177,7 @@ OK, the request spec is passing, but that generated controller spec is failing n
 
       describe 'user access' do
 
-        describe "GET 'index'" do      
+        describe "GET 'index'" do
           it "returns http success" do
             user = User.create(
               email: 'admin@example.com',
@@ -200,6 +200,6 @@ OK, the request spec is passing, but that generated controller spec is failing n
           end
         end
       end
-    end 
+    end
 
 This is the approach I'll use down the road when we add functionality to the administration panel. In the meantime, we've got a dashboard for our application--but it's just for show so far. There's not much you can do once you've logged in. In part two we'll convert a scaffolded resource to an administration dashboard. Watch for it in the next day or two.

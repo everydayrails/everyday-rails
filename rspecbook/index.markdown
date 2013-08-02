@@ -40,10 +40,10 @@ That's right! You may not believe it, but I can attest that writing tests and ma
     <div class="well">
       <h3>What's covered?</h3>
       <ul>
-        <li>Rails 3.2</li>
-        <li>RSpec 2.12</li>
+        <li>Rails 4.0</li>
+        <li>RSpec 2.14</li>
         <li>Factory Girl 4.2</li>
-        <li>Capybara 2.0</li>
+        <li>Capybara 2.1</li>
       </ul>
       <p>
         <a href="https://leanpub.com/everydayrailsrspec">Buy now</a> and get a <strong>free update</strong> when Rails 4 is released!
@@ -51,7 +51,5 @@ That's right! You may not believe it, but I can attest that writing tests and ma
     </div>
   </div>
 </div>
-
-## And did I mention that it's **still only $9 USD?**
 
 **Want to see more before you buy?** No problem. [Everyday Rails Testing with RSpec](https://leanpub.com/everydayrailsrspec) is actually based on a series of blog posts I wrote on the Everyday Rails blog; feel free to [start reading there](http://everydayrails.com/2012/03/12/testing-series-intro.html). Or better yet, head on over to Leanpub to [download a sample PDF](http://samples.leanpub.com/everydayrailsrspec-sample.pdf) for free. The sample includes the content derived from the blog posts.
