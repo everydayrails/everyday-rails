@@ -45,9 +45,6 @@ That's right! You may not believe it, but I can attest that writing tests and ma
         <li>Factory Girl 4.2</li>
         <li>Capybara 2.1</li>
       </ul>
-      <p>
-        <a href="https://leanpub.com/everydayrailsrspec">Buy now</a> and get a <strong>free update</strong> when Rails 4 is released!
-      </p>
     </div>
   </div>
 </div>
