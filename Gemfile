@@ -1,5 +1,5 @@
 source 'http://rubygems.org'
 
-gem 'jekyll', '~> 1.1.0'
+gem 'jekyll', '~> 1.1.2'
 gem 'RedCloth'
 gem 'gsl', '~> 1.15.3'
