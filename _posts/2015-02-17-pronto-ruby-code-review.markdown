@@ -36,7 +36,7 @@ Actually, Pronto itself doesn't do the checking. A series of add-on runners do.
 Here are my favorites, so far:
 
 * [pronto-rubocop](https://github.com/mmozuras/pronto-rubocop): Check your code
-  for adherence to the Ruby community style guide. Rubocop
+  for adherence to the Ruby community style guide. Rubocop finds
   issues that can be easy to miss when you're focusing on other
   aspects of coding.
 * [pronto-reek](https://github.com/mmozuras/pronto-reek): Check your code for
