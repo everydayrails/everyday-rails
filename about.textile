@@ -18,4 +18,4 @@ My goal is to share general, pragmatic tips to show how I use Rails (almost) eve
 
 h2. Colophon
 
-_Everyday Rails_ is published using the "Jekyll":https://github.com/mojombo/jekyll static site generator. I use TextMate to edit this site and my Rails projects. This site is hosted by "Dreamhost":http://www.dreamhost.com/r.cgi?79482.
+_Everyday Rails_ is published using the "Jekyll":https://github.com/mojombo/jekyll static site generator. I use TextMate to edit this site and my Rails projects.
