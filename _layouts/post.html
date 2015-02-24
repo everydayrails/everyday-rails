@@ -17,19 +17,13 @@
         <span class='st_plusone_hcount' displayText='Google +1'></span>
       </div>
 
-      <div class="well book">
-        <a href="http://leanpub.com/everydayrailsrspec"><img src="/images/rspec_book.jpg" alt=""></a>
-        <h2>Everyday Rails Testing with RSpec: The book</h2>
-        <p>
-        If you liked my series on practical advice for adding reliable tests to your Rails apps,
-        check out the new, expanded ebook version. Lots of additional, exclusive content and a complete
-        sample Rails application.
-        <strong><a href="http://leanpub.com/everydayrailsrspec">Get it now</a></strong> or
-        <a href="/rspecbook/">learn more about the book</a>.
-        </p>
-        <p>
-          <a href="http://leanpub.com/everydayrailsrspec" class="btn btn-primary">Start testing now</a>
-        </p>
+      <div class="well">
+        <h3>Possibly related posts</h3>
+        <ul>
+        {% for post in site.related_posts limit:5 %}
+          <li><a href="{{post.url}}">{{ post.title }}</a> ({{ post.date | date: "%B %d, %Y"  }})</li>
+        {% endfor %}
+        </ul>
       </div>
 
       <div id="disqus_thread"></div>
@@ -48,19 +42,20 @@
     </div>
 
     <div id="sidebar" class="span4">
-      <!-- <div class="well book">
-        <h3>My new RSpec book</h3>
+      <div class="well book">
         <a href="http://leanpub.com/everydayrailsrspec"><img src="/images/rspec_book.jpg" alt=""></a>
+        <h2>Everyday Rails Testing with RSpec: The book</h2>
         <p>
-          Practical advice for adding reliable tests to your Rails apps with RSpec.
-          Includes expanded, exclusive content and a complete sample Rails application.
-          <strong><a href="http://leanpub.com/everydayrailsrspec">Get it now for only $12.</a></strong>
+        If you liked my series on practical advice for adding reliable tests to your Rails apps,
+        check out the expanded ebook version. Lots of additional, exclusive content and a complete
+        sample Rails application.
+        <strong><a href="http://leanpub.com/everydayrailsrspec">Get it now</a></strong> or
+        <a href="/rspecbook/">learn more about the book</a>.
         </p>
-
         <p>
-          <a href="http://leanpub.com/everydayrailsrspec" class="btn btn-primary">Buy now</a>
+          <a href="http://leanpub.com/everydayrailsrspec" class="btn btn-primary">Start testing now</a>
         </p>
-      </div> -->
+      </div>
 
       <div class="well">
         <h3>Free newsletter</h3>
@@ -73,15 +68,6 @@
         <p>
           <a href="http://eepurl.com/nRW0z" class="btn btn-primary">Subscribe for free</a>
         </p>
-      </div>
-
-      <div class="well">
-        <h3>Possibly related posts</h3>
-        <ul>
-        {% for post in site.related_posts limit:5 %}
-          <li><a href="{{post.url}}">{{ post.title }}</a> ({{ post.date | date: "%B %d, %Y"  }})</li>
-        {% endfor %}
-        </ul>
       </div>
     </div>
   </div>
