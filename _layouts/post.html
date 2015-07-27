@@ -2,72 +2,22 @@
 
 <div class="container">
   <div class="row">
-    <div id="content" class="span8">
-
+    <div id="content" class="col-sm-12 col-md-8">
       <h1>{{ page.title }}</h1>
-
       <div id="datestamp"><strong>{{ page.date | date: "%B %d, %Y" }}</strong></div>
 
       {{ content }}
 
-      <div id="sharing">
-        <span class='st_twitter_hcount' displayText='Tweet'></span>
-        <span class='st_facebook_hcount' displayText='Facebook'></span>
-        <span class='st_reddit_hcount' displayText='Reddit'></span>
-        <span class='st_plusone_hcount' displayText='Google +1'></span>
-      </div>
-
-      <div class="well">
-        <h3>Possibly related posts</h3>
+      <div id="related">
+        <h2>Possibly related posts</h2>
         <ul>
         {% for post in site.related_posts limit:5 %}
           <li><a href="{{post.url}}">{{ post.title }}</a> ({{ post.date | date: "%B %d, %Y"  }})</li>
         {% endfor %}
         </ul>
       </div>
-
-      <div id="disqus_thread"></div>
-      <script type="text/javascript">
-        /**
-          * var disqus_identifier; [Optional but recommended: Define a unique identifier (e.g. post id or slug) for this thread]
-          */
-        (function() {
-         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-         dsq.src = 'http://everydayrails.disqus.com/embed.js';
-         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-      </script>
-      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=everydayrails">comments powered by Disqus.</a></noscript>
-      <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
     </div>
-
-    <div id="sidebar" class="span4">
-      <div class="well book">
-        <a href="http://leanpub.com/everydayrailsrspec"><img src="/images/rspec_book.jpg" alt=""></a>
-        <h2>Everyday Rails Testing with RSpec: The book</h2>
-        <p>
-        If you liked my series on practical advice for adding reliable tests to your Rails apps,
-        check out the expanded ebook version. Lots of additional, exclusive content and a complete
-        sample Rails application.
-        </p>
-        <p>
-          <a href="http://leanpub.com/everydayrailsrspec" class="btn btn-primary">Start testing now</a>
-        </p>
-      </div>
-
-      <div class="well">
-        <h3>Free newsletter</h3>
-
-        <p>
-          Ruby on Rails news and tips, and other ideas and surprises from Aaron at Everyday Rails.
-          Delivered to your inbox.
-        </p>
-
-        <p>
-          <a href="http://eepurl.com/nRW0z" class="btn btn-primary">Subscribe for free</a>
-        </p>
-      </div>
-    </div>
+    {% include sidebar.html %}
   </div>
 
   {% include footer.html %}
