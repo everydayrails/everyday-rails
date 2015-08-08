@@ -12,3 +12,4 @@ maruku:
 feed:         http://feeds.feedburner.com/EverydayRails
 twitter:      http://twitter.com/everydayrails
 facebook:     http://facebook.com/everydayrails
+exclude:      [node_modules, scss, tmp, bower_components, .ruby-version, bower.json, Rakefile, gulpfile.js, Gemfile, Gemfile.lock, Guardfile]
