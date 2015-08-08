@@ -1,5 +1,6 @@
 @import "variables";
 @import "bootstrap";
+@import "font-awesome";
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:300,700);
 
 .post {
@@ -10,4 +11,16 @@
   overflow: auto !important;
   word-wrap: normal !important;
   white-space: pre !important;
+}
+
+.social {
+  font-size: 200% !important;
+  margin-right: 20px;
+}
+
+.nav {
+  .social {
+    font-size: 150% !important;
+    margin: inherit;
+  }
 }
