@@ -1,33 +1,8 @@
 {% include header.html %}
 
 <div class="container">
-  <div class="hero-unit">
-    <div class="row">
-      <div class="span7">
-        <h1>Practical TDD in Rails</h1>
-        <p>
-          Practical advice for adding reliable tests to your Rails
-          apps with RSpec. Includes expanded, exclusive content and a
-          complete sample Rails application.
-        </p>
-
-        <p>
-          <a class="btn btn-primary btn-large" href="http://leanpub.com/everydayrailsrspec">Start testing now &raquo;</a>
-        </p>
-
-        <div class="small">
-          Already purchased? <a href="https://leanpub.com/dashboard">Sign into Leanpub and download the latest version for free</a>.
-        </div>
-
-      </div>
-      <div class="span3">
-        <a href="http://leanpub.com/everydayrailsrspec"><img src="images/rspec_book_large.jpg" alt=""></a>
-      </div>
-    </div>
-  </div>
-
   <div class="row">
-    <div id="content" class="span8">
+    <div id="content" class="col-sm-12 col-md-8">
       {{ content }}
     </div>
     {% include sidebar.html %}

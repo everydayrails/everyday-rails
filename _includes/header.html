@@ -1,31 +1,16 @@
 <!DOCTYPE html>
 
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+<html lang="en">
 <head>
   <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Set the viewport width to device width for mobile -->
-  <meta name="viewport" content="width=device-width" />
+  <title>{{ page.title }} | Everyday Rails</title>
 
-  <title>{{ page.title }}</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Aaron Sumner" />
   <meta name="description" content="{{ page.excerpt }}">
 
-  <link href='http://fonts.googleapis.com/css?family=Signika+Negative:600,400' rel='stylesheet' type='text/css'>
-  <link href="/css/bootstrap.min.css" rel="stylesheet">
-  <style type="text/css">
-    body {
-      padding-top: 100px;
-      padding-bottom: 30px;
-    }
-  </style>
-
-  <link href="/css/bootstrap-responsive.min.css" rel="stylesheet">
   <link href="/css/site.css" rel="stylesheet">
   <link href="/css/syntax.css" rel="stylesheet">
 
@@ -39,38 +24,33 @@
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-icon-144x144-precomposed.png" />
 
   <link href="{{ site.feed }}" rel="alternate" title="RSS" type="application/rss+xml" />
-
-  <script type="text/javascript">var switchTo5x=true;</script>
-  <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-  <script type="text/javascript">stLight.options({publisher: "316624d5-1fce-46aa-a56d-29e6ca0b9174"}); </script>
 </head>
 
 <body>
-
-  <div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-      <div class="container">
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">
+          <img alt="Everyday Rails" src="/images/logo-small.png" style="margin-top:-5px;" />
         </a>
-
-        <a class="brand" href="/"><img src="/images/logo-small.png" alt="Everyday Rails"></a>
-
-        <div class="nav-collapse">
-          <ul class="nav pull-right">
-            <li><a href="/about.html">About</a></li>
-            <li><a href="/archives.html">Archives</a></li>
-            <li><a href="/reading.html">Reading List</a></li>
-            <li><a href="{{ site.feed }}">Feed</a></li>
-            <li><a href="{{ site.twitter }}">Twitter</a></li>
-            <li><a href="{{ site.facebook }}">Facebook</a></li>
-            <li><a href="https://plus.google.com/113033588201751588171"
-                   rel="publisher">Google+</a></li>
-            <li><a href="/contact.html">Contact</a></li>
-          </ul>
-        </div>
-      </div>
     </div>
-  </div>
+    <div class="collapse navbar-collapse" id="navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/archives.html">Archives</a></li>
+        <li><a href="/reading.html">Reading List</a></li>
+        <li><a href="mailto:aaron@everydayrails.com?subject=Everyday Rails Feedback" title="Send me an email"><span class="fa fa-envelope social" aria-hidden="true" aria-label="Email"></span></a></li>
+        <li><a href="{{ site.twitter }}" title="Follow @everydayrails on Twitter"><span class="fa fa-twitter-square social" aria-hidden="true" aria-label="Twitter"></span></a></li>
+        <li><a href="{{ site.facebook }}" title="Follow Everyday Rails on Facebook"><span class="fa fa-facebook-square social" aria-hidden="true" aria-label="Facebook"></span></a></li>
+        <li><a href="https://plus.google.com/113033588201751588171"
+               rel="publisher" title="Follow Everyday Rails on Google+"><span class="fa fa-google-plus-square social" aria-hidden="true" aria-label="Google+"></span></a></li>
+        <li><a href="{{ site.feed }}" title="Add Everyday Rails to your feed reader"><span class="fa fa-rss-square social" aria-hidden="true" aria-label="Feed"></span></a></li>
+      </ul>
+    </div>
+  </nav>
