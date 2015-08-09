@@ -8095,3 +8095,6 @@ button.close {
 .nav .social {
   font-size: 150% !important;
   margin: inherit; }
+
+#footer * {
+  padding-bottom: 10px; }
