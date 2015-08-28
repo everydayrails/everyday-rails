@@ -7,6 +7,12 @@
   margin-bottom: 40px;
 }
 
+.full-post {
+  a {
+    text-decoration: underline;
+  }
+}
+
 .highlight, pre, code {
   overflow: auto !important;
   word-wrap: normal !important;

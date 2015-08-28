@@ -2,7 +2,10 @@
 
 <div class="container">
   <div class="row">
-    <div id="content" class="col-sm-12 col-md-8">
+    <div id="content" class="col-sm-12 col-md-8 full-post">
+      {% if page.image %}
+        <img src="{{ page.image }}" class="img-responsive" />
+      {% endif %}
       <h1>{{ page.title }}</h1>
       <div id="datestamp"><strong>{{ page.date | date: "%B %d, %Y" }}</strong></div>
 
