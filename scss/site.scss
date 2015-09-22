@@ -40,3 +40,24 @@
 #footer * {
   padding-bottom: 10px;
 }
+
+#sidebar {
+  img {
+    border: 1px solid #000;
+    margin: auto auto 10px 10px;
+  }
+}
+
+#book-cta {
+  h3 {
+    margin-top: 0;
+  }
+
+  .btn {
+    text-decoration: none;
+  }
+
+  img {
+    margin: 0 auto 10px 10px;
+  }
+}
