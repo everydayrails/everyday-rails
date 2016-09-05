@@ -72,7 +72,7 @@ There's not a whole lot of difference in structure and syntax between the origin
 
 Now, this particular controller spec example doesn't use deprecated behavior I mentioned in the introduction, so we could technically keep the existing coverage in controller specs. But in the interest of maintaining a healthy test suite, and being ready for an upgrade to Rails 5, moving the examples to a request spec is a smart decision.
 
-In the next post in this series, we'll look at a spec that *does* dig too deeply into the controller's implementation, and specifically uses those deprecated `assigns` and `assert_template` helpers.
+In the next post in this series, [we'll look at a spec that *does* dig too deeply into the controller's implementation](/2016/09/05/replace-rspec-controller-tests.html), and specifically uses those deprecated `assigns` and `assert_template` helpers.
 
 Until then, start looking at your application's controller tests for opportunities to future proof with request specs. And if you're adding new functionality to your Rails app, consider taking this path instead of adding new tests at the controller level.
 
