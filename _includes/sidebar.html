@@ -1,55 +1,27 @@
 <div id="sidebar" class="col-sm-12 col-md-4 hidden-print">
-  <div class="sticky_side">
+  <div>
+    <h3>Test with confidence!</h3>
     <div>
-      <h3>Share this page</h3>
-
-      <a onClick="window.open(this.href, &#39;twitter-share&#39;, &#39;width=550,height=300&#39;);return false;" href="https://twitter.com/share?text={% if page.title %}{{ page.title }}{% else %}Everyday Rails{% endif %} by @everydayrails&amp;url=http://everydayrails.com{{ page.url }}">
-         <span class="fa fa-twitter social" aria-hidden="true" aria-label="Share on Twitter">
-           <span class="fa-label">Share on Twitter</span>
-         </span>
-      </a>
-
-      <a onClick="window.open(this.href, &#39;twitter-share&#39;, &#39;width=550,height=300&#39;);return false;" href="http://www.facebook.com/sharer.php?u=http://everydayrails.com{{ page.url }}">
-        <span class="fa fa-facebook social" aria-hidden="true" aria-label="Share on Facebook">
-          <span class="fa-label">Share on Facebook</span>
-        </span>
-      </a>
-
-      <a onClick="window.open(this.href, &#39;twitter-share&#39;, &#39;width=550,height=300&#39;);return false;" href="https://plus.google.com/share?url=http://everydayrails.com{{ page.url }}">
-        <span class="fa fa-google-plus social" aria-hidden="true" aria-label="Share on Google+">
-          <span class="fa-label">Share on Google+</span>
-        </span>
-      </a>
-
-      <a href="mailto:?body={{ page.title }}%20-%20http://everydayrails.com{{ page.url }}&amp;subject={{ page.title }}">
-        <span class="fa fa-envelope social" aria-hidden="true" aria-label="Share by Email">
-           <span class="fa-label">Share by Email</span>
-        </span>
-      </a>
-    </div>
-
-    <div>
-      <h3>Test with confidence!</h3>
-      <div>
-        <a href="https://leanpub.com/everydayrailsrspec"><img src="/images/rspec_book.jpg" class="pull-right" alt="" /></a>
-        <p>
-          If you liked my series on practical advice for adding reliable tests to
-          your Rails apps, check out the expanded ebook version. Lots of
-          additional, exclusive content and a complete sample Rails application.
-        </p>
-        <a class="btn btn-sm btn-primary" href="https://leanpub.com/everydayrailsrspec">Start testing now »</a>
-      </div>
-    </div>
-
-    <div>
-      <h3>Newsletter</h3>
-      <div>
-        <p>
-          Ruby on Rails news and tips, and other ideas and surprises from Aaron at
-          Everyday Rails. Delivered to your inbox.
-        </p>
-        <a class="btn btn btn-sm btn-primary" href="http://eepurl.com/nRW0z">Subscribe now for free »</a>
-      </div>
+      <a href="https://leanpub.com/everydayrailsrspec"><img src="/images/rspec_book.jpg" class="pull-right" alt="" /></a>
+      <p>
+        If you liked my series on practical advice for adding reliable tests to
+        your Rails apps, check out the expanded ebook version. Lots of
+        additional, exclusive content and a complete sample Rails application.
+      </p>
+      <a class="btn btn-sm btn-primary" href="https://leanpub.com/everydayrailsrspec">Start testing now »</a>
     </div>
   </div>
+
+  <div>
+    <h3>Newsletter</h3>
+    <div>
+      <p>
+        Ruby on Rails news and tips, and other ideas and surprises from Aaron at
+        Everyday Rails. Delivered to your inbox.
+      </p>
+      <a class="btn btn btn-sm btn-primary" href="http://eepurl.com/nRW0z">Subscribe now for free »</a>
+    </div>
+  </div>
+
+  {% include sharing.html %}
 </div>
