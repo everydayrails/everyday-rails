@@ -5,10 +5,10 @@ layout: nil
 <feed xmlns="http://www.w3.org/2005/Atom">
  
  <title>Everyday Rails</title>
- <link href="http://everydayrails.com/atom.xml" rel="self"/>
- <link href="http://everydayrails.com/"/>
+ <link href="https://everydayrails.com/atom.xml" rel="self"/>
+ <link href="https://everydayrails.com/"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>http://everydayrails.com/</id>
+ <id>https://everydayrails.com/</id>
  <author>
    <name>Aaron Sumner</name>
    <email>aaron@everydayrails.com</email>
@@ -17,7 +17,7 @@ layout: nil
  {% for post in site.posts limit:10 %}
  <entry>
    <title>{{ post.title | xml_escape }}</title>
-   <link href="http://everydayrails.com{{ post.url }}"/>
+   <link href="https://everydayrails.com{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
    <id>http://www.everydayrails.com{{ post.id }}</id>
    <content type="html">{{ post.excerpt | xml_escape }}</content>

@@ -49,4 +49,4 @@ That's right! You may not believe it, but I can attest that writing tests and ma
   </div>
 </div>
 
-**Want to see more before you buy?** No problem. [Everyday Rails Testing with RSpec](https://leanpub.com/everydayrailsrspec) is actually based on a series of blog posts I wrote on the Everyday Rails blog; feel free to [start reading there](http://everydayrails.com/2012/03/12/testing-series-intro.html). Or better yet, head on over to Leanpub to [download a sample PDF](http://samples.leanpub.com/everydayrailsrspec-sample.pdf) for free. The sample includes the content derived from the blog posts.
+**Want to see more before you buy?** No problem. [Everyday Rails Testing with RSpec](https://leanpub.com/everydayrailsrspec) is actually based on a series of blog posts I wrote on the Everyday Rails blog; feel free to [start reading there](https://everydayrails.com/2012/03/12/testing-series-intro.html). Or better yet, head on over to Leanpub to [download a sample PDF](http://samples.leanpub.com/everydayrailsrspec-sample.pdf) for free. The sample includes the content derived from the blog posts.
