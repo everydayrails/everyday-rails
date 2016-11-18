@@ -7870,6 +7870,9 @@ button.close {
   border: 1px solid #000;
   margin: auto auto 10px 10px; }
 
+#sidebar div {
+  margin-bottom: 50px; }
+
 #book-cta h3 {
   margin-top: 0; }
 
