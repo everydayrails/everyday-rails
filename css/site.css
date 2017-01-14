@@ -7887,4 +7887,5 @@ button.close {
   float: right; }
 
 .decoration {
-  float: right; }
+  float: right;
+  margin: auto auto 20px 20px; }
