@@ -36,6 +36,10 @@ The HTML version of your Rails docs will need to be regenerated regularly, in or
 
 ### Use the default tools
 
+<div class="alert alert-warning">
+Since I wrote this, built-in support for generating application documentation was removed from Rails. I wrote a <a href="/2017/03/01/rails-5-app-documentation.html">separate article on how to add it back</a>. Everything else here still applies.
+</div>
+
 There are a handful of documentation generators available for Rails apps, but I've stuck with the default RDoc for projects I'm currently documenting. It does the job, and I can always swap it out later if I need something more robust. No sense in overthinking it in the meantime. That said, if you already have a preferred documentation gem, then by all means, use it!
 
 ### Document the right things
