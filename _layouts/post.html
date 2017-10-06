@@ -7,7 +7,12 @@
         <img src="{{ page.image }}" class="img-responsive" />
       {% endif %}
       <h1>{{ page.title }}</h1>
-      <div id="datestamp"><strong>{{ page.date | date: "%B %d, %Y" }}</strong></div>
+      <div id="datestamp">
+        <strong>{{ page.date | date: "%B %d, %Y" }}</strong>
+        {{ page | tags }}
+      </div>
+
+      <hr />
 
       {{ content }}
 
