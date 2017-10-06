@@ -2,6 +2,7 @@
 layout: post
 title: "Everyday Git: Search the git log from the command line"
 excerpt: "Your project's git log can tell you stories, but you have to know how to look for them. Here's how I explore a code base's history, using built-in command line tools."
+tags: git
 ---
 
 ![](/images/posts/git-log-header-large.jpg){.img-responsive}

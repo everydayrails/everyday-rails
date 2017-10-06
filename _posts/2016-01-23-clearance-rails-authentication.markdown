@@ -2,6 +2,7 @@
 layout: post
 title: "Clearance: The other Rails authentication gem"
 excerpt: "Looking for a well-balanced authentication solution? Check out Clearance as an alternative to Devise and has_secure_password."
+tags: security
 ---
 
 When adding email-and-password-based authentication to a Rails application, I have historically reached for the built-in `has_secure_password` mixin over the likes of the popular [Devise](https://github.com/plataformatec/devise) gem. Devise is very powerful and extensible, but a lot of times I find that it does way more than I need. Or I need to do something slightly different in a way that goes against the Devise way, and wind up fighting to get it to do what I want. Instead, I've opted to let `has_secure_password` take care of the complicated stuff like secure password hashing, and built up bespoke authentication systems from there.

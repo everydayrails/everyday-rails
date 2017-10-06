@@ -2,7 +2,7 @@
 layout: post
 title: "Code reviewing as a mindset"
 excerpt: "Code reviews are more than proper indentation and method length. They're about understanding your software, and developing a better team of developers. Here's my approach to the code review practice."
-tags: security
+tags: security code-review
 ---
 
 A couple of years ago, I shared some tools I use to help [automate the code review process](https://everydayrails.com/2015/02/17/pronto-ruby-code-review.html). Those tools are excellent for finding grammatical errors in my code--issues like improper indentation, poorly-defined variables, and under-documented commits. In this article, I want to focus more on the things that aren't as easy to automate.

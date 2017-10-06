@@ -2,6 +2,7 @@
 layout: post
 title: "Automating code review with Pronto (and friends)"
 excerpt: "Pronto helps streamline the code review process by automating what can be automated, so you can focus on the code's intent and design. Here's one example of how to use it."
+tags: code-review
 ---
 
 I've been thinking about the code review process recently. It's a great way to

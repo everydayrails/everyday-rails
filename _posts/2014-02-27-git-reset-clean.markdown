@@ -2,6 +2,7 @@
 layout: post
 title: "Everyday Git: Clean up and start over"
 excerpt: "Git makes it easy to experiment with ideas before committing them for posterity. Here's one way to get rid of those experiments when they go bad."
+tags: git
 ---
 
 Yes, this is still a Rails blog--but being productive in Rails means a lot more than just knowing Ruby and the framework. You also need to know your way around a version control system. That (hopefully) means Git. There are lots of excellent introductions to Git already available. If there's interest I can put together a list of some of my favorites. In the meantime, I thought I'd share some other Git workflows I use on a regular basis. Today, I want to share my process for those times when I've spiked some code I don't care to keep--or just made such a mess I want to back up and start over.
