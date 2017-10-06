@@ -2,7 +2,7 @@
 layout: post
 title: "Testing with RSpec book updated for 2017"
 excerpt: "I've released the first seven chapters (plus one) of an all new edition of my popular introduction to RSpec for Rails. Here's what's new, and what to expect next."
-tags: rspec
+tags: rspec rspec-book
 ---
 
 I'm happy and excited to let you know that a new release of _[Everyday Rails Testing with RSpec](https://leanpub.com/everydayrailsrspec)_ is now available. Unlike earlier updates, this is a **major rewrite** of the book. Some of the highlights include:

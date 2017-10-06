@@ -2,6 +2,7 @@
 layout: post
 title: "3 Rails documentation tools"
 excerpt: "Even in Rails, documenting your code is important. It's also pretty easy with these tools."
+tags: documentation
 ---
 
 If you've been using "Reek":http://github.com/kevinrutherford/reek/wiki to help in "refactoring your Rails applications":/2010/09/27/rails-refactoring-tools.html, you might run across warnings of _Irresponsible Modules_&mdash; that is, code with no comments to help explain what it does. A common knock on the Rails community is that we don't document our code. I hate to admit it, but it's fair. My own Rails project folders are full of uncommented methods and mysterious model attributes. If I can't remember specifics about my code, how can I expect someone else to pick it up?

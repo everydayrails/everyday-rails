@@ -2,7 +2,7 @@
 layout: post
 title: "Switching from Selenium to Poltergeist in RSpec feature specs"
 excerpt: "A quick one, for readers of my RSpec book: Moving to a headless driver for faster JavaScript testing with Capybara."
-tags: rspec
+tags: rspec rspec-book
 ---
 
 I was recently asked about how I test JavaScript-dependent features in RSpec. In [Everyday Rails Testing with RSpec](https://leanpub.com/everydayrailsrspec), I demonstrate using Selenium for this type of test. As I note there, though, and as you've no doubt found for yourself, spawning a browser window each time is slow. It's also not compatible with continuous integration services like Jenkins or Travis CI. That's where headless drivers like Poltergeist and capybara-webkit come into play. They're capable of running JavaScript, like Selenium, but don't require an external browser.

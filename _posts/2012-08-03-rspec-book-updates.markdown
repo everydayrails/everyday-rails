@@ -2,7 +2,7 @@
 layout: post
 title: "August 2012 updates for Everyday Rails Testing with RSpec"
 excerpt: "Anyone who's purchased my book should head over to Leanpub to download the latest version. Here's a list of what's new."
-tags: rspec
+tags: rspec rspec-book
 ---
 
 For anyone who either doesn't subscribe to updates from Leanpub, or is still on the fence about buying [my book about learning Rails testing through RSpec](http://leanpub.com/everydayrailsrspec), I just wanted to pass along that I pushed an update this evening with the following updates:

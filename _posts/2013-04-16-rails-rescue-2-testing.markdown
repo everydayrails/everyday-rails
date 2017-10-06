@@ -2,6 +2,7 @@
 layout: post
 title: "Diary of a Rails rescue project, part 2: Testing"
 excerpt: "Notes on using tests to learn about legacy software."
+tags: rspec rails-rescue
 ---
 
 [As mentioned previously](/2013/03/21/rails-rescue-1-setup.html), I've been spending spare cycles getting an outdated Rails application up to speed. Aside from the outdated versions of Rails and pretty much every gem used by the app, there's a glaring problem: No usable tests. Without tests, I can't be certain of what the application is supposed to do. What's more, I can't be sure that the rather massive changes I'm making to the code's underpinnings won't break functionality.

@@ -2,7 +2,7 @@
 layout: post
 title: "Testing with RSpec for Rails 4 is done"
 excerpt: "Information on the final release, and a note on what's up next."
-tags: rspec
+tags: rspec rspec-book
 ---
 
 As I type this, Leanpub's robots are busily formatting *[Everyday Rails Testing with RSpec](https://leanpub.com/everydayrailsrspec/)* into PDF, EPUB and MOBI for your digital reading convenience. Below are my release notes, sent to many of you already by email:

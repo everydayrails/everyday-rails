@@ -2,7 +2,7 @@
 layout: post
 title: "More advice on legacy data migration in Rails"
 excerpt: "What do you do if your legacy data defies convention or is just generally complex? Here are some notes from my recent experience using rake to accomplish difficult data migrations."
-tags: [ "data", "migration" ]
+tags: legacy data-migration rails-rescue
 ---
 
 A few months back I shared "how I used Trucker to migrate data from a legacy Rails application into a more current one":http://everydayrails.com/2011/09/16/rails-legacy-data-migration-trucker.html. This method works pretty well if your data is reasonably straightforward, but as I noted it hiccups on a couple of things:

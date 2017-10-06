@@ -2,7 +2,7 @@
 layout: post
 title: "Everyday Rails Testing with RSpec: Updates for April, 2013"
 excerpt: "Wrapping up Rails 3.2 and looking ahead to Rails 4.0."
-tags: rspec
+tags: rspec rspec-book
 ---
 
 Last week I released another round of updates to [Everyday Rails Testing with RSpec](https://leanpub.com/everydayrailsrspec), and subsequently released a couple of minor updates since. For those of you who may have missed it:

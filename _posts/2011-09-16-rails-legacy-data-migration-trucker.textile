@@ -2,6 +2,7 @@
 layout: post
 title: "Migrate data to Rails applications with Trucker"
 excerpt: "Get legacy data? Trucker makes moving it from old codebases into new Rails apps with relative ease."
+tags: legacy data-migration rails-rescue
 ---
 
 I spent a lot of time this summer working on moving legacy data from old Rails applications into new apps. In both cases my data model had changed significantly, so it wasn't just a matter of copying data over field for field&mdash;I needed a way to map individual fields and associations; as well as perform some occasional data cleanup to make sure everything would work correctly in the new apps. For this task, I worked with a gem called "Trucker":https://github.com/mokolabs/trucker.

@@ -2,6 +2,7 @@
 layout: post
 title: "Going HTTPS-only in Rails with Let's Encrypt"
 excerpt: "Serving your Rails application over HTTP? Starting this month, your users may start receiving security warnings when visiting your site. Protect their safety and privacy quickly and easily with Let's Encrypt."
+tags: security
 ---
 
 This article isn't a tutorial, but rather a call to action to hopefully encourage developers serving Rails applications insecurely to make the move to HTTPS-only (with a few things to watch for when you do). If you don't, your users may soon begin receiving nasty warnings when visiting your site in Chrome.
