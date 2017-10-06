@@ -2,6 +2,7 @@
 layout: post
 title: "How do assigns and reload work in Rails tests?"
 excerpt: "Rails offers a couple of methods to access persisted test data, but how do they work? Let's get some answers, with the help of Pry."
+tags: rspec
 ---
 
 I recently got a question from a reader of

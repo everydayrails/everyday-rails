@@ -2,6 +2,7 @@
 layout: post
 title: Improving Rails application documentation
 excerpt: "I've been thinking about how to improve the quality of Rails code bases through better documentation practices. Here are some steps I'm taking in my own projects."
+tags: documentation
 ---
 
 I've been reading and writing some Python and Elixir code lately. It's gotten me thinking about how documentation is treated in code bases. In those languages, *documentation is a first-class citizen*. In Ruby and Rails, not so much. We rely on self-documenting code and robust test suites to explain the code's intent to humans. self-documenting code and robust test suites are important, but I've been wondering lately if they're sufficient means of explaining what our software does, especially to newcomers to a project.

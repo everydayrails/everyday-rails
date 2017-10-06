@@ -2,6 +2,7 @@
 layout: post
 title: "Everyday Rails Testing with RSpec: Where are the Rails 4.0 updates?"
 excerpt: "Updated development schedule for all who've purchased my RSpec book. Short answer: They're coming!"
+tags: rspec rspec-book
 ---
 
 Last month I tweeted that I'd have the promised Rails 4.0-based version of *[Everyday Rails Testing with RSpec](https://leanpub.com/everydayrailsrspec)* out and ready for you to read within a week or so of the Rails 4 release. Obviously, I've missed that target. I apologize, and I'd also like to explain what's taking so long.

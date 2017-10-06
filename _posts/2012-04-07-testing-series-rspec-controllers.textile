@@ -2,6 +2,7 @@
 layout: post
 title: "How I learned to test my Rails applications, Part 4: Controller specs"
 excerpt: "Controllers are the glue in a Rails application, and should be tested just like any other code. This primer will guide you to better coverage in your own apps' controllers."
+tags: rspec
 ---
 
 <div class="alert alert-danger">

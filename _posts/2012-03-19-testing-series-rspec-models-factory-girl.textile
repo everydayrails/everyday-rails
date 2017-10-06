@@ -2,6 +2,7 @@
 layout: post
 title: "How I learned to test my Rails applications, Part 3: Model specs"
 excerpt: "How can you make sure your application's core building blocks are doing what you expect them to? Let's start by using RSpec to test model functionality."
+tags: rspec
 ---
 
 <div class="alert alert-info">

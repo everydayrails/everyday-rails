@@ -2,6 +2,7 @@
 layout: post
 title: "Everyday Rails Testing with RSpec: News and update plans"
 excerpt: "Updates to the Rails testing toolkit I use in the book are on the way (or here already). Here's my plan for addressing these changes."
+tags: rspec rspec-book
 ---
 
 It's been some time since I've been able to post something new here, so you may be wondering where things are relative to updates to [Everyday Rails Testing with RSpec](https://leanpub.com/everydayrailsrspec). First, let me thank all of you who've purchased the book. I'm happy to share that yesterday morning I surpassed 1,000 readers. I greatly appreciate your support.

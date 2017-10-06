@@ -2,6 +2,7 @@
 layout: post
 title: "Diary of a Rails rescue project"
 excerpt: "Notes from the field as bring a long-neglected Rails application up to speed."
+tags: legacy rails-rescue
 ---
 
 I recently picked up a rescue project. It's pretty gnarly--the application was, I believe, originally written in Rails 2.3 (possibly older), was updated to Rails 3.0 at some point, and sat unattended for most of last year. When major security issues hit Ruby and Rails the past few months, there were concerns that the application would have to be taken offline if action weren't taken. So I agreed to the work.

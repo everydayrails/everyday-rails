@@ -2,6 +2,7 @@
 layout: post
 title: "How I learned to test my Rails applications, Part 1: Introduction"
 excerpt: "Are you still wrapping your head around Rails testing techniques? Here are the tools and techniques that helped me go from zero to decent test coverage."
+tags: rspec
 ---
 
 Ruby on Rails and automated testing go hand in hand. Rails ships with a built-in test framework; if it's not to your liking you can replace it with one of your liking (as I write this, "Ruby Toolbox":ruby-toolbox.com/ lists 32 projects under the _Testing Frameworks_ category). So yeah, testing's pretty important in Rails--yet many people developing in Rails are either not testing their projects at all, or at best only adding a few token specs on model validations.

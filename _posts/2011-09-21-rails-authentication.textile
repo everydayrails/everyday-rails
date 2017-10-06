@@ -2,6 +2,7 @@
 layout: post
 title: "Rails authentication today: Options for 3.0 and 3.1"
 excerpt: "There's no shortage of approaches to adding password-based security to your Rails applications. Here's a look at the current lineup."
+tags: security
 ---
 
 Early on in _Everyday Rails_, I outlined "three options for adding authentication to your Rails applications":http://everydayrails.com/2010/06/06/rails-authentication-options.html. It's still a popular subject&mdash;and with two major releases of Rails and a number of new authentication options hitting the streets since I wrote my original list, it's due for a refresh. Here's a look at the current Rails authentication landscape.

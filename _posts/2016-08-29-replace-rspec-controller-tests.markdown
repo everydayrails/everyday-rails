@@ -5,6 +5,7 @@ excerpt: |-
   Does your application's test suite rely heavily on controller specs? It's time to consider alternatives, as controller testing has changed in Rails 5.
   Here's one way to replace a common use of these specs, even if you haven't
   upgraded to Rails 5 yet.
+tags: rspec
 ---
 
 Action Cable may be the new Rails 5 feature that got the most attention, but what caught my eye from this release was a big change to controller-level testing.

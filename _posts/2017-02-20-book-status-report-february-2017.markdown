@@ -2,6 +2,7 @@
 layout: post
 title: "Status report: Everyday Rails Testing with RSpec for RSpec 3.5 and Rails 5"
 excerpt: "A progress report on the latest version of my Rails testing book."
+tags: rspec rspec-book
 ---
 
 Hello friends, I wanted to give you a brief update on my progress updating *[Everyday Rails Testing with RSpec](https://leanpub.com/everydayrailsrspec)* for RSpec 3.5 and Rails 5. When I [announced the updates in December](/2016/12/05/rspec-book-rails-5.html), I estimated that I'd have a rough version ready for download by mid-February. Unfortunately, I'm behind on that schedule, but I think the book and I are both better off for the slower pace.

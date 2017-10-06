@@ -4,6 +4,7 @@ title: "Replacing RSpec controller specs, part 2: Feature specs"
 excerpt: |-
   In part two of a series on ditching controller specs, let's move a complicated
   controller example into a more reasonable, future-proof feature spec.
+tags: rspec
 ---
 
 One of the things I admire about the Rails team is their willingness to remove features that no longer make sense to keep in the framework. In Rails 5.0, two overused testing helpers got the axe: `assigns` and `assert_template`. These methods are commonly used when testing controllers, but often result in tests that know more about the underlying application code than they should. As [DHH pointed out in the discussion about this change](https://github.com/rails/rails/issues/18950), "testing the innards of the controller is just not a good idea." I agree. Does a browser care which view file was responsible for the HTML it got back from its request to your server? Does it need to know which instance variables got assigned as Ruby worked to craft its response? No--and chances are, your tests don't need to know this, either.

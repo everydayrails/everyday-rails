@@ -2,6 +2,7 @@
 layout: post
 title: "A great example of outside-in testing from Ruby Tapas"
 excerpt: "How do you turn testing knowledge into a testing habit? Learn from an expert."
+tags: rspec
 ---
 
 **Update: Avdi has generously made the Outside-In episode of Ruby Tapas embeddable for this post--see below. Thanks, Avdi!**

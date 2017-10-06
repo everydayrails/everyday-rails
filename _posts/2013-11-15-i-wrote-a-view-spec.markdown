@@ -2,6 +2,7 @@
 layout: post
 title: "I wrote a view spec"
 excerpt: "When is it beneficial to include a view spec in your Rails app's test suite? Here's one example."
+tags: rspec
 ---
 
 For almost two years now, I've been telling people I never write view specs for my Rails applications. They're hard to write and harder to manage over time. I don't even talk about them in *[Everyday Rails Testing with RSpec](https://leanpub.com/everydayrailsrspec)*--as a general rule, I try to either test view-related matters in my feature specs, or better yet, extract the stuff that needs testing into more testable layers of my application.

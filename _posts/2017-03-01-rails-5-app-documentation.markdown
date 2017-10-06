@@ -2,6 +2,7 @@
 layout: post
 title: "Generating application documentation in Rails 5"
 excerpt: "Support for generating an HTML version of application documentation in Rails 5 was removed. Here's how to add it back."
+tags: documentation
 ---
 
 I've written before about [my appreciation for good application documentation](/2016/04/18/rails-documentation-practices.html), especially for explaining the nuances of domain logic. I was disappointed that support for generating a nice, HTML-formatted documentation was removed in Rails 5. Luckily, it's not too difficult to reimplement this feature in an app, and customize it to your team's documentation needs.

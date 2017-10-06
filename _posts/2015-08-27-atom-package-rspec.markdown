@@ -3,6 +3,7 @@ layout: post
 title: "Using RSpec in Atom"
 excerpt: "I love how extensible GitHub's Atom editor is. Here are some useful packages for using it to edit and run RSpec tests."
 image: "/images/posts/atom-header.jpg"
+tags: rspec
 ---
 
 I've been using [Atom](http://atom.io) as my primary code editor since June. My favorite feature is how easy it is to customize the editing environment with tools we know as web developers, then share those customizations with others through Atom's packages system. My first contribution to the Atom ecosystem is [atom-everydayrails-rspec](https://atom.io/packages/atom-everydayrails-rspec), a collection of snippets for writing RSpec tests--specifically, some shortcuts for spec organization, Capybara, expectations, and some Factory Girl. If you've read [my book on Rails testing](https://leanpub.com/everydayrailsrspec), these should all look familiar.

@@ -2,6 +2,7 @@
 layout: post
 title: "Updates to Everyday Rails Testing with RSpec for Rails 5 and RSpec 3.5"
 excerpt: "A big update to my testing book is coming in 2017. Here's a list of things to expect in the new edition."
+tags: rspec rspec-book
 ---
 
 Rails 5 has been out for several months now, and I've received many questions about when *[Everyday Rails Testing with RSpec](https://leanpub.com/everydayrailsrspec)* will be updated to reflect the new version of the Rails framework and recent changes to RSpec. I've been quiet on the matter, but I finally have some news I'd like to share with everyone who's already supported my writing project, as well as those of you who have been on the fence about purchasing the book now.

@@ -2,6 +2,7 @@
 layout: post
 title: "Rails security essentials"
 excerpt: "Rails provides excellent support for software security, but you need to know how and when to apply those supports for them to work. Here's an overview of tools you can use to keep your applications safe."
+tags: security
 ---
 
 High-profile breaches of security are all too common in the news today. As web application developers, whether we like it or not, we need to be overly paranoid about security. All it takes is one simple slip-up to expose customer information, business secrets, or classified government documents to the world.
