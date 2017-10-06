@@ -2,6 +2,7 @@
 layout: post
 title: "Update on the RSpec book"
 excerpt: "I've been busy completing the book and incorporating your feedback. Here's where things stand at the moment, along with answers to some questions I've received."
+tags: rspec
 ---
 
 It's been a little over a week since I made _Everyday Rails Testing with RSpec_ "available in beta book form":http://leanpub.com/everydayrailsrspec. Thank you to everyone who's purchased a copy. The response has been incredible, and I hope you all get something positive out of the book.

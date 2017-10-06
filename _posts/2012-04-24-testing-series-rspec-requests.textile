@@ -2,6 +2,7 @@
 layout: post
 title: "How I learned to test my Rails applications, Part 5: Request specs"
 excerpt: "Integration testing with RSpec request specs make sure your application's various parts are working in cohesion. Here's a primer on getting started."
+tags: rspec
 ---
 
 So far we've added a good amount of test coverage to our contacts manager. We got "RSpec installed and configured":http://everydayrails.com/2012/03/12/testing-series-rspec-setup.html, used factories to generate test data, and set up some unit tests on "models":http://everydayrails.com/2012/03/19/testing-series-rspec-models-factory-girl.html and "controllers":http://everydayrails.com/2012/04/07/testing-series-rspec-controllers.html. Now it's time to put everything together for integration testing&mdash;in other words, making sure those models and controllers all play nicely with other models and controllers in the application. These tests are called _request specs_ in RSpec&mdash;and yes, they can be daunting if you're still getting comfortable with testing.

@@ -2,6 +2,7 @@
 layout: post
 title: "Everyday Rails Testing with RSpec, the book now covers Capybara 2.0, RSpec's new syntax, and more"
 excerpt: "The next round of updates to my introduction to testing in Rails is here!"
+tags: rspec
 ---
 
 Hey everyone, thanks again to all of you who have purchased [Everyday Rails Testing with RSpec](https://leanpub.com/everydayrailsrspec). I hope it's gotten you on your way to better-tested apps. Sales have been chugging right along--Leanpub reports I now have more than 1,400 readers. I appreciate each and every one. I've gotten lots of great feedback in the few months since the last large update, and have been busy working to address your suggestions.
