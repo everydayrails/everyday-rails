@@ -85,7 +85,7 @@ Experimenting with the gems in the console is one thing, but how do we put them 
   end
 {% endhighlight %}
 
-<div class="panel">
+<div class="well">
   <p>Don't forget to include Chronic and Chronic Duration in your <code>Gemfile</code> or <code>config/environment.rb</code> file, and restart your application.</p>
 </div>
 
@@ -115,6 +115,6 @@ or use it in a view helper along the lines of
 
 and use the helper in your views. It depends on what you need to do with the data, so experiment within your application to see what works best.
 
-<div class="panel">
+<div class="well">
   <p>Chronic doesn't include a function to return a date value in a pretty format&mdash;just use Ruby's "strftime":http://ruby-doc.org/core/classes/Time.html#M000298 method to handle that.</p>
 </div>

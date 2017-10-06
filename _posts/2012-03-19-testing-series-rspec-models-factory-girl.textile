@@ -4,7 +4,7 @@ title: "How I learned to test my Rails applications, Part 3: Model specs"
 excerpt: "How can you make sure your application's core building blocks are doing what you expect them to? Let's start by using RSpec to test model functionality."
 ---
 
-<div class="panel">
+<div class="well">
   This is part three of an ongoing "series on getting started and comfortable with testing Rails applications":http://everydayrails.com/2012/03/12/testing-series-intro.html. I appreciate your feedback along the way.
 </div>
 
@@ -199,7 +199,7 @@ And make it pass with this validation in your <code>Phone</code> model:
 validates :phone, uniqueness: { scope: :contact_id }
 {% endhighlight %}
 
-<div class="panel">
+<div class="well">
 That's not a typo in the previous sample spec&mdash;<code>Factory()</code> is a shortcut for </code>Factory.create()</code>.
 </div>
 
@@ -432,7 +432,7 @@ Finished in 0.33642 seconds
 6 examples, 0 failures
 {% endhighlight %}
 
-<div class="panel">
+<div class="well">
 
 h4. How DRY is too DRY?
 

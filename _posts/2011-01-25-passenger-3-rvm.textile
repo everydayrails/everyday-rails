@@ -31,7 +31,7 @@ Follow the instructions, including making sure you copy the Apache configuration
 
 Also note the suggested virtual host configuration provided; you may need it later depending on whether you've been using Passenger before or are using any supporting utilities for Passenger.
 
-<div class="panel">
+<div class="well">
   <p><strong>Potential gotcha with Apache 2 in Mac OS X 10.6.6:</strong> When I rebooted Apache following the Passenger module installer, I was greeted with an error in the <code>apachectl</code> script. The suggestion in "this post":http://articles.itecsoftware.com/shell-scripting/fix-for-mac-os-10-6-5-apachectl-line-82-ulimit solved the issue for me.</p>
 </div>
 

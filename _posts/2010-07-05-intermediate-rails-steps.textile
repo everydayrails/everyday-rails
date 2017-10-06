@@ -28,7 +28,7 @@ h2. 3. Use Passenger in development mode
 
 If you've deployed a Rails application&mdash;that is, installed your code on a server to share it with the world&mdash;then you may be familiar with Passenger, an add-on to common web servers like Apache and Nginx to make deployment as easy as adding a few lines to your web server configuration. (If you ever deployed an application in Rails' early, early days, you know this is not something to take for granted!) However, Passenger greatly simplifies work on the development side by letting you run multiple Rails applications simultaneously without the need to juggle ports.
 
-<div class="panel">
+<div class="well">
   <p>Sorry, Passenger doesn't work with Windows&mdash;you'll need to use a Mac or the Linux distribution of your choice.</p>
 </div>
 

@@ -48,7 +48,7 @@ Here's what a completed <code>config.yml</code> file might look like for me:
     email: help@mygreatapp.com
 {% endhighlight %}
 
-<div class="panel">
+<div class="well">
   <p>
   <strong>Don't forget:</strong> The values in your <code>app_config.yml</code> file are loaded when your application starts, so you'll need to restart your application after you first create the file or whenever you make changes to its values.
   </p>
@@ -99,6 +99,6 @@ Here's a simple example of using APP_CONFIG values outside of view-type files. I
 
 That's all for Nifty Generators' nifty_config feature. These are my uses for it, but I recommend experimenting with it in your own apps. Next time I'll close out my series on Nifty Generators with <code>nifty_scaffold</code>, the real meat of this very useful gem.
 
-<div class="panel">
+<div class="well">
   <p><strong>How am I doing?</strong> I'm still getting a feel for this blog and how to write for it. If you're reading (thanks, by the way) I'd love to hear what you think of what I've written so far. Please leave a comment with any input you care to share.</p>
 </div>

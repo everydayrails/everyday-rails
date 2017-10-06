@@ -34,7 +34,7 @@ This is a new one for me&mdash;in fact, I just learned about it today. So I have
 * "Learn Rails by Example&mdash;Rails 3 version":http://railstutorial.org/book
 * "Learn Rails by Example&mdash;Rails 2.3 version":http://railstutorial.org/book?version=2.3#top
 
-<div class="panel">
+<div class="well">
   <p><strong>Looking for more books?</strong> Thanks to everyone who added their recommendations&mdash;here are "more free Ruby and Rails books":http://everydayrails.com/2010/08/04/more-free-ruby-rails-books.html.</p>
 </div>
 

@@ -10,7 +10,7 @@ A little about my server setup: I've got several Linux-based virtual private ser
 
 Traditionally, I've used a hodgepodge set of bash scripts to dump MySQL databases and copy data directories over to another server, but with the "Backup":https://github.com/meskyanichi/backup gem by Michael van Rooijen my setup is a little less hodgepodge and a lot more elegant. Here's a quick look at how to get things set up.
 
-<div class="panel">
+<div class="well">
   <p>As mentioned in the README, Backup won't work on Windows computers.</p>
 </div>
 

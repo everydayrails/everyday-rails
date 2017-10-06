@@ -6,7 +6,7 @@ excerpt: "Controllers are the glue in a Rails application, and should be tested 
 
 Poor controllers. As Rails developers we keep them skinny (which is a good thing) and often don't give them due attention in our tests (which is a bad thing; more on that in a moment). As you continue to improve your application's test coverage, though, controllers are the next logical chunk of code to tackle.
 
-<div class="panel">
+<div class="well">
   <p>
     If you're new to RSpec or Rails testing in general, I recommend reading through the previous posts in this series first:
   </p>
@@ -115,7 +115,7 @@ end
 
 Notice the subtle difference: The <code>:invalid_contact</code> factory uses the <code>:contact</code> factory as a _parent_. It replaces the specified attributes (in this case, <code>firstname</code> with its own; everything else will defer to the original <code>:contact</code> factory.
 
-<div class="panel">
+<div class="well">
 h4. Setting up session data
 
 To date, the little address book app we've built is pretty basic. It doesn't even require a user to log in to view it or make changes. I'll revisit this in a future post; for now I want to focus on general controller testing practices.

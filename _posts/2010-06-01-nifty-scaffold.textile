@@ -15,7 +15,7 @@ So why is <code>nifty_scaffold</code> better? Basically because it addresses tho
   city:string state:string description:text
 {% endhighlight %}
 
-<div class="panel">
+<div class="well">
   <p><strong>Reminder:</strong> I'm still using Rails 2.3; if you're on Rails 3 use <code>rails generate nifty_scaffold</code> instead.</p>
 </div>
 
@@ -91,7 +91,7 @@ Finally, you can automatically stage the new files for your next commit to a Git
   city:string state:string description:text --git
 {% endhighlight %}
 
-<div class="panel">
+<div class="well">
   <p>Of course, you can pass along any or all of these flags as needed--you don't need to pick one.</p>
 </div>
 

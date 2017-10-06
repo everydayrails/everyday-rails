@@ -6,7 +6,7 @@ excerpt: "Here's the general process I follow whenever adding authorization&mdas
 
 If you thought you had a lot of options as a Rails developer for adding authentication to your Rails applications, search GitHub or RubyGems.org sometime for _role_ or _authorization_. As you'll see, the need to add an authorization layer to applications is a common one with more than one solution. In this post I won't talk much code, nor will I give you a list of gems&mdash;that's easy enough to create for yourself. Instead, I will talk about the thought processes I go through when adding an authorization layer to a new project.
 
-<div class="panel">
+<div class="well">
   <p>For the uninitiated: When I talk about _authentication_, I mean adding the ability to let people log into your site. When I talk about _authorization_, I mean defining what they're allowed to do once they've successfully logged in. In other words, authentication determines who you _are_, authorization determines what you can _do_.</p>
 </div>
 
