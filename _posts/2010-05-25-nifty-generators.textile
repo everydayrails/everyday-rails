@@ -43,7 +43,7 @@ That makes up pretty much all of my use of <code>nifty_layout</code>, but there'
 
 That's it for <code>nifty_layout</code>--next time I'll talk about how I use its parter, <code>nifty_config</code>, to simplify my apps' global settings.
 
-<div class="well">
+<div class="alert alert-info">
   <p>
   <strong>Tip:</strong>
   
