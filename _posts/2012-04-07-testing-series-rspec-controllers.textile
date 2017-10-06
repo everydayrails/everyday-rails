@@ -4,6 +4,17 @@ title: "How I learned to test my Rails applications, Part 4: Controller specs"
 excerpt: "Controllers are the glue in a Rails application, and should be tested just like any other code. This primer will guide you to better coverage in your own apps' controllers."
 ---
 
+<div class="alert alert-danger">
+  <strong>Controller testing has been soft-deprecated in Rails</strong>,
+  but you're still
+  likely to see controller specs in many Rails codebases. The basics covered
+  in this post still apply. Be sure to read my posts on replacing controller
+  specs with
+  <a href="/2016/09/05/replace-rspec-controller-tests.html">feature specs</a>
+  and <a href="/2016/08/29/replace-rspec-controller-tests.html">request specs</a>
+  for an up-to-date take on testing your code. Thanks!
+</div>
+
 Poor controllers. As Rails developers we keep them skinny (which is a good thing) and often don't give them due attention in our tests (which is a bad thing; more on that in a moment). As you continue to improve your application's test coverage, though, controllers are the next logical chunk of code to tackle.
 
 <div class="well">
