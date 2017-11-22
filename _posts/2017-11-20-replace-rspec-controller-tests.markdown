@@ -105,10 +105,10 @@ It bothers me enough that test coverage for this relatively simple feature is **
 In the interest of keeping things as simple as possible, perhaps the next step would be to move all the logic into the `Contact` model. For example:
 
 {% highlight ruby %}
-model Contact
+class Contact
   # other parts of model omitted ...
 
-  def self.search_by_letter(letter={})
+  def self.search_by_letter(params={})
     if params[:letter]
       self.by_letter(params[:letter])
     else
@@ -173,7 +173,7 @@ class Contact < ActiveRecord::Base
     where("lastname LIKE ?", "#{letter}%").order(:lastname)
   end
 
-  def self.search_by_letter(letter={})
+  def self.search_by_letter(params={})
     if params[:letter]
       self.by_letter(params[:letter])
     else
