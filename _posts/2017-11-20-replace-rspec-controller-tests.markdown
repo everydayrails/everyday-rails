@@ -218,3 +218,7 @@ I'd argue that taking such an approach makes it _easier_ for new developers to p
 ----
 
 Of the three scenarios I've provided throughout this series for preparing your codebase for the eventual retirement of controller-level testing, this is my favorite. That said, I know it's not always practical to to do refactoring to this degree. That's why it may be better to start with moving high-level tests up to features or requests, then refactor application code so that it can be more easily tested in isolation, then simplify the high-level coverage to ensure that objects are communicating with each other.
+
+<div class="alert alert-info">
+Special thanks to <a href="https://github.com/phawk">Pete Hawkins</a> for <a href="https://github.com/everydayrails/everyday-rails/pull/1">addressing a couple of code errors</a> in the original version of this post.
+</div>
