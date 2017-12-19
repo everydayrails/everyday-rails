@@ -2,6 +2,7 @@
 layout: post
 title: "Replacing RSpec controller tests, part 3: Removing business logic from controllers"
 excerpt: "Do you need yet another reason to move code out of controllers and into service (or whatever you want to call them) objects? How about better, forward-thinking testability?"
+tags: rspec
 ---
 
 After the Rails core team announced major changes to controller-level testing upon the release of Rails 5.0, I wrote a couple of pieces in Everyday Rails about how to shift testing responsibility up, to either [request specs](https://everydayrails.com/2016/08/29/replace-rspec-controller-tests.html), or browser-based [feature specs](https://everydayrails.com/2016/09/05/replace-rspec-controller-tests.html) (or system specs, in the current Rails testing landscape). However, relying solely on high level tests like these can lead to slower test suites. And even if they're _reasonably_ fast, they can still require extra setup like checking for proper authentication checking or populating a database with extraneous details.
