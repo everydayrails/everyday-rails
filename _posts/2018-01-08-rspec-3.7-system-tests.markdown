@@ -1,0 +1,93 @@
+---
+layout: post
+title: "Upgrading to RSpec 3.7.2 and system specs"
+excerpt: "Support for Rails 5.1 system testing is now available to RSpec fans like you and me. Here's how I moved my book's feature specs to system specs."
+tags: rspec
+---
+
+A few months ago, literally days after I released a major update to _[Everyday Rails Testing with RSpec](https://leanpub.com/everydayrailsrspec)_ with coverage of Rails 5.1 and RSpec 3.6, the RSpec team released a new version, 3.7. Due to how I build up each chapter incrementally, and the fact that the _rspec-rails_ gem is introduced to the book's sample code base early on, I've decided not to try to retrofit. Instead, I want to share my experience [upgrading the sample application to use RSpec 3.7](https://github.com/everydayrails/everydayrails-rspec-2017/compare/master...system-tests)--and most importantly, its **support for Rails 5.1 system tests**.
+
+With system tests, the Rails framework finally offers **end-to-end, browser-based tests like the feature-style approach** I cover in chapter six of my book, out of the box. These tests are called **[system tests](http://guides.rubyonrails.org/testing.html#system-testing)** and, in my opinion, have been a glaring omission from the default Rails stack for some time. I appreciate the **hard work the Rails team put into making system tests simple to configure and write**--even if it means more work as me as someone who teaches others how to test Rails apps!
+
+As you may know, Rails ships with the MiniTest testing framework by default. But with RSpec 3.7, **you can add system specs to your suite as long as you're testing a Rails 5.1 app**. RSpec 3.7 will work with older versions of Rails, but you'll need to stick with feature tests for integration testing. You'll also miss out on some of the other features provided by Rails 5.1's system testing support, though there are alternatives I'll share below.
+
+## The upgrade
+
+<div class="alert alert-info">
+  <p>
+    <a href="https://github.com/everydayrails/everydayrails-rspec-2017/compare/master...system-tests">I made a separate commit for each step of this process</a>; feel free to follow along. While preparing to work on this upgrade, I ran into a dependency conflict with <code>jquery-rails</code> and the new <code>rspec-rails</code>. For the purposes of this tutorial, I upgraded Rails to a newer patch of 5.1.
+  </p>
+</div>
+
+Before starting the RSpec upgrade, run the existing specs and make sure everything still passes as expected. This is especially important on projects that have gone untouched for awhile. With a passing test suite, we can upgrade the dependency in the project's _Gemfile_:
+
+{% highlight ruby %}
+group :development, :test do
+  gem 'rspec-rails', '~> 3.7.2'
+  # other gems ...
+end
+{% endhighlight %}
+
+Run `bundle update rspec-rails` to complete the installation. If we wanted to, we could stop now. Feature specs continue to work with RSpec 3.7, and will continue to do so for the foreseeable future. However, in the interest of keeping our test suite forward-facing, let's move existing feature specs to system specs.
+
+First, I recommend modifying our test driver configuration, located in _spec/support/capybara.rb_, and explicitly set the speedy `Rack::Test` driver for basic browser testing, and a JavaScript capable driver for more complex browser interactions (I prefer headless Chrome). Replace the file's contents:
+
+{% highlight ruby %}
+RSpec.configure do |config|
+  config.before(:each, type: :system) do
+    driven_by :rack_test
+  end
+
+  config.before(:each, type: :system, js: true) do
+    driven_by :selenium_chrome_headless
+  end
+end
+{% endhighlight %}
+
+You can also set `driven_by` on a test-by-test basis, but I like setting things system-wide when I can.
+
+Let's wrap up by migrating existing feature specs to the new system testing structure and syntax. We'll make the following changes:
+
+- Rename _spec/features_ to _spec/system_ [(diff)](https://github.com/everydayrails/everydayrails-rspec-2017/commit/e3e00f31cad1ccec1a465aa29b6bf486c0d0444d)
+- Set each spec's type as `type: :system` [(diff)](https://github.com/everydayrails/everydayrails-rspec-2017/commit/7418088f3bdfce384b79151bc9cd183e8a25926c)
+- Use `RSpec.describe` to define system specs, instead of `RSpec.feature` [(diff)](https://github.com/everydayrails/everydayrails-rspec-2017/commit/22387691e9e59ead10de76e9177d857c0ca50333)
+- Replace the `scenario` alias in previous feature specs with the standard `it` syntax (this appears to be optional) [(diff)](https://github.com/everydayrails/everydayrails-rspec-2017/commit/cd38682c2fa1f7e710a6462f625077d184199ad6)
+
+That's it! Specs still pass, and going forward, we can add new integration tests in the new _spec/system_ directory.
+
+## Generating new system specs
+
+As of version 3.7.2, `rspec-rails` doesn't provide a generator to create system specs, though a pull request is in progress as I write this. In the meantime, you'll need to manually create new spec files in _spec/system_, using this general boilerplate:
+
+{% highlight ruby %}
+require 'rails_helper'
+
+RSpec.system "Test name", type: :system do
+  it "does something" do
+    # ... your test
+  end
+end
+{% endhighlight %}
+
+## Screenshots
+
+Since we've been using Capybara, we can already save screenshots of browser-based tests in progress using `save_screenshot`. With Rails 5.1 and RSpec 3.7, we can use the alternative `take_screenshot` method anywhere in a test to generate an image of the simulated browser at that point. The file is saved in _tmp/screenshots_ by default. And if a test fails, you'll get a screenshot automatically! This is a useful feature when debugging integration tests that run in headless environments.
+
+If you're not using Rails 5.1, you can get similar functionality with the [capybara-screenshot](https://github.com/mattheworiordan/capybara-screenshot) gem. It requires a little additional setup, but is also more full-featured than what Rails 5.1 provides out of the box.
+
+## Database Cleaner
+
+I removed coverage of Database Cleaner from the Rails 5.1 edition of the book, because it wasn't necessary to make tests work in the sample app. However, if you're upgrading from previous versions of Rails and RSpec, you may have used this tool to keep database state from leaking across tests. With Rails 5.1, you no longer need Database Cleaner, at least from my limited experiments and what I've read. If you've found otherwise, please leave a comment to let me know.
+
+## Moving forward
+
+[RSpec's documentation now recommends using system specs over feature specs](https://relishapp.com/rspec/rspec-rails/docs/system-specs/system-spec). This seems reasonable to me, based on my experience so far with migrating existing feature tests to the new approach. I don't think you necessarily need to make this switch a priority over other work you have to do on your Rails app, but if time permits, give it a shot. I haven't worked with the new tooling extensively yet, but there's a chance you may need to update your Capybara dependency, too, if you run into errors or deprecation warnings.
+
+I'd love to hear about your experiences moving to system specs in your Rails apps, both positive and negative. Please leave a comment below. Thanks as always for reading!
+
+## References
+
+- [Code changes from this article](https://github.com/everydayrails/everydayrails-rspec-2017/compare/master...system-tests)
+- [Rails testing guide](http://guides.rubyonrails.org/testing.html#system-testing)
+- [RSpec system spec documentation](https://relishapp.com/rspec/rspec-rails/docs/system-specs/system-spec)
+- [A quick guide to Rails system tests in RSpec](https://medium.com/table-xi/a-quick-guide-to-rails-system-tests-in-rspec-b6e9e8a8b5f6)
