@@ -5,7 +5,7 @@ excerpt: "Support for Rails 5.1 system testing is now available to RSpec fans li
 tags: rspec
 ---
 
-A few months ago, literally days after I released a major update to _[Everyday Rails Testing with RSpec](https://leanpub.com/everydayrailsrspec)_ with coverage of Rails 5.1 and RSpec 3.6, the RSpec team released a new version, 3.7. Due to how I build up each chapter incrementally, and the fact that the _rspec-rails_ gem is introduced to the book's sample code base early on, I've decided not to try to retrofit. Instead, I want to share my experience [upgrading the sample application to use RSpec 3.7](https://github.com/everydayrails/everydayrails-rspec-2017/compare/master...system-tests)--and most importantly, its **support for Rails 5.1 system tests**.
+A few months ago, literally days after I released a major update to _[Everyday Rails Testing with RSpec](https://leanpub.com/everydayrailsrspec)_ with coverage of Rails 5.1 and RSpec 3.6, the RSpec team released a new version, 3.7. Due to how I build up each chapter incrementally, and the fact that the _rspec-rails_ gem is introduced to the book's sample code base early on, I've decided not to try to retrofit. Instead, I want to share my experience [upgrading the sample application to use RSpec 3.7](https://github.com/everydayrails/everydayrails-rspec-2017/compare/5a99f46...system-tests)--and most importantly, its **support for Rails 5.1 system tests**.
 
 With system tests, the Rails framework finally offers **end-to-end, browser-based tests like the feature-style approach** I cover in chapter six of my book, out of the box. These tests are called **[system tests](http://guides.rubyonrails.org/testing.html#system-testing)** and, in my opinion, have been a glaring omission from the default Rails stack for some time. I appreciate the **hard work the Rails team put into making system tests simple to configure and write**--even if it means more work as me as someone who teaches others how to test Rails apps!
 
@@ -15,7 +15,7 @@ As you may know, Rails ships with the MiniTest testing framework by default. But
 
 <div class="alert alert-info">
   <p>
-    <a href="https://github.com/everydayrails/everydayrails-rspec-2017/compare/master...system-tests">I made a separate commit for each step of this process</a>; feel free to follow along. While preparing to work on this upgrade, I ran into a dependency conflict with <code>jquery-rails</code> and the new <code>rspec-rails</code>. For the purposes of this tutorial, I upgraded Rails to a newer patch of 5.1.
+    <a href="https://github.com/everydayrails/everydayrails-rspec-2017/compare/5a99f46...system-tests">I made a separate commit for each step of this process</a>; feel free to follow along. While preparing to work on this upgrade, I ran into a dependency conflict with <code>jquery-rails</code> and the new <code>rspec-rails</code>. For the purposes of this tutorial, I upgraded Rails to a newer patch of 5.1.
   </p>
 </div>
 
