@@ -1,7 +1,7 @@
 destination: ./_site
 lsi:         false
 port:        4000
-pygments:    true
+highlighter: pygments
 markdown:    kramdown
 permalink:   date
 feed:         http://feeds.feedburner.com/EverydayRails
