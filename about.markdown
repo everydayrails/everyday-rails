@@ -4,7 +4,7 @@ title: About Everyday Rails
 excerpt: "A blog about using the Ruby on Rails web application framework to get stuff done as a web developer. New content every week or so."
 ---
 
-h2. Some background
+## Some background
 
 _Everyday Rails_ is about using the Ruby on Rails web application framework to get stuff done as a web developer. It's about finding the best plugins, gems, and practices to get the most from Rails and help you get your apps to production.
 
@@ -12,10 +12,10 @@ My name is Aaron Sumner, and I've been using the Ruby on Rails web application f
 
 However, I feel like there's something missing in the multitude of existing Rails books, podcasts, blogs, and mailing lists. From my observations while helping other people get up and running with Rails, I can see how there would be a disconnect between the materials out there for the _very_ beginner and for developers who've got a laundry list of gems they've published on GitHub. I want to help those people who have figured out the basics but are looking for help with the next steps.
 
-h2. The plan
+## The plan
 
 My goal is to share general, pragmatic tips to show how I use Rails (almost) every day to get stuff done on the job. I'll focus mostly on making things using Ruby on Rails, attempting to glean a better understanding of why the plugins, gems, and other Ruby parts do what they do to help me make as good an application as I can. If you learn something in the process, all the better.
 
-h2. Colophon
+## Colophon
 
-_Everyday Rails_ is published using the "Jekyll":https://github.com/mojombo/jekyll static site generator. I use "Atom":http://atom.io and Vim to edit this site and my Rails projects.
+_Everyday Rails_ is published using the [Jekyll](https://github.com/mojombo/jekyll) static site generator. I use [Atom](http://atom.io) and Vim to edit this site and my Rails projects.
