@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/everydayrails/jekyll-tagging
+  revision: 46dd035ae0c6bfa4cd2b123e139db9fe04a10721
+  branch: allow-posts-with-no-tags
+  specs:
+    jekyll-tagging (1.1.0)
+      nuggets
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -34,8 +42,6 @@ GEM
       octokit (~> 4.2)
     jekyll-sass-converter (1.5.2)
       sass (~> 3.4)
-    jekyll-tagging (1.1.0)
-      nuggets
     jekyll-watch (2.0.0)
       listen (~> 3.0)
     kramdown (1.17.0)
@@ -77,7 +83,7 @@ DEPENDENCIES
   RedCloth
   jekyll
   jekyll-gist
-  jekyll-tagging
+  jekyll-tagging!
   pygments.rb
 
 BUNDLED WITH
