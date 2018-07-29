@@ -27,7 +27,7 @@ In terms of complexity, Sorcery resides somewhere in the middle of Devise's kitc
 
 ### Authentication from scratch
 
-If you want total independence from other developers' interpretations of how authentication systems work, it's really not that hard to write your own. Two excellent Railscasts episodes cover how to do this in [Rails 3.1](http://railscasts.com/episodes/270-authentication-in-rails-3-1) (using the new <code>has_secure_password</code> option) or [Rails 3](http://railscasts.com/episodes/250-authentication-from-scratch). Bonus points for [adding password reset and remember me functionality](http://railscasts.com/episodes/274-remember-me-reset-password); even more bonus points for [writing specs to make sure authentication works as planned](http://railscasts.com/episodes/275-how-i-test).
+If you want total independence from other developers' interpretations of how authentication systems work, it's really not that hard to write your own. Two excellent Railscasts episodes cover how to do this in [Rails 3.1](http://railscasts.com/episodes/270-authentication-in-rails-3-1) (using the new `has_secure_password` option) or [Rails 3](http://railscasts.com/episodes/250-authentication-from-scratch). Bonus points for [adding password reset and remember me functionality](http://railscasts.com/episodes/274-remember-me-reset-password); even more bonus points for [writing specs to make sure authentication works as planned](http://railscasts.com/episodes/275-how-i-test).
 
 For the record, this is the approach we took on our current big project at my day job. It does take a little more time to implement&mdash;though not much. In the long term we've got a simple-but-solid solution that fits our exact authentication needs perfectly.
 

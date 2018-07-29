@@ -18,7 +18,7 @@ This is by no means a template for creating your mobile app, but here are some i
 
 ### Application code tweaks
 
-First off, here is a mobile application layout. Mine's a little different from Jarod's in that I've moved rendering of the <code>header</code> div to my layout file. Here I've got a Nifty Generators-like <code>@title</code> value that gets set in individual views, but is rendered in the right place. Otherwise, I have a straightforward conditional to display either a Sign In or Sign Out button. Any thoughts on how to properly display my app's flash messages here?
+First off, here is a mobile application layout. Mine's a little different from Jarod's in that I've moved rendering of the `header` div to my layout file. Here I've got a Nifty Generators-like `@title` value that gets set in individual views, but is rendered in the right place. Otherwise, I have a straightforward conditional to display either a Sign In or Sign Out button. Any thoughts on how to properly display my app's flash messages here?
 
 {% highlight erb %}
 <!-- views/layouts/application.mobile.erb -->
@@ -49,7 +49,7 @@ First off, here is a mobile application layout. Mine's a little different from J
 </html>
 {% endhighlight %}
 
-Since I moved the <code>header</code> div to the layout, I've removed it from the views corresponding to <code>posts_controller.rb</code>. That makes things look something like this:
+Since I moved the `header` div to the layout, I've removed it from the views corresponding to `posts_controller.rb`. That makes things look something like this:
 
 
 
@@ -142,7 +142,7 @@ Finally, here's a mobile login form:
 
 ### Locking down the Posts controller
 
-Let's say that anyone can access the Posts controller's <code>index</code> and <code>show</code> methods, but a user must be logged in to do anything else. The following before filter will take care of that:
+Let's say that anyone can access the Posts controller's `index` and `show` methods, but a user must be logged in to do anything else. The following before filter will take care of that:
 
 {% highlight ruby %}
 # app/controllers/posts_controller.rb
@@ -155,7 +155,7 @@ class PostsController < ApplicationController
 end
 {% endhighlight %}
 
-If you used the built-in Rails scaffold generator you may need to specify what to do when the mobile MIME type is used for <code>create</code>, <code>update</code> and <code>destroy</code>; for example:
+If you used the built-in Rails scaffold generator you may need to specify what to do when the mobile MIME type is used for `create`, `update` and `destroy`; for example:
   
 {% highlight ruby %}
 # app/controllers/posts_controller.rb

@@ -11,11 +11,11 @@ If Rails is your first real exposure to the command line&mdash;and I know a few 
 ## The basics
 
 * RailsGuides has documentation on [the Rails 2.3 command line](http://guides.rubyonrails.org/command_line.html) and [the Rails 3 command line](http://guides.rails.info/command_line.html). As usual with RailsGuides, these are very thorough and well-written.
-* The Rails 3 screencast series has a good video outlining [what's new in the Rails 3 command line](http://rubyonrails.org/screencasts/rails3/getting-started-action-dispatch). In particular, there are new flags to <code>rails</code> when setting up your application, and changes to the contents of the <code>script/</code> directory in a Rails application.
+* The Rails 3 screencast series has a good video outlining [what's new in the Rails 3 command line](http://rubyonrails.org/screencasts/rails3/getting-started-action-dispatch). In particular, there are new flags to `rails` when setting up your application, and changes to the contents of the `script/` directory in a Rails application.
 
 ## Generators
 
-Rails has default generators like <code>scaffold</code>, <code>model</code> and the like; various gems and plugins add generators of their own to help you quickly get your applications up and running. See the RailsGuides above for the defaults and the documentation of your installed gems and plugins for what they provide.
+Rails has default generators like `scaffold`, `model` and the like; various gems and plugins add generators of their own to help you quickly get your applications up and running. See the RailsGuides above for the defaults and the documentation of your installed gems and plugins for what they provide.
 
 For Rails 2.3:
 
@@ -32,7 +32,7 @@ When it comes to generators, everything changes in Rails 3.
 
 Rake, Ruby's build tool, is essential to Rails development. Rake is discussed in the RailsGuides referenced above. You're not limited to the tasks Rails provides&mdash;the gems and plugins your app uses may add tasks, and you can create your own.
 
-* Type <code>rake -T</code> to view the tasks you have access to within your application.
+* Type `rake -T` to view the tasks you have access to within your application.
 * This Railscasts episode on [writing your own Rake tasks](http://railscasts.com/episodes/66-custom-rake-tasks) is essential viewing.
 * Jason Siefer has also written a good [guide to writing Rake tasks](http://jasonseifer.com/2010/04/06/rake-tutorial).
 

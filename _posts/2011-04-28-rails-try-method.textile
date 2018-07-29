@@ -4,7 +4,7 @@ title: "try(), try() again in Rails"
 excerpt: "The very convenient try() method has been available to Rails developers since version 2.3, but it's easy to forget if you're not in the habit of using it. Here's a brief primer."
 ---
 
-In Rails, <code>try()</code> lets you call methods on an object without having to worry about the possibility of that object being <code>nil</code> and thus raising an exception. I know I sometimes forget about it, and I've looked at enough code from other developers to know that I'm not the only one. So today I'd like to give you a brief introduction to the method (and hopefully ingrain it a little deeper into my own brain). Let's look at some very simple code from a Rails view.
+In Rails, `try()` lets you call methods on an object without having to worry about the possibility of that object being `nil` and thus raising an exception. I know I sometimes forget about it, and I've looked at enough code from other developers to know that I'm not the only one. So today I'd like to give you a brief introduction to the method (and hopefully ingrain it a little deeper into my own brain). Let's look at some very simple code from a Rails view.
 
 <div class="box note">
   <strong>Disclaimer:</strong> While handy, this technique is not a replacement for good techniques like validations and default database values. Don't get lazy.
@@ -12,7 +12,7 @@ In Rails, <code>try()</code> lets you call methods on an object without having t
 
 ### Before
 
-Here's a simple example of code you might replace with <code>try()</code>. Say you've got a (rather contrived) <code>Product</code> model in your project. A <code>Product</code> may or may not have a known manufacturer, and some links you only want to display if a user is logged in _and_ has administrator rights:
+Here's a simple example of code you might replace with `try()`. Say you've got a (rather contrived) `Product` model in your project. A `Product` may or may not have a known manufacturer, and some links you only want to display if a user is logged in _and_ has administrator rights:
 
 {% highlight erb %}
   <!-- products/show.html.erb (before) -->
@@ -27,7 +27,7 @@ Here's a simple example of code you might replace with <code>try()</code>. Say y
   <% end %>
 {% endhighlight %}
 
-Like I said, it's contrived, but it should give you the idea. <code>try()</code> can help us in a couple of places here:
+Like I said, it's contrived, but it should give you the idea. `try()` can help us in a couple of places here:
 
 {% highlight erb %}
   <!-- products/show.html.erb (after) -->
@@ -42,7 +42,7 @@ Like I said, it's contrived, but it should give you the idea. <code>try()</code>
 
 ### With arguments and blocks
 
-You can pass arguments and blocks to <code>try():</code>
+You can pass arguments and blocks to `try():`
 
 {% highlight ruby %}
 
@@ -56,7 +56,7 @@ You can pass arguments and blocks to <code>try():</code>
 
 ### Chaining
 
-You can chain multiple <code>try()</code> methods together. In another contrived example, say you've got a method in your <code>Manufacturer</code> model that sends the manufacturer a message whenever called.
+You can chain multiple `try()` methods together. In another contrived example, say you've got a method in your `Manufacturer` model that sends the manufacturer a message whenever called.
 
 {% highlight ruby %}
   class Manufacturer < ActiveRecord::Base
@@ -75,4 +75,4 @@ You can chain multiple <code>try()</code> methods together. In another contrived
 
 ### Further reading
 
-You can start with [the Rails docs on try()](http://api.rubyonrails.org/classes/Object.html#method-i-try). Rails' inclusion of <code>try()</code> was inspired by [Chris Wanstrath's post about adding try() to Ruby](http://ozmm.org/posts/try.html). Raymond Law at Intridea has [a clever way to chain multiple calls to try()](http://intridea.com/2010/11/2/calling-methods-on-potential-nil-objects-in-rails?blog=company). And Scott Harvey has shared [a more practical example of try()](http://blog.scottharvey.co/blog/2010/7/5/ruby-on-rails-try-method.html).
+You can start with [the Rails docs on try()](http://api.rubyonrails.org/classes/Object.html#method-i-try). Rails' inclusion of `try()` was inspired by [Chris Wanstrath's post about adding try() to Ruby](http://ozmm.org/posts/try.html). Raymond Law at Intridea has [a clever way to chain multiple calls to try()](http://intridea.com/2010/11/2/calling-methods-on-potential-nil-objects-in-rails?blog=company). And Scott Harvey has shared [a more practical example of try()](http://blog.scottharvey.co/blog/2010/7/5/ruby-on-rails-try-method.html).

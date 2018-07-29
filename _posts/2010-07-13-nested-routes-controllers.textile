@@ -47,11 +47,11 @@ which gives you the following routes:
 | Posts by author | /authors/:author_id/posts |
 | All posts | /posts |
 
-<code>:category_id</code> and <code>:author_id</code> are now <code>param</code> values that you can access in your controller. Let's look at that now.
+`:category_id` and `:author_id` are now `param` values that you can access in your controller. Let's look at that now.
 
 ## The controller
 
-The second part of the trick happens in <code>posts_controller.rb</code>. What you need to do here is check for which <code>param</code> (if any) was passed into the <code>index</code> method, since that's what we'll use to generate a list of posts. Here's what happens:
+The second part of the trick happens in `posts_controller.rb`. What you need to do here is check for which `param` (if any) was passed into the `index` method, since that's what we'll use to generate a list of posts. Here's what happens:
 
 <div class="box code">
   app/controllers/posts_controller.rb
@@ -75,7 +75,7 @@ The second part of the trick happens in <code>posts_controller.rb</code>. What y
     
 {% endhighlight %}
 
-So if <code>group_id</code> is passed (like <code>/categories/3/posts</code>) the controller returns a list of that category's posts to the <code>index</code> view. If <code>author_id</code> is passed (via <code>/authors/27/posts</code>) we get that author's posts. If neither is passed (<code>/posts</code>) we get a list of all posts.
+So if `group_id` is passed (like `/categories/3/posts`) the controller returns a list of that category's posts to the `index` view. If `author_id` is passed (via `/authors/27/posts`) we get that author's posts. If neither is passed (`/posts`) we get a list of all posts.
 
 ## A real-world example
 

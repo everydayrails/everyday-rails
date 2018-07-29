@@ -23,11 +23,11 @@ Trucker is for anyone developing a brand new Rails application, with a need to c
 
 ### How does it work?
 
-I'll tell you how Trucker worked for _me_&mdash;as I said, I had to tweak some things to work the way I needed them to, but once everything was right it worked great. Trucker does its thing by adding a <code>Legacy</code> base class to your app, on top of which you'll create legacy versions of your application's models. In these legacy models you'll map your new models' fields to their legacy counterparts, and use Ruby to do any cleanup that might be necessary.
+I'll tell you how Trucker worked for _me_&mdash;as I said, I had to tweak some things to work the way I needed them to, but once everything was right it worked great. Trucker does its thing by adding a `Legacy` base class to your app, on top of which you'll create legacy versions of your application's models. In these legacy models you'll map your new models' fields to their legacy counterparts, and use Ruby to do any cleanup that might be necessary.
 
-Since the gem's README was written in a pre-Rails 3 world, its installation instructions are out of date from the get-go. Just follow the now-standard instructions of adding a dependency to your <code>Gemfile</code>, followed by the usual <code>bundle</code> command.
+Since the gem's README was written in a pre-Rails 3 world, its installation instructions are out of date from the get-go. Just follow the now-standard instructions of adding a dependency to your `Gemfile`, followed by the usual `bundle` command.
 
-According to [this presentation](http://www.slideshare.net/mokolabs/migrating-legacy-data-ruby-midwest), it's preferable to handle everything from your production server, but that wasn't an option for me. So I made a copy of the legacy database and moved it to my development box. Then I configured my Rails application to be aware of it, via my <code>database.yml</code> file:
+According to [this presentation](http://www.slideshare.net/mokolabs/migrating-legacy-data-ruby-midwest), it's preferable to handle everything from your production server, but that wasn't an option for me. So I made a copy of the legacy database and moved it to my development box. Then I configured my Rails application to be aware of it, via my `database.yml` file:
 
 {% highlight yaml %}
   legacy:
@@ -43,7 +43,7 @@ According to [this presentation](http://www.slideshare.net/mokolabs/migrating-le
 
 Next, there's a generator to create a base class for your legacy models and a starter rake task. As I mentioned above, the main fork for Trucker doesn't appear to be in active development these days&mdash;and the generator doesn't work past Rails 2.3 (at least, it didn't for me last summer). [The fork I used](https://github.com/gilesbowkett/trucker) handled this better, but it still had a hole relative to the rake tasks. I'll get to that in a moment.
 
-The good news is you don't _need_ the generator&mdash;there are only a couple of files to create. First, inside your app's <code>models</code> directory, create a new directory called <code>legacy</code>. In there, add a file called <code>legacy_base.rb</code> with the following (from the Trucker gem):
+The good news is you don't _need_ the generator&mdash;there are only a couple of files to create. First, inside your app's `models` directory, create a new directory called `legacy`. In there, add a file called `legacy_base.rb` with the following (from the Trucker gem):
 
 {% highlight ruby %}
   # app/models/legacy_base.rb
@@ -69,13 +69,13 @@ The good news is you don't _need_ the generator&mdash;there are only a couple of
   end
 {% endhighlight %}
 
-I had to tell Rails 3.0.x about the <doe>legacy</code> directory, in my app's <code>application.rb</code>:
+I had to tell Rails 3.0.x about the <doe>legacy</code> directory, in my app's `application.rb`:
   
 {% highlight ruby %}
   config.autoload_paths += %W(#{config.root}/app/models/legacy)
 {% endhighlight %}
 
-With the <code>LegacyBase</code> class in place you can now start building your legacy models. This is where you'll compare your old data to your new schema and set things up accordingly. If you're migrating from a really old application written in another language or framework, or a pre-RESTful Rails application, this can take some time, but it's a good exercise. I actually realized there was an obtuse field in my legacy application that I hadn't ported over to the new version.
+With the `LegacyBase` class in place you can now start building your legacy models. This is where you'll compare your old data to your new schema and set things up accordingly. If you're migrating from a really old application written in another language or framework, or a pre-RESTful Rails application, this can take some time, but it's a good exercise. I actually realized there was an obtuse field in my legacy application that I hadn't ported over to the new version.
 
 [Refer to the examples](https://github.com/mokolabs/trucker/blob/master/README.rdoc) from Trucker's README to get a sense for how your legacy models will be set up. Below is an annotated example from my work, which migrates a table of billing and shipping addresses:
 
@@ -133,7 +133,7 @@ With your legacy model in place, it's time to start moving data. When I was work
   end
 {% endhighlight %}
 
-To run a given legacy migration (in my example above, addresses), just run <code>rake db:migrate:nameoflegacymodel</code>. For me, each migration required a little bit of babysitting so I didn't create an <code>all</code> task that handled every migration&mdash;I took care of them individually.
+To run a given legacy migration (in my example above, addresses), just run `rake db:migrate:nameoflegacymodel`. For me, each migration required a little bit of babysitting so I didn't create an `all` task that handled every migration&mdash;I took care of them individually.
 
 <div class="alert alert-info">
   <p><strong>Important!</strong> Trucker will erase all existing data from the database table you're migrating to.
@@ -143,11 +143,11 @@ To run a given legacy migration (in my example above, addresses), just run <code
 
 #### Pluralization problems?
 
-The model I've been using so far as an example, <code>Address</code>, was not a cut-and-dry migration. When you run a Trucker migration, it gets the name of the model to use from the rake task, then does a series of conversions between symbol and string, pluralizing and depluralizing, in the file <code>lib/trucker.rb</code> (look inside the gem). I had to make adjustments to this file depending on whether or not my model's inflection pattern was straightforward and whether it ended in an s to begin with&mdash;for example, _address_ might be converted to _addresss_ or _addres_. Someday, if I have time, I'd like to revisit this, come up with a universal fix that works properly with any model name, and share it.
+The model I've been using so far as an example, `Address`, was not a cut-and-dry migration. When you run a Trucker migration, it gets the name of the model to use from the rake task, then does a series of conversions between symbol and string, pluralizing and depluralizing, in the file `lib/trucker.rb` (look inside the gem). I had to make adjustments to this file depending on whether or not my model's inflection pattern was straightforward and whether it ended in an s to begin with&mdash;for example, _address_ might be converted to _addresss_ or _addres_. Someday, if I have time, I'd like to revisit this, come up with a universal fix that works properly with any model name, and share it.
 
 #### Cleanup
 
-To keep things from complaining in production I had to remove my legacy models from <code>app/models</code> (I kept them inside my application, but outside of the standard Rails directories). Then I removed the line from my <code>application.rb</code> file. If you didn't include the dependency inside your <code>:development</code> group you'll also want to comment out or remove the reference from your <code>Gemfile</code>. You should now be ready to deploy your code. I followed this up by dumping my data from my development database and importing it into production.
+To keep things from complaining in production I had to remove my legacy models from `app/models` (I kept them inside my application, but outside of the standard Rails directories). Then I removed the line from my `application.rb` file. If you didn't include the dependency inside your `:development` group you'll also want to comment out or remove the reference from your `Gemfile`. You should now be ready to deploy your code. I followed this up by dumping my data from my development database and importing it into production.
 
 ### Conclusion
 

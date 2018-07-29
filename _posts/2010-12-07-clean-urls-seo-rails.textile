@@ -4,11 +4,11 @@ title: "Clean, search-friendly URLs for your Rails applications"
 excerpt: "Finding objects by nice-looking, search engine-friendly string parameters instead of the default object ID is easy with these Ruby gems."
 ---
 
-Slugs or permalinks are a common feature of blogging applications&mdash;instead of accessing data on your site with URLs like <code>http://mygreatrubybookstore.com/books/349</code> you can point users (and search engines) to pretty URLs like <code>http://mygreatrubybookstore.com/books/pragmatic-ruby</code>. And slugs aren't just for blog applications! I use these techniques liberally in my applications to add a little polish and usability. Group names, user profiles, and other models are fair game. This is an easy feature to implement, whether you're using one of several available Ruby gems. You can even roll your own if you'd like. Read on to get started.
+Slugs or permalinks are a common feature of blogging applications&mdash;instead of accessing data on your site with URLs like `http://mygreatrubybookstore.com/books/349` you can point users (and search engines) to pretty URLs like `http://mygreatrubybookstore.com/books/pragmatic-ruby`. And slugs aren't just for blog applications! I use these techniques liberally in my applications to add a little polish and usability. Group names, user profiles, and other models are fair game. This is an easy feature to implement, whether you're using one of several available Ruby gems. You can even roll your own if you'd like. Read on to get started.
 
 ## FriendlyId
 
-I have the most experience with [FriendlyId](https://github.com/norman/friendly_id). It's easy to install and configure, is under active development, includes [thorough documentation](http://norman.github.com/friendly_id/file.Guide.html), and overall has a good balance of features to simplicity. In addition to creating nice URLs, FriendlyId also handles reserved words like <code>new</code> and <code>edit</code> (you can add your own, too); non-unique slugs; caching; and scoped slugs (which I haven't had a need for yet).
+I have the most experience with [FriendlyId](https://github.com/norman/friendly_id). It's easy to install and configure, is under active development, includes [thorough documentation](http://norman.github.com/friendly_id/file.Guide.html), and overall has a good balance of features to simplicity. In addition to creating nice URLs, FriendlyId also handles reserved words like `new` and `edit` (you can add your own, too); non-unique slugs; caching; and scoped slugs (which I haven't had a need for yet).
 
 Let's say you've got an existing Book model, and you want to add FriendlyId to it. Install the gem to get started, then run the generator and, optionally, a migration to generate a cached version of the slug string to speed up queries:
 
@@ -40,7 +40,7 @@ Restart your application server and you're ready to go.
 
 ## ActsAsUrl
 
-ActsAsUrl, part of the [Stringex](https://github.com/rsl/stringex) collection of extensions to Ruby's String class, may be more beneficial to you if you need better Unicode support (as in, you want to translate common Unicode characters into more search-friendly terms). Check the README for some of the slick translations ActsAsUrl can do. You'll have to do a little more work&dash;once you've indicated your model's attribute for <code>acts_as_url</code>, you'll need to override <code>to_param</code>. This isn't too hard, but it's also not as turnkey as FriendlyId. If you need that translation support, though, ActsAsUrl should be worth the extra effort.
+ActsAsUrl, part of the [Stringex](https://github.com/rsl/stringex) collection of extensions to Ruby's String class, may be more beneficial to you if you need better Unicode support (as in, you want to translate common Unicode characters into more search-friendly terms). Check the README for some of the slick translations ActsAsUrl can do. You'll have to do a little more work&dash;once you've indicated your model's attribute for `acts_as_url`, you'll need to override `to_param`. This isn't too hard, but it's also not as turnkey as FriendlyId. If you need that translation support, though, ActsAsUrl should be worth the extra effort.
 
 ## Babosa
 
@@ -52,4 +52,4 @@ I'm including the venerable [permalink_fu](https://github.com/technoweenie/perma
 
 ## DIY
 
-Finally, I should acknowledge that yes, you can easily do this yourself in your model, by creating a method for the slug (probably using Rails' <code>parameterize</code> method) and overriding <code>to_param</code> to do lookups based on the slug instead of the <code>id</code> column. The benefit of a gem like one of these I've listed, though, is that you can apply slugs to as many different models in your application as you'd like, with minimum code duplication, and be able to focus on features more unique to your own project.
+Finally, I should acknowledge that yes, you can easily do this yourself in your model, by creating a method for the slug (probably using Rails' `parameterize` method) and overriding `to_param` to do lookups based on the slug instead of the `id` column. The benefit of a gem like one of these I've listed, though, is that you can apply slugs to as many different models in your application as you'd like, with minimum code duplication, and be able to focus on features more unique to your own project.

@@ -11,7 +11,7 @@ The good news is there are quite a few documentation tools out there. Here are t
 
 ### annotate-models
 
-The first tool is an oldie, but still works great: The [annotate-models](http://annotate-models.rubyforge.org)/ gem refers to your database schema and adds field details in the comments of the corresponding model. Install the gem, <code>cd</code> into your Rails project directory, and type <code>annotate</code> to add this documentation to your models. You can also document your tests, specs, and factories&mdash;see the [GitHub repository](http://github.com/ctran/annotate_models) for more details.
+The first tool is an oldie, but still works great: The [annotate-models](http://annotate-models.rubyforge.org)/ gem refers to your database schema and adds field details in the comments of the corresponding model. Install the gem, `cd` into your Rails project directory, and type `annotate` to add this documentation to your models. You can also document your tests, specs, and factories&mdash;see the [GitHub repository](http://github.com/ctran/annotate_models) for more details.
 
 ### RDoc
 
@@ -21,7 +21,7 @@ Now that you've got your models annotated (and have added some descriptive comme
   $ rake doc:app
 {% endhighlight %}
 
-Be sure to also edit the file <code>doc/READ_ME_FOR_APP</code>; that's what the Rake task uses for your documentation's starter file. Open <code>doc/app/index.html</code> in your browser to access your app's documentation.
+Be sure to also edit the file `doc/READ_ME_FOR_APP`; that's what the Rake task uses for your documentation's starter file. Open `doc/app/index.html` in your browser to access your app's documentation.
 
 ### Rails ERD
 

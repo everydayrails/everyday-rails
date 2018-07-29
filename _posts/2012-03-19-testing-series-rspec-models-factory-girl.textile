@@ -13,7 +13,7 @@ We've got all the tools we need for building a solid, reliable test suite&mdash;
 
 In this post, we'll complete the following tasks:
 
-* First we'll create a model spec for an existing model&mdash;in our case, the actual <code>Contact</code> model.
+* First we'll create a model spec for an existing model&mdash;in our case, the actual `Contact` model.
 * Next, we'll simplify the process of creating and maintaining test data with factories.
 * Finally, we'll write passing tests for a model's validations, class, and instance methods, and organize our spec in the process.
 
@@ -29,7 +29,7 @@ To get started, a model spec should include tests for the following:
 * data that fail validations should not be valid
 * class and instance methods perform as expected
 
-This is a good time to look at the basic structure of an RSpec model spec. I find it helpful to think of them as individual outlines. For example, let's look at our main <code>Contact</code> model's requirements:
+This is a good time to look at the basic structure of an RSpec model spec. I find it helpful to think of them as individual outlines. For example, let's look at our main `Contact` model's requirements:
 
 {% highlight ruby %}
 describe Contact
@@ -41,15 +41,15 @@ describe Contact
 
 We'll expand this outline in a few minutes, but this gives us quite a bit for starters. It's a simple spec for an admittedly simple model, but points to our first three best practices:
 
-* **Each example (a line beginning with <code>it</code>) only expects on thing.** Notice that I'm testing the <code>firstname</code> and </code>lastname</code> validations separately. This way, if an example fails, I know it's because of that _specific_ validation, and don't have to dig through RSpec's output for clues.
-* **Each example is explicit.** The descriptive string after <code>it</code> is technically optional in RSpec; however, omitting it makes your specs more difficult to read.
+* **Each example (a line beginning with `it`) only expects on thing.** Notice that I'm testing the `firstname` and </code>lastname</code> validations separately. This way, if an example fails, I know it's because of that _specific_ validation, and don't have to dig through RSpec's output for clues.
+* **Each example is explicit.** The descriptive string after `it` is technically optional in RSpec; however, omitting it makes your specs more difficult to read.
 * **Each example's description begins with a verb, not should.** _Should_ is redundant here, and clutters RSpec's output. Omitting it makes specs' output easier to read.
 
-With these best practices in mind, let's build a spec for the <code>Contact</code> model.
+With these best practices in mind, let's build a spec for the `Contact` model.
 
 ## Creating a model spec
 
-Open up the <code>spec</code> directory and, if necessary, create a subdirectory named <code>models</code>. Inside the subdirectory create a file named </code>contact_spec.rb</code> and add the following:
+Open up the `spec` directory and, if necessary, create a subdirectory named `models`. Inside the subdirectory create a file named </code>contact_spec.rb</code> and add the following:
 
 {% highlight ruby %}
 # spec/models/contact.rb
@@ -98,15 +98,15 @@ Finished in 0.00045 seconds
 
 Great! Four pending specs&mdash;let's make them pass.
 
-As we add additional models to the contacts manager, assuming we use Rails' <code>model</code> generator to do so, this file (along with an associated factory) will be added automatically. (If it doesn't go back and configure your application's generators now.)
+As we add additional models to the contacts manager, assuming we use Rails' `model` generator to do so, this file (along with an associated factory) will be added automatically. (If it doesn't go back and configure your application's generators now.)
 
 ## Generating test data with factories
 
 I won't spend a lot of time bad-mouthing fixtures&mdash;frankly, it's already been done. Long story short, there are two issues presented by fixtures I'd like to avoid: First, fixture data can be brittle and easily broken (meaning you spend about as much time maintaining your test data as you do your tests and actual code); and second, Rails bypasses Active Record when it loads fixture data into your test database. What does that mean? It means that important things like your models' validations are ignored. This is bad!
 
-Enter factories: Simple, flexible, building blocks for test data. If I had to point to a single component that helped me see the light toward testing more than anything else, it would be [Factory Girl](https://github.com/thoughtbot/factory_girl), an easy-to-use and easy-to-rely-on gem for creating test data without the brittleness of fixtures. Since we've got Factory Girl installed courtesy of the <code>factory_girl_rails</code> gem we installed earlier, we've got full access to factories in our app. Let's put them to work!
+Enter factories: Simple, flexible, building blocks for test data. If I had to point to a single component that helped me see the light toward testing more than anything else, it would be [Factory Girl](https://github.com/thoughtbot/factory_girl), an easy-to-use and easy-to-rely-on gem for creating test data without the brittleness of fixtures. Since we've got Factory Girl installed courtesy of the `factory_girl_rails` gem we installed earlier, we've got full access to factories in our app. Let's put them to work!
 
-Back in the <code>spec</code> directory, add another subdirectory named <code>factories</code>; within it, add the file </code>contacts.rb</code> with the following content:
+Back in the `spec` directory, add another subdirectory named `factories`; within it, add the file </code>contacts.rb</code> with the following content:
 
 {% highlight ruby %}
 # spec/factories/contacts.rb
@@ -118,7 +118,7 @@ FactoryGirl.define do
 end
 {% endhighlight %}
 
-This chunk of code gives us a _factory_ we can use throughout our specs. Essentially, whenever we create test data via <code>Factory(:contact)</code>, that contact's name will be John Doe. This is probably adequate for our first round of model specs, but I like to provide my specs with more random data. Enter the [Faker](http://rubygems.org/gems/faker) gem. Edit </code>contacts.rb</code> to include it:
+This chunk of code gives us a _factory_ we can use throughout our specs. Essentially, whenever we create test data via `Factory(:contact)`, that contact's name will be John Doe. This is probably adequate for our first round of model specs, but I like to provide my specs with more random data. Enter the [Faker](http://rubygems.org/gems/faker) gem. Edit </code>contacts.rb</code> to include it:
 
 {% highlight ruby %}
 # spec/factories/contacts.rb
@@ -132,9 +132,9 @@ FactoryGirl.define do
 end
 {% endhighlight %}
 
-Now our specs will use random, sometimes humorous names for each generated contact. Notice that I pass Faker's <code>first_name</code> method inside a block&mdash;Factory Girl considers these "lazy attributes" as opposed to the statically-added strings our initial factory had.
+Now our specs will use random, sometimes humorous names for each generated contact. Notice that I pass Faker's `first_name` method inside a block&mdash;Factory Girl considers these "lazy attributes" as opposed to the statically-added strings our initial factory had.
 
-Return to the <code>contact_spec.rb</code> file we set up a few minutes ago and locate the first example (</code>it "has a valid factory"</code>). We're going to write our first spec&mdash;essentially testing the factory we just created. Edit the example to look like the following:
+Return to the `contact_spec.rb` file we set up a few minutes ago and locate the first example (</code>it "has a valid factory"</code>). We're going to write our first spec&mdash;essentially testing the factory we just created. Edit the example to look like the following:
 
 {% highlight ruby %}
 # spec/models/contact_spec.rb
@@ -150,13 +150,13 @@ describe Contact do
 end
 {% endhighlight %}
 
-This single-line spec uses RSpec's <code>be_valid</code> matcher verify that our new factory does indeed return a valid contact.
+This single-line spec uses RSpec's `be_valid` matcher verify that our new factory does indeed return a valid contact.
 
 Run RSpec from the command line again and you should see one passing example, with three pending.
 
 ## Testing validations
 
-Validations are a good way to break into automated testing. These tests can usually be written in just a line or two of code, especially when we leverage the convenience of factories. Let's add some detail to our <code>firstname</code> validation spec:
+Validations are a good way to break into automated testing. These tests can usually be written in just a line or two of code, especially when we leverage the convenience of factories. Let's add some detail to our `firstname` validation spec:
 
 {% highlight ruby %}
 # spec/models/contact_spec.rb
@@ -165,11 +165,11 @@ it "is invalid without a firstname" do
 end
 {% endhighlight %}
 
-Note what we're doing with Factory Girl here: First, instead of the <code>Factory.create()</code> approach, we're using <code>Factory.build()</code>. Can you guess the difference? <code>Factory()</code> builds the model and saves it, while <code>Factory.build()</code> instantiates a new model, but doesn't save it. If we used </code>Factory()</code> in this example it would break before we could even run the test, due to the validation.
+Note what we're doing with Factory Girl here: First, instead of the `Factory.create()` approach, we're using `Factory.build()`. Can you guess the difference? `Factory()` builds the model and saves it, while `Factory.build()` instantiates a new model, but doesn't save it. If we used </code>Factory()</code> in this example it would break before we could even run the test, due to the validation.
 
-Second, we use the <code>Contact</code> factory's defaults for every attribute except <code>:firstname</code>, and for that we pass <code>nil</code> to give it no value. In other words, instead of the default name of _John Doe_ our </code>Contact</code> factory would normally give us, it returns _John_. This is an incredibly convenient feature, especially when testing at the model level. You'll use it a lot in your tests&mdash;starting with models, but more in other tests, too.
+Second, we use the `Contact` factory's defaults for every attribute except `:firstname`, and for that we pass `nil` to give it no value. In other words, instead of the default name of _John Doe_ our </code>Contact</code> factory would normally give us, it returns _John_. This is an incredibly convenient feature, especially when testing at the model level. You'll use it a lot in your tests&mdash;starting with models, but more in other tests, too.
 
-Run RSpec again; we should be up to two passing specs with two pending. We can use the same approach to test the <code>:lastname</code> validation.
+Run RSpec again; we should be up to two passing specs with two pending. We can use the same approach to test the `:lastname` validation.
 
 {% highlight ruby %}
   # spec/models/contact_spec.rb
@@ -182,7 +182,7 @@ You may be thinking that these tests are relatively pointless&mdash;how hard is 
 
 In addition, testing validations becomes more important when they are more complex than simply validating presence or uniqueness. For example, let's say we want to make sure we don't duplicate a phone number for a user&mdash;their home, office, and mobile phones should all be unique to them. How might you test that?
 
-In your <code>Phone</code> model spec, you might have the following example:
+In your `Phone` model spec, you might have the following example:
 
 {% highlight ruby %}
 # spec/models/phone_spec.rb
@@ -193,7 +193,7 @@ it "does not allow duplicate phone numbers per contact" do
 end
 {% endhighlight %}
 
-And make it pass with this validation in your <code>Phone</code> model:
+And make it pass with this validation in your `Phone` model:
 
 {% highlight ruby %}
 # app/models/phone.rb
@@ -201,14 +201,14 @@ validates :phone, uniqueness: { scope: :contact_id }
 {% endhighlight %}
 
 <div class="alert alert-info">
-That's not a typo in the previous sample spec&mdash;<code>Factory()</code> is a shortcut for </code>Factory.create()</code>.
+That's not a typo in the previous sample spec&mdash;`Factory()` is a shortcut for </code>Factory.create()</code>.
 </div>
 
 Of course, validations can be more complicated than just requiring a specific scope. Yours might involve a complex regular expression or a custom method. Get in the habit of testing these validations&mdash;not just the happy paths where everything is valid, but also error conditions.
 
 ## Testing instance methods
 
-It would be convenient to only have to refer to <code>@contact.name</code> to render our contacts' full names instead of creating the string every time; let's implement that feature in our </code>Contact</code> class now:
+It would be convenient to only have to refer to `@contact.name` to render our contacts' full names instead of creating the string every time; let's implement that feature in our </code>Contact</code> class now:
 
 {% highlight ruby %}
   # app/models/contact.rb
@@ -230,7 +230,7 @@ end
 
 ## Testing class methods and scopes
 
-Let's test the <code>Contact</code> model's ability to return a list of contacts whose names begin with a given letter. For example, if I click _S_ then I should get _Smith, Sumner_, and so on, but not _Jones_. There are a number of ways I could implement this&mdash;for demonstration purposes I'll show one.
+Let's test the `Contact` model's ability to return a list of contacts whose names begin with a given letter. For example, if I click _S_ then I should get _Smith, Sumner_, and so on, but not _Jones_. There are a number of ways I could implement this&mdash;for demonstration purposes I'll show one.
 
 First, let's say we choose to add this functionality via a class method like the following:
 
@@ -241,7 +241,7 @@ def self.by_letter(letter)
 end
 {% endhighlight %}
 
-To test this, let's add the following to our <code>Contact</code> spec:
+To test this, let's add the following to our `Contact` spec:
 
 {% highlight ruby %}
 # spec/models/contact_spec.rb
@@ -291,13 +291,13 @@ describe Contact do
 end
 {% endhighlight %}
 
-This spec uses RSpec's <code>include</code> matcher to determine if the array returned by <code>Contact.by_letter("J")</code>&mdash;and it passes! We're testing not just for ideal results&mdash;the user selects a letter with results&mdash;but also for letters with no results. However, a problem is brewing in our spec&mdash;can you spot it?
+This spec uses RSpec's `include` matcher to determine if the array returned by `Contact.by_letter("J")`&mdash;and it passes! We're testing not just for ideal results&mdash;the user selects a letter with results&mdash;but also for letters with no results. However, a problem is brewing in our spec&mdash;can you spot it?
 
 ## DRYer specs with before and after
 
 Our spec currently has some redundancy: We create the same three objects in each example. Just as in your application code, the DRY principle applies to your tests (with some exceptions; see below). Let's use a few RSpec tricks to clean things up.
 
-The first thing I'm going to do is create a <code>describe</code> block _within_ my <code>describe Contact</code> block to focus on the filter feature. The general outline will look like this:
+The first thing I'm going to do is create a `describe` block _within_ my `describe Contact` block to focus on the filter feature. The general outline will look like this:
 
 {% highlight ruby %}
 # spec/models/contact_spec.rb
@@ -313,7 +313,7 @@ describe Contact do
 end
 {% endhighlight %}
 
-Let's break things down further by including a couple of <code>context</code> blocks&mdash;one for matching letters, one for non-matching:
+Let's break things down further by including a couple of `context` blocks&mdash;one for matching letters, one for non-matching:
 
 {% highlight ruby %}
 # spec/models/contact_spec.rb
@@ -335,9 +335,9 @@ describe Contact do
 end
 {% endhighlight %}
 
-While <code>describe</code> and <code>context</code> are technically interchangeable, I prefer to use them like this&mdash;specifically, <code>describe</code> outlines a function of my class; <code>context</code> outlines a specific state. In my case, I have a state of a letter with matching results selected, and a state with a non-matching letter selected.
+While `describe` and `context` are technically interchangeable, I prefer to use them like this&mdash;specifically, `describe` outlines a function of my class; `context` outlines a specific state. In my case, I have a state of a letter with matching results selected, and a state with a non-matching letter selected.
 
-As you may be able to spot, we're creating an outline of examples here to help us sort similar examples together. This makes for a more readable spec. First, let's finish cleaning up our reorganized spec with the help of a <code>before</code> hook:
+As you may be able to spot, we're creating an outline of examples here to help us sort similar examples together. This makes for a more readable spec. First, let's finish cleaning up our reorganized spec with the help of a `before` hook:
 
 {% highlight ruby %}
 # spec/models/contact_spec.rb
@@ -365,11 +365,11 @@ describe Contact do
 end
 {% endhighlight %}
 
-RSpec's <code>before</code> hooks are vital to cleaning up unneeded redundancy from your specs. As you might guess, the code contained within the <code>before</code> block is run before _each_ example _within the <code>describe</code>_ block. Since I've indicated that the block should be run before _each_ example, RSpec will create them for each example individually. In this example, my <code>before</code> block will _only_ be called within the <code>describe "filter last name by letter"</code> block&mdash;in other words, my original validation specs will not have access to <code>@smith</code>, <code>@jones</code>, and <code>@johnson</code>.
+RSpec's `before` hooks are vital to cleaning up unneeded redundancy from your specs. As you might guess, the code contained within the `before` block is run before _each_ example _within the `describe`_ block. Since I've indicated that the block should be run before _each_ example, RSpec will create them for each example individually. In this example, my `before` block will _only_ be called within the `describe "filter last name by letter"` block&mdash;in other words, my original validation specs will not have access to `@smith`, `@jones`, and `@johnson`.
 
-Speaking of my three mock contacts, note that since they are no longer being created within each example, I have to assign them to instance variables, so they're accessible outside of the <code>before</code> block.
+Speaking of my three mock contacts, note that since they are no longer being created within each example, I have to assign them to instance variables, so they're accessible outside of the `before` block.
 
-If your spec requires some sort of post-example teardown&mdash;disconnecting from an external service, say&mdash;you can also use an <code>after</code> block to clean up after your examples. Since RSpec handles cleaning up the database for me, I rarely use <code>after</code>. <code>before</code>, though, is indispensable.
+If your spec requires some sort of post-example teardown&mdash;disconnecting from an external service, say&mdash;you can also use an `after` block to clean up after your examples. Since RSpec handles cleaning up the database for me, I rarely use `after`. `before`, though, is indispensable.
 
 Okay, let's see that full, organized spec:
 
@@ -437,11 +437,11 @@ Finished in 0.33642 seconds
 
 #### How DRY is too DRY?
 
-We've spent a lot of time in this chapter organizing specs into easy-to-follow blocks. Like I said, <code>before</code> blocks are key to making this happen&mdash;but they're also easy to abuse.
+We've spent a lot of time in this chapter organizing specs into easy-to-follow blocks. Like I said, `before` blocks are key to making this happen&mdash;but they're also easy to abuse.
 
-When setting up test conditions for your example, I think it's okay to bend the DRY principle in the interest of readability. If you find yourself scrolling up and down a large spec file in order to see what it is you're testing, consider duplicating your test data setup within smaller <code>describe</code> blocks&mdash;or even within examples themselves.
+When setting up test conditions for your example, I think it's okay to bend the DRY principle in the interest of readability. If you find yourself scrolling up and down a large spec file in order to see what it is you're testing, consider duplicating your test data setup within smaller `describe` blocks&mdash;or even within examples themselves.
 
-That said, well-named variables can go a long way as well&mdash;for example, in the spec above we used <code>@jones</code> and <code>@johnson</code> as test contacts. These are much easier to follow than <code>@user1</code> and <code>@user2</code> would have been.
+That said, well-named variables can go a long way as well&mdash;for example, in the spec above we used `@jones` and `@johnson` as test contacts. These are much easier to follow than `@user1` and `@user2` would have been.
 
 </div>
 
@@ -451,7 +451,7 @@ And that's how I test models, but we've covered a lot of other important techniq
 
 * **Use active, explicit expectations:** Use verbs to explain what an example's results should be. Only check for one result per example.
 * **Test for what _should_ and for what _should not_ happen:** Think about both paths when writing examples, and test accordingly.
-* **Organize your specs for good readability:** Use <code>describe</code> and <code>context</code> to sort similar examples into an outline format, and <code>before</code> and <code>after</code> blocks to remove duplication. However, in the case of tests readability trumps DRY&mdash;if you find yourself having to scroll up and down your spec too much, it's okay to repeat yourself a bit.
+* **Organize your specs for good readability:** Use `describe` and `context` to sort similar examples into an outline format, and `before` and `after` blocks to remove duplication. However, in the case of tests readability trumps DRY&mdash;if you find yourself having to scroll up and down your spec too much, it's okay to repeat yourself a bit.
 
 With a solid collection of model specs incorporated into your app, you're well on your way to more trustworthy code. Next time we'll apply and expand upon the techniques covered here to application controllers.
 

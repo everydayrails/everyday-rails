@@ -23,7 +23,7 @@ Then fire up the server:
   ==> http://127.0.0.1:1080
 {% endhighlight %}
 
-To configure your app to use MailCatcher in development, you'll need to add your SMTP details (served from <code>localhost</code>, port 1025). For simplicity's sake I'm just adding this to my <code>config/environments/development.rb</code> file here; when implementing in real apps I've created an initializer that configures my SMTP settings depending on environment (MailCatcher in development; generally GMail in production).
+To configure your app to use MailCatcher in development, you'll need to add your SMTP details (served from `localhost`, port 1025). For simplicity's sake I'm just adding this to my `config/environments/development.rb` file here; when implementing in real apps I've created an initializer that configures my SMTP settings depending on environment (MailCatcher in development; generally GMail in production).
 
 {% highlight ruby %}
   # config/environments/development.rb
@@ -35,7 +35,7 @@ To configure your app to use MailCatcher in development, you'll need to add your
     :domain => "everydayrails.com" }
 {% endhighlight %}
 
-Now, whenever you trigger a mailer, the message will be caught by MailCatcher. Fire up the web console at <code>http://127.0.0.1:1080</code> to have a look at the message in HTML, plain text, or raw source.
+Now, whenever you trigger a mailer, the message will be caught by MailCatcher. Fire up the web console at `http://127.0.0.1:1080` to have a look at the message in HTML, plain text, or raw source.
 
 ### MockSMTP
 

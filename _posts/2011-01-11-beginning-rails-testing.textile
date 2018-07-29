@@ -42,7 +42,7 @@ I'm a big fan of factories&mdash;they make it simple to specify exactly what you
   end
 {% endhighlight %}
 
-Now, as long as an <code>article</code> is invalid without a name, I can use the <code>invalid_article</code> factory in any test that has something to do with, you guessed it, an invalid article (for example, testing to make sure a <code>create</code> controller method doesn't process an incomplete entry).
+Now, as long as an `article` is invalid without a name, I can use the `invalid_article` factory in any test that has something to do with, you guessed it, an invalid article (for example, testing to make sure a `create` controller method doesn't process an incomplete entry).
 
 The other part of the code above that might look new is the use of the Faker gem in factories. A [Railscast on populating databases](http://railscasts.com/episodes/126-populating-a-database) showed how to use this handy gem; I've taken to using [Fast Faker](https://github.com/EmmanuelOga/ffaker), which has the same API but is much speedier.
 
@@ -50,7 +50,7 @@ The other part of the code above that might look new is the use of the Faker gem
 
 Your tests should be easy to read. They should also test one thing at a time. The best resource I've found that explains how to put this in practice is [RSpec Best Practices](http://blog.carbonfive.com/2010/10/21/rspec-best-practices)/, written last October by Jared Carroll at Carbon Five. Read this article, then revisit the tests you've written to figure out how you can make them cleaner.
 
-I also like to switch my RSpec output format to _documentation_ so I can see a nice outline of my tests. To do this in RSpec 2, edit your project's <code>.rspec</code> file and add the line
+I also like to switch my RSpec output format to _documentation_ so I can see a nice outline of my tests. To do this in RSpec 2, edit your project's `.rspec` file and add the line
 
 {% highlight ruby %}
   --format documentation

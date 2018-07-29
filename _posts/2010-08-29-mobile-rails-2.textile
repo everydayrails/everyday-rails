@@ -14,7 +14,7 @@ The Railscast is an excellent start, but after watching [Peepcode's episode on j
 
 ## Layout file
 
-My mobile layout file is mostly the same as Railscasts' version; I just converted it to Haml. I had a problem with indentation when I used <code>html2haml</code>, but that was easily fixed (note: like the Railscasts code, I'm also using the Nifty Generators gem). I removed the line that generates a Back button in the layout because based on what I know about jQTouch I think it needs to be in the view that needs a Back button to exist. This could be refactored but I'll worry about that later.
+My mobile layout file is mostly the same as Railscasts' version; I just converted it to Haml. I had a problem with indentation when I used `html2haml`, but that was easily fixed (note: like the Railscasts code, I'm also using the Nifty Generators gem). I removed the line that generates a Back button in the layout because based on what I know about jQTouch I think it needs to be in the view that needs a Back button to exist. This could be refactored but I'll worry about that later.
 
 Here's what my layout currently looks like, using jQTouch's Apple theme:
 
@@ -46,7 +46,7 @@ Here's what my layout currently looks like, using jQTouch's Apple theme:
 
 ## Controller
 
-This is another thing I picked up from Peepcode: Code for mobile views must be rendered without a layout; jQTouch then correctly replaces the <code>current</code> div with the code from the server and properly does the right-to-left slide transition.
+This is another thing I picked up from Peepcode: Code for mobile views must be rendered without a layout; jQTouch then correctly replaces the `current` div with the code from the server and properly does the right-to-left slide transition.
 
 {% highlight ruby %}
   # app/controllers/recipes_controller.rb
@@ -63,7 +63,7 @@ This is another thing I picked up from Peepcode: Code for mobile views must be r
 
 ## Views
 
-First, here's what the <code>index</code> method's view looks like. It returns a basic unordered list of my recipes, each with the <code>arrow</code> style that jQTouch uses.
+First, here's what the `index` method's view looks like. It returns a basic unordered list of my recipes, each with the `arrow` style that jQTouch uses.
 
 {% highlight haml %}
   # app/views/recipes/index.mobile.haml
@@ -77,7 +77,7 @@ First, here's what the <code>index</code> method's view looks like. It returns a
         = link_to recipe.total_time, recipe
 {% endhighlight %}
 
-Second, the view for my <code>show</code> method. Note that the <code>.toolbar</code> code is duplicated here; I haven't done any refactoring of this yet but will eventually create a helper to handle this. Note I have the <code>.toolbar</code> here, with a Back button.
+Second, the view for my `show` method. Note that the `.toolbar` code is duplicated here; I haven't done any refactoring of this yet but will eventually create a helper to handle this. Note I have the `.toolbar` here, with a Back button.
 
 {% highlight haml %}
   # app/views/recipes/show.mobile.haml

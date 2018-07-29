@@ -20,7 +20,7 @@ MailForm is for Rails developers who would like a basic, customizable contact fo
 
 First things first&mdash;make sure you've got outgoing mail configured to your liking. I use Google-hosted mail for production, and [MockSMTP or Mailcatcher](http://everydayrails.com/2011/05/26/rails-smtp-development.html) in development. (One gotcha for using Google Apps for Domains to deliver mail: Google will always change the sender's e-mail address to the address of the account you're using for SMTP. To my knowledge there's no way to change this, at least not with the free service level.)
 
-Once you've got that out of the way, set up MailForm as [outlined on the project's GitHub page](https://github.com/plataformatec/mail_form). Specifically, you'll install the gem via Bundler, then create a model for your contact form. Note the model inherits from <code>MailForm::Base</code>, not ActiveRecord.
+Once you've got that out of the way, set up MailForm as [outlined on the project's GitHub page](https://github.com/plataformatec/mail_form). Specifically, you'll install the gem via Bundler, then create a model for your contact form. Note the model inherits from `MailForm::Base`, not ActiveRecord.
 
 The GitHub instructions also include tips on localizing the form, validating that e-mail addresses are properly formatted, deterring spam, and adding your own fields. This is just a matter of adding attributes to your model (with corresponding fields in your form view, below). Once you've gotten this far you can test your new mail form in the Rails console&mdash;to implement your final interface, though, you'll need a controller and a couple of views. Here's how I did it.
 
@@ -63,9 +63,9 @@ And my actual controller:
   end
 {% endhighlight %}
 
-One thing I decided to do here that may be atypical: I am not redirecting following a successfully sent message; rather, I've got a view for my <code>create</code> method that I'll render upon completion of the method.
+One thing I decided to do here that may be atypical: I am not redirecting following a successfully sent message; rather, I've got a view for my `create` method that I'll render upon completion of the method.
 
-My views are relatively basic. <code>new.html</code>, written here using Haml and [SimpleForm](https://github.com/plataformatec/simple_form) (another great Platforma Tec project), is doing a couple of things. First, it is specifying the fields are not required&mdash;this is for SimpleForm's sake; the validations in the model still do their thing. Second is the <code>hidden</code> CSS class I'm wrapping around my _nickname_ field. This field is used by MailForm to determine if a message is coming from a spambot. The theory goes that if the field is hidden to humans, and the field is filled in, the message is probably spam. So far this has kept unwanted messages from hitting my inbox for this project.
+My views are relatively basic. `new.html`, written here using Haml and [SimpleForm](https://github.com/plataformatec/simple_form) (another great Platforma Tec project), is doing a couple of things. First, it is specifying the fields are not required&mdash;this is for SimpleForm's sake; the validations in the model still do their thing. Second is the `hidden` CSS class I'm wrapping around my _nickname_ field. This field is used by MailForm to determine if a message is coming from a spambot. The theory goes that if the field is hidden to humans, and the field is filled in, the message is probably spam. So far this has kept unwanted messages from hitting my inbox for this project.
 
 {% highlight haml %}
   # app/views/contact_forms/new.html.haml
@@ -80,9 +80,9 @@ My views are relatively basic. <code>new.html</code>, written here using Haml an
 
 I don't have any custom fields, but if I did including them would just be a matter of adding a line for each to my form, using the appropriate SimpleForm helper.
 
-If you're not using SimpleForm, just use a regular Rails <code>form_for</code> tag, and create your form's labels and fields accordingly.
+If you're not using SimpleForm, just use a regular Rails `form_for` tag, and create your form's labels and fields accordingly.
 
-My view for the <code>create</code> method is very simple.
+My view for the `create` method is very simple.
 
 {% highlight haml %}
   # app/views/contact_forms/create.html.haml

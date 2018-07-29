@@ -38,20 +38,20 @@ and create a test application:
   $ rails new mytestapp
 {% endhighlight %}
 
-We're almost done. Next create a <code>.rvmrc</code> file to tell RVM which gemset to use in the new application. Note that I'm using Ruby 1.9.2, which I believe is now a requirement in Rails 3.1.
+We're almost done. Next create a `.rvmrc` file to tell RVM which gemset to use in the new application. Note that I'm using Ruby 1.9.2, which I believe is now a requirement in Rails 3.1.
 
 {% highlight bash %}
   $ echo "rvm use 192@rails31beta" > mytestapp/.rvmrc
 {% endhighlight %}
 
-Open the application's directory, run <code>bundle</code> to install the default gems, and you're off to the races.
+Open the application's directory, run `bundle` to install the default gems, and you're off to the races.
 
 {% highlight bash %}
   $ cd mytestapp
   $ bundle
 {% endhighlight %}
 
-As you look around the application structure, take a look at your <code>Gemfile</code> and the new <code>assets</code> directory inside <code>app/</code>. This is where most of the new features that will affect Rails developers at all levels are located.
+As you look around the application structure, take a look at your `Gemfile` and the new `assets` directory inside `app/`. This is where most of the new features that will affect Rails developers at all levels are located.
 
 ### Where to go from here?
 

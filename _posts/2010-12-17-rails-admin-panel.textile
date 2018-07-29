@@ -12,11 +12,11 @@ Three things you should be aware of before you get started:
 # It recommends that you use Devise for authentication in your application, in order to provide a layer of protection to your data (users must be logged in to access the admin interface). I recommend this, too.
 # You'll probably also want to do some additional locking down if your app has multiple roles or user levels (that is, you'll probably want to restrict access to the admin panel to your site's admins).
 
-With those conditions addressed, RailsAdmin is really easy to install. The [documentation](https://github.com/sferik/rails_admin/blob/master/README.mkd) is well-done and will walk you through the initial steps of adding the engine to your application. Once you've followed the initial setup steps, fire up your application's server and load up <code>/admin</code> to poke around.
+With those conditions addressed, RailsAdmin is really easy to install. The [documentation](https://github.com/sferik/rails_admin/blob/master/README.mkd) is well-done and will walk you through the initial steps of adding the engine to your application. Once you've followed the initial setup steps, fire up your application's server and load up `/admin` to poke around.
 
 ### Authorization
 
-As I mentioned, if your application has multiple users of varying roles, you'll probably want to apply an authorization layer to RailsAdmin. The documentation outlines how to do this using Declarative Authorization, but ultimately how you configure authorization will be up to you and how your app is set up. In my application I used to try out RailsAdmin, using CanCan and a very basic roles system (just an <code>is_admin</code> boolean in my User model), I set up the initializer like this:
+As I mentioned, if your application has multiple users of varying roles, you'll probably want to apply an authorization layer to RailsAdmin. The documentation outlines how to do this using Declarative Authorization, but ultimately how you configure authorization will be up to you and how your app is set up. In my application I used to try out RailsAdmin, using CanCan and a very basic roles system (just an `is_admin` boolean in my User model), I set up the initializer like this:
 
 {% highlight ruby %}
   # config/initializers/rails_admin.rb
@@ -38,6 +38,6 @@ As I mentioned, if your application has multiple users of varying roles, you'll 
 
 ### Limitations
 
-RailsAdmin is a work in progress, and you'll note in the project's [issues on GitHub](https://github.com/sferik/rails_admin/issues) that several features are pending. One particular gotcha to be aware of: If you're already using the <code>admin</code> namespace in your app, you'll need to do some code juggling since RailsAdmin uses the same namespace and does not currently have a way to customize this. There are also some model relations that aren't yet supported, such as polymorphic and <code>has_many :through</code>. The Devise dependency will keep some from being able to use RailsAdmin. The good news is RailsAdmin is in very active development right now, particularly with an eye toward Rails 3.1, so many of these issues will hopefully get addressed in a timely fashion.
+RailsAdmin is a work in progress, and you'll note in the project's [issues on GitHub](https://github.com/sferik/rails_admin/issues) that several features are pending. One particular gotcha to be aware of: If you're already using the `admin` namespace in your app, you'll need to do some code juggling since RailsAdmin uses the same namespace and does not currently have a way to customize this. There are also some model relations that aren't yet supported, such as polymorphic and `has_many :through`. The Devise dependency will keep some from being able to use RailsAdmin. The good news is RailsAdmin is in very active development right now, particularly with an eye toward Rails 3.1, so many of these issues will hopefully get addressed in a timely fashion.
 
 All in all, RailsAdmin has great potential to save you time when developing Rails software, and even more time when managing the data your software contains.

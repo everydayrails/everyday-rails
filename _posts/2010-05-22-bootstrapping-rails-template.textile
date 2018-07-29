@@ -4,7 +4,7 @@ title: Bootstrapping Rails with an app template
 excerpt: "Now that you've seen how I configure my Rails applications out of the gate, here's a way to do the same thing with one command."
 ---
 
-In my first post I walked through [the steps I take when creating a Rails application from scratch](/2010/05/19/bootstrapping-a-rails-app.html). I should clarify that those are the steps I _would_ take if it weren't for app templates, a very useful feature introduced in Rails 2.3. Simply put, create a Ruby file like the following and put it somewhere you can access it--in this example I'll just keep it in my Home folder on my Mac, and call it <code>rails_template.rb</code>:
+In my first post I walked through [the steps I take when creating a Rails application from scratch](/2010/05/19/bootstrapping-a-rails-app.html). I should clarify that those are the steps I _would_ take if it weren't for app templates, a very useful feature introduced in Rails 2.3. Simply put, create a Ruby file like the following and put it somewhere you can access it--in this example I'll just keep it in my Home folder on my Mac, and call it `rails_template.rb`:
 
 {% highlight ruby %}
 # rails_template.rb

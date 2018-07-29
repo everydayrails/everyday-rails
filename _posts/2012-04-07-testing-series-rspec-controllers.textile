@@ -54,12 +54,12 @@ If you've been following along with this series, you may notice similarities to 
 
 * The description of the example is written in explicit, active language.
 * The example only expects one thing: After the post request is processed, a redirect should be returned to the browser.
-* A factory generates test data to pass to the controller method; note the use of Factory Girl's <code>attributes_for</code> option, which generates a hash of values as opposed to a Ruby object.
+* A factory generates test data to pass to the controller method; note the use of Factory Girl's `attributes_for` option, which generates a hash of values as opposed to a Ruby object.
 
 However, there are also a couple of new things to look at:
 
-* The basic syntax of a controller spec&mdash;it's REST method (<code>post</code>), controller method (<code>:create</code>), and, optionally, parameters being passed to the method.
-* The aforementioned <code>attributes_for</code> call to Factory Girl&mdash;not rocket science, but worth mentioning again because I had a habit early on of forgetting to use it versus default factories.
+* The basic syntax of a controller spec&mdash;it's REST method (`post`), controller method (`:create`), and, optionally, parameters being passed to the method.
+* The aforementioned `attributes_for` call to Factory Girl&mdash;not rocket science, but worth mentioning again because I had a habit early on of forgetting to use it versus default factories.
 
 ## Organization
 
@@ -99,7 +99,7 @@ describe ContactsController do
 end
 {% endhighlight %}
 
-And so on. As in our model specs, we can use RSpec's <code>describe</code> and <code>context</code> blocks to organize examples into a clean hierarchy, based on a controller's actions and the context we're testing&mdash;in this case, the happy path (a user passed valid attributes to the controller) and the unhappy path (a user passed invalid or incomplete attributes). If your application includes an authentication or authorization layer, you can include these as additional contexts&mdash;say, testing with and without a logged-in user, or testing based on a user's assigned role within the app.
+And so on. As in our model specs, we can use RSpec's `describe` and `context` blocks to organize examples into a clean hierarchy, based on a controller's actions and the context we're testing&mdash;in this case, the happy path (a user passed valid attributes to the controller) and the unhappy path (a user passed invalid or incomplete attributes). If your application includes an authentication or authorization layer, you can include these as additional contexts&mdash;say, testing with and without a logged-in user, or testing based on a user's assigned role within the app.
 
 With some organization in place, let's go over some things you might want to test in your application and how those tests would actually work.
 
@@ -125,7 +125,7 @@ factory :invalid_contact, parent: :contact do |f|
 end
 {% endhighlight %}
 
-Notice the subtle difference: The <code>:invalid_contact</code> factory uses the <code>:contact</code> factory as a _parent_. It replaces the specified attributes (in this case, <code>firstname</code> with its own; everything else will defer to the original <code>:contact</code> factory.
+Notice the subtle difference: The `:invalid_contact` factory uses the `:contact` factory as a _parent_. It replaces the specified attributes (in this case, `firstname` with its own; everything else will defer to the original `:contact` factory.
 
 <div class="alert alert-info">
 #### Setting up session data
@@ -135,7 +135,7 @@ To date, the little address book app we've built is pretty basic. It doesn't eve
 
 ### Testing GET methods
 
-A standard Rails controller is going to have four GET-based methods: <code>#index</code>, <code>#show</code>, <code>#new</code>, and <code>#edit</code>. Looking at the outline started above we can add the following tests:
+A standard Rails controller is going to have four GET-based methods: `#index`, `#show`, `#new`, and `#edit`. Looking at the outline started above we can add the following tests:
 
 {% highlight ruby %}
 # spec/controllers/contacts_controller_spec.rb
@@ -168,7 +168,7 @@ describe "GET #show" do
 end
 {% endhighlight %}
 
-Pretty simple stuff for the methods that, typically, have the lightest load to carry in controllers. In this address book app, the <code>new</code> method is a little more complicated, though&mdash;it's building some new phones to be nested in the contact information form:
+Pretty simple stuff for the methods that, typically, have the lightest load to carry in controllers. In this address book app, the `new` method is a little more complicated, though&mdash;it's building some new phones to be nested in the contact information form:
 
 {% highlight ruby %}
 # app/controllers/contacts_controller.rb
@@ -203,7 +203,7 @@ The point here is if your controller methods are doing things besides what a gen
 
 ### Testing POST methods
 
-Let's move on to our controller's <code>:create</code> method. Referring back to our outline, we've got two contexts to test: When a user passes in attributes for a valid contact, and when an invalid contact is entered. The resulting examples look something like this:
+Let's move on to our controller's `:create` method. Referring back to our outline, we've got two contexts to test: When a user passes in attributes for a valid contact, and when an invalid contact is entered. The resulting examples look something like this:
 
 {% highlight ruby %}
 # spec/controllers/contacts_controller_spec.rb
@@ -242,11 +242,11 @@ end
 
 {% endhighlight %}
 
-Let's talk about that <code>expect {}</code> Proc for a minute. RSpec's readability shines here&mdash;except this code to (or to not) do something. This one little example succinctly tests that an object is created and stored. (If Proc objects seem magical to you, refer to [this post by Alan Skorkin](http://www.skorks.com/2010/05/ruby-procs-and-lambdas-and-the-difference-between-them)/ and [this one by Robert Sosinski](http://www.robertsosinski.com/2008/12/21/understanding-ruby-blocks-procs-and-lambdas)/ to learn more.) Become familiar with this technique, as it'll be very useful in testing a variety of methods in controllers, models, and eventually at the integration level.
+Let's talk about that `expect {}` Proc for a minute. RSpec's readability shines here&mdash;except this code to (or to not) do something. This one little example succinctly tests that an object is created and stored. (If Proc objects seem magical to you, refer to [this post by Alan Skorkin](http://www.skorks.com/2010/05/ruby-procs-and-lambdas-and-the-difference-between-them)/ and [this one by Robert Sosinski](http://www.robertsosinski.com/2008/12/21/understanding-ruby-blocks-procs-and-lambdas)/ to learn more.) Become familiar with this technique, as it'll be very useful in testing a variety of methods in controllers, models, and eventually at the integration level.
 
 ### Testing PUT methods
 
-On to our controller's <code>update</code> method, where we need to check on a couple of  things&mdash;first, that the attributes passed into the method get assigned to the model we want to update; and second, that the redirect works as we want. Then we need to test that those things _don't_ happen if invalid attributes are passed through the params:
+On to our controller's `update` method, where we need to check on a couple of  things&mdash;first, that the attributes passed into the method get assigned to the model we want to update; and second, that the redirect works as we want. Then we need to test that those things _don't_ happen if invalid attributes are passed through the params:
 
 {% highlight ruby %}
 # spec/controllers/contacts_controller_spec.rb
@@ -301,11 +301,11 @@ end
 # rest of spec omitted ...
 {% endhighlight %}
 
-The examples I want to point out here are the two that verify whether or not an object's attributes are actually changed by the <code>update</code> method. Note that we have to call <code>reload</code> on <code>@contact</code> to check that our updates are actually persisted.
+The examples I want to point out here are the two that verify whether or not an object's attributes are actually changed by the `update` method. Note that we have to call `reload` on `@contact` to check that our updates are actually persisted.
 
 ### Testing DELETE methods
 
-Testing <code>destroy</code> is relatively straightforward:
+Testing `destroy` is relatively straightforward:
 
 {% highlight ruby %}
 # spec/controllers/contacts_controller_spec.rb
@@ -332,7 +332,7 @@ end
 # rest of spec omitted ...
 {% endhighlight %}
 
-By now you should be able to correctly guess what everything's doing. The first expectation checks to see if the <code>destroy</code> method in the controller actually deleted the object; the second expectation confirms that the user is redirected back to the index upon success.
+By now you should be able to correctly guess what everything's doing. The first expectation checks to see if the `destroy` method in the controller actually deleted the object; the second expectation confirms that the user is redirected back to the index upon success.
 
 ## Summary
 

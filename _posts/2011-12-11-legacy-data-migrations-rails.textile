@@ -7,8 +7,8 @@ tags: legacy data-migration rails-rescue
 
 A few months back I shared [how I used Trucker to migrate data from a legacy Rails application into a more current one](http://everydayrails.com/2011/09/16/rails-legacy-data-migration-trucker.html). This method works pretty well if your data is reasonably straightforward, but as I noted it hiccups on a couple of things:
 
-* Trucker wipes tables in your new data tables before migrating legacy data. This can be an issue if you're merging legacy data into data you want to keep and would require you to edit the gem. (In my case, I've been in the process of merging two Rails 2.3 applications into a single Rails 3.x code base. The first one was deployed in August; the second in a few weeks. Since the two legacy applications share users there will be overlap in my <code>users</code> table&mdash;rather than overwrite, I need to acknowledge the existing users and process accordingly.)
-* Due to the way Trucker handles the way tables are named in Rails applications, you may have problems with models like <code>Address</code>. The best solution is again to tweak the gem's code.
+* Trucker wipes tables in your new data tables before migrating legacy data. This can be an issue if you're merging legacy data into data you want to keep and would require you to edit the gem. (In my case, I've been in the process of merging two Rails 2.3 applications into a single Rails 3.x code base. The first one was deployed in August; the second in a few weeks. Since the two legacy applications share users there will be overlap in my `users` table&mdash;rather than overwrite, I need to acknowledge the existing users and process accordingly.)
+* Due to the way Trucker handles the way tables are named in Rails applications, you may have problems with models like `Address`. The best solution is again to tweak the gem's code.
 * Trucker requires some cleanup once its done, in order to keep your application from continuing to expect legacy models post-migration. I wasn't crazy about this.
 
 These issues, combined with a much more complex data structure (basically a total re-engineering of the data layer), led me to look into other options for legacy data migration for my next project. As it turns out, it's not terrifically difficult&mdash;it's just a matter of setting up some Rake tasks, mapping old data to new, and paying attention to the details.
@@ -23,9 +23,9 @@ The best place to start with this approach legacy data is Zach Holman's [Impress
 
 ### Connect to the legacy database
 
-Rather than creating temporary tables in my production database, I decided to establish a separate connection to my legacy database. You could establish a direct connection to the live database; instead I opted to first <code>mysqldump</code> the data, copy it to my development computer, and set up a local copy. This makes the migration process a little quicker and mitigates against accidentally doing something nasty to live data.
+Rather than creating temporary tables in my production database, I decided to establish a separate connection to my legacy database. You could establish a direct connection to the live database; instead I opted to first `mysqldump` the data, copy it to my development computer, and set up a local copy. This makes the migration process a little quicker and mitigates against accidentally doing something nasty to live data.
 
-To connect it to my Rails application, I used a procedure I learned from Chad Fowler's <em><a href=[http://www.amazon.com/gp/project/1934356778/ref=as_li_ss_tl?ie=UTF8&tag=everrail-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=1934356778">Rails Recipes, 3rd Edition</a><img src="http://www.assoc-amazon.com/e/ir?t=everrail-20&l=as2&o=1&a=1934356778" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></em> (get "early beta access now](http://pragprog.com/book/rr2/rails-recipes) from Pragmatic Programmers). First you create the connection in your <code>database.yml</code> file:
+To connect it to my Rails application, I used a procedure I learned from Chad Fowler's <em><a href=[http://www.amazon.com/gp/project/1934356778/ref=as_li_ss_tl?ie=UTF8&tag=everrail-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=1934356778">Rails Recipes, 3rd Edition</a><img src="http://www.assoc-amazon.com/e/ir?t=everrail-20&l=as2&o=1&a=1934356778" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></em> (get "early beta access now](http://pragprog.com/book/rr2/rails-recipes) from Pragmatic Programmers). First you create the connection in your `database.yml` file:
  
 {% highlight yaml %}
   legacy:
@@ -53,7 +53,7 @@ You can name each legacy class whatever you want, as long as it's not the same a
 
 ### Create a file for your classes
 
-Now, where to put those legacy classes? I had two problems with putting them inline in my Rake task. First, I had to do a lot of tweaking in each class, so my Rake tasks were getting pretty cluttered. Second, I had to access some classes in multiple Rake tasks, so it made good sense to put them somewhere from which I could access them in _any_ of my tasks. My solution was to move them into a separate file. For simplicity's sake I just put this file in my <code>tasks</code> folder alongside the actual Rake file, then included it in each task:
+Now, where to put those legacy classes? I had two problems with putting them inline in my Rake task. First, I had to do a lot of tweaking in each class, so my Rake tasks were getting pretty cluttered. Second, I had to access some classes in multiple Rake tasks, so it made good sense to put them somewhere from which I could access them in _any_ of my tasks. My solution was to move them into a separate file. For simplicity's sake I just put this file in my `tasks` folder alongside the actual Rake file, then included it in each task:
 
 {% highlight ruby %}
   #lib/tasks/legacy.rake
@@ -78,11 +78,11 @@ If you don't know how your ORM customizes the ways your application's models ass
 
 ### Check your keys
 
-If your new application's data set will only consist of what you're moving over from legacy, you can use existing ID values for associations. If not, you'll need to figure out something else that's unique and base associations off of that. In my case, projects have unique names; users have unique email addresses. Thus instead of making <code>new_project.user</code> equal <code>legacy_project.user</code>, I'd make the association via <code>new_project.user = User.find_by_email(legacy_project.user.email)</code>. Note that <code>User</code> is the model from the new application in this case&mdash;I want to find that user and associate him with the new project.
+If your new application's data set will only consist of what you're moving over from legacy, you can use existing ID values for associations. If not, you'll need to figure out something else that's unique and base associations off of that. In my case, projects have unique names; users have unique email addresses. Thus instead of making `new_project.user` equal `legacy_project.user`, I'd make the association via `new_project.user = User.find_by_email(legacy_project.user.email)`. Note that `User` is the model from the new application in this case&mdash;I want to find that user and associate him with the new project.
 
 ### Keep existing timestamps
 
-If you need to keep your old data's existing timestamps (and I don't think it's a bad idea), use <code>record_timestamps</code> from <code>ActiveRecord::Base</code>, as noted by Zach:
+If you need to keep your old data's existing timestamps (and I don't think it's a bad idea), use `record_timestamps` from `ActiveRecord::Base`, as noted by Zach:
 
 {% highlight ruby %}
   ActiveRecord::Base.record_timestamps = false
@@ -92,7 +92,7 @@ If you need to keep your old data's existing timestamps (and I don't think it's 
 
 ### Writing to protected attributes
 
-Speaking of timestamps, and other data you might have protected behind the likes of <code>attr_accessible</code> in your new application's models: You'll need to temporarily comment out this protection during your migrations, or override it. My new application uses a trick shared by Ryan Bates to [create a dynamic attr_accessible](http://railscasts.com/episodes/237-dynamic-attr-accessible) for each model in my app; I use this to my advantage by including the following in each legacy migration task:
+Speaking of timestamps, and other data you might have protected behind the likes of `attr_accessible` in your new application's models: You'll need to temporarily comment out this protection during your migrations, or override it. My new application uses a trick shared by Ryan Bates to [create a dynamic attr_accessible](http://railscasts.com/episodes/237-dynamic-attr-accessible) for each model in my app; I use this to my advantage by including the following in each legacy migration task:
 
 {% highlight ruby %}
   @project = Project.new
@@ -103,7 +103,7 @@ Speaking of timestamps, and other data you might have protected behind the likes
   @project.save!
 {% endhighlight %}
 
-Failing that, the simplest approach may be to comment out your <code>attr_accessible</code> setup&mdash;just don't forget to uncomment it prior to deployment.
+Failing that, the simplest approach may be to comment out your `attr_accessible` setup&mdash;just don't forget to uncomment it prior to deployment.
 
 ### Use Chronic for easier time manipulation
 
@@ -111,7 +111,7 @@ Legacy migrations may often require a lot of extra data manipulation, as you ben
 
 ### Log exceptions and move on
 
-There's always a chance that for whatever reason a few records won't cleanly migrate from your old app to the new one. Rather than tweak your Rake task to handle these unique exceptions, wrap your code actually creating new database values inside <code>begin rescue end</code>, log the exception, and deal with outliers individually.
+There's always a chance that for whatever reason a few records won't cleanly migrate from your old app to the new one. Rather than tweak your Rake task to handle these unique exceptions, wrap your code actually creating new database values inside `begin rescue end`, log the exception, and deal with outliers individually.
 
 ### Give yourself plenty of time
 

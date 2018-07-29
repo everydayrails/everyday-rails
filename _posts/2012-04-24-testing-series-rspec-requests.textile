@@ -7,9 +7,9 @@ tags: rspec
 
 So far we've added a good amount of test coverage to our contacts manager. We got [RSpec installed and configured](http://everydayrails.com/2012/03/12/testing-series-rspec-setup.html), used factories to generate test data, and set up some unit tests on [models](http://everydayrails.com/2012/03/19/testing-series-rspec-models-factory-girl.html) and [controllers](http://everydayrails.com/2012/04/07/testing-series-rspec-controllers.html). Now it's time to put everything together for integration testing&mdash;in other words, making sure those models and controllers all play nicely with other models and controllers in the application. These tests are called _request specs_ in RSpec&mdash;and yes, they can be daunting if you're still getting comfortable with testing.
 
-The good news is you know almost everything you need to know to write a solid request spec&mdash;they follow the same <code>describe</code> and <code>context</code> structure you've been using in models and controllers, and you can use Factory Girl to generate test data for them.
+The good news is you know almost everything you need to know to write a solid request spec&mdash;they follow the same `describe` and `context` structure you've been using in models and controllers, and you can use Factory Girl to generate test data for them.
 
-There's one last component to complete the basic RSpec toolkit: [Capybara](https://github.com/jnicklas/capybara). If necessary, add Capybara (and another gem we'll use in a moment, [DatabaseCleaner](https://github.com/bmabey/database_cleaner)) to your Gemfile's <code>:test</code> group like so, running <code>bundle install</code> to install the dependencies:
+There's one last component to complete the basic RSpec toolkit: [Capybara](https://github.com/jnicklas/capybara). If necessary, add Capybara (and another gem we'll use in a moment, [DatabaseCleaner](https://github.com/bmabey/database_cleaner)) to your Gemfile's `:test` group like so, running `bundle install` to install the dependencies:
 
 {% highlight ruby %}
 # Gemfile
@@ -21,7 +21,7 @@ group :test do
 end
 {% endhighlight %}
 
-Capybara lets you simulate how a user would interact with your application through the web, using a series of easy-to-understand methods like <code>click_link</code>, <code>fill_in</code>, and <code>visit</code>. What these methods let you do, then, is describe a test scenario for your app&mdash;for example:
+Capybara lets you simulate how a user would interact with your application through the web, using a series of easy-to-understand methods like `click_link`, `fill_in`, and `visit`. What these methods let you do, then, is describe a test scenario for your app&mdash;for example:
 
 {% highlight ruby %}
 # spec/requests/contacts_spec.rb
@@ -53,11 +53,11 @@ describe "Contacts" do
 end
 {% endhighlight %}
 
-You should recognize some techniques from previous tutorials&mdash;<code>describe</code> puts some structure to the spec (we can break things down further with more <code>context</code>, too) and the <code>expect{}</code> Proc we checked out in the [controller specs tutorial](http://everydayrails.com/2012/04/07/testing-series-rspec-controllers.html) plays the same role here. Following the Proc, we run a series of tests to make sure the resulting view is displayed in a way we'd expect, using Capybara's not-quite-plain-English-but-still-easy-to-follow style. Check out, too, the <code>within</code> block used to specify _where_ to look on a page for specific content&mdash; in this case, within the <code><h1></code> tag in the <code>show</code> view for contacts. You can get pretty fancy with this if you'd like&mdash;more on that in just a moment.
+You should recognize some techniques from previous tutorials&mdash;`describe` puts some structure to the spec (we can break things down further with more `context`, too) and the `expect{}` Proc we checked out in the [controller specs tutorial](http://everydayrails.com/2012/04/07/testing-series-rspec-controllers.html) plays the same role here. Following the Proc, we run a series of tests to make sure the resulting view is displayed in a way we'd expect, using Capybara's not-quite-plain-English-but-still-easy-to-follow style. Check out, too, the `within` block used to specify _where_ to look on a page for specific content&mdash; in this case, within the `<h1>` tag in the `show` view for contacts. You can get pretty fancy with this if you'd like&mdash;more on that in just a moment.
 
 One other thing to point out: Within request specs, I think it's perfectly reasonable to have multiple expectations in a given example. Request specs typically have much greater overhead than your models and controllers, and as such can take a lot longer to run.
 
-Of course, we need to load Capybara into RSpec to make it work, so open your <code>spec/spec_helper.rb</code> file and add the following, below any other <code>require</code> statements you've got there (and while you're at it, go ahead and require DatabaseCleaner, assuming you added it to your Gemfile and installed the gem already&mdash;if not, do that first):
+Of course, we need to load Capybara into RSpec to make it work, so open your `spec/spec_helper.rb` file and add the following, below any other `require` statements you've got there (and while you're at it, go ahead and require DatabaseCleaner, assuming you added it to your Gemfile and installed the gem already&mdash;if not, do that first):
 
 {% highlight ruby %}
   # spec/spec_helper.rb
@@ -113,11 +113,11 @@ it "Deletes a contact", js: true do
 end
 {% endhighlight %}
 
-Notice what's different: We've added <code>js: true</code> to the example, to tell Capybara to use a Javascript-capable driver (Selenium, by default). We've also added a couple of lines within <code>expect{}</code> to tell Capybara what to do with the dialog when it pops up.
+Notice what's different: We've added `js: true` to the example, to tell Capybara to use a Javascript-capable driver (Selenium, by default). We've also added a couple of lines within `expect{}` to tell Capybara what to do with the dialog when it pops up.
 
-One more new item: The call to <code>DatabaseCleaner.clean</code> in the first line of the example. Typically, RSpec is good about cleaning out your test database for each example, but when you use Selenium you'll need to help it out a bit. That's where DatabaseCleaner comes into play. However, you'll need to tell RSpec to use DatabaseCleaner's truncation "strategy" instead of RSpec's default technique for resetting test data.
+One more new item: The call to `DatabaseCleaner.clean` in the first line of the example. Typically, RSpec is good about cleaning out your test database for each example, but when you use Selenium you'll need to help it out a bit. That's where DatabaseCleaner comes into play. However, you'll need to tell RSpec to use DatabaseCleaner's truncation "strategy" instead of RSpec's default technique for resetting test data.
 
-Open <code>spec/spec_helper.rb</code> again locate the line:
+Open `spec/spec_helper.rb` again locate the line:
 
 {% highlight ruby %}
 config.use_transactional_fixtures = true
