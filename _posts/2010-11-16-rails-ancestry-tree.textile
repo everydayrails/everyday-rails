@@ -24,10 +24,10 @@ Follow the instructions provided in Ancestry's README to add it to your applicat
 
 The nice thing about Ancestry is how easy it makes it to work with a given object in your tree, its parents, and its children. It does this through more than 20 useful instance methods and several scopes. Among the ones you may want to start with:
 
-* *Roots:* To get a collection of the Category taxonomy's top-level nodes, just call <code>Category.roots</code>.
-* *Children:* Pretty straightforward; <code>@category.children</code> gives you a collection of a given category's subcategories.
-* *Ancestors:* A category's ancestry&mdash;its parent, grandparent, and on back&mdash;is accessible with <code>@category.ancestors</code>.
-* *Parent:* You've probably guessed it; <code>@category.parent</code> will give you the category's parent category. Useful if you want to include a back link in your view.
+* **Roots:** To get a collection of the Category taxonomy's top-level nodes, just call <code>Category.roots</code>.
+* **Children:** Pretty straightforward; <code>@category.children</code> gives you a collection of a given category's subcategories.
+* **Ancestors:** A category's ancestry&mdash;its parent, grandparent, and on back&mdash;is accessible with <code>@category.ancestors</code>.
+* **Parent:** You've probably guessed it; <code>@category.parent</code> will give you the category's parent category. Useful if you want to include a back link in your view.
 
 ### Breadcrumbs
 

@@ -24,7 +24,7 @@ In this book, I'll be working from a basic Rails 3.2 contact manager. The applic
 * Users may log in to enter contacts
 * Contacts may have multiple phone numbers, via nested form attributes
 
-OK, it's probably not going to replace your current address book--but it does have enough functionality to demonstrate some simple techniques to practice testing (and eventually, test-driven development) with RSpec and Rails. It's also worth noting that I'm leaving out some useful gems I'd normally use in Rails application development, such as Simple Form and Haml, so I can focus on RSpec-specific code (I *am*, however, using Devise for a turnkey authentication solution--it's not necessarily the simplest way to go about handling logins, but by and large it gets out of our way and lets us focus on the contact manager's core functionality).
+OK, it's probably not going to replace your current address book--but it does have enough functionality to demonstrate some simple techniques to practice testing (and eventually, test-driven development) with RSpec and Rails. It's also worth noting that I'm leaving out some useful gems I'd normally use in Rails application development, such as Simple Form and Haml, so I can focus on RSpec-specific code (I **am**, however, using Devise for a turnkey authentication solution--it's not necessarily the simplest way to go about handling logins, but by and large it gets out of our way and lets us focus on the contact manager's core functionality).
 
 We just have one problem--so far I haven't been doing any testing in my application! So far it hasn't come back to haunt me, but with every method I add to my project the likelihood of errors increases. At the very least, it becomes increasingly difficult to test my application the old fashioned way by clicking each and every link in development.
 
@@ -58,12 +58,12 @@ $ bundle
 
 So what did we just install?
 
-* *rspec-rails* includes RSpec itself in a wrapper to make it play nicely with Rails 3.
-* *factory_girl_rails* replaces Rails' default fixtures for feeding test data to the test suite with much more preferable factories.
-* *faker* generates names, email addresses, and other placeholders for factories.
-* *capybara* makes it easy to programatically simulate your users' interactions with your application.
-* *launchy* does one thing, but does it well: It opens your default web browser upon failed integration specs to show you what your application is rendering.
-* *guard-rspec* watches your application and tests and runs specs for you automatically when it detects changes.
+* **rspec-rails** includes RSpec itself in a wrapper to make it play nicely with Rails 3.
+* **factory_girl_rails** replaces Rails' default fixtures for feeding test data to the test suite with much more preferable factories.
+* **faker** generates names, email addresses, and other placeholders for factories.
+* **capybara** makes it easy to programatically simulate your users' interactions with your application.
+* **launchy** does one thing, but does it well: It opens your default web browser upon failed integration specs to show you what your application is rendering.
+* **guard-rspec** watches your application and tests and runs specs for you automatically when it detects changes.
 
 I'll cover each of these in more detail in future posts, but in the meantime our application has access to all the supports necessary to build a solid test suite. Next up: Creating our test database.
 
@@ -101,7 +101,7 @@ test:
   socket: /tmp/mysql.sock
 {% endhighlight %}
 
-If not, add the code to <code>config/database.yml</code> now, replacing *myapp_test* with the appropriate name for your application.
+If not, add the code to <code>config/database.yml</code> now, replacing **myapp_test** with the appropriate name for your application.
 
 Finally, to ensure we've got a database to talk to, run the following rake task:
 

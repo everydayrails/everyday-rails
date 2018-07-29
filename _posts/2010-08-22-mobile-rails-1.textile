@@ -16,9 +16,9 @@ Moving beyond this basic functionality, though, became frustrating for me. As I 
 
 In lieu of any other drop-in solutions, the next best route may be to roll your own mobile-enabling code. As it turns out, it's not that hard&mdash;a [Railscasts episode on mobile websites](http://railscasts.com/episodes/199-mobile-devices) covers the requirements, using largely the same approach as Mobile Fu, but adds some additional functionality that Mobile Fu doesn't explicitly provide. In particular, Ryan Bates shows how to allow users to switch between the mobile version and the standard version. It also looks like it will be easier to augment with my own code, such as:
 
-* *Mobile detection:* Ryan's regular expression might be worth revisiting. It may be possible to borrow from Mobile Fu's detection to make this more thorough, and hopefully return more specific device types.
-* *Check for Javascript-ready browsers:* I'd like to know whether I can deliver a browser a fancy version or just return a no-frills mobile format. Maybe I should just stick to WebKit for the fancy version?
-* *Check for iPads and tablets:* I see this becoming more important moving forward. Depending on the app, I may not even want to bother with a mobile version when rendering for a tablet's larger screen.
+* **Mobile detection:** Ryan's regular expression might be worth revisiting. It may be possible to borrow from Mobile Fu's detection to make this more thorough, and hopefully return more specific device types.
+* **Check for Javascript-ready browsers:** I'd like to know whether I can deliver a browser a fancy version or just return a no-frills mobile format. Maybe I should just stick to WebKit for the fancy version?
+* **Check for iPads and tablets:** I see this becoming more important moving forward. Depending on the app, I may not even want to bother with a mobile version when rendering for a tablet's larger screen.
 
 If these aren't issues for you, and you just want to create a mobile site that will work on Webkit-based devices, watch the Railscasts episode and you're well on your way.
 

@@ -12,17 +12,17 @@ What do I mean by _advance access_? I mean it's not done yet, but I wanted to go
 
 Here's a rundown of what's done and what I'm working on:
 
-# Introduction: *available now*
-# Setting up RSpec: *available now*
-# Model specs: *available now*
-# More on factories (exclusive): *in progress*
-# Controller specs: *available now*
-# Request specs: *available now*
-# Testing logins (exclusive): *in progress*
-# Improving specs (exclusive): *in progress*
-# Toward test-driven development (exclusive): *in progress*
-# Parting advice (updated content): *available now*
-# More testing resources for Rails (exclusive): *available now*
+# Introduction: **available now**
+# Setting up RSpec: **available now**
+# Model specs: **available now**
+# More on factories (exclusive): **in progress**
+# Controller specs: **available now**
+# Request specs: **available now**
+# Testing logins (exclusive): **in progress**
+# Improving specs (exclusive): **in progress**
+# Toward test-driven development (exclusive): **in progress**
+# Parting advice (updated content): **available now**
+# More testing resources for Rails (exclusive): **available now**
 
 I may throw in another chapter or two before it's done. When finished the book will be 100-ish pages and, as I mentioned, include a complete, downloadable Rails application with sample tests in RSpec.
 

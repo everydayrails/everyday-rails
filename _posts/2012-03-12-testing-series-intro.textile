@@ -25,7 +25,7 @@ On the more advanced end, if you're familiar with using Test::Unit or even RSpec
 
 ## My testing philosophy
 
-Discussing the right way to test your Rails application can invoke holy wars--not quite as bad as the Vim versus Emacs debate, but still not something to bring up in an otherwise pleasant conversation with fellow Rubyists. Yes, there is a right way to do testing--but there are degrees of *right* when it comes to testing.
+Discussing the right way to test your Rails application can invoke holy wars--not quite as bad as the Vim versus Emacs debate, but still not something to bring up in an otherwise pleasant conversation with fellow Rubyists. Yes, there is a right way to do testing--but there are degrees of **right** when it comes to testing.
 
 At the risk of starting riots among the Ruby TDD and BDD communities, my approach focuses on the following:
 

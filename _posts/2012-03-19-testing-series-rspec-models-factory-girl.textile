@@ -41,9 +41,9 @@ describe Contact
 
 We'll expand this outline in a few minutes, but this gives us quite a bit for starters. It's a simple spec for an admittedly simple model, but points to our first three best practices:
 
-* *Each example (a line beginning with <code>it</code>) only expects on thing.* Notice that I'm testing the <code>firstname</code> and </code>lastname</code> validations separately. This way, if an example fails, I know it's because of that _specific_ validation, and don't have to dig through RSpec's output for clues.
-* *Each example is explicit.* The descriptive string after <code>it</code> is technically optional in RSpec; however, omitting it makes your specs more difficult to read.
-* *Each example's description begins with a verb, not should.* _Should_ is redundant here, and clutters RSpec's output. Omitting it makes specs' output easier to read.
+* **Each example (a line beginning with <code>it</code>) only expects on thing.** Notice that I'm testing the <code>firstname</code> and </code>lastname</code> validations separately. This way, if an example fails, I know it's because of that _specific_ validation, and don't have to dig through RSpec's output for clues.
+* **Each example is explicit.** The descriptive string after <code>it</code> is technically optional in RSpec; however, omitting it makes your specs more difficult to read.
+* **Each example's description begins with a verb, not should.** _Should_ is redundant here, and clutters RSpec's output. Omitting it makes specs' output easier to read.
 
 With these best practices in mind, let's build a spec for the <code>Contact</code> model.
 
@@ -449,9 +449,9 @@ That said, well-named variables can go a long way as well&mdash;for example, in 
 
 And that's how I test models, but we've covered a lot of other important techniques you'll want to use in other types of specs moving forward:
 
-* *Use active, explicit expectations:* Use verbs to explain what an example's results should be. Only check for one result per example.
-* *Test for what _should_ and for what _should not_ happen:* Think about both paths when writing examples, and test accordingly.
-* *Organize your specs for good readability:* Use <code>describe</code> and <code>context</code> to sort similar examples into an outline format, and <code>before</code> and <code>after</code> blocks to remove duplication. However, in the case of tests readability trumps DRY&mdash;if you find yourself having to scroll up and down your spec too much, it's okay to repeat yourself a bit.
+* **Use active, explicit expectations:** Use verbs to explain what an example's results should be. Only check for one result per example.
+* **Test for what _should_ and for what _should not_ happen:** Think about both paths when writing examples, and test accordingly.
+* **Organize your specs for good readability:** Use <code>describe</code> and <code>context</code> to sort similar examples into an outline format, and <code>before</code> and <code>after</code> blocks to remove duplication. However, in the case of tests readability trumps DRY&mdash;if you find yourself having to scroll up and down your spec too much, it's okay to repeat yourself a bit.
 
 With a solid collection of model specs incorporated into your app, you're well on your way to more trustworthy code. Next time we'll apply and expand upon the techniques covered here to application controllers.
 
