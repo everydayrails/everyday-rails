@@ -5,9 +5,9 @@ excerpt: "Get legacy data? Trucker makes moving it from old codebases into new R
 tags: legacy data-migration rails-rescue
 ---
 
-I spent a lot of time this summer working on moving legacy data from old Rails applications into new apps. In both cases my data model had changed significantly, so it wasn't just a matter of copying data over field for field&mdash;I needed a way to map individual fields and associations; as well as perform some occasional data cleanup to make sure everything would work correctly in the new apps. For this task, I worked with a gem called "Trucker":https://github.com/mokolabs/trucker.
+I spent a lot of time this summer working on moving legacy data from old Rails applications into new apps. In both cases my data model had changed significantly, so it wasn't just a matter of copying data over field for field&mdash;I needed a way to map individual fields and associations; as well as perform some occasional data cleanup to make sure everything would work correctly in the new apps. For this task, I worked with a gem called [Trucker](https://github.com/mokolabs/trucker).
 
-I first learned about Trucker at last year's "Ruby Midwest":http://www.rubymidwest.com/ conference in Kansas City. The main project on GitHub hasn't been touched in almost a year, but some folks have created "newer forks":https://github.com/mokolabs/trucker/network keeping it up (I started from "this fork":https://github.com/gilesbowkett/trucker, which had better-working generators at the time). All the same, there are a few minor annoyances I had to deal with when using Trucker for myself. In this post, I'll walk through what I had to do to get my application set up for Trucker and my data correctly migrated over.
+I first learned about Trucker at last year's [Ruby Midwest](http://www.rubymidwest.com)/ conference in Kansas City. The main project on GitHub hasn't been touched in almost a year, but some folks have created [newer forks](https://github.com/mokolabs/trucker/network) keeping it up (I started from [this fork](https://github.com/gilesbowkett/trucker), which had better-working generators at the time). All the same, there are a few minor annoyances I had to deal with when using Trucker for myself. In this post, I'll walk through what I had to do to get my application set up for Trucker and my data correctly migrated over.
 
 <div class="alert alert-info">
   <p><strong>Minor disclaimer:</strong> This document shouldn't be treated as a step-by-step tutorial. It may represent more of a hack than some people are comfortable putting to practice themselves, but I can attest that it's a hack that works with some cajoling. Use it as a loose guide to hopefully point out places where you'll have to do a little extra work to get things functioning correctly.</p>
@@ -27,7 +27,7 @@ I'll tell you how Trucker worked for _me_&mdash;as I said, I had to tweak some t
 
 Since the gem's README was written in a pre-Rails 3 world, its installation instructions are out of date from the get-go. Just follow the now-standard instructions of adding a dependency to your <code>Gemfile</code>, followed by the usual <code>bundle</code> command.
 
-According to "this presentation":http://www.slideshare.net/mokolabs/migrating-legacy-data-ruby-midwest, it's preferable to handle everything from your production server, but that wasn't an option for me. So I made a copy of the legacy database and moved it to my development box. Then I configured my Rails application to be aware of it, via my <code>database.yml</code> file:
+According to [this presentation](http://www.slideshare.net/mokolabs/migrating-legacy-data-ruby-midwest), it's preferable to handle everything from your production server, but that wasn't an option for me. So I made a copy of the legacy database and moved it to my development box. Then I configured my Rails application to be aware of it, via my <code>database.yml</code> file:
 
 {% highlight yaml %}
   legacy:
@@ -41,7 +41,7 @@ According to "this presentation":http://www.slideshare.net/mokolabs/migrating-le
     socket: /tmp/mysql.sock
 {% endhighlight %}
 
-Next, there's a generator to create a base class for your legacy models and a starter rake task. As I mentioned above, the main fork for Trucker doesn't appear to be in active development these days&mdash;and the generator doesn't work past Rails 2.3 (at least, it didn't for me last summer). "The fork I used":https://github.com/gilesbowkett/trucker handled this better, but it still had a hole relative to the rake tasks. I'll get to that in a moment.
+Next, there's a generator to create a base class for your legacy models and a starter rake task. As I mentioned above, the main fork for Trucker doesn't appear to be in active development these days&mdash;and the generator doesn't work past Rails 2.3 (at least, it didn't for me last summer). [The fork I used](https://github.com/gilesbowkett/trucker) handled this better, but it still had a hole relative to the rake tasks. I'll get to that in a moment.
 
 The good news is you don't _need_ the generator&mdash;there are only a couple of files to create. First, inside your app's <code>models</code> directory, create a new directory called <code>legacy</code>. In there, add a file called <code>legacy_base.rb</code> with the following (from the Trucker gem):
 
@@ -77,7 +77,7 @@ I had to tell Rails 3.0.x about the <doe>legacy</code> directory, in my app's <c
 
 With the <code>LegacyBase</code> class in place you can now start building your legacy models. This is where you'll compare your old data to your new schema and set things up accordingly. If you're migrating from a really old application written in another language or framework, or a pre-RESTful Rails application, this can take some time, but it's a good exercise. I actually realized there was an obtuse field in my legacy application that I hadn't ported over to the new version.
 
-"Refer to the examples":https://github.com/mokolabs/trucker/blob/master/README.rdoc from Trucker's README to get a sense for how your legacy models will be set up. Below is an annotated example from my work, which migrates a table of billing and shipping addresses:
+[Refer to the examples](https://github.com/mokolabs/trucker/blob/master/README.rdoc) from Trucker's README to get a sense for how your legacy models will be set up. Below is an annotated example from my work, which migrates a table of billing and shipping addresses:
 
 {% highlight ruby %}
   # app/models/legacy/legacy_address.rb

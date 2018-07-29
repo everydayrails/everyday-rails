@@ -5,7 +5,7 @@ excerpt: "What do you do if your legacy data defies convention or is just genera
 tags: legacy data-migration rails-rescue
 ---
 
-A few months back I shared "how I used Trucker to migrate data from a legacy Rails application into a more current one":http://everydayrails.com/2011/09/16/rails-legacy-data-migration-trucker.html. This method works pretty well if your data is reasonably straightforward, but as I noted it hiccups on a couple of things:
+A few months back I shared [how I used Trucker to migrate data from a legacy Rails application into a more current one](http://everydayrails.com/2011/09/16/rails-legacy-data-migration-trucker.html). This method works pretty well if your data is reasonably straightforward, but as I noted it hiccups on a couple of things:
 
 * Trucker wipes tables in your new data tables before migrating legacy data. This can be an issue if you're merging legacy data into data you want to keep and would require you to edit the gem. (In my case, I've been in the process of merging two Rails 2.3 applications into a single Rails 3.x code base. The first one was deployed in August; the second in a few weeks. Since the two legacy applications share users there will be overlap in my <code>users</code> table&mdash;rather than overwrite, I need to acknowledge the existing users and process accordingly.)
 * Due to the way Trucker handles the way tables are named in Rails applications, you may have problems with models like <code>Address</code>. The best solution is again to tweak the gem's code.
@@ -14,18 +14,18 @@ A few months back I shared "how I used Trucker to migrate data from a legacy Rai
 These issues, combined with a much more complex data structure (basically a total re-engineering of the data layer), led me to look into other options for legacy data migration for my next project. As it turns out, it's not terrifically difficult&mdash;it's just a matter of setting up some Rake tasks, mapping old data to new, and paying attention to the details.
 
 <div class="alert alert-info">
-  <p><strong>New to creating your own Rake tasks?</strong> "Review this Railscasts episode":http://railscasts.com/episodes/66-custom-rake-tasks on developing your own custom Rake tasks. It's an important skill for any Rails developer.</p>
+  <p><strong>New to creating your own Rake tasks?</strong> [Review this Railscasts episode](http://railscasts.com/episodes/66-custom-rake-tasks) on developing your own custom Rake tasks. It's an important skill for any Rails developer.</p>
 </div>
 
 h3. Getting started
 
-The best place to start with this approach legacy data is Zach Holman's "Impress the Ladies with Legacy Migrations":http://zachholman.com/2010/01/impress-the-ladies-with-legacy-migrations/. It outlines a simple-but-effective strategy: Create Rake tasks for each model you need to migrate, create an ActiveRecord class for the model, and customize as needed. I added a few of my own takes on the process:
+The best place to start with this approach legacy data is Zach Holman's [Impress the Ladies with Legacy Migrations](http://zachholman.com/2010/01/impress-the-ladies-with-legacy-migrations)/. It outlines a simple-but-effective strategy: Create Rake tasks for each model you need to migrate, create an ActiveRecord class for the model, and customize as needed. I added a few of my own takes on the process:
 
 h3. Connect to the legacy database
 
 Rather than creating temporary tables in my production database, I decided to establish a separate connection to my legacy database. You could establish a direct connection to the live database; instead I opted to first <code>mysqldump</code> the data, copy it to my development computer, and set up a local copy. This makes the migration process a little quicker and mitigates against accidentally doing something nasty to live data.
 
-To connect it to my Rails application, I used a procedure I learned from Chad Fowler's <em><a href="http://www.amazon.com/gp/project/1934356778/ref=as_li_ss_tl?ie=UTF8&tag=everrail-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=1934356778">Rails Recipes, 3rd Edition</a><img src="http://www.assoc-amazon.com/e/ir?t=everrail-20&l=as2&o=1&a=1934356778" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></em> (get "early beta access now":http://pragprog.com/book/rr2/rails-recipes from Pragmatic Programmers). First you create the connection in your <code>database.yml</code> file:
+To connect it to my Rails application, I used a procedure I learned from Chad Fowler's <em><a href=[http://www.amazon.com/gp/project/1934356778/ref=as_li_ss_tl?ie=UTF8&tag=everrail-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=1934356778">Rails Recipes, 3rd Edition</a><img src="http://www.assoc-amazon.com/e/ir?t=everrail-20&l=as2&o=1&a=1934356778" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></em> (get "early beta access now](http://pragprog.com/book/rr2/rails-recipes) from Pragmatic Programmers). First you create the connection in your <code>database.yml</code> file:
  
 {% highlight yaml %}
   legacy:
@@ -68,7 +68,7 @@ Now, where to put those legacy classes? I had two problems with putting them inl
 
 h3. Get to know your ORM
 
-If you don't know how your ORM customizes the ways your application's models associate with others, you'll need to take a crash course to get everything connected&mdash;again, since we're slightly breaking from convention in our class names, Rails can't automatically hook them to tables as it normally would. Depending on what kind of association you're establishing, this may be as straightforward as defining the class name used in the association, or as complex as also defining the keys and join tables. Luckily ActiveRecord (and most other ORMs) make this pretty straightforward; "review ActiveRecord's class methods":http://api.rubyonrails.org/classes/ActiveRecord/Associations/ClassMethods.html to get a handle on them all. Here are a few examples:
+If you don't know how your ORM customizes the ways your application's models associate with others, you'll need to take a crash course to get everything connected&mdash;again, since we're slightly breaking from convention in our class names, Rails can't automatically hook them to tables as it normally would. Depending on what kind of association you're establishing, this may be as straightforward as defining the class name used in the association, or as complex as also defining the keys and join tables. Luckily ActiveRecord (and most other ORMs) make this pretty straightforward; [review ActiveRecord's class methods](http://api.rubyonrails.org/classes/ActiveRecord/Associations/ClassMethods.html) to get a handle on them all. Here are a few examples:
 
 {% highlight ruby %}
   has_many :projects, :class_name => 'LegacyProjects'
@@ -92,7 +92,7 @@ If you need to keep your old data's existing timestamps (and I don't think it's 
 
 h3. Writing to protected attributes
 
-Speaking of timestamps, and other data you might have protected behind the likes of <code>attr_accessible</code> in your new application's models: You'll need to temporarily comment out this protection during your migrations, or override it. My new application uses a trick shared by Ryan Bates to "create a dynamic attr_accessible":http://railscasts.com/episodes/237-dynamic-attr-accessible for each model in my app; I use this to my advantage by including the following in each legacy migration task:
+Speaking of timestamps, and other data you might have protected behind the likes of <code>attr_accessible</code> in your new application's models: You'll need to temporarily comment out this protection during your migrations, or override it. My new application uses a trick shared by Ryan Bates to [create a dynamic attr_accessible](http://railscasts.com/episodes/237-dynamic-attr-accessible) for each model in my app; I use this to my advantage by including the following in each legacy migration task:
 
 {% highlight ruby %}
   @project = Project.new
@@ -107,7 +107,7 @@ Failing that, the simplest approach may be to comment out your <code>attr_access
 
 h3. Use Chronic for easier time manipulation
 
-Legacy migrations may often require a lot of extra data manipulation, as you bend old data to work in new models. The process is thus a great opportunity to empty your Ruby toolbox and get practice with both standard library utilities and other gems like the wonderful "Chronic":http://rubygems.org/gems/chronic natural language parser for time and date. In my case, I had to merge dates and datetimes into new structures; creating and processing timestamps via Chronic turned out to be much more straightforward than using Ruby's usual date and time-related methods. Check the "Ruby Toolbox":http://www.ruby-toolbox.com/ for other potential time-savers.
+Legacy migrations may often require a lot of extra data manipulation, as you bend old data to work in new models. The process is thus a great opportunity to empty your Ruby toolbox and get practice with both standard library utilities and other gems like the wonderful [Chronic](http://rubygems.org/gems/chronic) natural language parser for time and date. In my case, I had to merge dates and datetimes into new structures; creating and processing timestamps via Chronic turned out to be much more straightforward than using Ruby's usual date and time-related methods. Check the [Ruby Toolbox](http://www.ruby-toolbox.com)/ for other potential time-savers.
 
 h3. Log exceptions and move on
 

@@ -4,13 +4,13 @@ title: "Mobile Rails applications, part 2: jQTouch with Rails 3"
 excerpt: "Continuing on my project to build a mobile-friendly Rails application, here's a look at making the jQTouch mobile framework talk to your Rails application."
 ---
 
-In my "last post":/2010/08/22/mobile-rails-1.html I shared my first steps toward creating a mobile version of a Rails application. I looked at the Mobile Fu plugin, but wasn't happy with how it played with other parts what you might want to do with a Rails application. So referring to a couple of screencasts I moved forward with hand-rolling my mobile detection code&mdash;as it turns out, it's not hard at all to do. 
+In my [last post](/2010/08/22/mobile-rails-1.html) I shared my first steps toward creating a mobile version of a Rails application. I looked at the Mobile Fu plugin, but wasn't happy with how it played with other parts what you might want to do with a Rails application. So referring to a couple of screencasts I moved forward with hand-rolling my mobile detection code&mdash;as it turns out, it's not hard at all to do. 
 
 h2. Prerequisites
 
-I'll assume you've watched the "Railscasts episode on mobile websites":http://railscasts.com/episodes/199-mobile-devices and followed the steps in it to prepare your application for mobile devices. Although it was written with Rails 2.3 in mind, I'm not having problems with it in Rails 3 RC 2.
+I'll assume you've watched the [Railscasts episode on mobile websites](http://railscasts.com/episodes/199-mobile-devices) and followed the steps in it to prepare your application for mobile devices. Although it was written with Rails 2.3 in mind, I'm not having problems with it in Rails 3 RC 2.
 
-The Railscast is an excellent start, but after watching "Peepcode's episode on jQTouch":http://peepcode.com/products/jqtouch I learned a few small touches I'd been missing to make my app work like an _app_. If you're still getting a feel for jQTouch, the Peepcode episode is worth the money. It doesn't cover some things I want to get into later (like theming), but it is more than enough to get you started with a mobile Rails application.
+The Railscast is an excellent start, but after watching [Peepcode's episode on jQTouch](http://peepcode.com/products/jqtouch) I learned a few small touches I'd been missing to make my app work like an _app_. If you're still getting a feel for jQTouch, the Peepcode episode is worth the money. It doesn't cover some things I want to get into later (like theming), but it is more than enough to get you started with a mobile Rails application.
 
 h2. Layout file
 

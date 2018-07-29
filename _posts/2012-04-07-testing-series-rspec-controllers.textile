@@ -23,9 +23,9 @@ Poor controllers. As Rails developers we keep them skinny (which is a good thing
     If you're new to RSpec or Rails testing in general, I recommend reading through the previous posts in this series first:
   </p>
 
-* "Introduction":http://everydayrails.com/2012/03/12/testing-series-intro.html
-* "Setup":http://everydayrails.com/2012/03/12/testing-series-rspec-setup.html
-* "Models":http://everydayrails.com/2012/03/19/testing-series-rspec-models-factory-girl.html
+* [Introduction](http://everydayrails.com/2012/03/12/testing-series-intro.html)
+* [Setup](http://everydayrails.com/2012/03/12/testing-series-rspec-setup.html)
+* [Models](http://everydayrails.com/2012/03/19/testing-series-rspec-models-factory-girl.html)
   
 </div>
 
@@ -33,13 +33,13 @@ h2. Why test controllers?
 
 Following the lead of some prominent Ruby developers I stopped working on controller specs for awhile, in favor of covering this functionality in my request specs (integration tests). At the time I liked this idea a lot--using tests that more closely mirrored _how_ controller actions are accessed made good sense--but since then I've come back to testing controllers more explicitly, for a couple of primary reasons:
 
-# Controllers are models too, as "Piotr Solnica indicated in an excellent blog post":http://solnic.eu/2012/02/02/yes-you-should-write-controller-tests.html. And in Rails applications, they're pretty important models--so it's a good idea to put them on equal footing, spec-wise, as your Rails models.
+# Controllers are models too, as [Piotr Solnica indicated in an excellent blog post](http://solnic.eu/2012/02/02/yes-you-should-write-controller-tests.html). And in Rails applications, they're pretty important models--so it's a good idea to put them on equal footing, spec-wise, as your Rails models.
 # Controller specs can be written more quickly than their integration spec counterparts. For me, this becomes critical when I encounter a bug that's residing at the controller level, or I want to add additional specs to verify some refactoring. Writing a solid controller spec is a comparatively straightforward process, since I can generate very specific input to the method I'm testing without the overhead of request specs. This also means that
 # Controller specs run more quickly than request specs, making them very valuable during bug fixing and checking the bad paths your users can take (in addition to the good ones, of course).
 
 h2. Controller testing basics
 
-Scaffolds, when done correctly, are a great way to learn coding techniques. The spec files generated for controllers, at least as of RSpec 2.8, are pretty nice and provide a good template to help you build your own specs. "Look at the scaffold generator in rspec-rails' source":https://github.com/rspec/rspec-rails/tree/master/lib/generators/rspec/scaffold, or generate a scaffold in your properly configured Rails application to begin getting a sense of these tests. (Another generator to look at is the one in "Nifty Generator's scaffolds":https://github.com/ryanb/nifty-generators/tree/master/rails_generators/nifty_scaffold).
+Scaffolds, when done correctly, are a great way to learn coding techniques. The spec files generated for controllers, at least as of RSpec 2.8, are pretty nice and provide a good template to help you build your own specs. [Look at the scaffold generator in rspec-rails' source](https://github.com/rspec/rspec-rails/tree/master/lib/generators/rspec/scaffold), or generate a scaffold in your properly configured Rails application to begin getting a sense of these tests. (Another generator to look at is the one in [Nifty Generator's scaffolds](https://github.com/ryanb/nifty-generators/tree/master/rails_generators/nifty_scaffold)).
 
 A controller spec is broken down by controller method&mdash;each example is based off of a single action and, optionally, any params passed to it. Here's a simple example:
 
@@ -242,7 +242,7 @@ end
 
 {% endhighlight %}
 
-Let's talk about that <code>expect {}</code> Proc for a minute. RSpec's readability shines here&mdash;except this code to (or to not) do something. This one little example succinctly tests that an object is created and stored. (If Proc objects seem magical to you, refer to "this post by Alan Skorkin":http://www.skorks.com/2010/05/ruby-procs-and-lambdas-and-the-difference-between-them/ and "this one by Robert Sosinski":http://www.robertsosinski.com/2008/12/21/understanding-ruby-blocks-procs-and-lambdas/ to learn more.) Become familiar with this technique, as it'll be very useful in testing a variety of methods in controllers, models, and eventually at the integration level.
+Let's talk about that <code>expect {}</code> Proc for a minute. RSpec's readability shines here&mdash;except this code to (or to not) do something. This one little example succinctly tests that an object is created and stored. (If Proc objects seem magical to you, refer to [this post by Alan Skorkin](http://www.skorks.com/2010/05/ruby-procs-and-lambdas-and-the-difference-between-them)/ and [this one by Robert Sosinski](http://www.robertsosinski.com/2008/12/21/understanding-ruby-blocks-procs-and-lambdas)/ to learn more.) Become familiar with this technique, as it'll be very useful in testing a variety of methods in controllers, models, and eventually at the integration level.
 
 h3. Testing PUT methods
 

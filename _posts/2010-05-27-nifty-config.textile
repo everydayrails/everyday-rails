@@ -4,7 +4,7 @@ title: "Building Rails apps faster with Nifty Generators, part 2: nifty_config"
 excerpt: "Nifty Generators does more than just view-related code; here's an easy way to create a global config file for your app."
 ---
 
-Continuing with my series on the "Nifty Generators":http://github.com/ryanb/nifty-generators gem by Ryan Bates (see "part 1 on nifty_layout":/2010/05/25/nifty-generators.html), in this post I want to talk about a second feature this gem provides, called <code>nifty_config</code>. With <code>nifty_config</code>, you can quickly create a set of global variables for your application, dependent on the environment in which your Rails application is currently running.
+Continuing with my series on the [Nifty Generators](http://github.com/ryanb/nifty-generators) gem by Ryan Bates (see [part 1 on nifty_layout](/2010/05/25/nifty-generators.html)), in this post I want to talk about a second feature this gem provides, called <code>nifty_config</code>. With <code>nifty_config</code>, you can quickly create a set of global variables for your application, dependent on the environment in which your Rails application is currently running.
 
 To get started, generate a config file:
 

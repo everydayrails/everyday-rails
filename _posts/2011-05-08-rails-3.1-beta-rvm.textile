@@ -4,7 +4,7 @@ title: "Install Rails 3.1 beta with RVM gemsets (a public service announcement)"
 excerpt: "Don't forget, RVM gemsets are great for trying out pre-release versions of Rails without interfering with other work. Here's a reminder on how to set that up."
 ---
 
-Last summer, as the early releases of Rails 3.0 began rolling out, I shared "how to use RVM to create sandboxes for experimenting with new versions of gems":http://everydayrails.com/2010/06/28/rvm-gemsets-rails3.html. Fast forward to now&mdash;Rails 3.1 is coming our way soon, with some major changes under the hood. These changes are well documented and debated elsewhere, so I won't get into them here. Once again, there's no need to wait until 3.1 goes final to see what's different. Here's a quick rundown of how to install your own Rails 3.1 sandbox.
+Last summer, as the early releases of Rails 3.0 began rolling out, I shared [how to use RVM to create sandboxes for experimenting with new versions of gems](http://everydayrails.com/2010/06/28/rvm-gemsets-rails3.html). Fast forward to now&mdash;Rails 3.1 is coming our way soon, with some major changes under the hood. These changes are well documented and debated elsewhere, so I won't get into them here. Once again, there's no need to wait until 3.1 goes final to see what's different. Here's a quick rundown of how to install your own Rails 3.1 sandbox.
 
 First, if you haven't updated RVM in awhile, it doesn't hurt to do so now.
 
@@ -56,5 +56,5 @@ As you look around the application structure, take a look at your <code>Gemfile<
 h3. Where to go from here?
 
 * There are plenty of jQuery tutorials out there; I don't have one in particular I recommend over others. This will really only affect you if you use the Prototype/scriptaculous Javascript framework in your Rails apps.
-* The "Sass tutorial":http://sass-lang.com/tutorial.html should get you up and running with replacing your CSS. I've been using Sass for awhile now and love it&mdash;if you haven't checked it out yet, you owe it to yourself to do so.
-* Charles Max Wood at "Teach Me To Code":http://teachmetocode.com/screencasts/ has been showing the basics of CoffeeScript in his screencasts. I will admit to being kind of green in this area, but am looking forward to getting Javascript functionality in my apps without having to deal with old-school RJS.
+* The [Sass tutorial](http://sass-lang.com/tutorial.html) should get you up and running with replacing your CSS. I've been using Sass for awhile now and love it&mdash;if you haven't checked it out yet, you owe it to yourself to do so.
+* Charles Max Wood at [Teach Me To Code](http://teachmetocode.com/screencasts)/ has been showing the basics of CoffeeScript in his screencasts. I will admit to being kind of green in this area, but am looking forward to getting Javascript functionality in my apps without having to deal with old-school RJS.

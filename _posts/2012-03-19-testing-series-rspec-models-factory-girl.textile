@@ -6,7 +6,7 @@ tags: rspec
 ---
 
 <div class="alert alert-info">
-  This is part three of an ongoing "series on getting started and comfortable with testing Rails applications":http://everydayrails.com/2012/03/12/testing-series-intro.html. I appreciate your feedback along the way.
+  This is part three of an ongoing [series on getting started and comfortable with testing Rails applications](http://everydayrails.com/2012/03/12/testing-series-intro.html). I appreciate your feedback along the way.
 </div>
 
 We've got all the tools we need for building a solid, reliable test suite&mdash;now it's time to put them to work. We'll get started with the app's core building blocks&mdash;its models.
@@ -17,7 +17,7 @@ In this post, we'll complete the following tasks:
 * Next, we'll simplify the process of creating and maintaining test data with factories.
 * Finally, we'll write passing tests for a model's validations, class, and instance methods, and organize our spec in the process.
 
-We'll create our first spec files and factories for existing models by hand (though the handy RSpec generators we configured in "Part 2":http://everydayrails.com/2012/03/12/testing-series-rspec-setup.html can be used as templates when adding future models to our application).
+We'll create our first spec files and factories for existing models by hand (though the handy RSpec generators we configured in [Part 2](http://everydayrails.com/2012/03/12/testing-series-rspec-setup.html) can be used as templates when adding future models to our application).
 
 h2. Anatomy of a model spec
 
@@ -104,7 +104,7 @@ h2. Generating test data with factories
 
 I won't spend a lot of time bad-mouthing fixtures&mdash;frankly, it's already been done. Long story short, there are two issues presented by fixtures I'd like to avoid: First, fixture data can be brittle and easily broken (meaning you spend about as much time maintaining your test data as you do your tests and actual code); and second, Rails bypasses Active Record when it loads fixture data into your test database. What does that mean? It means that important things like your models' validations are ignored. This is bad!
 
-Enter factories: Simple, flexible, building blocks for test data. If I had to point to a single component that helped me see the light toward testing more than anything else, it would be "Factory Girl":https://github.com/thoughtbot/factory_girl, an easy-to-use and easy-to-rely-on gem for creating test data without the brittleness of fixtures. Since we've got Factory Girl installed courtesy of the <code>factory_girl_rails</code> gem we installed earlier, we've got full access to factories in our app. Let's put them to work!
+Enter factories: Simple, flexible, building blocks for test data. If I had to point to a single component that helped me see the light toward testing more than anything else, it would be [Factory Girl](https://github.com/thoughtbot/factory_girl), an easy-to-use and easy-to-rely-on gem for creating test data without the brittleness of fixtures. Since we've got Factory Girl installed courtesy of the <code>factory_girl_rails</code> gem we installed earlier, we've got full access to factories in our app. Let's put them to work!
 
 Back in the <code>spec</code> directory, add another subdirectory named <code>factories</code>; within it, add the file </code>contacts.rb</code> with the following content:
 
@@ -118,7 +118,7 @@ FactoryGirl.define do
 end
 {% endhighlight %}
 
-This chunk of code gives us a _factory_ we can use throughout our specs. Essentially, whenever we create test data via <code>Factory(:contact)</code>, that contact's name will be John Doe. This is probably adequate for our first round of model specs, but I like to provide my specs with more random data. Enter the "Faker":http://rubygems.org/gems/faker gem. Edit </code>contacts.rb</code> to include it:
+This chunk of code gives us a _factory_ we can use throughout our specs. Essentially, whenever we create test data via <code>Factory(:contact)</code>, that contact's name will be John Doe. This is probably adequate for our first round of model specs, but I like to provide my specs with more random data. Enter the [Faker](http://rubygems.org/gems/faker) gem. Edit </code>contacts.rb</code> to include it:
 
 {% highlight ruby %}
 # spec/factories/contacts.rb

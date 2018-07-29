@@ -23,11 +23,11 @@ Like I said, I'm not hardcore into Test Driven Development or Behavior Driven De
 
 h3. 3. Start with your scaffolds
 
-Scaffolds are a great way to learn Rails (and to continue to write Rails code quickly), and they're also good for learning to write tests. In particular, Ryan Bates' "Nifty Generators":https://github.com/ryanb/nifty-generators will write starter tests for you using your choice of Test::Unit or RSpec. You can use Ryan's generated tests to get a handle on what you should be testing and how, then build on those with your own tests.
+Scaffolds are a great way to learn Rails (and to continue to write Rails code quickly), and they're also good for learning to write tests. In particular, Ryan Bates' [Nifty Generators](https://github.com/ryanb/nifty-generators) will write starter tests for you using your choice of Test::Unit or RSpec. You can use Ryan's generated tests to get a handle on what you should be testing and how, then build on those with your own tests.
 
 h3. 4. Use factories liberally
 
-I'm a big fan of factories&mdash;they make it simple to specify exactly what your data should look like in each of your tests. I currently use "Factory Girl":https://github.com/thoughtbot/factory_girl. The "Railscasts":http://railscasts.com/episodes/158-factories-not-fixtures episode is a good primer (though slightly outdated, so refer to Factory Girl's documentation for the latest syntax). I use factories in RSpec to test my models and my controllers alike. I'm also a big fan of using the inheritance feature:
+I'm a big fan of factories&mdash;they make it simple to specify exactly what your data should look like in each of your tests. I currently use [Factory Girl](https://github.com/thoughtbot/factory_girl). The [Railscasts](http://railscasts.com/episodes/158-factories-not-fixtures) episode is a good primer (though slightly outdated, so refer to Factory Girl's documentation for the latest syntax). I use factories in RSpec to test my models and my controllers alike. I'm also a big fan of using the inheritance feature:
 
 {% highlight ruby %}
   # spec/factories.rb
@@ -44,11 +44,11 @@ I'm a big fan of factories&mdash;they make it simple to specify exactly what you
 
 Now, as long as an <code>article</code> is invalid without a name, I can use the <code>invalid_article</code> factory in any test that has something to do with, you guessed it, an invalid article (for example, testing to make sure a <code>create</code> controller method doesn't process an incomplete entry).
 
-The other part of the code above that might look new is the use of the Faker gem in factories. A "Railscast on populating databases":http://railscasts.com/episodes/126-populating-a-database showed how to use this handy gem; I've taken to using "Fast Faker":https://github.com/EmmanuelOga/ffaker, which has the same API but is much speedier.
+The other part of the code above that might look new is the use of the Faker gem in factories. A [Railscast on populating databases](http://railscasts.com/episodes/126-populating-a-database) showed how to use this handy gem; I've taken to using [Fast Faker](https://github.com/EmmanuelOga/ffaker), which has the same API but is much speedier.
 
 h3. 5. Structure your tests
 
-Your tests should be easy to read. They should also test one thing at a time. The best resource I've found that explains how to put this in practice is "RSpec Best Practices":http://blog.carbonfive.com/2010/10/21/rspec-best-practices/, written last October by Jared Carroll at Carbon Five. Read this article, then revisit the tests you've written to figure out how you can make them cleaner.
+Your tests should be easy to read. They should also test one thing at a time. The best resource I've found that explains how to put this in practice is [RSpec Best Practices](http://blog.carbonfive.com/2010/10/21/rspec-best-practices)/, written last October by Jared Carroll at Carbon Five. Read this article, then revisit the tests you've written to figure out how you can make them cleaner.
 
 I also like to switch my RSpec output format to _documentation_ so I can see a nice outline of my tests. To do this in RSpec 2, edit your project's <code>.rspec</code> file and add the line
 
@@ -60,8 +60,8 @@ h3. Next steps
 
 First and foremost, I'll reiterate that the best way to move forward with testing your Rails applications is to start writing tests. Write tests on code you know to work and build up from there.
 
-I also like a couple of books in particular about testing in Rails. The first, _"Rails Test Prescriptions: Keeping Your Application Healthy":http://amzn.to/ofN37q_ by Noel Rappin is a good overview of the entire Rails testing ecosystem (it's technically in beta right now but will be released soon&mdash;follow the "Rails Test Prescriptions Blog":http://railsrx.com/ to keep current on the book's status). The second book is specific to RSpec and is called, fittingly, _"The RSpec Book: Behaviour-Driven Development with RSpec, Cucumber, and Friends":http://amzn.to/qoeTvR_. This one's by David Chelimsky, Dave Astels, Zach Dennis, Aslak Helles&oslash;y, Bryan Helmkamp, Dan North&mdash;the folks behind RSpec itself.
+I also like a couple of books in particular about testing in Rails. The first, _[Rails Test Prescriptions: Keeping Your Application Healthy](http://amzn.to/ofN37q_) by Noel Rappin is a good overview of the entire Rails testing ecosystem (it's technically in beta right now but will be released soon&mdash;follow the [Rails Test Prescriptions Blog](http://railsrx.com)/ to keep current on the book's status). The second book is specific to RSpec and is called, fittingly, _[The RSpec Book: Behaviour-Driven Development with RSpec, Cucumber, and Friends](http://amzn.to/qoeTvR_). This one's by David Chelimsky, Dave Astels, Zach Dennis, Aslak Helles&oslash;y, Bryan Helmkamp, Dan North&mdash;the folks behind RSpec itself.
 
-One last thought: If you're brand new to Rails, or haven't gotten up to speed on Rails 3 yet, I recommend getting started with Michael Hartl's "Rails Tutorial":http://railstutorial.org/ ("also available in book form":http://amzn.to/ovOHFn). Unlike other Rails primers, this one gets you off on the right foot by having you write tests alongside your code, to help you get into that good habit.
+One last thought: If you're brand new to Rails, or haven't gotten up to speed on Rails 3 yet, I recommend getting started with Michael Hartl's [Rails Tutorial](http://railstutorial.org)/ ([also available in book form](http://amzn.to/ovOHFn)). Unlike other Rails primers, this one gets you off on the right foot by having you write tests alongside your code, to help you get into that good habit.
 
 Good luck with your Rails testing!

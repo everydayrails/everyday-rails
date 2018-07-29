@@ -5,11 +5,11 @@ excerpt: "Integration testing with RSpec request specs make sure your applicatio
 tags: rspec
 ---
 
-So far we've added a good amount of test coverage to our contacts manager. We got "RSpec installed and configured":http://everydayrails.com/2012/03/12/testing-series-rspec-setup.html, used factories to generate test data, and set up some unit tests on "models":http://everydayrails.com/2012/03/19/testing-series-rspec-models-factory-girl.html and "controllers":http://everydayrails.com/2012/04/07/testing-series-rspec-controllers.html. Now it's time to put everything together for integration testing&mdash;in other words, making sure those models and controllers all play nicely with other models and controllers in the application. These tests are called _request specs_ in RSpec&mdash;and yes, they can be daunting if you're still getting comfortable with testing.
+So far we've added a good amount of test coverage to our contacts manager. We got [RSpec installed and configured](http://everydayrails.com/2012/03/12/testing-series-rspec-setup.html), used factories to generate test data, and set up some unit tests on [models](http://everydayrails.com/2012/03/19/testing-series-rspec-models-factory-girl.html) and [controllers](http://everydayrails.com/2012/04/07/testing-series-rspec-controllers.html). Now it's time to put everything together for integration testing&mdash;in other words, making sure those models and controllers all play nicely with other models and controllers in the application. These tests are called _request specs_ in RSpec&mdash;and yes, they can be daunting if you're still getting comfortable with testing.
 
 The good news is you know almost everything you need to know to write a solid request spec&mdash;they follow the same <code>describe</code> and <code>context</code> structure you've been using in models and controllers, and you can use Factory Girl to generate test data for them.
 
-There's one last component to complete the basic RSpec toolkit: "Capybara":https://github.com/jnicklas/capybara. If necessary, add Capybara (and another gem we'll use in a moment, "DatabaseCleaner":https://github.com/bmabey/database_cleaner) to your Gemfile's <code>:test</code> group like so, running <code>bundle install</code> to install the dependencies:
+There's one last component to complete the basic RSpec toolkit: [Capybara](https://github.com/jnicklas/capybara). If necessary, add Capybara (and another gem we'll use in a moment, [DatabaseCleaner](https://github.com/bmabey/database_cleaner)) to your Gemfile's <code>:test</code> group like so, running <code>bundle install</code> to install the dependencies:
 
 {% highlight ruby %}
 # Gemfile
@@ -53,7 +53,7 @@ describe "Contacts" do
 end
 {% endhighlight %}
 
-You should recognize some techniques from previous tutorials&mdash;<code>describe</code> puts some structure to the spec (we can break things down further with more <code>context</code>, too) and the <code>expect{}</code> Proc we checked out in the "controller specs tutorial":http://everydayrails.com/2012/04/07/testing-series-rspec-controllers.html plays the same role here. Following the Proc, we run a series of tests to make sure the resulting view is displayed in a way we'd expect, using Capybara's not-quite-plain-English-but-still-easy-to-follow style. Check out, too, the <code>within</code> block used to specify _where_ to look on a page for specific content&mdash; in this case, within the <code><h1></code> tag in the <code>show</code> view for contacts. You can get pretty fancy with this if you'd like&mdash;more on that in just a moment.
+You should recognize some techniques from previous tutorials&mdash;<code>describe</code> puts some structure to the spec (we can break things down further with more <code>context</code>, too) and the <code>expect{}</code> Proc we checked out in the [controller specs tutorial](http://everydayrails.com/2012/04/07/testing-series-rspec-controllers.html) plays the same role here. Following the Proc, we run a series of tests to make sure the resulting view is displayed in a way we'd expect, using Capybara's not-quite-plain-English-but-still-easy-to-follow style. Check out, too, the <code>within</code> block used to specify _where_ to look on a page for specific content&mdash; in this case, within the <code><h1></code> tag in the <code>show</code> view for contacts. You can get pretty fancy with this if you'd like&mdash;more on that in just a moment.
 
 One other thing to point out: Within request specs, I think it's perfectly reasonable to have multiple expectations in a given example. Request specs typically have much greater overhead than your models and controllers, and as such can take a lot longer to run.
 
@@ -135,7 +135,7 @@ h2. Parting advice
 
 * *Keep it simple:* If you don't get request specs right away, don't worry about it. They require some additional setup and thinking to not just work, but actually test what you need to test. Don't stop testing your models and controllers, though&mdash;building skills at that level will help you grasp more complicated specs sooner rather than later.
 * *Make time for testing:* Yes, tests are extra code for you to maintain; that extra care takes time. Plan accordingly, as a feature you may have been able to complete in an hour or two before might take a whole day now. This especially applies when you're getting started with testing. However, in the long run you'll recover that time by working from a more trustworthy code base.
-* *Don't revert to old habits!* It's easy to get stuck on a failing test that shouldn't be failing. If you can't get a test to pass, make a note to come back to it&mdash;_and then come back to it_. The RSpec mailing list is helpful, as are books like _"The RSpec Book":http://www.amazon.com/gp/product/1934356379/ref=as_li_ss_tl?ie=UTF8&tag=everrail-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=1934356379_ and _"Rails Test Prescriptions":http://www.amazon.com/gp/product/1934356646/ref=as_li_ss_tl?ie=UTF8&tag=everrail-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=1934356646_.
+* *Don't revert to old habits!* It's easy to get stuck on a failing test that shouldn't be failing. If you can't get a test to pass, make a note to come back to it&mdash;_and then come back to it_. The RSpec mailing list is helpful, as are books like _[The RSpec Book](http://www.amazon.com/gp/product/1934356379/ref=as_li_ss_tl?ie=UTF8&tag=everrail-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=1934356379_) and _[Rails Test Prescriptions](http://www.amazon.com/gp/product/1934356646/ref=as_li_ss_tl?ie=UTF8&tag=everrail-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=1934356646_).
 
 h2. Conclusion
 
@@ -149,4 +149,4 @@ There's a lot we haven't covered, though:
 * What it means to be a _test-driven developer_
 * Other things we could be testing (email, routes, etc.)
 
-I'm happy to announce that *I'm working on a book* to cover these topics! There will be more details in the coming days, but I'm self-publishing to keep it affordable (under 10 American bucks) and intend to provide a complete source example and updates through Rails 4.0. "Get early access now!":http://leanpub.com/everydayrailsrspec
+I'm happy to announce that *I'm working on a book* to cover these topics! There will be more details in the coming days, but I'm self-publishing to keep it affordable (under 10 American bucks) and intend to provide a complete source example and updates through Rails 4.0. [Get early access now!](http://leanpub.com/everydayrailsrspec)

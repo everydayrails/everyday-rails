@@ -4,7 +4,7 @@ title: "Trees and taxonomies with Ancestry"
 excerpt: "Ancestry is a new gem for adding tree structures to content in your Rails applications."
 ---
 
-"Ancestry":https://github.com/stefankroes/ancestry is a handy gem for building tree structures or taxonomies in your Rails applications. It's similar to the likes of the "acts_as_tree":https://github.com/rails/acts_as_tree plugin (see the "Railscasts tutorial":http://railscasts.com/episodes/162-tree-based-navigation). The "project wiki":https://github.com/stefankroes/ancestry/wiki has several ideas for ways to put Ancestry to use; in this post I'll cover a couple of basic uses to get you rolling with some common applications of the gem.
+[Ancestry](https://github.com/stefankroes/ancestry) is a handy gem for building tree structures or taxonomies in your Rails applications. It's similar to the likes of the [acts_as_tree](https://github.com/rails/acts_as_tree) plugin (see the [Railscasts tutorial](http://railscasts.com/episodes/162-tree-based-navigation)). The [project wiki](https://github.com/stefankroes/ancestry/wiki) has several ideas for ways to put Ancestry to use; in this post I'll cover a couple of basic uses to get you rolling with some common applications of the gem.
 
 h3. Installation
 
