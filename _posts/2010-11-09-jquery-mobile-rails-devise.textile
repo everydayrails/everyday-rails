@@ -6,7 +6,7 @@ excerpt: "jQuery Mobile is easy to integrate with Rails and Devise to create aut
 
 Mobile web frameworks are taking off, and developers now have a number of options for making great-looking mobile-optimized web applications with relative ease. In the past I covered jQTouch, a jQuery-based JavaScript framework (see [part one](/2010/08/22/mobile-rails-1.html) and [part two](/2010/08/29/mobile-rails-2.html) of my work), but ran into frustrations when trying to integrate it with the likes of [Devise](https://github.com/plataformatec/devise). Meanwhile, [jQuery Mobile](http://jquerymobile.com)/, from the jQuery Group themselves, has been released and shows great promise, especially if you need to get a mobile version up and running within an existing application.
 
-h3. Background reading
+### Background reading
 
 To start, I recommend reading through Jarod Santo's [excellent introduction to using jQuery Mobile with Rails 3](http://fuelyourcoding.com/getting-started-with-jquery-mobile-rails-3)/. It goes through the steps of integrating the mobile framework into a standard CRUD scaffold. However, to make your app both mobile and desktop-savvy, you'll probably want to do some browser detection like that covered in the [Railscasts episode on mobile web apps](http://railscasts.com/episodes/199-mobile-devices). Depending on the mobile devices you want to support (jQuery Mobile should eventually support most mobile platforms) you may need to change the regular expression Ryan uses to detect mobile browsers.
 
@@ -16,7 +16,7 @@ We're going to use Devise to handle our app's authentication, so if you haven't 
 
 This is by no means a template for creating your mobile app, but here are some ideas to help you get started.
 
-h3. Application code tweaks
+### Application code tweaks
 
 First off, here is a mobile application layout. Mine's a little different from Jarod's in that I've moved rendering of the <code>header</code> div to my layout file. Here I've got a Nifty Generators-like <code>@title</code> value that gets set in individual views, but is rendered in the right place. Otherwise, I have a straightforward conditional to display either a Sign In or Sign Out button. Any thoughts on how to properly display my app's flash messages here?
 
@@ -53,7 +53,7 @@ Since I moved the <code>header</code> div to the layout, I've removed it from th
 
 
 
-h3. Devise views
+### Devise views
 
 If you haven't done so already, generate a copy of the Devise views into your application:
 
@@ -140,7 +140,7 @@ Finally, here's a mobile login form:
 </div>
 {% endhighlight %}
 
-h3. Locking down the Posts controller
+### Locking down the Posts controller
 
 Let's say that anyone can access the Posts controller's <code>index</code> and <code>show</code> methods, but a user must be logged in to do anything else. The following before filter will take care of that:
 
@@ -177,6 +177,6 @@ end
 
 {% endhighlight %}
 
-h3. Next steps
+### Next steps
 
 This should be enough to get you started, though as I said it's not the end-all, be-all template for creating apps with Rails and jQuery Mobile. What I've shared here is working for me in development but I'm not ready to move any of this to production just yet. Experiment with it and [some of the options available in jQuery Mobile](http://jquerymobile.com/demos/1.0a1)/, keeping in mind that jQuery Mobile is currently in its first alpha release. You'll find some quirks, but I think in the long run this framework will be a winner for creating cross-platform mobile web apps. As you make discoveries of your own, I hope you'll share them here in the comments.

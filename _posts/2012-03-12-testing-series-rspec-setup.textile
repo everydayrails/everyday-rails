@@ -16,7 +16,7 @@ In this post, we'll complete the following tasks:
 * Configure RSpec
 * Configure our Rails application to automatically generate files for testing as we add new features
 
-h2. Our application
+## Our application
 
 In this book, I'll be working from a basic Rails 3.2 contact manager. The application currently has the following features:
 
@@ -30,7 +30,7 @@ We just have one problem--so far I haven't been doing any testing in my applicat
 
 Let's fix that now. Before I dive into specs, though, I need to do some configuring.
 
-h2. Gemfile
+## Gemfile
 
 First things first: Since RSpec isn't included in a default Rails 3.x application, we'll need to take a moment to install it and a few helpers. We'll use Bundler to add these dependencies. In your application, open <code>Gemfile</code> and add the following code:
 
@@ -67,7 +67,7 @@ So what did we just install?
 
 I'll cover each of these in more detail in future posts, but in the meantime our application has access to all the supports necessary to build a solid test suite. Next up: Creating our test database.
 
-h2. Test database
+## Test database
 
 If you're adding specs to an existing Rails application, there's a chance you've already got a test database on your computer. If not, we'll add one now.
 
@@ -111,7 +111,7 @@ $ rake db:create:all
 
 If you didn't yet have a test database, you do now. If you did, the rake task politely informs you that the database already exists--no need to worry about accidentally deleting a previous database. Now let's configure RSpec itself.
 
-h2. RSpec configuration
+## RSpec configuration
 
 Now we can add a spec folder to our application and add some basic RSpec configuration. On your command line, install RSpec with the following:
 
@@ -137,7 +137,7 @@ Next--and this is optional--I like to change RSpec's output from the default for
 
 One last setup step: Telling Rails to generate spec files for us.
 
-h2. Generators
+## Generators
 
 Now that we've got RSpec installed and configured, let's tell Rails to use it to generate starter files for our application's test suite (instead of the default TestUnit). While we're at it, we'll tell Rails to create a factory corresponding to each new model we create with Rails' generate command.
 

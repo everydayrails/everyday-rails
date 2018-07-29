@@ -14,11 +14,11 @@ In addition to managing Ruby versions, RVM gives you a second killer feature--th
 
 The tutorials on the RVM website cover all of the steps to get going, but they may require a little hunting and can be daunting if you don't know what you're doing. I use Mac OS X 10.6 for development; if you do as well then these steps should work for you. Steps 2 through 5 should fly for you if you're using a Linux distribution. If you're using Windows, check out [Pik](http://github.com/vertiginous/pik) for similar functionality (I have no experience with Pik myself).
 
-h2. 1. Prerequisites
+## 1. Prerequisites
 
 Depending on the installation method you choose, you may be good to go with a stock installation of your operating system. You may want to install Git if you haven't already to retrieve the latest versions of RVM or Rubies. I recommend [Homebrew](http://mxcl.github.com/homebrew)/ for installing Git and other software packages for Mac OS X, though if you'd prefer a double-click installer there's [Git for OS X](http://code.google.com/p/git-osx-installer)/.
 
-h2. 2. Installation
+## 2. Installation
 
 The [RVM installation documentation](http://rvm.beginrescueend.com/rvm/install)/ lists three options. I used the first option (installing from the GitHub repository via a single command). I'm not sure why installing from the gem is not recommended, other than you're apt to not get the latest version. For what it's worth, the [Railscasts episode on using RVM with Rails 3 Beta](http://railscasts.com/episodes/200-rails-3-beta-and-rvm) installs from GitHub. So, going that route, type:
 
@@ -64,7 +64,7 @@ And pick a default Ruby interpreter with
   <p><strong>Which Rubies should I install?</strong> That depends on your particular development needs. I have 1.8.7, 1.9.1, and REE (Ruby Enterprise Edition) installed.</p>
 </div>
 
-h2. 3. Rails 3 gemset
+## 3. Rails 3 gemset
 
 At this point you can install Rails 2.3.8 and any other gems in your default environment, and continue using them for your day-to-day Rails development. You can also create a compartmentalized area called a _gemset_ for experimenting with Rails 3.
 
@@ -108,7 +108,7 @@ Read the [RVM documentation on gemsets](http://rvm.beginrescueend.com/gemsets/ba
   $ rvm use 1.8.7@rails3 --create
 {% endhighlight %}
 
-h2. 4. Passenger setup (optional)
+## 4. Passenger setup (optional)
 
 If you're using Passenger on your development computer, and want to keep using it with RVM, you'll need to make a few tweaks to your web server configuration. In my case, I'm using the default installation of Apache in Mac OS X. Looking at the [documentation on integrating Passenger with RVM](http://rvm.beginrescueend.com/integration/passenger)/, you'll see there are a few steps involved here. It confused me a little the first time I ran through it, but here's the rundown:
 
@@ -130,7 +130,7 @@ Finally, edit your web server configuration file (in the case of Apache on OS X,
 
 Reboot Apache and you should be good to go. For the record, I'm about to switch my server settings to use REE instead of 1.8.7, to better reflect a production environment.
 
-h2. 5. MySQL (optional)
+## 5. MySQL (optional)
 
 First, install MySQL the way you normally would (if you haven't already). You can use Homebrew, or you can download an installer for your operating system. I went with the latter--if you're using Leopard or Snow Leopard, _make sure you download and install the 64-bit version_.
 
@@ -149,7 +149,7 @@ And install the MySQL Ruby gem via:
 (Adjust your path to MySQL's <code>bin</code> directory if needed; what's above is the default installation.)
 
 <div class="alert alert-info">
-h2. Don't forget!
+## Don't forget!
 
 * Aside from integrating Passenger with your web server, _you won't use <code>sudo</code> to install gems anymore_.
 * You'll need to install gems for _each Ruby and each gemset you've installed using RVM_. In other words, a gem you installed in one gemset won't work in a second unless you install the gem in the second gemset, too.

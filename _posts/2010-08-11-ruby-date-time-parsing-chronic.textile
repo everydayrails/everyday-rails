@@ -8,7 +8,7 @@ Out of the box, Rails' <code>date_select</code> input type and other date/time-r
 
 In this crash course in natural date/time parsing in Ruby, we're going to look at two gems called [Chronic](http://chronic.rubyforge.org)/ and [Chronic Duration](http://github.com/hpoydar/chronic_duration). These gems handle almost any date or time format your users throw at them and store them in database-friendly formats without the need for Javascript on the client side or hand-coded Ruby on the server side.
 
-h3. Chronic
+### Chronic
 
 Let's start with Chronic for parsing date/time values into something you can store in a database. First, install the gem:
 
@@ -33,7 +33,7 @@ Chronic's usage is very straightforward. Let's fire up <code>irb</code> or <code
 
 So rather than requiring users to use Rails' default pulldown-based date picker, or enter data in forced formats (like <code>MM/DD/YYYY</code>), or click through Javascript-based calendars, your app can be smart about parsing the entered date into something meaningful to the server. For that matter, you can use it in conjunction with a Javascript calendar (like the [datepicker in JQuery UI](http://jqueryui.com/demos/datepicker)/) for further functionality.
 
-h3. Chronic Duration
+### Chronic Duration
 
 Say you're developing a cooking site or project management tool and want to allow users to enter spans of time like "35 minutes," "1 hour 15 minutes," "1:30," or "2 days" and store them in a consistent format. Enter Chronic Duration&mdash;it works like Chronic, but for stretches of time as opposed to actual dates or times. After parsing the entry, the duration is stored in the database as the number of seconds. First, install the gem:
 
@@ -65,7 +65,7 @@ And so on. Chronic Duration also provides an output method:
     => "1:15"
 {% endhighlight %}
 
-h3. Using Chronic and Chronic Duration in Rails
+### Using Chronic and Chronic Duration in Rails
 
 Experimenting with the gems in the console is one thing, but how do we put them to use in a Rails application? Here's how I do it. Going back to the idea of a project tracker, say I've got a model named <code>Task</code> with a due date and an estimated time field. It might look like this:
 

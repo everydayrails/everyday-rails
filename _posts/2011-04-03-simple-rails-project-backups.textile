@@ -20,7 +20,7 @@ The Backup gem is incredibly easy to install, assuming you've got shell access t
   $ backup dependencies --list
 {% endhighlight %}
 
-h3. Next steps
+### Next steps
 
 * You'll probably want to set up automated execution of your new backup system. Van Rooijen and I both recommend using the handy [Whenever](https://github.com/javan/whenever) gem to create cron jobs for this purpose.
 * You can set up notification via e-mail, Twitter, or Campfire. See [the project wiki's page on notifications](https://github.com/meskyanichi/backup/wiki/Notifiers) for details.

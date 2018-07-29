@@ -10,7 +10,7 @@ In Rails, <code>try()</code> lets you call methods on an object without having t
   <strong>Disclaimer:</strong> While handy, this technique is not a replacement for good techniques like validations and default database values. Don't get lazy.
 </div>
 
-h3. Before
+### Before
 
 Here's a simple example of code you might replace with <code>try()</code>. Say you've got a (rather contrived) <code>Product</code> model in your project. A <code>Product</code> may or may not have a known manufacturer, and some links you only want to display if a user is logged in _and_ has administrator rights:
 
@@ -40,7 +40,7 @@ Like I said, it's contrived, but it should give you the idea. <code>try()</code>
   <% end %>
 {% endhighlight %}
 
-h3. With arguments and blocks
+### With arguments and blocks
 
 You can pass arguments and blocks to <code>try():</code>
 
@@ -54,7 +54,7 @@ You can pass arguments and blocks to <code>try():</code>
   
 {% endhighlight %}
 
-h3. Chaining
+### Chaining
 
 You can chain multiple <code>try()</code> methods together. In another contrived example, say you've got a method in your <code>Manufacturer</code> model that sends the manufacturer a message whenever called.
 
@@ -73,6 +73,6 @@ You can chain multiple <code>try()</code> methods together. In another contrived
   #=> "Manufacturer has been contacted."
 {% endhighlight %}
 
-h3. Further reading
+### Further reading
 
 You can start with [the Rails docs on try()](http://api.rubyonrails.org/classes/Object.html#method-i-try). Rails' inclusion of <code>try()</code> was inspired by [Chris Wanstrath's post about adding try() to Ruby](http://ozmm.org/posts/try.html). Raymond Law at Intridea has [a clever way to chain multiple calls to try()](http://intridea.com/2010/11/2/calling-methods-on-potential-nil-objects-in-rails?blog=company). And Scott Harvey has shared [a more practical example of try()](http://blog.scottharvey.co/blog/2010/7/5/ruby-on-rails-try-method.html).

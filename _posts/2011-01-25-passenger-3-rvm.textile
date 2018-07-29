@@ -37,6 +37,6 @@ Also note the suggested virtual host configuration provided; you may need it lat
 
 From here, it's just a matter of preparing your Rails applications to take advantage of RVM's gemsets feature. Again, I'll refer you to [an earlier post about adding a <code>setup_load_paths.rb</code> file](http://everydayrails.com/2010/09/13/rvm-project-gemsets.html) to each new app's <code>config</code> directory. You'll also need to set up a virtual host for each new app. If you were using Passenger 2.2.x before, your existing virtual hosts should work fine. (The [OS X Passenger Preference Pane](http://www.fngtps.com/passenger-preference-pane), while still only 32-bit, is still working for me on my setup.)
 
-h3. What about multiple Rubies?
+### What about multiple Rubies?
 
 I haven't done this myself, but if you need to use this general setup with multiple versions of Ruby, refer to [this post on Phusion's blog about using proxies with Passenger and RVM](http://blog.phusion.nl/2010/09/21/phusion-passenger-running-multiple-ruby-versions)/

@@ -6,17 +6,17 @@ excerpt: "Get e-mail feedback from your site's visitors though this simple-to-im
 
 Everyday Rails is back after an unexpected summer hiatus that included an overloaded work schedule and an unexpected move in residence. To get back in the swing of things, I'd like to share a handy gem I discovered and implemented a few times over the summer to accomplish the common task of sending comments from a form. While there are a few ways you could write your own, I recommend taking a look at MailForm for both getting the task done and learning more about working with Ruby and Rails constructs that fall outside of the typical scaffold approach.
 
-h3. What is it?
+### What is it?
 
 [MailForm](https://github.com/plataformatec/mail_form) is a dead-simple, customizable gem to deliver mail to designated recipients from a Rails app via a web form. It was developed by Jos&#233; Valim and Carlos Antonio da Silva of Platforma Tec, makers of the popular Devise authentication gem. (Jos&#233; is also a core contributor to Rails.)
 
 By the way, if you're interested in learning more about the internals of this gem, check out Jos&#233;'s [Crafting Rails Applications&#058; Expert Practices for Everyday Rails Development](http://amzn.to/nS90ZU) (no relation to this blog). It's a great way to get a better understanding of Ruby and Rails internals.
 
-h3. Who's it for?
+### Who's it for?
 
 MailForm is for Rails developers who would like a basic, customizable contact form in their Rails applications, but don't need to store messages in the database (in which case a basic scaffold might be your best bet). You should be able to get MailForm up and running in your app, tests included, in an hour or less.
 
-h3. How does it work?
+### How does it work?
 
 First things first&mdash;make sure you've got outgoing mail configured to your liking. I use Google-hosted mail for production, and [MockSMTP or Mailcatcher](http://everydayrails.com/2011/05/26/rails-smtp-development.html) in development. (One gotcha for using Google Apps for Domains to deliver mail: Google will always change the sender's e-mail address to the address of the account you're using for SMTP. To my knowledge there's no way to change this, at least not with the free service level.)
 
@@ -136,6 +136,6 @@ Finally, a quick note about tests/specs. In the app in question, we use RSpec Ca
   end
 {% endhighlight %}
 
-h3. Conclusion
+### Conclusion
 
 There you go, everything you need to add a straightforward, tested mail form to your Rails application. Thanks to Jos&#233; and Carlos for the useful gem, and thanks to you for coming back to Everyday Rails. I'll do my best to be more of a regular around here myself.

@@ -15,7 +15,7 @@ I'd looked at Ruby before, but never had a serious use for it until Rails began 
 
 That said, early Rails books and tutorials focused more on speed (build a blog in 15 minutes!) than on good practices like testing. If testing were covered at all, it was generally reserved for a chapter toward the end. Newer works on Rails have addressed this shortcoming, and now demonstrate how to test applications throughout, and a number of books have been written specifically on the topic of testing. But without a sound approach to the testing side, many developers--especially those in a similar boat to the one I was in--may find themselves without a consistent testing strategy. My goal with this series is to introduce you to a consistent strategy that works for me--one that you can then adapt to make work consistently for you, too.
 
-h2. Who should read this series
+## Who should read this series
 
 If Rails is your first foray into a web application framework, and your past programming experience didn't involve any testing to speak of, this series will hopefully help you get started. If you're really new to Rails, you may find it beneficial to review coverage of testing in the likes of Michael Hartl's [Rails Tutorial](http://ruby.railstutorial.org)/ or Sam Ruby's _[Agile Web Development with Rails (4th Edition)](http://www.amazon.com/gp/product/1934356549/ref=as_li_ss_tl?ie=UTF8&tag=everrail-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=1934356549_) as well--this series assumes you've got some basic Rails skills under your belt. In other words, this series won't teach you how to use Rails, and it won't provide a ground-up introduction to the testing tools built into the framework--we're going to be installing a few extras to make the testing process easier to comprehend and manage.
 
@@ -23,7 +23,7 @@ If you've been developing in Rails for a little while, and maybe even have an ap
 
 On the more advanced end, if you're familiar with using Test::Unit or even RSpec, and have a workflow that (a) you're comfortable with and (b) provides adequate coverage already in place, you may be able to fine-tune some of your approach to testing your applications--but to be honest, at this point you're probably on board with automated testing and don't need this extra nudge. Books like David Chelimsky's _[The RSpec Book](http://www.amazon.com/gp/product/1934356379/ref=as_li_ss_tl?ie=UTF8&tag=everrail-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=1934356379_) or Noel Rappin's _[Rails Test Prescriptions](http://www.amazon.com/gp/product/1934356646/ref=as_li_ss_tl?ie=UTF8&tag=everrail-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=1934356646_) may be of more use to you in the long run.
 
-h2. My testing philosophy
+## My testing philosophy
 
 Discussing the right way to test your Rails application can invoke holy wars--not quite as bad as the Vim versus Emacs debate, but still not something to bring up in an otherwise pleasant conversation with fellow Rubyists. Yes, there is a right way to do testing--but there are degrees of *right* when it comes to testing.
 

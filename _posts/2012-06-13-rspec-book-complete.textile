@@ -13,10 +13,10 @@ Next, let me remind you what's in the book as it now stands: 115 pages (as the P
 
 If you're still on the fence, check out the [preview available through Leanpub](http://leanpub.com/everydayrailsrspec), or refer to the [testing series on this blog](http://everydayrails.com/2012/03/12/testing-series-intro.html) that started the whole thing.
 
-h3. Update for Rails 4.0
+### Update for Rails 4.0
 
 Once Rails 4.0 begins hitting the release candidate phase, I'm going to revisit the content of the book and the libraries shared within it, with the hope that an updated version of the book can be available within a month of Rails 4's final release. This version will be a free update to anyone who's purchased the book. I'm doing that because I know how quickly software books can become obsolete, and that Rails 4 is going to hit sooner rather than later.
 
-h3. Availability outside of Leanpub
+### Availability outside of Leanpub
 
 I know that the book isn't available right now in countries Paypal doesn't support. I know also that there are people who just don't like Paypal and don't want to use it. This is a limitation placed by Leanpub, not me. My intention is to make the book available elsewhere as soon as possible, but I want to talk to the folks at Leanpub to determine the best way to go about it. More news as I get it.

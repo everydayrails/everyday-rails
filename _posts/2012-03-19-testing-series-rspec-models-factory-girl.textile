@@ -19,7 +19,7 @@ In this post, we'll complete the following tasks:
 
 We'll create our first spec files and factories for existing models by hand (though the handy RSpec generators we configured in [Part 2](http://everydayrails.com/2012/03/12/testing-series-rspec-setup.html) can be used as templates when adding future models to our application).
 
-h2. Anatomy of a model spec
+## Anatomy of a model spec
 
 I think it's easiest to learn testing at the model level because doing so allows you to examine and test the core building blocks of an application. (An object-oriented application without objects isn't very useful, after all.) Well-tested code at this level is key&mdash;a solid foundation is the first step toward a reliable overall code base.
 
@@ -47,7 +47,7 @@ We'll expand this outline in a few minutes, but this gives us quite a bit for st
 
 With these best practices in mind, let's build a spec for the <code>Contact</code> model.
 
-h2. Creating a model spec
+## Creating a model spec
 
 Open up the <code>spec</code> directory and, if necessary, create a subdirectory named <code>models</code>. Inside the subdirectory create a file named </code>contact_spec.rb</code> and add the following:
 
@@ -100,7 +100,7 @@ Great! Four pending specs&mdash;let's make them pass.
 
 As we add additional models to the contacts manager, assuming we use Rails' <code>model</code> generator to do so, this file (along with an associated factory) will be added automatically. (If it doesn't go back and configure your application's generators now.)
 
-h2. Generating test data with factories
+## Generating test data with factories
 
 I won't spend a lot of time bad-mouthing fixtures&mdash;frankly, it's already been done. Long story short, there are two issues presented by fixtures I'd like to avoid: First, fixture data can be brittle and easily broken (meaning you spend about as much time maintaining your test data as you do your tests and actual code); and second, Rails bypasses Active Record when it loads fixture data into your test database. What does that mean? It means that important things like your models' validations are ignored. This is bad!
 
@@ -154,7 +154,7 @@ This single-line spec uses RSpec's <code>be_valid</code> matcher verify that our
 
 Run RSpec from the command line again and you should see one passing example, with three pending.
 
-h2. Testing validations
+## Testing validations
 
 Validations are a good way to break into automated testing. These tests can usually be written in just a line or two of code, especially when we leverage the convenience of factories. Let's add some detail to our <code>firstname</code> validation spec:
 
@@ -206,7 +206,7 @@ That's not a typo in the previous sample spec&mdash;<code>Factory()</code> is a 
 
 Of course, validations can be more complicated than just requiring a specific scope. Yours might involve a complex regular expression or a custom method. Get in the habit of testing these validations&mdash;not just the happy paths where everything is valid, but also error conditions.
 
-h2. Testing instance methods
+## Testing instance methods
 
 It would be convenient to only have to refer to <code>@contact.name</code> to render our contacts' full names instead of creating the string every time; let's implement that feature in our </code>Contact</code> class now:
 
@@ -228,7 +228,7 @@ it "returns a contact's full name as a string" do
 end
 {% endhighlight %}
 
-h2. Testing class methods and scopes
+## Testing class methods and scopes
 
 Let's test the <code>Contact</code> model's ability to return a list of contacts whose names begin with a given letter. For example, if I click _S_ then I should get _Smith, Sumner_, and so on, but not _Jones_. There are a number of ways I could implement this&mdash;for demonstration purposes I'll show one.
 
@@ -261,7 +261,7 @@ describe Contact do
 end
 {% endhighlight %}
     
-h2. Organizing specs with describe and context
+## Organizing specs with describe and context
 
 We've tested the happy path&mdash;a user selects a name for which we can return results&mdash;but what about occasions when a selected letter returns no results? We'd better test that, too. The following spec should do it:
 
@@ -293,7 +293,7 @@ end
 
 This spec uses RSpec's <code>include</code> matcher to determine if the array returned by <code>Contact.by_letter("J")</code>&mdash;and it passes! We're testing not just for ideal results&mdash;the user selects a letter with results&mdash;but also for letters with no results. However, a problem is brewing in our spec&mdash;can you spot it?
 
-h2. DRYer specs with before and after
+## DRYer specs with before and after
 
 Our spec currently has some redundancy: We create the same three objects in each example. Just as in your application code, the DRY principle applies to your tests (with some exceptions; see below). Let's use a few RSpec tricks to clean things up.
 
@@ -435,7 +435,7 @@ Finished in 0.33642 seconds
 
 <div class="alert alert-info">
 
-h4. How DRY is too DRY?
+#### How DRY is too DRY?
 
 We've spent a lot of time in this chapter organizing specs into easy-to-follow blocks. Like I said, <code>before</code> blocks are key to making this happen&mdash;but they're also easy to abuse.
 
@@ -445,7 +445,7 @@ That said, well-named variables can go a long way as well&mdash;for example, in 
 
 </div>
 
-h2. Summary
+## Summary
 
 And that's how I test models, but we've covered a lot of other important techniques you'll want to use in other types of specs moving forward:
 

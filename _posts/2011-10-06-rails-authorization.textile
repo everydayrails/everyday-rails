@@ -13,7 +13,7 @@ If you thought you had a lot of options as a Rails developer for adding authenti
 
 *Why is authorization important?* Rather than try to answer this question myself, let me remind you of last summer's breach at Citi, when hackers stole more than 200,000 credit card numbers. The approach? [Logging in, then changing the account number in the URL](http://consumerist.com/2011/06/how-hackers-stole-200000-citi-accounts-by-exploiting-basic-browser-vulnerability.html). Want to bet some developers lost their jobs over that one?
 
-h3. How much do you need?
+### How much do you need?
 
 Before you invest a lot of time adding a complex authorization layer to your app, assess what's necessary. How many different types of users will you have? What will those users be able to do (or not do)? A lot of times you or your customer may start a project assuming that you'll need complex roles, when in reality you'll only need a handful&mdash;and in some cases, a full-blown authorization layer isn't required for the level of security you need:
 
@@ -22,7 +22,7 @@ Before you invest a lot of time adding a complex authorization layer to your app
 
 It's relatively easy to migrate from either of these scenarios to a more complex one if and when the time comes. In the short term, however, they may provide all the security you need to ship your initial project.
 
-h3. Defining roles
+### Defining roles
 
 Assuming you've walked through the thinking processes I've outlined above, and you've determined that your current authorization needs are more complex than a simple boolean can handle, then it's time to peruse GitHub and/or RubyGems.org for a good roles manager. You can also create your own&mdash;this is the approach I've taken after experimentation with several gems. Making your own roles solution isn't difficult; [this Railscast on embedded associations](http://railscasts.com/episodes/189-embedded-association) shows one way to accomplish it. Whether you opt for someone else's gem or your own code, though, consider these questions:
 
@@ -30,7 +30,7 @@ Assuming you've walked through the thinking processes I've outlined above, and y
 * I've shied away from approaches that use bitmasks to store a given user's roles. The aforementioned RoleModel and Railscast episode both do this. I found that as I added or removed roles I had to regenerate the bitmasks for each user. It may be worth revisiting the approach once an application's roles aren't in flux and changes to them are more unlikely.
 * Finally, I've been using my roles approach to add a _blocked_ role. At my day job we build tools to collect data in schools, and when a principal or teacher moves on we want to keep what she or he recorded but not allow them access to a given school's information. We don't delete any user or membership information&mdash;rather, we block access to that school's data. (This also entails replacing the usual <code>destroy</code> functionality in controllers to add the blocked role, versus actually deleting a user or membership).
 
-h3. Defining permissions
+### Defining permissions
 
 At this point I'm ready to actually build the authorization layer. If it's anything more complex than a couple of calls to <code>current_user.is_admin?</code> I almost always use [CanCan](https://github.com/ryanb/cancan). It's flexible, up-to-date, and thoroughly documented. In the past I used [RESTful_ACL](https://github.com/ProtectedMethod/restful_acl), which took a different approach to authorization but got the job done. I featured RESTful_ACL early on in _Everyday Rails_; [consult the archives](/archives.html) to learn more.
 

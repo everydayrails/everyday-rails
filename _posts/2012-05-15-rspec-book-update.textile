@@ -21,30 +21,30 @@ My rough schedule for the next few weeks:
 
 Finally, I'd like to quickly respond to a few general questions I've received so far:
 
-h3. What is the intended level of experience for the book?
+### What is the intended level of experience for the book?
 
 Definitely not for beginners. Most likely not for advanced testers (though if you've purchased a copy, you may pick up on some new ideas). If you're a beginner, or have minimal exposure to testing (say, you skipped that chapter in the popular Rails tutorials) you may be better served by Michael Hartl's _Rails 3 Tutorial_. If you're more interested in knowing every detail of RSpec, refer to _The RSpec Book_ by Chelimsky et al.
 
 I've done a lot of refactoring in the book, as I mentioned, and have put a lot of work this past week in explaining examples and why I make certain decisions. But the book still moves pretty quickly. However, if you feel like I'm glossing over something too much (or, conversely, am spending way too much time on a concept) please let me know. This is my first book; I value your feedback.
 
-h3. When will the book be done?
+### When will the book be done?
 
 Two part answer: I intend to have all the content for testing a Rails 3.2 application done and (mostly) edited by the end of May. As typos, bugs, or changes to the Rails and RSpec landscape (as they apply to Rails 3.2) emerge.
 
 When Rails 4.0 is released, I am going to update the sample code and book as needed, and release that as the final version. The reasoning behind this is I want you to have something you can use now with Rails 3.2, but won't be obsolete when Rails 4.0 comes out.
 
-h3. What if I find an error or have a suggestion?
+### What if I find an error or have a suggestion?
 
 The best way to let me know is to send me an email at aaron _at_ everydayrails _dot_ com. If you'd prefer you can let me know by leaving a comment here, or on the book's product page on Leanpub, or on Twitter. I know email isn't the most transparent tool, but right now I'm focused on getting content done and as correct as possible.
 
-h3. When will the book be available in my country?
+### When will the book be available in my country?
 
 Or, _why do I have to use Paypal to purchase the book?_ Leanpub is a Canadian country, so some payment gateways (read: Stripe) aren't available to them at this time. Once the 4.0 version of the book is finished I may pursue other channels, but while it's still in heavy development I'm afraid we're stuck with Paypal--or at least until Leanpub is able to use another gateway. I do know this is high on their wish list.
 
-h3. How's your experience with Leanpub been?
+### How's your experience with Leanpub been?
 
 I've been really happy with Leanpub as a publishing tool. It's very programmer-friendly--I'm using TextMate and Markdown for everything, and Leanpub's Dropbox integration is slick. I definitely recommend checking it out if you've got a book you've been dying to write, but haven't known where to start.
 
-h3. Are you for hire?
+### Are you for hire?
 
 Maybe? Let's talk. Shoot me an email.

@@ -8,12 +8,12 @@ In a keynote at last week's [Ruby Midwest](http://www.rubymidwest.com)/ conferen
 
 If Rails is your first real exposure to the command line&mdash;and I know a few people for whom this is true&mdash;you may think that command lines aren't what we use to interact with computers anymore (especially on Macs). With a bit of practice, though, you may discover that the command line is a much quicker and more powerful way to get things done on your computer than a graphical interface and a mouse. Here are some resources to get you started with the command line in Rails.
 
-h2. The basics
+## The basics
 
 * RailsGuides has documentation on [the Rails 2.3 command line](http://guides.rubyonrails.org/command_line.html) and [the Rails 3 command line](http://guides.rails.info/command_line.html). As usual with RailsGuides, these are very thorough and well-written.
 * The Rails 3 screencast series has a good video outlining [what's new in the Rails 3 command line](http://rubyonrails.org/screencasts/rails3/getting-started-action-dispatch). In particular, there are new flags to <code>rails</code> when setting up your application, and changes to the contents of the <code>script/</code> directory in a Rails application.
 
-h2. Generators
+## Generators
 
 Rails has default generators like <code>scaffold</code>, <code>model</code> and the like; various gems and plugins add generators of their own to help you quickly get your applications up and running. See the RailsGuides above for the defaults and the documentation of your installed gems and plugins for what they provide.
 
@@ -28,7 +28,7 @@ When it comes to generators, everything changes in Rails 3.
 * He's also got an episode on [writing generators in Rails 3](http://railscasts.com/episodes/218-making-generators-in-rails-3)
 * Ben Scofield has written a good series on Rails 3 generators that gives a line-by-line comparison of the Rails 2 way to the Rails 3 way of using generators&mdash;see [the standard generators](http://www.viget.com/extend/rails-3-generators-the-old-faithful)/, some [less common generators like mailers, helpers, and observers](http://www.viget.com/extend/rails-3-generators-the-unusuals-part-1)/, some [more testing-specific generators](http://www.viget.com/extend/rails-3-generators-the-unusuals-part-2)/.
 
-h2. Rake
+## Rake
 
 Rake, Ruby's build tool, is essential to Rails development. Rake is discussed in the RailsGuides referenced above. You're not limited to the tasks Rails provides&mdash;the gems and plugins your app uses may add tasks, and you can create your own.
 
@@ -36,7 +36,7 @@ Rake, Ruby's build tool, is essential to Rails development. Rake is discussed in
 * This Railscasts episode on [writing your own Rake tasks](http://railscasts.com/episodes/66-custom-rake-tasks) is essential viewing.
 * Jason Siefer has also written a good [guide to writing Rake tasks](http://jasonseifer.com/2010/04/06/rake-tutorial).
 
-h2. Unix
+## Unix
 
 These last links aren't specific to Rails, but a general grasp of the Unix command line is going to make your life as a Rails developer much easier, and can help you get other things done on your computer that are cumbersome (or impossible) via a graphical interface. Seriously, if you're using a Mac or Linux-based computer, learn the command line.
 

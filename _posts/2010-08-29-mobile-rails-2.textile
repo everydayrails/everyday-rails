@@ -6,13 +6,13 @@ excerpt: "Continuing on my project to build a mobile-friendly Rails application,
 
 In my [last post](/2010/08/22/mobile-rails-1.html) I shared my first steps toward creating a mobile version of a Rails application. I looked at the Mobile Fu plugin, but wasn't happy with how it played with other parts what you might want to do with a Rails application. So referring to a couple of screencasts I moved forward with hand-rolling my mobile detection code&mdash;as it turns out, it's not hard at all to do. 
 
-h2. Prerequisites
+## Prerequisites
 
 I'll assume you've watched the [Railscasts episode on mobile websites](http://railscasts.com/episodes/199-mobile-devices) and followed the steps in it to prepare your application for mobile devices. Although it was written with Rails 2.3 in mind, I'm not having problems with it in Rails 3 RC 2.
 
 The Railscast is an excellent start, but after watching [Peepcode's episode on jQTouch](http://peepcode.com/products/jqtouch) I learned a few small touches I'd been missing to make my app work like an _app_. If you're still getting a feel for jQTouch, the Peepcode episode is worth the money. It doesn't cover some things I want to get into later (like theming), but it is more than enough to get you started with a mobile Rails application.
 
-h2. Layout file
+## Layout file
 
 My mobile layout file is mostly the same as Railscasts' version; I just converted it to Haml. I had a problem with indentation when I used <code>html2haml</code>, but that was easily fixed (note: like the Railscasts code, I'm also using the Nifty Generators gem). I removed the line that generates a Back button in the layout because based on what I know about jQTouch I think it needs to be in the view that needs a Back button to exist. This could be refactored but I'll worry about that later.
 
@@ -44,7 +44,7 @@ Here's what my layout currently looks like, using jQTouch's Apple theme:
         
 {% endhighlight %}
 
-h2. Controller
+## Controller
 
 This is another thing I picked up from Peepcode: Code for mobile views must be rendered without a layout; jQTouch then correctly replaces the <code>current</code> div with the code from the server and properly does the right-to-left slide transition.
 
@@ -61,7 +61,7 @@ This is another thing I picked up from Peepcode: Code for mobile views must be r
 
 {% endhighlight %}
 
-h2. Views
+## Views
 
 First, here's what the <code>index</code> method's view looks like. It returns a basic unordered list of my recipes, each with the <code>arrow</code> style that jQTouch uses.
 
@@ -115,7 +115,7 @@ Second, the view for my <code>show</code> method. Note that the <code>.toolbar</
 
 {% endhighlight %}
 
-h2. Next steps
+## Next steps
 
 I still have a few things to do, for a future post. First, I want to build in some better mobile device detection so I can give high end mobile users a rich experience while still providing content for devices without the bells and whistles (hopefully another look at the Mobile Fu code will help with that). Second, I want to put in some authentication with Devise. Finally, I want to experiment more with jQTouch's theming system to give my little application a more universal user interface.
 

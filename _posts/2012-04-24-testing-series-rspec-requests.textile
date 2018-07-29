@@ -131,13 +131,13 @@ DatabaseCleaner.strategy = :truncation
 
 With those changes, the request spec will run through Firefox (amaze your friends as the browser launches and works through the steps of your web interface), and you're one step closer to a well-tested application.
 
-h2. Parting advice
+## Parting advice
 
 * *Keep it simple:* If you don't get request specs right away, don't worry about it. They require some additional setup and thinking to not just work, but actually test what you need to test. Don't stop testing your models and controllers, though&mdash;building skills at that level will help you grasp more complicated specs sooner rather than later.
 * *Make time for testing:* Yes, tests are extra code for you to maintain; that extra care takes time. Plan accordingly, as a feature you may have been able to complete in an hour or two before might take a whole day now. This especially applies when you're getting started with testing. However, in the long run you'll recover that time by working from a more trustworthy code base.
 * *Don't revert to old habits!* It's easy to get stuck on a failing test that shouldn't be failing. If you can't get a test to pass, make a note to come back to it&mdash;_and then come back to it_. The RSpec mailing list is helpful, as are books like _[The RSpec Book](http://www.amazon.com/gp/product/1934356379/ref=as_li_ss_tl?ie=UTF8&tag=everrail-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=1934356379_) and _[Rails Test Prescriptions](http://www.amazon.com/gp/product/1934356646/ref=as_li_ss_tl?ie=UTF8&tag=everrail-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=1934356646_).
 
-h2. Conclusion
+## Conclusion
 
 You've now got all the tools you need to do basic automated testing in your Rails projects, using RSpec, Factory Girl, Capybara, and DatabaseCleaner to help. These are the core tools I use daily as a Rails developer, and the tutorials I've presented here show how _I_ learned to effectively use them to increase my trust in my code. I hope I've been able to help you get started with these tools as well.
 

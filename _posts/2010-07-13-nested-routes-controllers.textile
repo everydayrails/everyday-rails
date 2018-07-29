@@ -17,11 +17,11 @@ Why would you want to do this? Say you're writing a blog (sorry to be trite, but
   <p>I know those paths could be more human and search engine friendly by replacing the IDs with a token of some kind; I'll talk about ways to do that in a future post. Check out [FriendlyID](http://github.com/norman/friendly_id) or [this Railscasts episode](http://railscasts.com/episodes/63-model-name-in-url) if you're in a hurry.</p>
 </div>
 
-h2. The models
+## The models
 
 In order for this to work, the first thing you'll need to do is make sure your model relationships are in place. So an Author has many Posts, a Category has many Posts (for the sake of simplicity we'll just assign a Post to a single Category, though this technique will apply to a more complex relationship), and a Post belongs to an Author and belongs to a Category.
 
-h2. The routes
+## The routes
 
 Here's the first part of the trick&mdash;you're not limited to nesting a route under a single parent route. Rather, you can nest it under as many parents as you need to. You can also leave it un-nested. So what does this mean? We can create the following routes (in Rails 2.3.x style):
 
@@ -49,7 +49,7 @@ which gives you the following routes:
 
 <code>:category_id</code> and <code>:author_id</code> are now <code>param</code> values that you can access in your controller. Let's look at that now.
 
-h2. The controller
+## The controller
 
 The second part of the trick happens in <code>posts_controller.rb</code>. What you need to do here is check for which <code>param</code> (if any) was passed into the <code>index</code> method, since that's what we'll use to generate a list of posts. Here's what happens:
 
@@ -77,6 +77,6 @@ The second part of the trick happens in <code>posts_controller.rb</code>. What y
 
 So if <code>group_id</code> is passed (like <code>/categories/3/posts</code>) the controller returns a list of that category's posts to the <code>index</code> view. If <code>author_id</code> is passed (via <code>/authors/27/posts</code>) we get that author's posts. If neither is passed (<code>/posts</code>) we get a list of all posts.
 
-h2. A real-world example
+## A real-world example
 
 I'm working on a project at work that involves tagging items and then sharing those items in one or more groups (similar to categories in the example I made up above). Using the method I just outlined, I can display a list of tags that are used on items shared with a given group, or a list of tags used by an individual user, or a list of all the tags in my system.

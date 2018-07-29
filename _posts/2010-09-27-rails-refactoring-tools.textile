@@ -10,21 +10,21 @@ In addition to making your code more maintainable, refactoring is an excellent l
 
 While a suite of tests for your application is not _strictly_ a prerequisite to refactoring, it will make the task significantly easier. I throw this out there because I know most resources for learning Rails talk about testing, but don't cover it with the significance it's given in true TDD/BDD approaches. I can talk more about my philosophies of getting started with testing another time, but for now let me point out that if you don't have any tests for your application, be prepared for a lot of browser refreshing as you move forward with refactoring.
 
-h3. metric_fu
+### metric_fu
 
 The Swiss army knife of Rails refactoring is [metric_fu](http://metric-fu.rubyforge.org)/, a do-it-all (with shiny graphs) utility by Jake Scruggs. metric_fu includes a stable of Ruby and Rails metric reporting tools, all just a rake task away. metric_fu is relatively easy to install (walk through the steps on the project page linked above; a slightly dated [Railscasts tutorial](http://railscasts.com/episodes/166-metric-fu) is also available). Then, run the provided rake tasks to generate easy-to-read reports on issues on design issues within your code.
 
 So, metric_fu is a powerful tool for refactoring your code. Its reports can also be pretty daunting, especially if (a) you're relatively new to Rails development, or (b) you've let a project go on a little too long without refactoring. With that in mind, I want to look a little closer at two of the tools used by metric_fu, and how they can be used independently to help clean up your project.
 
-h3. Rails Best Practices
+### Rails Best Practices
 
 I think the best tool to start refactoring with is [Rails Best Practices](http://github.com/flyerhzm/rails_best_practices), a gem that checks your code for violations of&mdash;you guessed it&mdash;widely-accepted practices for good Rails code design. Rails Best Practice is command line-based, but it's easy to use and provides an easy-to-read list of potential problems with your code. The best thing is the tie-in with the [Rails Best Practices](http://rails-bestpractices.com)/ website and community, where you can get solid advice on _why_ you're getting warnings about your code, and how to go about cleanup.
 
-h3. Reek
+### Reek
 
 Once your Rails code makes the grade (or at least comes closer to it), install Kevin Rutherford's [Reek](http://github.com/kevinrutherford/reek). Reek looks for more Ruby-specific issues in your code. The [Reek project wiki](http://wiki.github.com/kevinrutherford/reek/code-smells) on GitHub is a great resource for explaining the "code smells" Reek finds in your application. Some of these might seem esoteric to new developers, but the sooner you become familiar with these good practices, the easier your refactoring tasks will be in the long run.
 
-h3. Parting thoughts on metrics and refactoring
+### Parting thoughts on metrics and refactoring
 
 Keep in mind that tools like metric_fu, Rails Best Practices, and Reek are good, but not perfect. Their analyses may yield false alarms. As noted in the [ASCIIcasts version of the metric_fu tutorial](http://asciicasts.com/episodes/166-metric-fu), "they should all be used as an aid to help you find the areas of your code that might need some work not as an absolute instruction that you must refactor a part of your application." Use metrics as guides, and strive for perfect reports knowing that, in many cases, they're not attainable.
 

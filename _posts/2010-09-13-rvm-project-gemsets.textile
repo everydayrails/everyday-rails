@@ -17,11 +17,11 @@ With that said, for this setup, I'm going to assume the following:
 * You're already using Phusion Passenger in development
 * You're using Apache on your development computer (I haven't tried this with Nginx)
 
-h3. Preparation
+### Preparation
 
 Before you begin, I strongly recommend checking the versions of any gems you're using in your applications, particularly your legacy (pre-Rails 3) apps. Most of the problems I've had have resulted from not being strict enough with my gem versions listed in my <code>environment.rb</code> file. As a result, <code>rake gems:install</code> installs the latest versions of these gems, and in many cases those versions are no longer Rails 2.3 compatible.
 
-h3. Update RVM
+### Update RVM
 
 As of this writing, the current version of RVM is 1.0.5. If you need to update you can do so with the following:
 
@@ -30,7 +30,7 @@ As of this writing, the current version of RVM is 1.0.5. If you need to update y
   $ rvm reload
 {% endhighlight %}
 
-h3. Pick a Ruby
+### Pick a Ruby
 
 Even though RVM lets you run multiple Ruby interpreters simultaneously, Passenger will only let you use one at a time. Unless your code needs to run on every Ruby under the sun you can probably pick one that makes sense. On my work computer, I went with Ruby Enterprise Edition since that's what my server runs. On my home computer I'm going with 1.9.2 since I primarily deploy personal projects to Heroku. This isn't to say you can _only_ use one Ruby; it just makes it easier to integrate with other apps like Passenger and TextMate.
 
@@ -48,7 +48,7 @@ One last check to make sure you're using the Ruby you want:
   $ ruby -v
 {% endhighlight %}
 
-h3. Create a global gemset
+### Create a global gemset
 
 This is where things begin to get a little tricky. What we're going to do is create a _global_ gemset that contains gems that will be used across multiple projects, then a _project-specific_ gemset for each of our Rails applications. To begin, let's make our global gemset:
 
@@ -63,7 +63,7 @@ What you put in @global is up to you, but try to keep it clean. Since the point 
   $ gem install bundler passenger capistrano hirb wirble
 {% endhighlight %}
 
-h3. Configure Passenger
+### Configure Passenger
 
 This is the first kind of tricky part. If you're content using your application's built-in server, you can skip it. After much frustration, I found [this post on RVM and Passenger integration by Sam Philips](http://www.samsworldofno.com/2009/12/30/playing-nicely-notes-on-installing-rvm-and-passenger)/ to be the most helpful. The gist is you're going to point Apache to the copy of Passenger you just installed in the <code>@global</code> gemset and create a wrapper to point it to the Ruby version you picked to kick things off.
 
@@ -87,7 +87,7 @@ Edit your Apache configuration to properly load Passenger. As noted in the RVM d
   PassengerRuby /Users/asumner/.rvm/bin/passenger_ruby
 {% endhighlight %}
 
-h3. Set up your project (Rails 3)
+### Set up your project (Rails 3)
 
 Thanks to Bundler, getting your Rails 3 projects configured to use your new development environment should be fairly straightforward.
 
@@ -138,7 +138,7 @@ Now we can install the gems from our project's Gemfile:
 
 Configure Passenger to point to your application as you normally would (I use the [Passenger PrefPane](http://www.fngtps.com/passenger-preference-pane) for Mac OS X) and everything should work as you'd expect. If not, double check your Apache configuration (did you reboot Apache?), your <code>.rvmrc</code> file, and your installed gems. Stack traces were especially useful for me while getting my first Rails 3 application set up for development in this new environment.
 
-h3. Set up your project (Rails 2.3)
+### Set up your project (Rails 2.3)
 
 Getting a Rails 2.3 application up and running in this new development environment isn't necessarily more difficult, but there are different details to watch for. In particular, a 2.3 app probably isn't going to be using Bundler, so we'll be installing gems in a more traditional manner. As noted at the beginning of this article, attention to gem versions will also be important.
 
@@ -194,7 +194,7 @@ Now install the rest of the gems used in the application. Did you double-check t
   
 Set up a virtual host for your application, restart it (either <code>touch tmp/restart.txt</code> or reboot Apache), and try it out. If it doesn't work, check the stack trace. Odds are a rogue gem is causing problems, or you didn't point to the right gemset in your <code>.rvmrc</code> file.
 
-h3. Configure TextMate
+### Configure TextMate
 
 Finally, let's make TextMate aware of the new configuration. Luckily, the RVM documentation on this topic is solid&mdash;rather than recreate it I'll just refer you there. One downside is you'll have to switch the gemset TextMate uses when you switch from project to project.
 
@@ -202,6 +202,6 @@ To set this up, I recommend following the [instructions on RVM and TextMate inte
 
 I've also read about issues with Ruby 1.9 and TextMate in this setup, but haven't gone about setting up a Ruby 1.9 environment yet. If you know something I don't, please comment below.
 
-h3. That's it!
+### That's it!
 
 That was a lot of work, but hopefully worth the trouble: You now have a Rails development environment capable of running Rails 2.3 and Rails 3 applications simultaneously, with independent gemsets to help avoid potential conflicts. This should give you a solid platform on which to move forward with new development in Rails 3, while maintaining legacy code as needed (and hopefully getting it up-to-date as well).
