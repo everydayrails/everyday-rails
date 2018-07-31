@@ -5,7 +5,7 @@ excerpt: "The expanded version of my series on learning to test is ready for non
 tags: rspec rspec-book
 ---
 
-On Monday I posted the final, edited version of _[Everyday Rails Testing with RSpec](http://leanpub.com/everydayrailsrspec_), available now on Leanpub for $12 US.
+On Monday I posted the final, edited version of _[Everyday Rails Testing with RSpec](http://leanpub.com/everydayrailsrspec)_, available now on Leanpub for $12 US.
 
 First, let me again thank everyone who purchased the early access, beta version of the book. I appreciate the support and all the feedback. As I shared on the Leanpub mailing list yesterday, releasing the book so early in its development cycle perhaps frustrated a couple of readers, but it resulted in a very different (and in my opinion, better) book than I'd originally set out to write. I'm planning to write a more complete retrospective in [my personal blog](http://www.aaronsumner.com/) later this week, for anyone interested in the lean publishing approach.
 

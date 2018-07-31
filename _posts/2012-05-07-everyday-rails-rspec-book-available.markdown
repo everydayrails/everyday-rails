@@ -6,7 +6,7 @@ tags: rspec rspec-book
 ---
 
 <img src="/images/rspec_book_large.jpg" alt="" class="content_img">
-When I concluded my series on [learning RSpec](http://everydayrails.com/2012/04/24/testing-series-rspec-requests.html) a couple of weeks ago, I mentioned I've been working on an ebook version of the series with additional content and a complete code sample. I'm happy to announce that my first book, _[Everyday Rails Testing with RSpec: A Practical Approach to Test-driven Development](http://leanpub.com/everydayrailsrspec_) is now available for advance access through Leanpub!
+When I concluded my series on [learning RSpec](http://everydayrails.com/2012/04/24/testing-series-rspec-requests.html) a couple of weeks ago, I mentioned I've been working on an ebook version of the series with additional content and a complete code sample. I'm happy to announce that my first book, _[Everyday Rails Testing with RSpec: A Practical Approach to Test-driven Development](http://leanpub.com/everydayrailsrspec)_ is now available for advance access through Leanpub!
 
 What do I mean by _advance access_? I mean it's not done yet, but I wanted to go ahead and get the book out there for people to start reading. (If you've ever purchased a beta book from Pragmatic Programmers you know what I'm talking about.) I've got updated versions of the original RSpec articles from this blog in place, along with a few other pieces. The remainder will be in place within the next few weeks, with some editing to be done after that along with the completed sample code. In addition, I'll keep code samples current through Rails 4.0.
 
