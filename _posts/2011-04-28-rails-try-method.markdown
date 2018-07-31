@@ -7,7 +7,7 @@ excerpt: "The very convenient try() method has been available to Rails developer
 In Rails, `try()` lets you call methods on an object without having to worry about the possibility of that object being `nil` and thus raising an exception. I know I sometimes forget about it, and I've looked at enough code from other developers to know that I'm not the only one. So today I'd like to give you a brief introduction to the method (and hopefully ingrain it a little deeper into my own brain). Let's look at some very simple code from a Rails view.
 
 <div class="box note">
-  <strong>Disclaimer:</strong> While handy, this technique is not a replacement for good techniques like validations and default database values. Don't get lazy.
+  **Disclaimer:** While handy, this technique is not a replacement for good techniques like validations and default database values. Don't get lazy.
 </div>
 
 ### Before

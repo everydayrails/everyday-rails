@@ -13,8 +13,8 @@ Why would you want to do this? Say you're writing a blog (sorry to be trite, but
 | Posts by author | /authors/27/posts |
 | All posts | /posts |
 
-<div class="alert alert-info">
-  <p>I know those paths could be more human and search engine friendly by replacing the IDs with a token of some kind; I'll talk about ways to do that in a future post. Check out [FriendlyID](http://github.com/norman/friendly_id) or [this Railscasts episode](http://railscasts.com/episodes/63-model-name-in-url) if you're in a hurry.</p>
+<div class="alert alert-info" markdown="1">
+I know those paths could be more human and search engine friendly by replacing the IDs with a token of some kind; I'll talk about ways to do that in a future post. Check out [FriendlyID](http://github.com/norman/friendly_id) or [this Railscasts episode](http://railscasts.com/episodes/63-model-name-in-url) if you're in a hurry.
 </div>
 
 ## The models

@@ -40,8 +40,8 @@ Rake, Ruby's build tool, is essential to Rails development. Rake is discussed in
 
 These last links aren't specific to Rails, but a general grasp of the Unix command line is going to make your life as a Rails developer much easier, and can help you get other things done on your computer that are cumbersome (or impossible) via a graphical interface. Seriously, if you're using a Mac or Linux-based computer, learn the command line.
 
-<div class="alert alert-info">
-  <p>If you _really_ want to get hands-on exposure to command line-only computing, install [Ubuntu Server Edition](http://www.ubuntu.com/server) a computer or virtual machine. This version of Ubuntu Linux is optimized for server use so it doesn't include a GUI out of the box. You can install one if you want, but you'll need to use the command line to do so.</p>
+<div class="alert alert-info" markdown="1">
+If you _really_ want to get hands-on exposure to command line-only computing, install [Ubuntu Server Edition](http://www.ubuntu.com/server) a computer or virtual machine. This version of Ubuntu Linux is optimized for server use so it doesn't include a GUI out of the box. You can install one if you want, but you'll need to use the command line to do so.
 </div>
 
 * The [Unix/Linux tutorial for beginners](http://www.ee.surrey.ac.uk/Teaching/Unix)/ is a good start, especially if the day you installed Rails was the first time you'd opened Terminal.

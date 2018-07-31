@@ -15,8 +15,8 @@ So why is `nifty_scaffold` better? Basically because it addresses those shortcom
   city:string state:string description:text
 {% endhighlight %}
 
-<div class="alert alert-info">
-  <p><strong>Reminder:</strong> I'm still using Rails 2.3; if you're on Rails 3 use `rails generate nifty_scaffold` instead.</p>
+<div class="alert alert-info" markdown="1">
+**Reminder:** I'm still using Rails 2.3; if you're on Rails 3 use `rails generate nifty_scaffold` instead.
 </div>
 
 So what does this generator give us? Let's look at the list returned in the terminal. First, it's created my model and the migration to go along with it:
@@ -91,8 +91,8 @@ Finally, you can automatically stage the new files for your next commit to a Git
   city:string state:string description:text --git
 {% endhighlight %}
 
-<div class="alert alert-info">
-  <p>Of course, you can pass along any or all of these flags as needed--you don't need to pick one.</p>
+<div class="alert alert-info" markdown="1">
+Of course, you can pass along any or all of these flags as needed--you don't need to pick one.
 </div>
 
 That's just a bit of what you can crank out with `nifty_scaffold`, but there are several more flags it provides. I don't use these very often myself, but it's possible to do things like only create a model (or only create a controller and views), omit Rails' default timestamps from your model (to be fair, regular scaffolds can do this as well), or indicate specific methods your controller needs (or does not need). The best way to see everything you can accomplish with `nifty_scaffold` is to check out its help file:

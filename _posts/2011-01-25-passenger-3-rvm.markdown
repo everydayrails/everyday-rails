@@ -32,7 +32,7 @@ Follow the instructions, including making sure you copy the Apache configuration
 Also note the suggested virtual host configuration provided; you may need it later depending on whether you've been using Passenger before or are using any supporting utilities for Passenger.
 
 <div class="alert alert-info">
-  <p><strong>Potential gotcha with Apache 2 in Mac OS X 10.6.6:</strong> When I rebooted Apache following the Passenger module installer, I was greeted with an error in the `apachectl` script. The suggestion in [this post](http://articles.itecsoftware.com/shell-scripting/fix-for-mac-os-10-6-5-apachectl-line-82-ulimit) solved the issue for me.</p>
+**Potential gotcha with Apache 2 in Mac OS X 10.6.6:** When I rebooted Apache following the Passenger module installer, I was greeted with an error in the `apachectl` script. The suggestion in [this post](http://articles.itecsoftware.com/shell-scripting/fix-for-mac-os-10-6-5-apachectl-line-82-ulimit) solved the issue for me.
 </div>
 
 From here, it's just a matter of preparing your Rails applications to take advantage of RVM's gemsets feature. Again, I'll refer you to [an earlier post about adding a `setup_load_paths.rb` file](http://everydayrails.com/2010/09/13/rvm-project-gemsets.html) to each new app's `config` directory. You'll also need to set up a virtual host for each new app. If you were using Passenger 2.2.x before, your existing virtual hosts should work fine. (The [OS X Passenger Preference Pane](http://www.fngtps.com/passenger-preference-pane), while still only 32-bit, is still working for me on my setup.)

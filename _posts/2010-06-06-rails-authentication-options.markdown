@@ -6,8 +6,8 @@ excerpt: "It's almost inevitable that your Rails application will ultimately nee
 
 Today's post serves mostly to set up what I'm planning to write about next in _Everyday Rails_. Upon request, I'll be covering how I handle authentication and authorization in my Rails applications. These are topics that have evolved a great deal from the early days of Rails, and even if you've got a go-to solution for either it's worth spending a little time to check on the latest and greatest.
 
-<div class="alert alert-info">
-  <p><strong>What's the difference between authentication and authorization?</strong> _Authentication_ tells your app who you are. _Authorization_ tells your app what you can do based on who you are.</p>
+<div class="alert alert-info" markdown="1">
+**What's the difference between authentication and authorization?** _Authentication_ tells your app who you are. _Authorization_ tells your app what you can do based on who you are.
 </div>
 
 My plan is to spend some time this week covering authentication, then dovetail from there into authorization. To set the tone, here are three authentication tools I've used or am getting ready to use:

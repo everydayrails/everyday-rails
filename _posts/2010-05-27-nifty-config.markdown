@@ -48,10 +48,8 @@ Here's what a completed `config.yml` file might look like for me:
     email: help@mygreatapp.com
 {% endhighlight %}
 
-<div class="alert alert-info">
-  <p>
-  <strong>Don't forget:</strong> The values in your `app_config.yml` file are loaded when your application starts, so you'll need to restart your application after you first create the file or whenever you make changes to its values.
-  </p>
+<div class="alert alert-info" markdown="1">
+**Don't forget:** The values in your `app_config.yml` file are loaded when your application starts, so you'll need to restart your application after you first create the file or whenever you make changes to its values.
 </div>
 
 From there, it's just a matter of calling up your values wherever they're needed. All you need to do is refer to `APP_CONFIG[:value]` within your application's code to use whatever you assigned to `value` in your `config.yml` file, for the environment in which your app is currently running. For example, given the above configuration file, `APP_CONFIG[:email]` would return `devaccount@mygreatapp.com` if I were running the code in development mode; it would return `help@mygreatapp.com` if I were in production.
@@ -99,6 +97,6 @@ Here's a simple example of using APP_CONFIG values outside of view-type files. I
 
 That's all for Nifty Generators' nifty_config feature. These are my uses for it, but I recommend experimenting with it in your own apps. Next time I'll close out my series on Nifty Generators with `nifty_scaffold`, the real meat of this very useful gem.
 
-<div class="alert alert-info">
-  <p><strong>How am I doing?</strong> I'm still getting a feel for this blog and how to write for it. If you're reading (thanks, by the way) I'd love to hear what you think of what I've written so far. Please leave a comment with any input you care to share.</p>
+<div class="alert alert-info" markdown="1">
+**How am I doing?** I'm still getting a feel for this blog and how to write for it. If you're reading (thanks, by the way) I'd love to hear what you think of what I've written so far. Please leave a comment with any input you care to share.
 </div>

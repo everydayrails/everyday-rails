@@ -85,8 +85,8 @@ Experimenting with the gems in the console is one thing, but how do we put them 
   end
 {% endhighlight %}
 
-<div class="alert alert-info">
-  <p>Don't forget to include Chronic and Chronic Duration in your `Gemfile` or `config/environment.rb` file, and restart your application.</p>
+<div class="alert alert-info" markdown="1">
+Don't forget to include Chronic and Chronic Duration in your `Gemfile` or `config/environment.rb` file, and restart your application.
 </div>
 
 There are a few ways you could use `ChronicDuration::output` in your application's views&mdash;you could either override the accessor in the model by adding something like
@@ -115,6 +115,6 @@ or use it in a view helper along the lines of
 
 and use the helper in your views. It depends on what you need to do with the data, so experiment within your application to see what works best.
 
-<div class="alert alert-info">
-  <p>Chronic doesn't include a function to return a date value in a pretty format&mdash;just use Ruby's [strftime](http://ruby-doc.org/core/classes/Time.html#M000298) method to handle that.</p>
+<div class="alert alert-info" markdown="1">
+Chronic doesn't include a function to return a date value in a pretty format&mdash;just use Ruby's [strftime](http://ruby-doc.org/core/classes/Time.html#M000298) method to handle that.
 </div>

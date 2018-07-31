@@ -5,8 +5,8 @@ excerpt: "Our series on getting comfortable with Rails testing continues as we s
 tags: rspec
 ---
 
-<div class="alert alert-info">
-  This is part two of an ongoing [series on getting started and comfortable with testing Rails applications](http://everydayrails.com/2012/03/12/testing-series-intro.html). I appreciate your feedback along the way.
+<div class="alert alert-info" markdown="1">
+This is part two of an ongoing [series on getting started and comfortable with testing Rails applications](http://everydayrails.com/2012/03/12/testing-series-intro.html). I appreciate your feedback along the way.
 </div>
 
 In this post, we'll complete the following tasks:

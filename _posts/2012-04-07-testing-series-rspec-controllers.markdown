@@ -18,15 +18,12 @@ tags: rspec
 
 Poor controllers. As Rails developers we keep them skinny (which is a good thing) and often don't give them due attention in our tests (which is a bad thing; more on that in a moment). As you continue to improve your application's test coverage, though, controllers are the next logical chunk of code to tackle.
 
-<div class="alert alert-info">
-  <p>
-    If you're new to RSpec or Rails testing in general, I recommend reading through the previous posts in this series first:
-  </p>
+<div class="alert alert-info" markdown="1">
+If you're new to RSpec or Rails testing in general, I recommend reading through the previous posts in this series first:
 
 * [Introduction](http://everydayrails.com/2012/03/12/testing-series-intro.html)
 * [Setup](http://everydayrails.com/2012/03/12/testing-series-rspec-setup.html)
 * [Models](http://everydayrails.com/2012/03/19/testing-series-rspec-models-factory-girl.html)
-  
 </div>
 
 ## Why test controllers?
@@ -127,7 +124,7 @@ end
 
 Notice the subtle difference: The `:invalid_contact` factory uses the `:contact` factory as a _parent_. It replaces the specified attributes (in this case, `firstname` with its own; everything else will defer to the original `:contact` factory.
 
-<div class="alert alert-info">
+<div class="alert alert-info" markdown="1">
 #### Setting up session data
 
 To date, the little address book app we've built is pretty basic. It doesn't even require a user to log in to view it or make changes. I'll revisit this in a future post; for now I want to focus on general controller testing practices.

@@ -10,7 +10,7 @@ I spent a lot of time this summer working on moving legacy data from old Rails a
 I first learned about Trucker at last year's [Ruby Midwest](http://www.rubymidwest.com)/ conference in Kansas City. The main project on GitHub hasn't been touched in almost a year, but some folks have created [newer forks](https://github.com/mokolabs/trucker/network) keeping it up (I started from [this fork](https://github.com/gilesbowkett/trucker), which had better-working generators at the time). All the same, there are a few minor annoyances I had to deal with when using Trucker for myself. In this post, I'll walk through what I had to do to get my application set up for Trucker and my data correctly migrated over.
 
 <div class="alert alert-info">
-  <p><strong>Minor disclaimer:</strong> This document shouldn't be treated as a step-by-step tutorial. It may represent more of a hack than some people are comfortable putting to practice themselves, but I can attest that it's a hack that works with some cajoling. Use it as a loose guide to hopefully point out places where you'll have to do a little extra work to get things functioning correctly.</p>
+**Minor disclaimer:** This document shouldn't be treated as a step-by-step tutorial. It may represent more of a hack than some people are comfortable putting to practice themselves, but I can attest that it's a hack that works with some cajoling. Use it as a loose guide to hopefully point out places where you'll have to do a little extra work to get things functioning correctly.
 </div>
 
 ### What is it?
@@ -113,7 +113,7 @@ With the `LegacyBase` class in place you can now start building your legacy mode
 {% endhighlight %}
 
 <div class="alert alert-info">
-  <p>If your legacy model is like mine above and either ends in an s or has some other odd inflection, read below for resolving pluralization issues.</p>
+  If your legacy model is like mine above and either ends in an s or has some other odd inflection, read below for resolving pluralization issues.
 </div>
 
 With your legacy model in place, it's time to start moving data. When I was working with Trucker the generator didn't create a starter for this, so I added it myself&mdash;it's pretty straightforward.
@@ -136,8 +136,8 @@ With your legacy model in place, it's time to start moving data. When I was work
 To run a given legacy migration (in my example above, addresses), just run `rake db:migrate:nameoflegacymodel`. For me, each migration required a little bit of babysitting so I didn't create an `all` task that handled every migration&mdash;I took care of them individually.
 
 <div class="alert alert-info">
-  <p><strong>Important!</strong> Trucker will erase all existing data from the database table you're migrating to.
-  Keep that in mind; back things up first if this makes you leery.</p>
+  **Important!** Trucker will erase all existing data from the database table you're migrating to.
+  Keep that in mind; back things up first if this makes you leery.
 </div>
 
 

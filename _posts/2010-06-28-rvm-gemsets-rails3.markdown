@@ -4,8 +4,8 @@ title: "Stop procrastinating and install Rails 3 now with RVM"
 excerpt: "Worried about Rails 3 disrupting your workflow? Here's how I use RVM's gemsets feature to keep my day-to-day development environment and Rails 3 distinct."
 ---
 
-<div class="box note">
-  I've written a follow-up to this post for using the [Rails 3.1 beta with RVM](/2011/05/08/rails-3.1-beta-rvm.html).
+<div class="box note" markdown="1">
+I've written a follow-up to this post for using the [Rails 3.1 beta with RVM](/2011/05/08/rails-3.1-beta-rvm.html).
 </div>
 
 A couple of weeks ago at a get-together of local developers, someone mentioned he hadn't checked out Rails 3 yet because he didn't want pre-release software mucking up his usual development environment. I don't blame him--this is a reason I also put off checking out earlier releases of Rails 3. That was before I got a new computer and set up Ruby from scratch, using the why-didn't-someone-think-of-this-sooner [Ruby Version Manager](http://rvm.beginrescueend.com)/ (RVM). Simply put, RVM lets you have multiple versions of Ruby on your computer, and keeps these Rubies and any gems you install in your user account. No root access or `sudo` is required to install.
@@ -60,8 +60,8 @@ And pick a default Ruby interpreter with
   $ rvm 1.8.7 --default
 {% endhighlight %}
 
-<div class="alert alert-info">
-  <p><strong>Which Rubies should I install?</strong> That depends on your particular development needs. I have 1.8.7, 1.9.1, and REE (Ruby Enterprise Edition) installed.</p>
+<div class="alert alert-info" markdown="1">
+**Which Rubies should I install?** That depends on your particular development needs. I have 1.8.7, 1.9.1, and REE (Ruby Enterprise Edition) installed.
 </div>
 
 ## 3. Rails 3 gemset
@@ -76,8 +76,8 @@ The basic syntax to get started is
 
 where `rails3` is your gemset's name. You can use another version of Ruby if you'd prefer&mdash;in fact, it might not be a bad idea to start getting familiar with Ruby 1.9.1 as long as you're enabling your computer to handle multiple Rubies and Rails versions.
 
-<div class="alert alert-info">
-  <p>You can copy gemsets from Ruby to Ruby; see the [RVM documentation](http://rvm.beginrescueend.com/gemsets/copying)/ for details.</p>
+<div class="alert alert-info" markdown="1">
+You can copy gemsets from Ruby to Ruby; see the [RVM documentation](http://rvm.beginrescueend.com/gemsets/copying)/ for details.
 </div>
 
 Now type
@@ -124,8 +124,8 @@ Finally, edit your web server configuration file (in the case of Apache on OS X,
   PassengerRuby /Users/everydayrails/.rvm/bin/passenger_ruby
 {% endhighlight %}
 
-<div class="alert alert-info">
-  <p>Did you copy and paste the above and it didn't work? Remember, RVM installs Rubies and gems inside _your home folder_, so these settings point to those files. Unless your account name is also `everydayrails` you'll need to update these paths accordingly.</p>
+<div class="alert alert-info" markdown="1">
+Did you copy and paste the above and it didn't work? Remember, RVM installs Rubies and gems inside _your home folder_, so these settings point to those files. Unless your account name is also `everydayrails` you'll need to update these paths accordingly.
 </div>
 
 Reboot Apache and you should be good to go. For the record, I'm about to switch my server settings to use REE instead of 1.8.7, to better reflect a production environment.
@@ -148,7 +148,7 @@ And install the MySQL Ruby gem via:
 
 (Adjust your path to MySQL's `bin` directory if needed; what's above is the default installation.)
 
-<div class="alert alert-info">
+<div class="alert alert-info" markdown="1">
 ## Don't forget!
 
 * Aside from integrating Passenger with your web server, _you won't use `sudo` to install gems anymore_.

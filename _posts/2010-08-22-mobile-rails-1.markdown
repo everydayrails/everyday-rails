@@ -32,6 +32,6 @@ There are other frameworks for mobile Javascript&mdash;jQTouch is just what I'm 
 
 My next steps, which I plan to document here in the coming days, are to refine some of my understanding of jQTouch with Rails (specifically form handling) and figure out what styles are missing from the default jQTouch templates (I'm using the Apple theme instead of the jQT theme; its brighter look will appeal more to my audience). From there I want to get into a more advanced mobile browser check to determine which version of my mobile site to send to a given device. To be continued, but if you have questions or suggestions in the meantime please share them.
 
-<div class="alert alert-info">
-  <p><strong>Update:</strong> [part two of this series](/2010/08/29/mobile-rails-2.html) is now available.</p>
+<div class="alert alert-info" markdown="1">
+**Update:** [part two of this series](/2010/08/29/mobile-rails-2.html) is now available.
 </div>

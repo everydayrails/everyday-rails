@@ -43,10 +43,8 @@ That makes up pretty much all of my use of `nifty_layout`, but there's more to t
 
 That's it for `nifty_layout`--next time I'll talk about how I use its parter, `nifty_config`, to simplify my apps' global settings.
 
-<div class="alert alert-info">
-  <p>
-  <strong>Tip:</strong>
-  
-  When using generated code like that from `nifty_layout`, take time to look over the code to familiarize yourself with what it does and how it works. Not only will this practice help make sure you use the generated code as intended, it also gives you the chance to see how a seasoned developer like Ryan Bates writes code. In this case, you can pick up some tips on refactoring your view code into helpers and layouts.
-  </p>
+<div class="alert alert-info" markdown="1">
+#### Tip:
+
+When using generated code like that from `nifty_layout`, take time to look over the code to familiarize yourself with what it does and how it works. Not only will this practice help make sure you use the generated code as intended, it also gives you the chance to see how a seasoned developer like Ryan Bates writes code. In this case, you can pick up some tips on refactoring your view code into helpers and layouts.
 </div>

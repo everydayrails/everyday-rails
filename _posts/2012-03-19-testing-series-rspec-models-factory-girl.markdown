@@ -5,7 +5,7 @@ excerpt: "How can you make sure your application's core building blocks are doin
 tags: rspec
 ---
 
-<div class="alert alert-info">
+<div class="alert alert-info" markdown="1">
   This is part three of an ongoing [series on getting started and comfortable with testing Rails applications](http://everydayrails.com/2012/03/12/testing-series-intro.html). I appreciate your feedback along the way.
 </div>
 
@@ -41,7 +41,7 @@ describe Contact
 
 We'll expand this outline in a few minutes, but this gives us quite a bit for starters. It's a simple spec for an admittedly simple model, but points to our first three best practices:
 
-* **Each example (a line beginning with `it`) only expects on thing.** Notice that I'm testing the `firstname` and </code>lastname</code> validations separately. This way, if an example fails, I know it's because of that _specific_ validation, and don't have to dig through RSpec's output for clues.
+* **Each example (a line beginning with `it`) only expects on thing.** Notice that I'm testing the `firstname` and `lastname` validations separately. This way, if an example fails, I know it's because of that _specific_ validation, and don't have to dig through RSpec's output for clues.
 * **Each example is explicit.** The descriptive string after `it` is technically optional in RSpec; however, omitting it makes your specs more difficult to read.
 * **Each example's description begins with a verb, not should.** _Should_ is redundant here, and clutters RSpec's output. Omitting it makes specs' output easier to read.
 
@@ -49,7 +49,7 @@ With these best practices in mind, let's build a spec for the `Contact` model.
 
 ## Creating a model spec
 
-Open up the `spec` directory and, if necessary, create a subdirectory named `models`. Inside the subdirectory create a file named </code>contact_spec.rb</code> and add the following:
+Open up the `spec` directory and, if necessary, create a subdirectory named `models`. Inside the subdirectory create a file named `contact_spec.rb` and add the following:
 
 {% highlight ruby %}
 # spec/models/contact.rb
@@ -106,7 +106,7 @@ I won't spend a lot of time bad-mouthing fixtures&mdash;frankly, it's already be
 
 Enter factories: Simple, flexible, building blocks for test data. If I had to point to a single component that helped me see the light toward testing more than anything else, it would be [Factory Girl](https://github.com/thoughtbot/factory_girl), an easy-to-use and easy-to-rely-on gem for creating test data without the brittleness of fixtures. Since we've got Factory Girl installed courtesy of the `factory_girl_rails` gem we installed earlier, we've got full access to factories in our app. Let's put them to work!
 
-Back in the `spec` directory, add another subdirectory named `factories`; within it, add the file </code>contacts.rb</code> with the following content:
+Back in the `spec` directory, add another subdirectory named `factories`; within it, add the file `contacts.rb` with the following content:
 
 {% highlight ruby %}
 # spec/factories/contacts.rb
@@ -118,7 +118,7 @@ FactoryGirl.define do
 end
 {% endhighlight %}
 
-This chunk of code gives us a _factory_ we can use throughout our specs. Essentially, whenever we create test data via `Factory(:contact)`, that contact's name will be John Doe. This is probably adequate for our first round of model specs, but I like to provide my specs with more random data. Enter the [Faker](http://rubygems.org/gems/faker) gem. Edit </code>contacts.rb</code> to include it:
+This chunk of code gives us a _factory_ we can use throughout our specs. Essentially, whenever we create test data via `Factory(:contact)`, that contact's name will be John Doe. This is probably adequate for our first round of model specs, but I like to provide my specs with more random data. Enter the [Faker](http://rubygems.org/gems/faker) gem. Edit `contacts.rb` to include it:
 
 {% highlight ruby %}
 # spec/factories/contacts.rb
@@ -134,7 +134,7 @@ end
 
 Now our specs will use random, sometimes humorous names for each generated contact. Notice that I pass Faker's `first_name` method inside a block&mdash;Factory Girl considers these "lazy attributes" as opposed to the statically-added strings our initial factory had.
 
-Return to the `contact_spec.rb` file we set up a few minutes ago and locate the first example (</code>it "has a valid factory"</code>). We're going to write our first spec&mdash;essentially testing the factory we just created. Edit the example to look like the following:
+Return to the `contact_spec.rb` file we set up a few minutes ago and locate the first example (`it "has a valid factory"`). We're going to write our first spec&mdash;essentially testing the factory we just created. Edit the example to look like the following:
 
 {% highlight ruby %}
 # spec/models/contact_spec.rb
@@ -165,9 +165,9 @@ it "is invalid without a firstname" do
 end
 {% endhighlight %}
 
-Note what we're doing with Factory Girl here: First, instead of the `Factory.create()` approach, we're using `Factory.build()`. Can you guess the difference? `Factory()` builds the model and saves it, while `Factory.build()` instantiates a new model, but doesn't save it. If we used </code>Factory()</code> in this example it would break before we could even run the test, due to the validation.
+Note what we're doing with Factory Girl here: First, instead of the `Factory.create()` approach, we're using `Factory.build()`. Can you guess the difference? `Factory()` builds the model and saves it, while `Factory.build()` instantiates a new model, but doesn't save it. If we used `Factory()` in this example it would break before we could even run the test, due to the validation.
 
-Second, we use the `Contact` factory's defaults for every attribute except `:firstname`, and for that we pass `nil` to give it no value. In other words, instead of the default name of _John Doe_ our </code>Contact</code> factory would normally give us, it returns _John_. This is an incredibly convenient feature, especially when testing at the model level. You'll use it a lot in your tests&mdash;starting with models, but more in other tests, too.
+Second, we use the `Contact` factory's defaults for every attribute except `:firstname`, and for that we pass `nil` to give it no value. In other words, instead of the default name of _John Doe_ our `Contact` factory would normally give us, it returns _John_. This is an incredibly convenient feature, especially when testing at the model level. You'll use it a lot in your tests&mdash;starting with models, but more in other tests, too.
 
 Run RSpec again; we should be up to two passing specs with two pending. We can use the same approach to test the `:lastname` validation.
 
@@ -200,15 +200,15 @@ And make it pass with this validation in your `Phone` model:
 validates :phone, uniqueness: { scope: :contact_id }
 {% endhighlight %}
 
-<div class="alert alert-info">
-That's not a typo in the previous sample spec&mdash;`Factory()` is a shortcut for </code>Factory.create()</code>.
+<div class="alert alert-info" markdown="1">
+That's not a typo in the previous sample spec&mdash;`Factory()` is a shortcut for `Factory.create()`.
 </div>
 
 Of course, validations can be more complicated than just requiring a specific scope. Yours might involve a complex regular expression or a custom method. Get in the habit of testing these validations&mdash;not just the happy paths where everything is valid, but also error conditions.
 
 ## Testing instance methods
 
-It would be convenient to only have to refer to `@contact.name` to render our contacts' full names instead of creating the string every time; let's implement that feature in our </code>Contact</code> class now:
+It would be convenient to only have to refer to `@contact.name` to render our contacts' full names instead of creating the string every time; let's implement that feature in our `Contact` class now:
 
 {% highlight ruby %}
   # app/models/contact.rb
@@ -433,7 +433,7 @@ Finished in 0.33642 seconds
 6 examples, 0 failures
 {% endhighlight %}
 
-<div class="alert alert-info">
+<div class="alert alert-info" markdown="1">
 
 #### How DRY is too DRY?
 

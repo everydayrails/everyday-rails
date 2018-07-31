@@ -6,8 +6,8 @@ excerpt: "Here's how to protect your application's data through an easy-to-apply
 
 In [part one of this series on the RESTful_ACL gem](http://everydayrails.com/2010/06/16/authorization-restful-acl-1.html), I walked through the steps required to prepare an app to use this handy, albeit overshadowed, mechanism for adding authorization to a Rails application. Now let's dive into the actual ACL settings themselves. In the interest of simplicity and familiarity, we'll go with a basic blogging app with categories, posts, and comments. Let's say that admins can create and edit categories, regular users can write posts and edit posts they've written. In this part I'll cover categories and posts; we'll use some more advanced features to protect our comments in a later tutorial.
 
-<div class="alert alert-info">
-<p>Behind the scenes, I've set up a Rails 2.3.8 application with an [authentication system](http://everydayrails.com/2010/06/06/rails-authentication-options.html) installed. The important thing to know here is that your authentication session information must be named `current_user`, which has pretty much become practice in every authentication mechanism I've seen for Rails in the last couple of years. I've also added a boolean `is_admin` to my User model and run the generated migration.</p>
+<div class="alert alert-info" markdown="1">
+Behind the scenes, I've set up a Rails 2.3.8 application with an [authentication system](http://everydayrails.com/2010/06/06/rails-authentication-options.html) installed. The important thing to know here is that your authentication session information must be named `current_user`, which has pretty much become practice in every authentication mechanism I've seen for Rails in the last couple of years. I've also added a boolean `is_admin` to my User model and run the generated migration.
 </div>
 
 First, let's create the category and post scaffolds (see my post on [using Nifty Generators to create Rails scaffolds](http://everydayrails.com/2010/06/01/nifty-scaffold.html) if you need a primer):
@@ -101,8 +101,8 @@ Let's clean up a couple of views real quick. In our index view, we only want the
 
 There are two things doing the work here&mdash;RESTful_ACL's `allowed?` helper is checking the ACL, but only if Restful Authentication's `logged_in?` helper returns true. This two-level setup is necessary because the `:index` action doesn't require login, so some users (guests) may not be logged in.
 
-<div class="alert alert-info">
-  <p>You can also apply these helpers to `show.html.haml` to hide the Edit and Destroy links from non-administrators.</p>
+<div class="alert alert-info" markdown="1">
+You can also apply these helpers to `show.html.haml` to hide the Edit and Destroy links from non-administrators.
 </div>
 
 Now let's move on to the Post model:
@@ -147,8 +147,8 @@ Now let's move on to the Post model:
   end
 {% endhighlight %}
 
-<div class="alert alert-info">
-  <p>The controller and views for the Post scaffold will be set up in the same fashion as they were for Categories.</p>
+<div class="alert alert-info" markdown="1">
+The controller and views for the Post scaffold will be set up in the same fashion as they were for Categories.
 </div>
 
 We're off to a good start. Our application now protects two models from unauthorized access. Next time I'll add a basic commenting system to my application, and use RESTful_ACL's logical parent option to extend existing ACLs to a model's children. As always, please let me know what you think about this article. I appreciate your questions, comments and suggestions.

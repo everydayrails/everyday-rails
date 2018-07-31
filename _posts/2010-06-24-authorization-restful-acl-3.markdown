@@ -6,17 +6,17 @@ excerpt: "Leverage your applications' model relationships to write complex, but 
 
 I've been covering [RESTful_ACL](http://github.com/mdarby/restful_acl), an alternative to role-based authorization systems like CanCan and Declarative Authorization, for Rails applications needing to protect actions within controllers. So far we've set up the gem to work with our application and added authorization settings to two distinct models. This time we'll add a new model, which is a child of one of the existing models, and look at how that affects our ACL settings.
 
-<div class="alert alert-info">
-*Need to catch up on this series?*
-  
+<div class="alert alert-info" markdown="1">
+#### Need to catch up on this series?
+
 * [Read part 1: RESTful_ACL setup](/2010/06/16/authorization-restful-acl-1.html)
 * [Read part 2: Basic ACL setup](/2010/06/21/authorization-restful-acl-2.html)
 </div>
 
 So far the blogging app I've been creating in these tutorials has categories and posts. Posts belong to categories, and each have very distinct ACL settings. Now we want to add a Comment model. Posts have many comments. Comments ACLs will be based on those of their parent posts&mdash;post authors will be able to edit or delete comments added to their own posts, but not those added to other authors' posts; administrators may edit or delete any comment; guests (non-logged in visitors) may read or add comments.
 
-<div class="alert alert-info">
-  <p>Yes, I know a polymorphic Comment model would be a more attractive solution in many cases, particularly if I had many models that needed comments. My setup here is just for the sake of demonstration and discussion, but if you need to add comments to your own apps take a look at [acts_as_commentable](http://github.com/jackdempsey/acts_as_commentable</p)>
+<div class="alert alert-info" markdown="1">
+Yes, I know a polymorphic Comment model would be a more attractive solution in many cases, particularly if I had many models that needed comments. My setup here is just for the sake of demonstration and discussion, but if you need to add comments to your own apps take a look at [acts_as_commentable](http://github.com/jackdempsey/acts_as_commentable)
 </div>
 
 Let's look at the new file for our comment and add its ACL settings:

@@ -13,19 +13,19 @@ A few months back I shared [how I used Trucker to migrate data from a legacy Rai
 
 These issues, combined with a much more complex data structure (basically a total re-engineering of the data layer), led me to look into other options for legacy data migration for my next project. As it turns out, it's not terrifically difficult&mdash;it's just a matter of setting up some Rake tasks, mapping old data to new, and paying attention to the details.
 
-<div class="alert alert-info">
-  <p><strong>New to creating your own Rake tasks?</strong> [Review this Railscasts episode](http://railscasts.com/episodes/66-custom-rake-tasks) on developing your own custom Rake tasks. It's an important skill for any Rails developer.</p>
+<div class="alert alert-info" markdown="1">
+**New to creating your own Rake tasks?** [Review this Railscasts episode](http://railscasts.com/episodes/66-custom-rake-tasks) on developing your own custom Rake tasks. It's an important skill for any Rails developer.
 </div>
 
 ### Getting started
 
-The best place to start with this approach legacy data is Zach Holman's [Impress the Ladies with Legacy Migrations](http://zachholman.com/2010/01/impress-the-ladies-with-legacy-migrations)/. It outlines a simple-but-effective strategy: Create Rake tasks for each model you need to migrate, create an ActiveRecord class for the model, and customize as needed. I added a few of my own takes on the process:
+The best place to start with this approach legacy data is Zach Holman's [Impress the Ladies with Legacy Migrations](http://zachholman.com/2010/01/impress-the-ladies-with-legacy-migrations/). It outlines a simple-but-effective strategy: Create Rake tasks for each model you need to migrate, create an ActiveRecord class for the model, and customize as needed. I added a few of my own takes on the process:
 
 ### Connect to the legacy database
 
 Rather than creating temporary tables in my production database, I decided to establish a separate connection to my legacy database. You could establish a direct connection to the live database; instead I opted to first `mysqldump` the data, copy it to my development computer, and set up a local copy. This makes the migration process a little quicker and mitigates against accidentally doing something nasty to live data.
 
-To connect it to my Rails application, I used a procedure I learned from Chad Fowler's <em><a href=[http://www.amazon.com/gp/project/1934356778/ref=as_li_ss_tl?ie=UTF8&tag=everrail-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=1934356778">Rails Recipes, 3rd Edition</a><img src="http://www.assoc-amazon.com/e/ir?t=everrail-20&l=as2&o=1&a=1934356778" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></em> (get "early beta access now](http://pragprog.com/book/rr2/rails-recipes) from Pragmatic Programmers). First you create the connection in your `database.yml` file:
+To connect it to my Rails application, I used a procedure I learned from Chad Fowler's _[Rails Recipes, 3rd Edition](http://www.amazon.com/gp/project/1934356778/ref=as_li_ss_tl?ie=UTF8&tag=everrail-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=1934356778)_ ([get early beta access now](http://pragprog.com/book/rr2/rails-recipes) from Pragmatic Programmers). First you create the connection in your `database.yml` file:
  
 {% highlight yaml %}
   legacy:
