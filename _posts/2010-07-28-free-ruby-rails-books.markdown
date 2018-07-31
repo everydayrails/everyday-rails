@@ -16,7 +16,7 @@ Dave Thomas and Andy Hunt, the Pragmatic Programmers themselves, penned the book
 
 Unless you're brand new to Ruby, you've no doubt heard of [Why the Lucky Stiff](http://en.wikipedia.org/wiki/Why_the_lucky_stiff) and his contributions to Ruby. _Why's (Poignant) Guide to Ruby_ was one of my first introductions to the language (along with the first edition of _Agile Web Development with Rails_). I'll be honest, I didn't get through the whole book. But I did find it fascinating. If nothing else, it's worth skimming so you get the _chunky bacon_ references you'll hear in the Ruby community.
 
-Sadly, _why disappeared about a year ago, but admirers of his work scrambled to make sure archived copies of his writings about Ruby, as well as his essential Ruby projects like Hpricot, Camping, Hackety Hack, and arguably his most famous work, the (Poignant) Guide.
+Sadly, \_why disappeared about a year ago, but admirers of his work scrambled to make sure archived copies of his writings about Ruby, as well as his essential Ruby projects like Hpricot, Camping, Hackety Hack, and arguably his most famous work, the (Poignant) Guide.
 
 * [Why's (Poignant) Guide to Ruby&mdash;HTML](http://mislav.uniqpath.com/poignant-guide/book/)
 * [Why's (Poignant) Guide to Ruby&mdash;PDF](http://www.ember.co.nz/files/resources/whys-poignant-guide-to-ruby.pdf)
