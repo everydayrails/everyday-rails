@@ -57,4 +57,4 @@ As you look around the application structure, take a look at your `Gemfile` and 
 
 * There are plenty of jQuery tutorials out there; I don't have one in particular I recommend over others. This will really only affect you if you use the Prototype/scriptaculous Javascript framework in your Rails apps.
 * The [Sass tutorial](http://sass-lang.com/tutorial.html) should get you up and running with replacing your CSS. I've been using Sass for awhile now and love it&mdash;if you haven't checked it out yet, you owe it to yourself to do so.
-* Charles Max Wood at [Teach Me To Code](http://teachmetocode.com/screencasts)/ has been showing the basics of CoffeeScript in his screencasts. I will admit to being kind of green in this area, but am looking forward to getting Javascript functionality in my apps without having to deal with old-school RJS.
+* Charles Max Wood at [Teach Me To Code](http://teachmetocode.com/screencasts/) has been showing the basics of CoffeeScript in his screencasts. I will admit to being kind of green in this area, but am looking forward to getting Javascript functionality in my apps without having to deal with old-school RJS.

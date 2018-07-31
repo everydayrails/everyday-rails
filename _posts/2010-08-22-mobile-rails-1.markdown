@@ -24,9 +24,9 @@ If these aren't issues for you, and you just want to create a mobile site that w
 
 ### jQTouch
 
-In the Railscasts episode above, [jQTouch](http://www.jqtouch.com)/ is briefly mentioned and shown as a way to deliver native-like iPhone apps using a jQuery-based Javascript framework. Based on the recommendation, I spent some time hacking around with it, but it wasn't until I watched an hour-long [Peepcode episode dedicated to jQTouch](http://peepcode.com/products/jqtouch) that I began to figure things out. The episode is definitely worth the 9 dollars. As it turns out, jQTouch works best with AJAX, so I'll need to revisit my controllers and update as needed. Based on the examples and the tutorial, this extra work will be worth it.
+In the Railscasts episode above, [jQTouch](http://www.jqtouch.com/) is briefly mentioned and shown as a way to deliver native-like iPhone apps using a jQuery-based Javascript framework. Based on the recommendation, I spent some time hacking around with it, but it wasn't until I watched an hour-long [Peepcode episode dedicated to jQTouch](http://peepcode.com/products/jqtouch) that I began to figure things out. The episode is definitely worth the 9 dollars. As it turns out, jQTouch works best with AJAX, so I'll need to revisit my controllers and update as needed. Based on the examples and the tutorial, this extra work will be worth it.
 
-There are other frameworks for mobile Javascript&mdash;jQTouch is just what I'm working with right now. Last week Mashable put together a list of [mobile Javascript frameworks](http://mashable.com/2010/08/18/mobile-web-app-frameworks)/. This is just an overview, and it's not Rails-specific, but will give you an idea of the potential of each framework.
+There are other frameworks for mobile Javascript&mdash;jQTouch is just what I'm working with right now. Last week Mashable put together a list of [mobile Javascript frameworks](http://mashable.com/2010/08/18/mobile-web-app-frameworks/). This is just an overview, and it's not Rails-specific, but will give you an idea of the potential of each framework.
 
 ### What's next
 

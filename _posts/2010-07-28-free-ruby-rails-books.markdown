@@ -10,7 +10,7 @@ If you're just getting into Ruby or Rails now, and looking for some light readin
 
 Dave Thomas and Andy Hunt, the Pragmatic Programmers themselves, penned the book that is credited with popularizing Ruby in the United States. The first edition (from 2001) is available for free, or you can buy the [second edition, which covers Ruby 1.8](http://amzn.to/oWYAwN), or the [third edition, covering Ruby 1.9](http://amzn.to/rn1G2b), from the Pragmatic Programmers.
 
-* [Programming Ruby: The Pragmatic Progammer's Guide (1st Edition)](http://ruby-doc.org/docs/ProgrammingRuby)/
+* [Programming Ruby: The Pragmatic Progammer's Guide (1st Edition)](http://ruby-doc.org/docs/ProgrammingRuby/)
 
 ### Why's (Poignant) Guide to Ruby (HTML, PDF)
 
@@ -18,14 +18,14 @@ Unless you're brand new to Ruby, you've no doubt heard of [Why the Lucky Stiff](
 
 Sadly, _why disappeared about a year ago, but admirers of his work scrambled to make sure archived copies of his writings about Ruby, as well as his essential Ruby projects like Hpricot, Camping, Hackety Hack, and arguably his most famous work, the (Poignant) Guide.
 
-* [Why's (Poignant) Guide to Ruby&mdash;HTML](http://mislav.uniqpath.com/poignant-guide/book)/
+* [Why's (Poignant) Guide to Ruby&mdash;HTML](http://mislav.uniqpath.com/poignant-guide/book/)
 * [Why's (Poignant) Guide to Ruby&mdash;PDF](http://www.ember.co.nz/files/resources/whys-poignant-guide-to-ruby.pdf)
 
 ### Mr. Neighborly's Humble Little Ruby Book (HTML, PDF)
 
 The _Humble Little Ruby Book_ by Jeremy McAnally is a little out of date, being based on Ruby version 1.8.4 (versions 1.8.7 and 1.9.2 are commonly used now), but it's relatively short (under 150 pages) and in a very friendly, accessible tone. If you're still getting familiar with the Ruby language itself, it's as good an introduction as there is out there. There's also a [print version for sale](http://www.lulu.com/product/paperback/mr-neighborlys-humble-little-ruby-book/498212) for under $10.
 
-* [Mr. Neighborly's Humble Little Ruby Book](http://humblelittlerubybook.com)/
+* [Mr. Neighborly's Humble Little Ruby Book](http://humblelittlerubybook.com/)
 
 ### Learn Rails by Example (HTML)
 

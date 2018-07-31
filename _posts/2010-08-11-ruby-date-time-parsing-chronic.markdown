@@ -6,7 +6,7 @@ excerpt: "Make dates, times, and durations friendlier to users with Chronic and 
 
 Out of the box, Rails' `date_select` input type and other date/time-related times are a bit ugly and not very user-friendly&mdash;just a series of pulldown menus from which to select the month, day, year, hour, minute, and so on. You can pretty these up using a number of [calendar-related plugins](http://railscasts.com/episodes/213-calendars), notably by using Javascript, but there's another way you can make date and time more user-friendly. I like going with a basic text input, let my users enter dates like "tomorrow," "8/12/10," "August 12," or "next Thursday," then parsing the entries before storing them in the database.
 
-In this crash course in natural date/time parsing in Ruby, we're going to look at two gems called [Chronic](http://chronic.rubyforge.org)/ and [Chronic Duration](http://github.com/hpoydar/chronic_duration). These gems handle almost any date or time format your users throw at them and store them in database-friendly formats without the need for Javascript on the client side or hand-coded Ruby on the server side.
+In this crash course in natural date/time parsing in Ruby, we're going to look at two gems called [Chronic](http://chronic.rubyforge.org/) and [Chronic Duration](http://github.com/hpoydar/chronic_duration). These gems handle almost any date or time format your users throw at them and store them in database-friendly formats without the need for Javascript on the client side or hand-coded Ruby on the server side.
 
 ### Chronic
 
@@ -31,7 +31,7 @@ Chronic's usage is very straightforward. Let's fire up `irb` or `script/console`
     => Thu Aug 12 15:00:00 -0500 2010
 {% endhighlight %}
 
-So rather than requiring users to use Rails' default pulldown-based date picker, or enter data in forced formats (like `MM/DD/YYYY`), or click through Javascript-based calendars, your app can be smart about parsing the entered date into something meaningful to the server. For that matter, you can use it in conjunction with a Javascript calendar (like the [datepicker in JQuery UI](http://jqueryui.com/demos/datepicker)/) for further functionality.
+So rather than requiring users to use Rails' default pulldown-based date picker, or enter data in forced formats (like `MM/DD/YYYY`), or click through Javascript-based calendars, your app can be smart about parsing the entered date into something meaningful to the server. For that matter, you can use it in conjunction with a Javascript calendar (like the [datepicker in JQuery UI](http://jqueryui.com/demos/datepicker/)) for further functionality.
 
 ### Chronic Duration
 

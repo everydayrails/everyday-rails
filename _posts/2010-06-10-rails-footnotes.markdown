@@ -6,7 +6,7 @@ excerpt: "Rails Footnotes is a must-have gem for Rails developers of all skill l
 
 I live in Lawrence, Kansas; home of the Django web framework. I'm sticking with Ruby on Rails for my own work, though I'll admit there are features in Django that would make Rails a better development experience. In particular, the first time I saw the Django Debug Toolbar I couldn't figure out why Rails didn't have such a utility--then I learned that we Rails developers have our own debugging tool called [Rails Footnotes](http://github.com/josevalim/rails-footnotes). You just have to install it separately.
 
-Instructions in the gem's [README](http://wiki.github.com/josevalim/rails-footnotes)/ file are a little misleading. Here's what I've done to get up and running in a few Rails applications. 
+Instructions in the gem's [README](http://wiki.github.com/josevalim/rails-footnotes/) file are a little misleading. Here's what I've done to get up and running in a few Rails applications. 
 
 To start, the line for installing the gem isn't quite current--I added the following to my `config/environments/development.rb` file:
 

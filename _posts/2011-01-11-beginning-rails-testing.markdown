@@ -48,7 +48,7 @@ The other part of the code above that might look new is the use of the Faker gem
 
 ### 5. Structure your tests
 
-Your tests should be easy to read. They should also test one thing at a time. The best resource I've found that explains how to put this in practice is [RSpec Best Practices](http://blog.carbonfive.com/2010/10/21/rspec-best-practices)/, written last October by Jared Carroll at Carbon Five. Read this article, then revisit the tests you've written to figure out how you can make them cleaner.
+Your tests should be easy to read. They should also test one thing at a time. The best resource I've found that explains how to put this in practice is [RSpec Best Practices](http://blog.carbonfive.com/2010/10/21/rspec-best-practices/), written last October by Jared Carroll at Carbon Five. Read this article, then revisit the tests you've written to figure out how you can make them cleaner.
 
 I also like to switch my RSpec output format to _documentation_ so I can see a nice outline of my tests. To do this in RSpec 2, edit your project's `.rspec` file and add the line
 
@@ -60,8 +60,8 @@ I also like to switch my RSpec output format to _documentation_ so I can see a n
 
 First and foremost, I'll reiterate that the best way to move forward with testing your Rails applications is to start writing tests. Write tests on code you know to work and build up from there.
 
-I also like a couple of books in particular about testing in Rails. The first, _[Rails Test Prescriptions: Keeping Your Application Healthy](http://amzn.to/ofN37q_) by Noel Rappin is a good overview of the entire Rails testing ecosystem (it's technically in beta right now but will be released soon&mdash;follow the [Rails Test Prescriptions Blog](http://railsrx.com)/ to keep current on the book's status). The second book is specific to RSpec and is called, fittingly, _[The RSpec Book: Behaviour-Driven Development with RSpec, Cucumber, and Friends](http://amzn.to/qoeTvR_). This one's by David Chelimsky, Dave Astels, Zach Dennis, Aslak Helles&oslash;y, Bryan Helmkamp, Dan North&mdash;the folks behind RSpec itself.
+I also like a couple of books in particular about testing in Rails. The first, _[Rails Test Prescriptions: Keeping Your Application Healthy](http://amzn.to/ofN37q_) by Noel Rappin is a good overview of the entire Rails testing ecosystem (it's technically in beta right now but will be released soon&mdash;follow the [Rails Test Prescriptions Blog](http://railsrx.com/) to keep current on the book's status). The second book is specific to RSpec and is called, fittingly, _[The RSpec Book: Behaviour-Driven Development with RSpec, Cucumber, and Friends](http://amzn.to/qoeTvR_). This one's by David Chelimsky, Dave Astels, Zach Dennis, Aslak Helles&oslash;y, Bryan Helmkamp, Dan North&mdash;the folks behind RSpec itself.
 
-One last thought: If you're brand new to Rails, or haven't gotten up to speed on Rails 3 yet, I recommend getting started with Michael Hartl's [Rails Tutorial](http://railstutorial.org)/ ([also available in book form](http://amzn.to/ovOHFn)). Unlike other Rails primers, this one gets you off on the right foot by having you write tests alongside your code, to help you get into that good habit.
+One last thought: If you're brand new to Rails, or haven't gotten up to speed on Rails 3 yet, I recommend getting started with Michael Hartl's [Rails Tutorial](http://railstutorial.org/) ([also available in book form](http://amzn.to/ovOHFn)). Unlike other Rails primers, this one gets you off on the right foot by having you write tests alongside your code, to help you get into that good habit.
 
 Good luck with your Rails testing!

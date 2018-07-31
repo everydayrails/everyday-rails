@@ -39,13 +39,13 @@ Now, whenever you trigger a mailer, the message will be caught by MailCatcher. F
 
 ### MockSMTP
 
-If you're a Mac-based Rails developer, and you have about $30 to throw at a development SMTP server, check out [MockSMTP](http://mocksmtpapp.com)/ (also available in the Mac App Store). MockSMTP does the same thing as DreamCatcher, except via a native Mac interface. Fire up MockSMTP and configure your Rails application the exact same way.
+If you're a Mac-based Rails developer, and you have about $30 to throw at a development SMTP server, check out [MockSMTP](http://mocksmtpapp.com/) (also available in the Mac App Store). MockSMTP does the same thing as DreamCatcher, except via a native Mac interface. Fire up MockSMTP and configure your Rails application the exact same way.
 
 For most projects I would imagine that DreamCatcher is just as good, but you may have cases in which you'd want to separate outgoing mail by sender&mdash;MockSMTP's interface makes this quite easy. You can also tell MockSMTP to deliver messages once you've looked at them, which can be handy if you want to check how a message looks in specific mail clients.
 
 ### What about Windows?
 
-Windows-based Rails developers might want to check out [Papercut](http://papercut.codeplex.com)/, or search around. I know nothing about these apps myself.
+Windows-based Rails developers might want to check out [Papercut](http://papercut.codeplex.com/), or search around. I know nothing about these apps myself.
 
 ### What if I _do_ just want to send out mail?
 

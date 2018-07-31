@@ -6,7 +6,7 @@ excerpt: "Take advantage of RVM's gemset feature to create project-specific gem 
 
 Sorry about the delay in posting&mdash;everyday life got in the way of Everyday Rails. I've also been in the middle of changing how my development Ruby environment works, and want to share that today.
 
-In a little more than a year, [RVM](rvm.beginrescueend.com)/ (Ruby Version Manager) has become a critical tool for Ruby and Rails developers. A few months ago, when Rails 3 was still in beta, I [wrote how to use RVM's gemsets feature to allow multiple versions of Rails to coexist](/2010/06/28/rvm-gemsets-rails3.html) by creating a separate gemset for Rails 3 and its dependencies, so you wouldn't have to worry about conflicts with productional Rails 2.3 code. In this post, I'll extend that general approach to show how I'm using RVM to create project-specific gemsets, allowing each of my Ruby projects (Rails 3, Rails 2.3, Jekyll, and Sinatra) to exist in a silo, with their own, independent gem installations.
+In a little more than a year, [RVM](rvm.beginrescueend.com/) (Ruby Version Manager) has become a critical tool for Ruby and Rails developers. A few months ago, when Rails 3 was still in beta, I [wrote how to use RVM's gemsets feature to allow multiple versions of Rails to coexist](/2010/06/28/rvm-gemsets-rails3.html) by creating a separate gemset for Rails 3 and its dependencies, so you wouldn't have to worry about conflicts with productional Rails 2.3 code. In this post, I'll extend that general approach to show how I'm using RVM to create project-specific gemsets, allowing each of my Ruby projects (Rails 3, Rails 2.3, Jekyll, and Sinatra) to exist in a silo, with their own, independent gem installations.
 
 *Why would you want to do this?* I'm currently developing new applications in Rails 3, while maintaining a handful of Rails 2.3 applications that aren't quite ready to be migrated to Rails 3. (I even have a Rails 1.2 application I need to poke at every now and then.) Given not just all these different versions of Rails, but also the different levels of compatibility a given gem has for that version of Rails, it's important that I keep things separate. Updating a gem for Application A could wreck Application B. Long story short, it's a little bit of short-term setup headache for a lot of long-term code maintenance sanity.
 
@@ -65,7 +65,7 @@ What you put in @global is up to you, but try to keep it clean. Since the point 
 
 ### Configure Passenger
 
-This is the first kind of tricky part. If you're content using your application's built-in server, you can skip it. After much frustration, I found [this post on RVM and Passenger integration by Sam Philips](http://www.samsworldofno.com/2009/12/30/playing-nicely-notes-on-installing-rvm-and-passenger)/ to be the most helpful. The gist is you're going to point Apache to the copy of Passenger you just installed in the `@global` gemset and create a wrapper to point it to the Ruby version you picked to kick things off.
+This is the first kind of tricky part. If you're content using your application's built-in server, you can skip it. After much frustration, I found [this post on RVM and Passenger integration by Sam Philips](http://www.samsworldofno.com/2009/12/30/playing-nicely-notes-on-installing-rvm-and-passenger/) to be the most helpful. The gist is you're going to point Apache to the copy of Passenger you just installed in the `@global` gemset and create a wrapper to point it to the Ruby version you picked to kick things off.
 
 First, let's create that wrapper:
 
@@ -108,7 +108,7 @@ This is the key to the magic that's happening here: RVM is smart enough to know 
 
 Here's the second kind of tricky part: Since Passenger doesn't technically know about our project-specific gemset, we need to tell it where to access our app's gems. It will get this information from the `.rvmrc` file.
 
-To do this, inside your app's `config` directory, create a new file called `setup_load_paths.rb` to let your app know how to access its gems. Here's what wound up working for me, courtesy of [Jeremy Lecour's excellent writeup on RVM and Passenger](http://jeremy.wordpress.com/2010/08/19/ruby-rvm-passenger-rails-bundler-in-development)/:
+To do this, inside your app's `config` directory, create a new file called `setup_load_paths.rb` to let your app know how to access its gems. Here's what wound up working for me, courtesy of [Jeremy Lecour's excellent writeup on RVM and Passenger](http://jeremy.wordpress.com/2010/08/19/ruby-rvm-passenger-rails-bundler-in-development/):
 
 {% highlight ruby %}
   # config/setup_load_paths.rb
@@ -198,7 +198,7 @@ Set up a virtual host for your application, restart it (either `touch tmp/restar
 
 Finally, let's make TextMate aware of the new configuration. Luckily, the RVM documentation on this topic is solid&mdash;rather than recreate it I'll just refer you there. One downside is you'll have to switch the gemset TextMate uses when you switch from project to project.
 
-To set this up, I recommend following the [instructions on RVM and TextMate integration](http://rvm.beginrescueend.com/integration/textmate)/ on the RVM site. It's kind of a messy process, but it works. Hopefully this will be made easier in TextMate 2.
+To set this up, I recommend following the [instructions on RVM and TextMate integration](http://rvm.beginrescueend.com/integration/textmate/) on the RVM site. It's kind of a messy process, but it works. Hopefully this will be made easier in TextMate 2.
 
 I've also read about issues with Ruby 1.9 and TextMate in this setup, but haven't gone about setting up a Ruby 1.9 environment yet. If you know something I don't, please comment below.
 

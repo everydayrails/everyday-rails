@@ -4,7 +4,7 @@ title: "Know your Rails command line tools"
 excerpt: "There's no getting around the command line when it comes to developing Rails applications. Here are several resources to help you get the most out of the Rails command line experience."
 ---
 
-In a keynote at last week's [Ruby Midwest](http://www.rubymidwest.com)/ conference in Kansas City, Rails core contributor Yehuda Katz talked about the attention the Rails team puts into the experience of the developer. A large part of this experience is the command line, and Yehuda pointed to the efforts that have been put into making sure that interface to Rails and the software you write with it is as useful as possible. The goal is to keep you from having to refer to a manual or stack trace as little as possible.
+In a keynote at last week's [Ruby Midwest](http://www.rubymidwest.com/) conference in Kansas City, Rails core contributor Yehuda Katz talked about the attention the Rails team puts into the experience of the developer. A large part of this experience is the command line, and Yehuda pointed to the efforts that have been put into making sure that interface to Rails and the software you write with it is as useful as possible. The goal is to keep you from having to refer to a manual or stack trace as little as possible.
 
 If Rails is your first real exposure to the command line&mdash;and I know a few people for whom this is true&mdash;you may think that command lines aren't what we use to interact with computers anymore (especially on Macs). With a bit of practice, though, you may discover that the command line is a much quicker and more powerful way to get things done on your computer than a graphical interface and a mouse. Here are some resources to get you started with the command line in Rails.
 
@@ -26,7 +26,7 @@ When it comes to generators, everything changes in Rails 3.
 
 * Ryan Bates covers the [changes to generators in Rails 3](http://railscasts.com/episodes/216-generators-in-rails-3) in Railscasts;
 * He's also got an episode on [writing generators in Rails 3](http://railscasts.com/episodes/218-making-generators-in-rails-3)
-* Ben Scofield has written a good series on Rails 3 generators that gives a line-by-line comparison of the Rails 2 way to the Rails 3 way of using generators&mdash;see [the standard generators](http://www.viget.com/extend/rails-3-generators-the-old-faithful)/, some [less common generators like mailers, helpers, and observers](http://www.viget.com/extend/rails-3-generators-the-unusuals-part-1)/, some [more testing-specific generators](http://www.viget.com/extend/rails-3-generators-the-unusuals-part-2)/.
+* Ben Scofield has written a good series on Rails 3 generators that gives a line-by-line comparison of the Rails 2 way to the Rails 3 way of using generators&mdash;see [the standard generators](http://www.viget.com/extend/rails-3-generators-the-old-faithful/), some [less common generators like mailers, helpers, and observers](http://www.viget.com/extend/rails-3-generators-the-unusuals-part-1/), some [more testing-specific generators](http://www.viget.com/extend/rails-3-generators-the-unusuals-part-2/).
 
 ## Rake
 
@@ -44,5 +44,5 @@ These last links aren't specific to Rails, but a general grasp of the Unix comma
 If you _really_ want to get hands-on exposure to command line-only computing, install [Ubuntu Server Edition](http://www.ubuntu.com/server) a computer or virtual machine. This version of Ubuntu Linux is optimized for server use so it doesn't include a GUI out of the box. You can install one if you want, but you'll need to use the command line to do so.
 </div>
 
-* The [Unix/Linux tutorial for beginners](http://www.ee.surrey.ac.uk/Teaching/Unix)/ is a good start, especially if the day you installed Rails was the first time you'd opened Terminal.
+* The [Unix/Linux tutorial for beginners](http://www.ee.surrey.ac.uk/Teaching/Unix/) is a good start, especially if the day you installed Rails was the first time you'd opened Terminal.
 * Here's a [summary of Unix commands](http://www.math.utah.edu/lab/unix/unix-commands.html) for quick reference.

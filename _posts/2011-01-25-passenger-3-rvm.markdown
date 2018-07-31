@@ -4,7 +4,7 @@ title: "Passenger 3, RVM, and Apache; quick and easy"
 excerpt: "If, like me, you've been dragging your feet about upgrading to Passenger 3, stop waiting. In this post I'll quickly walk through using it with RVM for Rails development."
 ---
 
-[Passenger 3](http://www.modrails.com)/ has been out since last October, so for most folks this will all be very, very old news. For those of you who haven't upgraded yet, version 3 touts faster, more stable performance over version 2. It's also very easy to set up on your development computer so you can have multiple Rails projects running in development simultaneously. For my setup I'm also using [RVM](http://rvm.beginrescueend.com)/ to manage project-specific gemsets ([read more about why I think this is a great idea](http://everydayrails.com/2010/09/13/rvm-project-gemsets.html)), but standardizing on one Ruby version.
+[Passenger 3](http://www.modrails.com/) has been out since last October, so for most folks this will all be very, very old news. For those of you who haven't upgraded yet, version 3 touts faster, more stable performance over version 2. It's also very easy to set up on your development computer so you can have multiple Rails projects running in development simultaneously. For my setup I'm also using [RVM](http://rvm.beginrescueend.com/) to manage project-specific gemsets ([read more about why I think this is a great idea](http://everydayrails.com/2010/09/13/rvm-project-gemsets.html)), but standardizing on one Ruby version.
 
 To start, it probably wouldn't hurt to make sure you've got the latest version of RVM on your computer. At this writing, that's version 1.2.4. The following should take care of the upgrade:
 
@@ -13,7 +13,7 @@ To start, it probably wouldn't hurt to make sure you've got the latest version o
   $ rvm reload
 {% endhighlight %}
 
-Next, install the new Passenger gem (at 3.0.2 as I write this). This is [very well documented on the RVM website](http://rvm.beginrescueend.com/integration/passenger)/, if you need more detail. I keep the Passenger gem in my @global RVM gemset.
+Next, install the new Passenger gem (at 3.0.2 as I write this). This is [very well documented on the RVM website](http://rvm.beginrescueend.com/integration/passenger/), if you need more detail. I keep the Passenger gem in my @global RVM gemset.
 
 {% highlight bash %}
   $ gem install passenger
@@ -39,4 +39,4 @@ From here, it's just a matter of preparing your Rails applications to take advan
 
 ### What about multiple Rubies?
 
-I haven't done this myself, but if you need to use this general setup with multiple versions of Ruby, refer to [this post on Phusion's blog about using proxies with Passenger and RVM](http://blog.phusion.nl/2010/09/21/phusion-passenger-running-multiple-ruby-versions)/
+I haven't done this myself, but if you need to use this general setup with multiple versions of Ruby, refer to [this post on Phusion's blog about using proxies with Passenger and RVM](http://blog.phusion.nl/2010/09/21/phusion-passenger-running-multiple-ruby-versions/)

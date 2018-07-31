@@ -107,7 +107,7 @@ Failing that, the simplest approach may be to comment out your `attr_accessible`
 
 ### Use Chronic for easier time manipulation
 
-Legacy migrations may often require a lot of extra data manipulation, as you bend old data to work in new models. The process is thus a great opportunity to empty your Ruby toolbox and get practice with both standard library utilities and other gems like the wonderful [Chronic](http://rubygems.org/gems/chronic) natural language parser for time and date. In my case, I had to merge dates and datetimes into new structures; creating and processing timestamps via Chronic turned out to be much more straightforward than using Ruby's usual date and time-related methods. Check the [Ruby Toolbox](http://www.ruby-toolbox.com)/ for other potential time-savers.
+Legacy migrations may often require a lot of extra data manipulation, as you bend old data to work in new models. The process is thus a great opportunity to empty your Ruby toolbox and get practice with both standard library utilities and other gems like the wonderful [Chronic](http://rubygems.org/gems/chronic) natural language parser for time and date. In my case, I had to merge dates and datetimes into new structures; creating and processing timestamps via Chronic turned out to be much more straightforward than using Ruby's usual date and time-related methods. Check the [Ruby Toolbox](http://www.ruby-toolbox.com/) for other potential time-savers.
 
 ### Log exceptions and move on
 

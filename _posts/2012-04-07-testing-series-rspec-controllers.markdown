@@ -239,7 +239,7 @@ end
 
 {% endhighlight %}
 
-Let's talk about that `expect {}` Proc for a minute. RSpec's readability shines here&mdash;except this code to (or to not) do something. This one little example succinctly tests that an object is created and stored. (If Proc objects seem magical to you, refer to [this post by Alan Skorkin](http://www.skorks.com/2010/05/ruby-procs-and-lambdas-and-the-difference-between-them)/ and [this one by Robert Sosinski](http://www.robertsosinski.com/2008/12/21/understanding-ruby-blocks-procs-and-lambdas)/ to learn more.) Become familiar with this technique, as it'll be very useful in testing a variety of methods in controllers, models, and eventually at the integration level.
+Let's talk about that `expect {}` Proc for a minute. RSpec's readability shines here&mdash;except this code to (or to not) do something. This one little example succinctly tests that an object is created and stored. (If Proc objects seem magical to you, refer to [this post by Alan Skorkin](http://www.skorks.com/2010/05/ruby-procs-and-lambdas-and-the-difference-between-them/) and [this one by Robert Sosinski](http://www.robertsosinski.com/2008/12/21/understanding-ruby-blocks-procs-and-lambdas/) to learn more.) Become familiar with this technique, as it'll be very useful in testing a variety of methods in controllers, models, and eventually at the integration level.
 
 ### Testing PUT methods
 

@@ -46,7 +46,7 @@ Now I'll create my databases for the development and test environments. Not nece
 
 So far, everything has been pretty by-the-book in terms of setting up a Rails application from scratch. From here, I get into some of the specific tools I use to code my apps.
 
-I use [Haml](http://haml-lang.com)/ instead of ERb for my views. Haml gives me much cleaner code, and it's true that Haml speeds things up when it comes to tweaking views to get them how you want. When you install Haml, you also install Sass--an alternative to traditional CSS that lets you include variables, cleaner nested styles, and "mixins" for reusable code. If you haven't done so already, install the Haml gem:
+I use [Haml](http://haml-lang.com/) instead of ERb for my views. Haml gives me much cleaner code, and it's true that Haml speeds things up when it comes to tweaking views to get them how you want. When you install Haml, you also install Sass--an alternative to traditional CSS that lets you include variables, cleaner nested styles, and "mixins" for reusable code. If you haven't done so already, install the Haml gem:
 
 {% highlight bash %}
   $ sudo gem install haml
@@ -58,7 +58,7 @@ After that, you need to install the Haml plugin in your app using the next comma
   $ haml --rails .
 {% endhighlight %}
 
-I'm also a big fan of the [Nifty Generators](http://github.com/ryanb/nifty-generators) gem, created by Ryan Bates of [Railscasts](http://railscasts.com)/ fame. For one thing, its default look-and-feel for scaffolds is a little nicer than the Rails default. I also like the code it generates for my controllers, and if you're with me on using Haml, you can tell it to generate Haml instead of ERb (and RSpec instead of Test::Unit, but that's another post for another time). The first line creates a layout file for your application, a default stylesheet, and a helper file to help DRY up your views with a `title` method.
+I'm also a big fan of the [Nifty Generators](http://github.com/ryanb/nifty-generators) gem, created by Ryan Bates of [Railscasts](http://railscasts.com/) fame. For one thing, its default look-and-feel for scaffolds is a little nicer than the Rails default. I also like the code it generates for my controllers, and if you're with me on using Haml, you can tell it to generate Haml instead of ERb (and RSpec instead of Test::Unit, but that's another post for another time). The first line creates a layout file for your application, a default stylesheet, and a helper file to help DRY up your views with a `title` method.
 
 The second line is also pretty handy. It generates a configuration file for your application, so you can specify site-wide variables that are dependent on your current environment. For example, say your app has a mailer, and you want messages sent to one address during development, and a different address during production. The nifty_config generator makes that easy. I'll cover Nifty Generators more in a future post, but in the meantime you can prepare your application for these very handy features with the following:
 

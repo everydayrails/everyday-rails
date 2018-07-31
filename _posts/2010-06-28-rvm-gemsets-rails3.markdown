@@ -8,7 +8,7 @@ excerpt: "Worried about Rails 3 disrupting your workflow? Here's how I use RVM's
 I've written a follow-up to this post for using the [Rails 3.1 beta with RVM](/2011/05/08/rails-3.1-beta-rvm.html).
 </div>
 
-A couple of weeks ago at a get-together of local developers, someone mentioned he hadn't checked out Rails 3 yet because he didn't want pre-release software mucking up his usual development environment. I don't blame him--this is a reason I also put off checking out earlier releases of Rails 3. That was before I got a new computer and set up Ruby from scratch, using the why-didn't-someone-think-of-this-sooner [Ruby Version Manager](http://rvm.beginrescueend.com)/ (RVM). Simply put, RVM lets you have multiple versions of Ruby on your computer, and keeps these Rubies and any gems you install in your user account. No root access or `sudo` is required to install.
+A couple of weeks ago at a get-together of local developers, someone mentioned he hadn't checked out Rails 3 yet because he didn't want pre-release software mucking up his usual development environment. I don't blame him--this is a reason I also put off checking out earlier releases of Rails 3. That was before I got a new computer and set up Ruby from scratch, using the why-didn't-someone-think-of-this-sooner [Ruby Version Manager](http://rvm.beginrescueend.com/) (RVM). Simply put, RVM lets you have multiple versions of Ruby on your computer, and keeps these Rubies and any gems you install in your user account. No root access or `sudo` is required to install.
 
 In addition to managing Ruby versions, RVM gives you a second killer feature--the ability to create _gemsets_, which are exactly what they sound like. Each Ruby version managed with RVM has its own set of gems configured to work with it, and each Ruby version can have multiple gemsets applied to it. Each gemset is distinct, so you can experiment with different versions of Ruby and different versions of gems without affecting your go-to configurations. In other words, you've got no excuses to not be tinkering with Rails 3 _right now_.
 
@@ -16,17 +16,17 @@ The tutorials on the RVM website cover all of the steps to get going, but they m
 
 ## 1. Prerequisites
 
-Depending on the installation method you choose, you may be good to go with a stock installation of your operating system. You may want to install Git if you haven't already to retrieve the latest versions of RVM or Rubies. I recommend [Homebrew](http://mxcl.github.com/homebrew)/ for installing Git and other software packages for Mac OS X, though if you'd prefer a double-click installer there's [Git for OS X](http://code.google.com/p/git-osx-installer)/.
+Depending on the installation method you choose, you may be good to go with a stock installation of your operating system. You may want to install Git if you haven't already to retrieve the latest versions of RVM or Rubies. I recommend [Homebrew](http://mxcl.github.com/homebrew/) for installing Git and other software packages for Mac OS X, though if you'd prefer a double-click installer there's [Git for OS X](http://code.google.com/p/git-osx-installer/).
 
 ## 2. Installation
 
-The [RVM installation documentation](http://rvm.beginrescueend.com/rvm/install)/ lists three options. I used the first option (installing from the GitHub repository via a single command). I'm not sure why installing from the gem is not recommended, other than you're apt to not get the latest version. For what it's worth, the [Railscasts episode on using RVM with Rails 3 Beta](http://railscasts.com/episodes/200-rails-3-beta-and-rvm) installs from GitHub. So, going that route, type:
+The [RVM installation documentation](http://rvm.beginrescueend.com/rvm/install/) lists three options. I used the first option (installing from the GitHub repository via a single command). I'm not sure why installing from the gem is not recommended, other than you're apt to not get the latest version. For what it's worth, the [Railscasts episode on using RVM with Rails 3 Beta](http://railscasts.com/episodes/200-rails-3-beta-and-rvm) installs from GitHub. So, going that route, type:
 
 {% highlight bash %}
   $ bash < <( curl http://rvm.beginrescueend.com/releases/rvm-install-head )
 {% endhighlight %}
 
-The real work begins with the post-installation steps (scroll down about halfway on the [installation documentation](http://rvm.beginrescueend.com/rvm/install)/). Locate your profile (by default on a Mac, that's `.bash_profile` inside your home directory; you may also have settings like `$PATH` in this file) and paste the following line at the bottom:
+The real work begins with the post-installation steps (scroll down about halfway on the [installation documentation](http://rvm.beginrescueend.com/rvm/install/)). Locate your profile (by default on a Mac, that's `.bash_profile` inside your home directory; you may also have settings like `$PATH` in this file) and paste the following line at the bottom:
 
 {% highlight bash %}
   [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
@@ -46,7 +46,7 @@ Then switch to that Ruby with
   $ rvm 1.8.7
 {% endhighlight %}
 
-The RVM documentation provides [a complete list of Ruby interpreters available](http://rvm.beginrescueend.com/interpreters)/
+The RVM documentation provides [a complete list of Ruby interpreters available](http://rvm.beginrescueend.com/interpreters/)
 
 See a list of all your installed Rubies with
 
@@ -77,7 +77,7 @@ The basic syntax to get started is
 where `rails3` is your gemset's name. You can use another version of Ruby if you'd prefer&mdash;in fact, it might not be a bad idea to start getting familiar with Ruby 1.9.1 as long as you're enabling your computer to handle multiple Rubies and Rails versions.
 
 <div class="alert alert-info" markdown="1">
-You can copy gemsets from Ruby to Ruby; see the [RVM documentation](http://rvm.beginrescueend.com/gemsets/copying)/ for details.
+You can copy gemsets from Ruby to Ruby; see the [RVM documentation](http://rvm.beginrescueend.com/gemsets/copying/) for details.
 </div>
 
 Now type
@@ -100,7 +100,7 @@ shows the gemset is empty; change that with
 
 to install the current pre-release version of Rails.
 
-Read the [RVM documentation on gemsets](http://rvm.beginrescueend.com/gemsets/basics)/ for more usage examples for gemsets--but for all intents and purposes, we're ready to roll with Rails 3.
+Read the [RVM documentation on gemsets](http://rvm.beginrescueend.com/gemsets/basics/) for more usage examples for gemsets--but for all intents and purposes, we're ready to roll with Rails 3.
 
 *Update:* Reader Sutto points out that you can create and switch to a new gemset in one fell swoop with
 
@@ -110,7 +110,7 @@ Read the [RVM documentation on gemsets](http://rvm.beginrescueend.com/gemsets/ba
 
 ## 4. Passenger setup (optional)
 
-If you're using Passenger on your development computer, and want to keep using it with RVM, you'll need to make a few tweaks to your web server configuration. In my case, I'm using the default installation of Apache in Mac OS X. Looking at the [documentation on integrating Passenger with RVM](http://rvm.beginrescueend.com/integration/passenger)/, you'll see there are a few steps involved here. It confused me a little the first time I ran through it, but here's the rundown:
+If you're using Passenger on your development computer, and want to keep using it with RVM, you'll need to make a few tweaks to your web server configuration. In my case, I'm using the default installation of Apache in Mac OS X. Looking at the [documentation on integrating Passenger with RVM](http://rvm.beginrescueend.com/integration/passenger/), you'll see there are a few steps involved here. It confused me a little the first time I ran through it, but here's the rundown:
 
 First, switch to the Ruby version you want to use with Passenger, if necessary. In the documentation they're using REE but you can use any Ruby you've installed with RVM.
 
@@ -134,7 +134,7 @@ Reboot Apache and you should be good to go. For the record, I'm about to switch 
 
 First, install MySQL the way you normally would (if you haven't already). You can use Homebrew, or you can download an installer for your operating system. I went with the latter--if you're using Leopard or Snow Leopard, _make sure you download and install the 64-bit version_.
 
-Then, follow the instructions provided in the [RVM documentation](http://rvm.beginrescueend.com/integration/databases)/ to finish. Specifically, you'll add the following to `~/.rvmrc`:
+Then, follow the instructions provided in the [RVM documentation](http://rvm.beginrescueend.com/integration/databases/) to finish. Specifically, you'll add the following to `~/.rvmrc`:
 
 {% highlight bash %}
   rvm_archflags="-arch x86_64"

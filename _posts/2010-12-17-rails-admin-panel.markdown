@@ -4,7 +4,7 @@ title: "Turnkey administration interface for your Rails apps"
 excerpt: "RailsAdmin gives you a rich, web-based interface to your Rails 3 application's data in minutes. Here's how to get started."
 ---
 
-One benefit Python web framework Django has had over Rails is the [admin interface](http://www.djangobook.com/en/2.0/chapter06)/, an easy-to-use, web-based interface for website administrators to access and manipulate data. Similar interfaces are not complicated to build in Rails, particularly if you're using scaffolds, but the process to date hasn't been as relatively turnkey as is setting up a Django admin interface. A recently released engine called [RailsAdmin](https://github.com/sferik/rails_admin) adds similar functionality to Rails 3 applications in a matter of minutes.
+One benefit Python web framework Django has had over Rails is the [admin interface](http://www.djangobook.com/en/2.0/chapter06/), an easy-to-use, web-based interface for website administrators to access and manipulate data. Similar interfaces are not complicated to build in Rails, particularly if you're using scaffolds, but the process to date hasn't been as relatively turnkey as is setting up a Django admin interface. A recently released engine called [RailsAdmin](https://github.com/sferik/rails_admin) adds similar functionality to Rails 3 applications in a matter of minutes.
 
 Three things you should be aware of before you get started:
 

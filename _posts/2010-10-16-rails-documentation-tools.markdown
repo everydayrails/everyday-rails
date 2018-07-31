@@ -11,7 +11,7 @@ The good news is there are quite a few documentation tools out there. Here are t
 
 ### annotate-models
 
-The first tool is an oldie, but still works great: The [annotate-models](http://annotate-models.rubyforge.org)/ gem refers to your database schema and adds field details in the comments of the corresponding model. Install the gem, `cd` into your Rails project directory, and type `annotate` to add this documentation to your models. You can also document your tests, specs, and factories&mdash;see the [GitHub repository](http://github.com/ctran/annotate_models) for more details.
+The first tool is an oldie, but still works great: The [annotate-models](http://annotate-models.rubyforge.org/) gem refers to your database schema and adds field details in the comments of the corresponding model. Install the gem, `cd` into your Rails project directory, and type `annotate` to add this documentation to your models. You can also document your tests, specs, and factories&mdash;see the [GitHub repository](http://github.com/ctran/annotate_models) for more details.
 
 ### RDoc
 
@@ -25,7 +25,7 @@ Be sure to also edit the file `doc/READ_ME_FOR_APP`; that's what the Rake task u
 
 ### Rails ERD
 
-Finally, how about some visual documentation of how your models relate to one another? Check out [Rails ERD](http://rails-erd.rubyforge.org)/ a new gem that creates nice PDF entity-relationship diagrams for your apps. It's easy to install, customizable, and very well documented. Take a look at the [gallery of ERD examples from popular open source Rails projects](http://rails-erd.rubyforge.org/gallery.html) to get a feel for how it works. The rendered PDF saves to your application root by default&mdash;I check this into my source control for other developers (not to mention for my own reference).
+Finally, how about some visual documentation of how your models relate to one another? Check out [Rails ERD](http://rails-erd.rubyforge.org/) a new gem that creates nice PDF entity-relationship diagrams for your apps. It's easy to install, customizable, and very well documented. Take a look at the [gallery of ERD examples from popular open source Rails projects](http://rails-erd.rubyforge.org/gallery.html) to get a feel for how it works. The rendered PDF saves to your application root by default&mdash;I check this into my source control for other developers (not to mention for my own reference).
 
 ### Other tools
 

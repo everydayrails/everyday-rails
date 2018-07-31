@@ -12,13 +12,13 @@ While a suite of tests for your application is not _strictly_ a prerequisite to 
 
 ### metric_fu
 
-The Swiss army knife of Rails refactoring is [metric_fu](http://metric-fu.rubyforge.org)/, a do-it-all (with shiny graphs) utility by Jake Scruggs. metric_fu includes a stable of Ruby and Rails metric reporting tools, all just a rake task away. metric_fu is relatively easy to install (walk through the steps on the project page linked above; a slightly dated [Railscasts tutorial](http://railscasts.com/episodes/166-metric-fu) is also available). Then, run the provided rake tasks to generate easy-to-read reports on issues on design issues within your code.
+The Swiss army knife of Rails refactoring is [metric_fu](http://metric-fu.rubyforge.org/), a do-it-all (with shiny graphs) utility by Jake Scruggs. metric_fu includes a stable of Ruby and Rails metric reporting tools, all just a rake task away. metric_fu is relatively easy to install (walk through the steps on the project page linked above; a slightly dated [Railscasts tutorial](http://railscasts.com/episodes/166-metric-fu) is also available). Then, run the provided rake tasks to generate easy-to-read reports on issues on design issues within your code.
 
 So, metric_fu is a powerful tool for refactoring your code. Its reports can also be pretty daunting, especially if (a) you're relatively new to Rails development, or (b) you've let a project go on a little too long without refactoring. With that in mind, I want to look a little closer at two of the tools used by metric_fu, and how they can be used independently to help clean up your project.
 
 ### Rails Best Practices
 
-I think the best tool to start refactoring with is [Rails Best Practices](http://github.com/flyerhzm/rails_best_practices), a gem that checks your code for violations of&mdash;you guessed it&mdash;widely-accepted practices for good Rails code design. Rails Best Practice is command line-based, but it's easy to use and provides an easy-to-read list of potential problems with your code. The best thing is the tie-in with the [Rails Best Practices](http://rails-bestpractices.com)/ website and community, where you can get solid advice on _why_ you're getting warnings about your code, and how to go about cleanup.
+I think the best tool to start refactoring with is [Rails Best Practices](http://github.com/flyerhzm/rails_best_practices), a gem that checks your code for violations of&mdash;you guessed it&mdash;widely-accepted practices for good Rails code design. Rails Best Practice is command line-based, but it's easy to use and provides an easy-to-read list of potential problems with your code. The best thing is the tie-in with the [Rails Best Practices](http://rails-bestpractices.com/) website and community, where you can get solid advice on _why_ you're getting warnings about your code, and how to go about cleanup.
 
 ### Reek
 
