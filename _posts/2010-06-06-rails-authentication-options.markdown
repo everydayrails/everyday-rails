@@ -26,9 +26,9 @@ The [Railscast on Restful Authentication](http://railscasts.com/episodes/67-rest
 
 Restful Authentication has three big holes you'll need to plug:
 
-# Lack of password reset functionality: What do you do if you've forgotten your password? There's nothing out of the box to help in this situation, but luckily the [forgot_password](http://github.com/greenisus/forgot_password) generator creates the necessary code (a controller, model, and mailers) to take care of the dirty work.
-# Lack of account editing: The Restful Authentication generator gives you `new` and `create` methods in `users_controller.rb`--what happens if a user wants to change his password after he's logged in (or other information, if you've extended the default fields in the users database table)? This takes a little extra work. Later this week I'll share how I've addressed this in the past, with the help of authorization.
-# Anyone can create an account: This is the default setup for Restful Authentication, but what if you're building a closed system (say, a company intranet) and don't want just anyone signing in? There are workarounds for that as well, which I'll touch upon this week as well.
+1. Lack of password reset functionality: What do you do if you've forgotten your password? There's nothing out of the box to help in this situation, but luckily the [forgot_password](http://github.com/greenisus/forgot_password) generator creates the necessary code (a controller, model, and mailers) to take care of the dirty work.
+2. Lack of account editing: The Restful Authentication generator gives you `new` and `create` methods in `users_controller.rb`--what happens if a user wants to change his password after he's logged in (or other information, if you've extended the default fields in the users database table)? This takes a little extra work. Later this week I'll share how I've addressed this in the past, with the help of authorization.
+3. Anyone can create an account: This is the default setup for Restful Authentication, but what if you're building a closed system (say, a company intranet) and don't want just anyone signing in? There are workarounds for that as well, which I'll touch upon this week as well.
 
 Ultimately, though, I don't want to spend a lot of my time (or yours) on Restful Authentication, mainly because I think Devise is currently the best way to go for adding authentication to your Rails apps. More on Devise in a minute.
 

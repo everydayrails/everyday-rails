@@ -63,8 +63,8 @@ Let's look at the new file for our comment and add its ACL settings:
 
 This is similar to the ACLs we set up last time for categories and posts, with one major difference. This time we've set `logical_parent`, which gives me access to a comment's corresponding post (its parent) in my ACLs. In the cases of the `is_updatable_by` and `is_deletable_by` settings above, I allow the action to proceed if:
 
-# The comment's post's author is the same as the user attempting access, _or_
-# The user attempting access is an administrator.
+1. The comment's post's author is the same as the user attempting access, _or_
+2. The user attempting access is an administrator.
 
 It's relatively simple, but for some reason this took me awhile to fully comprehend. Before I figured it out I was creating some convoluted ACL requirements, but the use of `logical_parent` has cleaned them up.
 

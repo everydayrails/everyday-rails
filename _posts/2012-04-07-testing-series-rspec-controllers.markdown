@@ -30,9 +30,9 @@ If you're new to RSpec or Rails testing in general, I recommend reading through 
 
 Following the lead of some prominent Ruby developers I stopped working on controller specs for awhile, in favor of covering this functionality in my request specs (integration tests). At the time I liked this idea a lot--using tests that more closely mirrored _how_ controller actions are accessed made good sense--but since then I've come back to testing controllers more explicitly, for a couple of primary reasons:
 
-# Controllers are models too, as [Piotr Solnica indicated in an excellent blog post](http://solnic.eu/2012/02/02/yes-you-should-write-controller-tests.html). And in Rails applications, they're pretty important models--so it's a good idea to put them on equal footing, spec-wise, as your Rails models.
-# Controller specs can be written more quickly than their integration spec counterparts. For me, this becomes critical when I encounter a bug that's residing at the controller level, or I want to add additional specs to verify some refactoring. Writing a solid controller spec is a comparatively straightforward process, since I can generate very specific input to the method I'm testing without the overhead of request specs. This also means that
-# Controller specs run more quickly than request specs, making them very valuable during bug fixing and checking the bad paths your users can take (in addition to the good ones, of course).
+1. Controllers are models too, as [Piotr Solnica indicated in an excellent blog post](http://solnic.eu/2012/02/02/yes-you-should-write-controller-tests.html). And in Rails applications, they're pretty important models--so it's a good idea to put them on equal footing, spec-wise, as your Rails models.
+2. Controller specs can be written more quickly than their integration spec counterparts. For me, this becomes critical when I encounter a bug that's residing at the controller level, or I want to add additional specs to verify some refactoring. Writing a solid controller spec is a comparatively straightforward process, since I can generate very specific input to the method I'm testing without the overhead of request specs. This also means that
+3. Controller specs run more quickly than request specs, making them very valuable during bug fixing and checking the bad paths your users can take (in addition to the good ones, of course).
 
 ## Controller testing basics
 

@@ -24,8 +24,8 @@ Reboot your app, and you're good to go. Out of the box (or fresh from the comman
 
 As noted, you can add your own custom footnotes. The example note, to display information about the currently logged-in user, is useful relative to the current theme at _Everyday Rails_ about authentication systems. The sample code is 99 percent useful as-is; however, there are a couple of issues if you're new to Ruby and/or Rails that may throw you for a loop. Specifically:
 
-# **Where does the custom note code go?** Create a file in your app's `lib/` directory. I just called mine `footnotes.rb`.
-# **Why do I get an error stating `uninitialized constant Footnotes::Notes::AbstractNote` when I try restarting my app?** You need to add `require 'rails-footnotes'` to the top of your `footnotes.rb` file (this is not included in the example code).
+1. **Where does the custom note code go?** Create a file in your app's `lib/` directory. I just called mine `footnotes.rb`.
+2. **Why do I get an error stating `uninitialized constant Footnotes::Notes::AbstractNote` when I try restarting my app?** You need to add `require 'rails-footnotes'` to the top of your `footnotes.rb` file (this is not included in the example code).
 
 Now, with that said, here's why you might want to add custom notes with caution. I don't know why this happens, but when I add a custom note to my configuration, Queries/DB note and the Log note both fail to yield any information. The Queries/DB note is particularly useful as it can help diagnose database bottlenecks. I'm unclear on why this is, but my workaround is to enable or disable my custom notes as needed by commenting or uncommenting the line to append your custom notes to the notes array (in the example code, this is `Footnotes::Filter.notes += [:current_user]`). In other words, only load your custom notes when you need them.
 

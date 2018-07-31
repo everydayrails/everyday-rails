@@ -8,9 +8,9 @@ One benefit Python web framework Django has had over Rails is the [admin interfa
 
 Three things you should be aware of before you get started:
 
-# RailsAdmin only works with Rails 3 applications&mdash;3.0.3 or newer, to be precise.
-# It recommends that you use Devise for authentication in your application, in order to provide a layer of protection to your data (users must be logged in to access the admin interface). I recommend this, too.
-# You'll probably also want to do some additional locking down if your app has multiple roles or user levels (that is, you'll probably want to restrict access to the admin panel to your site's admins).
+1. RailsAdmin only works with Rails 3 applications&mdash;3.0.3 or newer, to be precise.
+2. It recommends that you use Devise for authentication in your application, in order to provide a layer of protection to your data (users must be logged in to access the admin interface). I recommend this, too.
+3. You'll probably also want to do some additional locking down if your app has multiple roles or user levels (that is, you'll probably want to restrict access to the admin panel to your site's admins).
 
 With those conditions addressed, RailsAdmin is really easy to install. The [documentation](https://github.com/sferik/rails_admin/blob/master/README.mkd) is well-done and will walk you through the initial steps of adding the engine to your application. Once you've followed the initial setup steps, fire up your application's server and load up `/admin` to poke around.
 
