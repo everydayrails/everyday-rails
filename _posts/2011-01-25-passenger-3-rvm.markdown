@@ -1,0 +1,42 @@
+---
+layout: post
+title: "Passenger 3, RVM, and Apache; quick and easy"
+excerpt: "If, like me, you've been dragging your feet about upgrading to Passenger 3, stop waiting. In this post I'll quickly walk through using it with RVM for Rails development."
+---
+
+[Passenger 3](http://www.modrails.com/) has been out since last October, so for most folks this will all be very, very old news. For those of you who haven't upgraded yet, version 3 touts faster, more stable performance over version 2. It's also very easy to set up on your development computer so you can have multiple Rails projects running in development simultaneously. For my setup I'm also using [RVM](http://rvm.beginrescueend.com/) to manage project-specific gemsets ([read more about why I think this is a great idea](http://everydayrails.com/2010/09/13/rvm-project-gemsets.html)), but standardizing on one Ruby version.
+
+To start, it probably wouldn't hurt to make sure you've got the latest version of RVM on your computer. At this writing, that's version 1.2.4. The following should take care of the upgrade:
+
+{% highlight bash %}
+  $ rvm update
+  $ rvm reload
+{% endhighlight %}
+
+Next, install the new Passenger gem (at 3.0.2 as I write this). This is [very well documented on the RVM website](http://rvm.beginrescueend.com/integration/passenger/), if you need more detail. I keep the Passenger gem in my @global RVM gemset.
+
+{% highlight bash %}
+  $ gem install passenger
+{% endhighlight %}
+
+Now run the Passenger module installer:
+
+{% highlight bash %}
+  $ rvm passenger-install-apache2-module
+{% endhighlight %}
+
+(Note: Earlier I'd incorrectly listed the above command as `rvmsudo`. This isn't necessary. Thank you to Oldřich Vetešník for pointing this out.)
+
+Follow the instructions, including making sure you copy the Apache configuration directives provided into your own Apache config files. The good news here is these lines already point to your RVM-specified Ruby (the Ruby you were using when you installed the Passenger gem), so Apache is all set.
+
+Also note the suggested virtual host configuration provided; you may need it later depending on whether you've been using Passenger before or are using any supporting utilities for Passenger.
+
+<div class="alert alert-info">
+**Potential gotcha with Apache 2 in Mac OS X 10.6.6:** When I rebooted Apache following the Passenger module installer, I was greeted with an error in the `apachectl` script. The suggestion in [this post](http://articles.itecsoftware.com/shell-scripting/fix-for-mac-os-10-6-5-apachectl-line-82-ulimit) solved the issue for me.
+</div>
+
+From here, it's just a matter of preparing your Rails applications to take advantage of RVM's gemsets feature. Again, I'll refer you to [an earlier post about adding a `setup_load_paths.rb` file](http://everydayrails.com/2010/09/13/rvm-project-gemsets.html) to each new app's `config` directory. You'll also need to set up a virtual host for each new app. If you were using Passenger 2.2.x before, your existing virtual hosts should work fine. (The [OS X Passenger Preference Pane](http://www.fngtps.com/passenger-preference-pane), while still only 32-bit, is still working for me on my setup.)
+
+### What about multiple Rubies?
+
+I haven't done this myself, but if you need to use this general setup with multiple versions of Ruby, refer to [this post on Phusion's blog about using proxies with Passenger and RVM](http://blog.phusion.nl/2010/09/21/phusion-passenger-running-multiple-ruby-versions/)

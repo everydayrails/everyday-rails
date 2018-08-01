@@ -1,0 +1,88 @@
+---
+layout: post
+title: "Adding authorization to your Rails app with RESTful_ACL, part 3: Parent and child objects"
+excerpt: "Leverage your applications' model relationships to write complex, but clean, authorization rules."
+---
+
+I've been covering [RESTful_ACL](http://github.com/mdarby/restful_acl), an alternative to role-based authorization systems like CanCan and Declarative Authorization, for Rails applications needing to protect actions within controllers. So far we've set up the gem to work with our application and added authorization settings to two distinct models. This time we'll add a new model, which is a child of one of the existing models, and look at how that affects our ACL settings.
+
+<div class="alert alert-info" markdown="1">
+#### Need to catch up on this series?
+
+* [Read part 1: RESTful_ACL setup](/2010/06/16/authorization-restful-acl-1.html)
+* [Read part 2: Basic ACL setup](/2010/06/21/authorization-restful-acl-2.html)
+</div>
+
+So far the blogging app I've been creating in these tutorials has categories and posts. Posts belong to categories, and each have very distinct ACL settings. Now we want to add a Comment model. Posts have many comments. Comments ACLs will be based on those of their parent posts&mdash;post authors will be able to edit or delete comments added to their own posts, but not those added to other authors' posts; administrators may edit or delete any comment; guests (non-logged in visitors) may read or add comments.
+
+<div class="alert alert-info" markdown="1">
+Yes, I know a polymorphic Comment model would be a more attractive solution in many cases, particularly if I had many models that needed comments. My setup here is just for the sake of demonstration and discussion, but if you need to add comments to your own apps take a look at [acts_as_commentable](http://github.com/jackdempsey/acts_as_commentable)
+</div>
+
+Let's look at the new file for our comment and add its ACL settings:
+
+<div class="box code">
+  app/models/comment.rb
+</div>
+
+{% highlight ruby %}
+  class Comment < ActiveRecord::Base
+    attr_accessible :message, :post_id
+
+    belongs_to :post
+
+    # ACL settings start here
+    logical_parent :post
+
+    # Only logged-in users may access the :index action
+    def self.is_indexable_by(user, parent = nil)
+      user != nil
+    end
+
+    # Anyone may create a comment
+    def self.is_creatable_by(user, parent = nil)
+      true
+    end
+
+    # Anybody may view a comment
+    def is_readable_by(user, parent = nil)
+      true
+    end
+
+    # Only the post's author or administrators may edit comments
+    def is_updatable_by(user, parent = nil)
+      parent.user == user or user.is_admin?
+    end
+
+    # Only the post's author or administrators may edit comments
+    def is_deletable_by(user, parent = nil)
+      parent.user == user or user.is_admin?
+    end
+  end
+{% endhighlight %}
+
+This is similar to the ACLs we set up last time for categories and posts, with one major difference. This time we've set `logical_parent`, which gives me access to a comment's corresponding post (its parent) in my ACLs. In the cases of the `is_updatable_by` and `is_deletable_by` settings above, I allow the action to proceed if:
+
+1. The comment's post's author is the same as the user attempting access, _or_
+2. The user attempting access is an administrator.
+
+It's relatively simple, but for some reason this took me awhile to fully comprehend. Before I figured it out I was creating some convoluted ACL requirements, but the use of `logical_parent` has cleaned them up.
+
+One other RESTful_ACL-related update to make, to the new controller:
+
+<div class="code box">
+  app/controllers/comments_controller.rb
+</div>
+
+{% highlight ruby %}
+  class CommentsController < ApplicationController
+
+    before_filter :login_required, :except => [ :show, :new, :create ]
+    before_filter :has_permission?
+    
+    # rest of controller ...
+{% endhighlight %}
+
+From there it's a matter of deciding how the interface might look&mdash;where should comments go, where should the comment form go, how do authorized users access the edit and destroy methods, and so on. I'm not going to post any of that here since I wanted to focus on the ACL settings, but as I built the example I created a very basic in-line view of the comments (in `post#show`, underneath the body of the message, like a usual blog). I also nested my comments' routes inside their parent posts. Since routing changes so much in Rails 3 it's probably not worth getting into a tutorial on how I did this in my Rails 2.3.8 application.
+
+That, in a nutshell, is RESTful_ACL. If you've tried other authorization solutions for your Rails applications and are interested in something that isn't as role-based as the others, it's worth a look. It's been indispensable for me for the last couple of years. I have two more posts to share in this series&mdash;first, how I test that my ACLs are working using RSpec controller specs; and second, a look at how I use ACLs in Rails join models. In the meantime, if you have experience with RESTful_ACL or need clarification on anything, please drop me a comment below. Thanks again to everyone for reading.

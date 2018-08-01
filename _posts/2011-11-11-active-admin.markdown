@@ -1,0 +1,84 @@
+---
+layout: post
+title: "How I've been developing an administrative backend with ActiveAdmin"
+excerpt: "Rails developers with deadlines will love ActiveAdmin for building high-quality interfaces for managing a site's data."
+---
+
+After a little time away from heavy Ruby development, I've been working again on a couple of projects these past few weeks. One of those projects is basically a start-over from something I'd worked on a bit over the summer&mdash;it unfortunately went down a path none of us were happy with, so the best thing to do was to start from scratch. Anyway, it's coming together much better the second time around, I think, and a big part of that success can be attributed to [ActiveAdmin](http://activeadmin.info/).
+
+Like [RailsAdmin](https://github.com/sferik/rails_admin) ([covered here last December](http://everydayrails.com/2010/12/17/rails-admin-panel.html)), ActiveAdmin is a gem that gives you a very good-looking backend panel for your application. It's like Django's automatic admin interface, but for Rails. I'm not going to provide a primer&mdash;there's already a good one on [Railscasts](http://railscasts.com/episodes/284-active-admin) &mdash;but I do want to share a handful of tips based on my experiences with ActiveAdmin to date. I'm still exploring what's possible with this gem&mdash;if you've found nice ways to use it, please share them in the comments and I'll add them to this list.
+
+### Application design
+
+Since I'm focused on rebuilding my data models and providing an interface for site managers to work with information from the database, I've _only_ used ActiveAdmin's interface to date. No other controllers, no scaffolds, just ActiveRecord models hooked to ActiveAdmin. Once I get to the controllers, I only have to worry about how they'll look to the general public&mdash;no conditional extra administration links embedded in my views (which was becoming a problem in both excessive view logic and, frankly, in a cluttered UI). All administration will be handled through ActiveAdmin.
+
+In addition, I'm leveraging ActiveAdmin's dependence on [Devise](https://github.com/plataformatec/devise) for authentication. I'm not crazy about Devise these days, but in this case I can use it to my advantage. Using ActiveAdmin's default `AdminUser` model for administrators and, eventually, a `User` model for everyone else, frees me up from some authorization logic.
+
+### Users
+
+Speaking of users, here are my customizations for ActiveAdmin's handling of my `AdminUser` model. It essentially lets administrators create and manage the accounts of other administrators.
+
+{% highlight ruby %}
+  ActiveAdmin.register AdminUser do
+    form do |f|
+      f.inputs 'Administrator' do
+        f.input :email
+        f.input :password
+        f.input :password_confirmation
+      end
+      f.buttons
+    end
+
+    index do
+      column :email
+      column :last_sign_in_at
+      column :last_sign_in_ip
+      default_actions
+    end
+  end
+{% endhighlight %}
+
+### Attachments
+
+My app uses [Paperclip](https://github.com/thoughtbot/paperclip) for file uploads. To make this work in ActiveAdmin, I had to customize my form as follows to make `image` a file upload field. Note the multiple `multipart` requirements.
+
+{% highlight ruby %}
+  ActiveAdmin.register Product do
+    form :html => { :enctype => "multipart/form-data" } do |f|
+      f.inputs "Product", :multipart => true do
+        f.input :name
+        f.input :description
+        f.input :category
+        f.input :image
+        f.input :released_on
+      end
+      f.buttons
+    end
+{% endhighlight %}
+
+### Nested attributes
+
+Nested attributes are among my favorite features in Rails. They can sometimes be cumbersome to set up in regular views, but this is not the case with ActiveAdmin. Here's an implementation building upon the `Product` administrative panel I began customizing in the previous example.
+
+{% highlight ruby %}
+  ActiveAdmin.register Product do
+    form :html => { :enctype => "multipart/form-data" } do |f|
+      f.inputs "Product", :multipart => true do
+        f.input :name
+        f.input :description
+        f.input :category
+        f.input :image
+        f.input :released_on
+      end
+      f.has_many :prices do |p|
+        p.input :price
+        p.input :min_qty
+      end
+      f.buttons
+    end
+  end
+{% endhighlight %}
+
+### Next steps
+
+I haven't set up ActiveAdmin's dashboard yet, and I still have several models to implement in my new take on this application. Once those are in place, though, I can be comfortable knowing my client has a solid administrative interface to begin entering his product information and not have to wait for the public-facing parts of the site to be done. Like I said, I'm very pleased with ActiveAdmin so far and look forward to using it in future projects as well.

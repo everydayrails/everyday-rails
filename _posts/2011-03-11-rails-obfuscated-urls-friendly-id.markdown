@@ -1,0 +1,26 @@
+---
+layout: post
+title: "Obfuscated URLs with the FriendlyId gem"
+excerpt: "SEO-friendly URLs are great, but what if you want to obfuscate things a bit? Here's a proof of concept of one way to get the job done with the FriendlyId gem."
+tags: security
+---
+
+As I've mentioned in the past, [I'm a big fan of the FriendlyId gem](http://everydayrails.com/2010/12/07/clean-urls-seo-rails.html) for easily creating human-readable, search engine-friendly URLs. But what if you want to make something that's _not_ so human or search engine friendly? Here's one simple way to get something up and running.
+
+For this demonstration, I'll be using the [FriendlyId](https://github.com/norman/friendly_id) gem's ability to [use a custom method for a slug](http://norman.github.com/friendly_id/file.Guide.html#using_a_custom_method_to_generate_the_slug_text). (I'm assuming you've installed and configured FriendlyId as dictated by the gem's instructions.) What I'm doing here is creating a SHA1 hash of a _secret's_ `name` field. You could, of course, use any unique field that's not going to change (though FriendlyId should remember old slugs, if necessary), or use your own encryption technique.
+
+{% highlight ruby %}
+  # app/models/secret.rb; this would go in the model you want to obfuscate
+  class Secret < ActiveRecord::Base
+    has_friendly_id :code, :use_slug => true
+
+    validates :name, :uniqueness => true
+
+    def code
+       Digest::SHA1.hexdigest self.name
+    end
+  end
+
+{% endhighlight %}
+
+Like I said, it's simple. If your security needs are serious you'd probably want something a little more complex (not to mention more layered than a basic obfuscation technique), but I wanted to share an out-of-the-box way to use a gem that already exists (and may even be in use in your app already).

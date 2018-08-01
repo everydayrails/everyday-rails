@@ -7,7 +7,7 @@ tags: security
 
 High-profile breaches of security are all too common in the news today. As web application developers, whether we like it or not, we need to be overly paranoid about security. All it takes is one simple slip-up to expose customer information, business secrets, or classified government documents to the world.
 
-![Obligatory photo of a cat at a computer. Better than a guy in a hoodie, crouched over a laptop in a dark room, right?](/images/posts/hacker-cat.jpg){.decoration}
+![Obligatory photo of a cat at a computer. Better than a guy in a hoodie, crouched over a laptop in a dark room, right?](/images/posts/hacker-cat.jpg){: .decoration}
 
 As Rails developers, though, we're lucky. We have a great framework that has our backs, and wonderful add-on tools to help make sure we're writing safe code. But we have to know how to use these features, and how to understand what they're telling us. **Security is important**, and too easy to defer until later or sweep under the rug. If you've been ignoring security in your Rails app, it's time to put the tinfoil hat on, assume the worst, and take a look at your Rails application's code.
 
@@ -23,7 +23,7 @@ Next, I recommend the **[OWASP Top 10 project](https://www.owasp.org/index.php/C
 
 ## Scanners
 
-![Brakeman](/images/posts/brakeman.png){.decoration}
+![Brakeman](/images/posts/brakeman.png){: .decoration}
 
 Feeling nervous about your app, now that you've read the checklist? Don't worry, **[Brakeman](http://brakemanscanner.org)** will help you track down potential security issues. Brakeman scans your code for potential issues, and returns a thorough report. I recommend trying the HTML format, which includes inline code samples and helpful links explaining each found vulnerability. The report may be sobering, especially if your code base has been left unchecked for a few years with nobody keeping up with good security practices--but often, the fixes are not too difficult.
 

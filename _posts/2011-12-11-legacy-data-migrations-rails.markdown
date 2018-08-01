@@ -1,0 +1,193 @@
+---
+layout: post
+title: "More advice on legacy data migration in Rails"
+excerpt: "What do you do if your legacy data defies convention or is just generally complex? Here are some notes from my recent experience using rake to accomplish difficult data migrations."
+tags: legacy data-migration rails-rescue
+---
+
+A few months back I shared [how I used Trucker to migrate data from a legacy Rails application into a more current one](http://everydayrails.com/2011/09/16/rails-legacy-data-migration-trucker.html). This method works pretty well if your data is reasonably straightforward, but as I noted it hiccups on a couple of things:
+
+* Trucker wipes tables in your new data tables before migrating legacy data. This can be an issue if you're merging legacy data into data you want to keep and would require you to edit the gem. (In my case, I've been in the process of merging two Rails 2.3 applications into a single Rails 3.x code base. The first one was deployed in August; the second in a few weeks. Since the two legacy applications share users there will be overlap in my `users` table&mdash;rather than overwrite, I need to acknowledge the existing users and process accordingly.)
+* Due to the way Trucker handles the way tables are named in Rails applications, you may have problems with models like `Address`. The best solution is again to tweak the gem's code.
+* Trucker requires some cleanup once its done, in order to keep your application from continuing to expect legacy models post-migration. I wasn't crazy about this.
+
+These issues, combined with a much more complex data structure (basically a total re-engineering of the data layer), led me to look into other options for legacy data migration for my next project. As it turns out, it's not terrifically difficult&mdash;it's just a matter of setting up some Rake tasks, mapping old data to new, and paying attention to the details.
+
+<div class="alert alert-info" markdown="1">
+**New to creating your own Rake tasks?** [Review this Railscasts episode](http://railscasts.com/episodes/66-custom-rake-tasks) on developing your own custom Rake tasks. It's an important skill for any Rails developer.
+</div>
+
+### Getting started
+
+The best place to start with this approach legacy data is Zach Holman's [Impress the Ladies with Legacy Migrations](http://zachholman.com/2010/01/impress-the-ladies-with-legacy-migrations/). It outlines a simple-but-effective strategy: Create Rake tasks for each model you need to migrate, create an ActiveRecord class for the model, and customize as needed. I added a few of my own takes on the process:
+
+### Connect to the legacy database
+
+Rather than creating temporary tables in my production database, I decided to establish a separate connection to my legacy database. You could establish a direct connection to the live database; instead I opted to first `mysqldump` the data, copy it to my development computer, and set up a local copy. This makes the migration process a little quicker and mitigates against accidentally doing something nasty to live data.
+
+To connect it to my Rails application, I used a procedure I learned from Chad Fowler's _[Rails Recipes, 3rd Edition](http://www.amazon.com/gp/project/1934356778/ref=as_li_ss_tl?ie=UTF8&tag=everrail-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=1934356778)_ ([get early beta access now](http://pragprog.com/book/rr2/rails-recipes) from Pragmatic Programmers). First you create the connection in your `database.yml` file:
+ 
+{% highlight yaml %}
+  legacy:
+    adapter: mysql
+    encoding: utf8
+    reconnect: false
+    database: legacy_database_name
+    pool: 5
+    username: root
+    password:
+    socket: /tmp/mysql.sock
+{% endhighlight %}
+
+
+Then access that database from each legacy class&mdash;for example:
+
+{% highlight ruby %}
+  class LegacyProject < ActiveRecord::Base
+    establish_connection :legacy
+    set_table_name 'projects'
+  end
+{% endhighlight %}
+
+You can name each legacy class whatever you want, as long as it's not the same as a class in your new application&mdash;you'll need to access the new application's classes to actually move data. The first step is to tell ActiveRecord the legacy data table's name, since it can't deduce this from the class name as it normally would. This also requires a little extra work when it comes to defining any associations the legacy class may have, but that's fairly straightforward as well&mdash;I'll get to it in a moment.
+
+### Create a file for your classes
+
+Now, where to put those legacy classes? I had two problems with putting them inline in my Rake task. First, I had to do a lot of tweaking in each class, so my Rake tasks were getting pretty cluttered. Second, I had to access some classes in multiple Rake tasks, so it made good sense to put them somewhere from which I could access them in _any_ of my tasks. My solution was to move them into a separate file. For simplicity's sake I just put this file in my `tasks` folder alongside the actual Rake file, then included it in each task:
+
+{% highlight ruby %}
+  #lib/tasks/legacy.rake
+  
+  desc 'migrate projects'
+  task :projects => :environment do
+    require 'lib/tasks/legacy_classes'
+    
+    # migration stuff
+  end
+{% endhighlight %}
+
+### Get to know your ORM
+
+If you don't know how your ORM customizes the ways your application's models associate with others, you'll need to take a crash course to get everything connected&mdash;again, since we're slightly breaking from convention in our class names, Rails can't automatically hook them to tables as it normally would. Depending on what kind of association you're establishing, this may be as straightforward as defining the class name used in the association, or as complex as also defining the keys and join tables. Luckily ActiveRecord (and most other ORMs) make this pretty straightforward; [review ActiveRecord's class methods](http://api.rubyonrails.org/classes/ActiveRecord/Associations/ClassMethods.html) to get a handle on them all. Here are a few examples:
+
+{% highlight ruby %}
+  has_many :projects, :class_name => 'LegacyProjects'
+  belongs_to :user, :class_name => 'LegacyUser'
+  has_and_belongs_to_many :tags, :class_name => 'LegacyTags', :join_table => 'projects_tags', :foreign_key => project_id, :association_foreign_key => :tag_id
+{% endhighlight %}
+
+### Check your keys
+
+If your new application's data set will only consist of what you're moving over from legacy, you can use existing ID values for associations. If not, you'll need to figure out something else that's unique and base associations off of that. In my case, projects have unique names; users have unique email addresses. Thus instead of making `new_project.user` equal `legacy_project.user`, I'd make the association via `new_project.user = User.find_by_email(legacy_project.user.email)`. Note that `User` is the model from the new application in this case&mdash;I want to find that user and associate him with the new project.
+
+### Keep existing timestamps
+
+If you need to keep your old data's existing timestamps (and I don't think it's a bad idea), use `record_timestamps` from `ActiveRecord::Base`, as noted by Zach:
+
+{% highlight ruby %}
+  ActiveRecord::Base.record_timestamps = false
+  # do your migration
+  ActiveRecord::Base.record_timestamps = true
+{% endhighlight %}
+
+### Writing to protected attributes
+
+Speaking of timestamps, and other data you might have protected behind the likes of `attr_accessible` in your new application's models: You'll need to temporarily comment out this protection during your migrations, or override it. My new application uses a trick shared by Ryan Bates to [create a dynamic attr_accessible](http://railscasts.com/episodes/237-dynamic-attr-accessible) for each model in my app; I use this to my advantage by including the following in each legacy migration task:
+
+{% highlight ruby %}
+  @project = Project.new
+  @project.accessible = :all
+  @project.attributes = {
+    # hash to map old values to new fields
+  }
+  @project.save!
+{% endhighlight %}
+
+Failing that, the simplest approach may be to comment out your `attr_accessible` setup&mdash;just don't forget to uncomment it prior to deployment.
+
+### Use Chronic for easier time manipulation
+
+Legacy migrations may often require a lot of extra data manipulation, as you bend old data to work in new models. The process is thus a great opportunity to empty your Ruby toolbox and get practice with both standard library utilities and other gems like the wonderful [Chronic](http://rubygems.org/gems/chronic) natural language parser for time and date. In my case, I had to merge dates and datetimes into new structures; creating and processing timestamps via Chronic turned out to be much more straightforward than using Ruby's usual date and time-related methods. Check the [Ruby Toolbox](http://www.ruby-toolbox.com/) for other potential time-savers.
+
+### Log exceptions and move on
+
+There's always a chance that for whatever reason a few records won't cleanly migrate from your old app to the new one. Rather than tweak your Rake task to handle these unique exceptions, wrap your code actually creating new database values inside `begin rescue end`, log the exception, and deal with outliers individually.
+
+### Give yourself plenty of time
+
+Legacy migrations will take awhile to run, especially if you're moving a lot of data or doing a lot of manipulation to it before saving it out to the new database. A general rule of thumb: Be more interested in making sure my data get moved over reliably rather than quickly. As a result, some processes may turn out to be slower than they would otherwise be. Plan ahead. In my case, I know I'll probably need to dedicate about a day of non-stop processing to get everything from my old application (with a couple hundred thousand database rows) into the new one. 
+
+### A partial example
+
+So let's put together a rough example of how one of these might look. First the Rake task:
+
+{% highlight ruby %}
+  # lib/tasks/legacy.rake
+    
+  desc 'migrate projects'
+  # note: this assumes your users have already been migrated
+  task :projects => :environment do
+    require 'lib/tasks/legacy_classes'
+    
+    ActiveRecord::Base.record_timestamps = false
+    
+    LegacyProject.each do |project|
+      begin
+        user = User.find_by_email(project.user.email)
+        new_project = Project.new
+        new_project.accessible = :all # if you're using dynamic attr_accessible
+        new_project.attributes = {
+          :name => project.name,
+          :description => project.description,
+          :user => user,
+          :created_at => project.created_at,
+          :updated_at => project.updated_at
+        }
+        new_project.save!
+        
+        project.tags.each do |tag|
+          new_project.tags << Tag.find_by_name(tag.name)
+        end
+        puts "Project #{project.id} successfully migrated"
+      rescue
+        puts "Error migrating #{project.id}"
+      end
+    end
+    
+    ActiveRecord::Base.record_timestamps = true
+    
+  end
+{% endhighlight %}
+
+And here are a couple of classes used by the Rake task:
+
+{% highlight ruby %}
+  # lib/tasks/legacy_classes.rb
+  
+  class LegacyUser < ActiveRecord::Base
+    establish_connection :legacy
+    set_table_name 'users'
+    has_many  :projects, :class_name => 'LegacyProject'
+  end
+  
+  class LegacyProject < ActiveRecord::Base
+    establish_connection :legacy
+    set_table_name 'projects'
+    belongs_to :user, :class_name => 'LegacyUser'
+    has_and_belongs_to_many :tags, :class_name => 'LegacyTag', 
+      :join_table => 'projects_tags', :foreign_key => :project_id,
+      :assocation_foreign_key => :tag_id
+  end
+  
+  class LegacyTag < ActiveRecord::Base
+    establish_connection :legacy
+    set_table_name 'tags'
+    has_and_belongs_to_many :projects, :class_name => 'LegacyProject', 
+      :join_table => 'projects_tags', :foreign_key => :tag_id,
+      :assocation_foreign_key => :project_id
+  end
+{% endhighlight %}
+
+### Conclusion
+
+It may not be pretty, but as you can see, handling legacy migrations on your own gives you a lot of flexibility&mdash;and in the end, isn't any more difficult than relying on a third party solution. Even if your project only consists of a few tables of data, I strongly recommend using this approach. The keys are to pay attention to the details and to allow plenty of time for both development and processing. If you have additional tips to add, please do so by posting a comment below. Thanks for reading and happy migrations!

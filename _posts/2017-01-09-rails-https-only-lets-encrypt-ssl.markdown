@@ -9,7 +9,7 @@ This article isn't a tutorial, but rather a call to action to hopefully encourag
 
 This isn't just a concern for Rails developers--Google is pushing hard to **make the web a more secure place by encouraging the use of HTTPS instead of HTTP**. In that regard, [changes coming this month to Chrome](https://security.googleblog.com/2016/09/moving-towards-more-secure-web.html) will cause users to receive noisy warnings when forms collecting sensitive information like passwords or credit card numbers have any non-HTTPS content (including inline images, media embeds, CSS, and JavaScript). And eventually, sites not served over HTTPS will be marked as insecure!
 
-![](/images/posts/letsencrypt-logo-horizontal.svg){.decoration}
+![Let's Encrypt logo](/images/posts/letsencrypt-logo-horizontal.svg){: .decoration}
 
 I finally got several sites on a personal server configured to serve over HTTPS-only using **[Let's Encrypt](https://letsencrypt.org)**. Let's Encrypt provides **basic, DV (domain validation) security certificates for free**. It's great for hobby projects and personal websites in particular, but works fine for any project on a budget.
 

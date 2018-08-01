@@ -1,0 +1,23 @@
+---
+layout: post
+title: "Adding authorization to your Rails app with RESTful_ACL, part 1: Setup"
+excerpt: "Need easy-to-use authorization in your application? Check out this useful alternative to other, better known options."
+---
+
+Rails authorization systems like [CanCan](http://github.com/ryanb/cancan), [Declarative Authorization](http://github.com/stffn/declarative_authorization) and [role_requirement](http://github.com/timcharper/role_requirement) get most of the attention, but they are by no means your only options for adding permission systems to your applications. My current favorite is none of these (in fact, it's not even listed in the [list of authorization options in Ruby Toolbox](http://www.ruby-toolbox.com/categories/rails_authorization.html)). I've been using [RESTful_ACL](http://github.com/mdarby/restful_acl) by Matt Darby. Its approach to an access control layer is different than other solutions. 
+
+In particular, ACL settings center more around your application's models than they do the notion of roles. For me, this works out well for one main reason: At the top level I like to keep my apps' user options pretty basic--you're either an administrator, or a user, or a guest (not logged in). I don't have authors, editors, moderators, well-wishers, and so on, so I don't need a separate table to keep track of all these different roles. It's also worth noting that unlike other authorization systems, which put your application's authorization settings in a single configuration file, RESTful_ACL's authorization settings for each model are included in the model file itself. (As I get more exposure to the likes of Declarative Authorization and CanCan I think I like the central file idea better.)
+
+In the next series of posts on _Everyday Rails_ I'll cover the use of RESTful_ACL in application authorization, staring with a couple of tips for configuring your application to use the gem. To begin, follow the instructions provided in [RESTful_ACL's repository](http://github.com/mdarby/restful_acl) to add it to your app. It's assumed you've got some sort of authentication system in place (Devise, Restful Authentication, Authlogic, etc.). For my apps, I also have an `is_admin` boolean value set up in my User model, giving some users the ability to do anything within the app (see [Hacking Restful Authentication](/2010/06/08/hacking-restful-authentication.html)). If your application requires more roles for users, you can either create your own `roles` mechanism or look into one of the many role-supporting gems or plugins available.
+
+The `config.gem` part should be straightforward. You'll also need to add a route to redirect to when a user tries to do something he's not authorized to do. I usually put this in the sessions controller created by Restful Authentication:
+
+{% highlight ruby %}
+  map.denied 'denied', :controller => 'sessions_controller', :action => 'denied'
+{% endhighlight %}
+
+Don't forget to add a `denied` method to your sessions controller and a corresponding view file. Your code is now ready to use RESTful_ACL for validating that users may perform functions within your application.
+
+<div class="alert alert-info" markdown="1">
+Next time I'll apply RESTful_ACL to a basic Rails application, showing how to add ACL settings to a parent and child model and give different people different levels of access depending on whether they're logged in or are application administrators.
+</div>

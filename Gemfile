@@ -1,9 +1,11 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-gem 'jekyll', '~> 1.1.2'
-gem 'RedCloth'
-gem 'gsl', '~> 1.15.3' # brew install homebrew/versions/gsl114
+gem "jekyll"
+gem "pygments.rb"
 
 group :jekyll_plugins do
-  gem "jekyll-tagging"
+  gem "jekyll-tagging",
+    git: "https://github.com/everydayrails/jekyll-tagging",
+    branch: "allow-posts-with-no-tags"
+  gem "jekyll-gist"
 end
