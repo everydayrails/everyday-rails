@@ -6,7 +6,7 @@ excerpt: "Sometimes, TDD gets in the way, does more to confuse than guide, or ge
 
 When test-driven development works well, it's smooth and fluid, guiding you back and forth between test code and application code. It hints at what you need to do next—what to add, what to change, what to remove. And it does so quickly. The process is an asset, not a liability.
 
-You and I both know it's always an easy ride, though. Sometimes, TDD gets in the way, does more to confuse than guide, or generally just slows development to a monotonous crawl—leaving you staring repeatedly at vague test failures, or maybe just an empty line in your code editor, unsure where to even start.
+You and I both know it's not always an easy ride, though. Sometimes, TDD gets in the way, does more to confuse than guide, or generally just slows development to a monotonous crawl—leaving you staring repeatedly at vague test failures, or maybe just an empty line in your code editor, unsure where to even start.
 
 When those times arise (and they will), here's a set of five go-to strategies I use to get out of test-fueled frustration, and back to productivity. While I mostly use them in Ruby on Rails with the RSpec testing framework, they're pretty general overall, and conceptually apply to TDD in other languages and frameworks.
 
