@@ -7,7 +7,7 @@ permalink:   date
 feed:         http://feeds.feedburner.com/EverydayRails
 twitter:      http://twitter.com/everydayrails
 facebook:     http://facebook.com/everydayrails
-exclude:      [node_modules, scss, tmp, bower_components, .ruby-version, bower.json, Rakefile, gulpfile.js, Gemfile, Gemfile.lock, Guardfile]
+exclude:      [node_modules, scss, tmp, bower_components, .ruby-version, bower.json, Rakefile, gulpfile.js, Gemfile, Gemfile.lock, Guardfile, drafts, public, src]
 tag_page_layout: tags
 tag_page_dir: tag
 plugins: [jekyll-gist]
