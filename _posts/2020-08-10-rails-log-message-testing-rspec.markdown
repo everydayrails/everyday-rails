@@ -4,6 +4,7 @@ title: "2 ways to test Rails log messages with RSpec"
 excerpt: "If you're like me and don't need to test log output on a
 regular basis, you may not find the solutions to be immediately
 obvious. Here are two ways (that I know of) to approach the problem."
+tags: rspec
 ---
 
 One thing about writing about Rails for as long as I have is, sometimes
