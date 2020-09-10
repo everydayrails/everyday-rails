@@ -4,7 +4,7 @@
   "description": "Everyday Rails is a blog about getting stuff done with Ruby on Rails. This is the source code for the blog, which is created with the Jekyll static site framework/generator.",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "postcss _css/tailwind.css -o css/tailwind.css"
   },
   "repository": {
     "type": "git",
