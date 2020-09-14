@@ -1,6 +1,6 @@
-<div id="sidebar" class="col-sm-12 col-md-4 hidden-print">
-  <div  class="well">
-    <h3>Black lives matter.</h3>
+<div class="md:ml-20 mt-10 md:w-2/5">
+  <div class="p-5 bg-gray-100 rounded-lg">
+    <h3 class="text-xl font-semibold">Black lives matter.</h3>
     <div>
       <p>
         I stand with the Black community against systemic racism, police
@@ -17,38 +17,44 @@
         working toward equity and safety for all, not just the privileged.
         Thank you.
       </p>
-      <a class="btn btn-sm btn-primary" href="https://www.blackgirlscode.com/donations.html">Donate to Black Girls CODE »</a>
+      <div class="mt-5">
+        <a class="bg-red-800 hover:bg-gray-400 hover:text-gray-800 text-sm no-underline font-semibold px-3 py-2 text-white rounded-lg" href="https://www.blackgirlscode.com/donations.html">Donate to Black Girls CODE</a>
+      </div>
     </div>
   </div>
 
-  <div>
-    <h3>Test with confidence!</h3>
+  <div class="mt-10">
+    <h3 class="text-xl font-semibold">Test with confidence!</h3>
     <div>
-      <a href="https://leanpub.com/everydayrailsrspec"><img src="/images/rspec_book.jpg" class="pull-right" alt="" /></a>
+      <a href="https://leanpub.com/everydayrailsrspec"><img src="/images/rspec_book.jpg" class="float-right border ml-2 mb-2" alt="" /></a>
       <p>
         If you liked my series on practical advice for adding reliable tests to
         your Rails apps, check out the expanded ebook version. Lots of
         additional, exclusive content and a complete sample Rails application.
       </p>
-      <a class="btn btn-sm btn-primary" href="https://leanpub.com/everydayrailsrspec">Start testing now »</a>
+      <div class="mt-5">
+        <a class="bg-red-800 hover:bg-gray-400 hover:text-gray-800 text-sm no-underline font-semibold px-3 py-2 text-white rounded-lg" href="https://leanpub.com/everydayrailsrspec">Start testing now</a>
+      </div>
     </div>
   </div>
 
-  <div>
-    <h3>Newsletter</h3>
+  <div class="mt-10">
+    <h3 class="text-xl font-semibold">Newsletter</h3>
     <div>
       <p>
         Ruby on Rails news and tips, and other ideas and surprises from Aaron at
         Everyday Rails. Delivered to your inbox.
       </p>
-      <a class="btn btn btn-sm btn-primary" href="http://eepurl.com/nRW0z">Subscribe now for free »</a>
+      <div class="mt-5">
+        <a class="bg-red-800 hover:bg-gray-400 hover:text-gray-800 text-sm no-underline font-semibold px-3 py-2 text-white rounded-lg" href="http://eepurl.com/nRW0z">Subscribe now for free</a>
+      </div>
     </div>
   </div>
 
-  <div id="tag-cloud">
-    <h3>Tags</h3>
-    {{ site | tag_cloud }}
+  <div class="mt-10">
+    <h3 class="text-xl font-semibold">Tags</h3>
+    <div id="tags" class="mt-5">
+      {{ site | tag_cloud }}
+    </div>
   </div>
-
-  {% include sharing.html %}
 </div>
