@@ -15,7 +15,7 @@
   }
 
   a {
-    @apply text-red-800 underline;
+    @apply text-red-900 underline;
   }
 
   pre {
