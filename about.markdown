@@ -18,4 +18,7 @@ My goal is to share general, pragmatic tips to show how I use Rails (almost) eve
 
 ## Colophon
 
-_Everyday Rails_ is published using the [Jekyll](https://github.com/mojombo/jekyll) static site generator. I use [Atom](http://atom.io) and Vim to edit this site and my Rails projects.
+_Everyday Rails_ is published using the [Jekyll] static site generator and hosted on [Netlify].
+
+[Jekyll]: https://github.com/jekyll/jekyll
+[Netlify]: https://www.netlify.com
