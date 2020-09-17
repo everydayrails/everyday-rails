@@ -22,6 +22,18 @@
     @apply my-5 p-3 bg-gray-800 text-gray-200 rounded overflow-scroll;
   }
 
+  ul {
+    @apply list-disc my-5;
+  }
+
+  ol {
+    @apply list-decimal my-5;
+  }
+
+  li {
+    @apply my-2 ml-5;
+  }
+
   #tags a {
     @apply pr-3;
   }
