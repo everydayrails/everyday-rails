@@ -37,4 +37,8 @@
   #tags a {
     @apply pr-3;
   }
+
+  .decoration {
+    @apply float-right;
+  }
 }
