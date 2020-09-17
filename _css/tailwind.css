@@ -18,6 +18,10 @@
     @apply text-red-800 underline;
   }
 
+  pre {
+    @apply my-5 p-3 bg-gray-800 text-gray-200 rounded overflow-scroll;
+  }
+
   #tags a {
     @apply pr-3;
   }
