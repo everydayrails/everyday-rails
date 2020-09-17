@@ -3,11 +3,8 @@ layout: post
 title: "Everyday Git: Search the git log from the command line"
 excerpt: "Your project's git log can tell you stories, but you have to know how to look for them. Here's how I explore a code base's history, using built-in command line tools."
 tags: git
+image: "/images/posts/git-log-header-large.jpg"
 ---
-
-![](/images/posts/git-log-header-large.jpg){.img-responsive}
-
-*Photo credit: [H. Michael Karshis via Flickr](https://www.flickr.com/photos/48889115061@N01/29330647181/) ([license](https://creativecommons.org/licenses/by/2.0/))*
 
 Version control tools like git are wonderful. They let you easily pass code around with other developers working on your project. They provide a safety net, so if you make a mistake, you can quickly revert back to a known, working version. But they can also provide valuable clues about how your software became the thing of beauty (or horrible mess) that it is today. You just need to know where to look.
 
@@ -51,3 +48,5 @@ If you write good commit messages, and [keep individual commits concise](http://
 **And now my trick:** While viewing the log, to find the next commit, type `/^commit`, then use `n` and `N` to move to the next or previous commit. To search for the previous commit, use `?^commit`. The `^` between the search trigger and the term makes sure that the word `commit` starts at the beginning of the line, ignoring occurrences of the term in the commit messages themselves, or code, or stats output. No extra software required!
 
 Simple, right? Did you find this useful, or do you have other tips to add? Please leave a comment below to let me know what you think, and thanks for reading.
+
+*Photo credit: [H. Michael Karshis via Flickr](https://www.flickr.com/photos/48889115061@N01/29330647181/) ([license](https://creativecommons.org/licenses/by/2.0/))*
