@@ -165,8 +165,9 @@ isolated unit test:
 
 - The code being exercised lacks a lot of external dependencies
   (including Rails)
-- The test can be structured so that all assertions are kept together
-  --or better yet, the log assertion is the only thing being checked
+- The test can be structured so that all assertions are kept
+  together--or better yet, the log assertion is the only thing being
+  checked
 
 Consider a spy when the scenario is more complex:
 
