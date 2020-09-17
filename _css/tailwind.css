@@ -50,4 +50,28 @@
   .decoration {
     @apply float-right;
   }
+
+  .alert {
+    @apply mt-5 p-5 rounded-lg;
+  }
+
+  .alert p:first-child {
+    @apply mt-0;
+  }
+
+  .alert ul:last-child {
+    @apply mt-0;
+  }
+
+  .alert-info {
+    @apply bg-green-200 text-green-800;
+  }
+
+  .alert-danger {
+    @apply bg-red-200 text-red-800;
+  }
+
+  .alert-warning {
+    @apply bg-orange-100 text-orange-800;
+  }
 }
