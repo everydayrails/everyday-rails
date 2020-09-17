@@ -12,6 +12,11 @@ My name is Aaron Sumner, and I've been using the Ruby on Rails web application f
 
 However, I feel like there's something missing in the multitude of existing Rails books, podcasts, blogs, and mailing lists. From my observations while helping other people get up and running with Rails, I can see how there would be a disconnect between the materials out there for the _very_ beginner and for developers who've got a laundry list of gems they've published on GitHub. I want to help those people who have figured out the basics but are looking for help with the next steps.
 
+For more background on Everyday Rails, you may enjoy
+[my reflections on this site's 10th birthday] from May, 2020.
+
+[my reflections on this site's 10th birthday]:/2020/05/18/everyday-rails-10th-birthday.html
+
 ## The plan
 
 My goal is to share general, pragmatic tips to show how I use Rails (almost) every day to get stuff done on the job. I'll focus mostly on making things using Ruby on Rails, attempting to glean a better understanding of why the plugins, gems, and other Ruby parts do what they do to help me make as good an application as I can. If you learn something in the process, all the better.

@@ -10,7 +10,9 @@ I'm still letting that sink in.
 
 That post, if you're interested, was about [bootstrapping a fresh Rails application]. It's horribly out of date now, but I appreciate it as a time capsule of how far Rails has come in those ten years, yet how similar my philosophy and approach to software development remain. My mission statement has never changed in these ten years:
 
-> Everyday Rails is about using the Ruby on Rails web application framework to get stuff done as a web developer.
+<blockquote class="mt-5 bg-gray-100 rounded-lg p-5 text-xl italic leading-tight">
+  Everyday Rails is about using the Ruby on Rails web application framework to get stuff done as a web developer.
+</blockquote>
 
 For a little perspective, I'd been writing software professionally for more than 15 years when I started Everyday Rails. In that time, I'd split my time across several languages and frameworks, moving on when my frustration with each one became too much. Back then, for the most part, I was lucky that I could call my shots and not only try new languages and ideas, but put them into production early. Rails came along at a particularly sweet spot in my career.
 
