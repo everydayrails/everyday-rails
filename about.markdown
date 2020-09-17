@@ -4,9 +4,9 @@ title: About Everyday Rails
 excerpt: "A blog about using the Ruby on Rails web application framework to get stuff done as a web developer. New content every week or so."
 ---
 
-## Some background
-
 _Everyday Rails_ is about using the Ruby on Rails web application framework to get stuff done as a web developer. It's about finding the best plugins, gems, and practices to get the most from Rails and help you get your apps to production.
+
+## Some background
 
 My name is Aaron Sumner, and I've been using the Ruby on Rails web application framework since the relatively early days, after ten-plus years of doing web development the old-fashioned way with brittle, procedural spaghetti written mostly in Perl and PHP. Rails was my first actual framework, and I've never looked back. For the work I do it's been perfect, from the tool itself to the supporting cast of Rubyists and the expertise (and code) they share to get the most from the framework and the language.
 
