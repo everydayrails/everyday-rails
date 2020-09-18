@@ -1,38 +1,31 @@
 {% include header.html %}
 
-<div class="container">
-  <div class="row">
-    <div id="content" class="col-sm-12 col-md-8 full-post">
-      {% if page.image %}
-        <img src="{{ page.image }}" class="img-responsive" />
-      {% endif %}
-      <h1>{{ page.title }}</h1>
-      <div id="datestamp">
-        <strong>{{ page.date | date: "%B %d, %Y" }}</strong>
-        {{ page | tags }}
+<body class="text-gray-900">
+  {% include nav.html %}
+
+  <div class="mx-5 md:mx-10 lg:mx-20">
+    <div class="md:flex">
+      <div class="md:w-3/5">
+        {% if page.image %}
+          <div>
+            <img src="{{ page.image }}" class="mt-10 rounded-lg" />
+          </div>
+        {% endif %}
+
+        <h1 class="leading-tight">{{ page.title }}</h1>
+
+        <div class="my-5 text-sm">
+          <strong>{{ page.date | date: "%B %d, %Y" }}</strong>
+          <span class="ml-1">{{ page | tags }}</span>
+        </div>
+
+        {{ content }}
+
+        {% include social.html %}
       </div>
-
-      <hr />
-
-      {{ content }}
-
-      {% include book_cta.html %}
-
-      {% include disqus.html %}
-
-      <div id="related">
-        <h2>Possibly related posts</h2>
-        <ul>
-        {% for post in site.related_posts limit:5 %}
-          <li><a href="{{post.url}}">{{ post.title }}</a> ({{ post.date | date: "%B %d, %Y"  }})</li>
-        {% endfor %}
-        </ul>
-      </div>
+      {% include sidebar.html %}
     </div>
-    {% include sidebar.html %}
+    {% include footer.html %}
   </div>
-
-  {% include footer.html %}
-</div>
 </body>
 </html>

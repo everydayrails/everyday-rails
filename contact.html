@@ -4,4 +4,34 @@ title: Contact
 excerpt: "A blog about using the Ruby on Rails web application framework to get stuff done as a web developer. New content a few times a week."
 ---
 
-Let me know what you think--my address is aaron [at] everydayrails [dot] com or <a href="http://twitter.com/everydayrails">@everydayrails</a> on Twitter.
+<p>
+  If you've got a question or comment about something
+  you read here, please use the form below to send me an email. Please fill in
+  all the fields—I just need it to be able to reply, not to sell or market.
+  I do my best to reply in a reasonable amount of time, but please
+  understand that it can sometimes take me a little while to get back to you.
+</p>
+
+<p>
+  If you have a question about something from
+  <em>Everyday Rails Testing with RSpec</em>, please direct it to the
+  <a href="https://github.com/everydayrails/">GitHub issues page for that project</a>.
+  Thanks!
+</p>
+
+<form name="contact" method="POST" data-netlify="true" action="/thanks.html">
+  <div>
+    <label for="name" class="block font-semibold mt-5">Your name</label>
+    <input type="text" name="name" class="border rounded w-full p-1" />
+  </div>
+  <div>
+    <label for="email" class="block font-semibold mt-5">Your email address</label>
+    <input type="email" name="email" class="border rounded w-full p-1" />
+  </div>
+  <div>
+    <label for="message" class="block font-semibold mt-5">Message</label>
+    <textarea name="message" rows="6" class="border rounded w-full p-1 leading-tight"></textarea>
+  </div>
+
+  <button type="submit" class="mt-5 bg-red-900 hover:bg-gray-400 hover:text-gray-800 text-sm no-underline font-semibold px-3 py-2 text-white rounded-lg">Send message</button>
+</form>

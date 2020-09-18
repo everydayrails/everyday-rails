@@ -1,25 +1,26 @@
 {
   "name": "everyday-rails",
   "version": "1.0.0",
-  "description": "Everyday Rails site",
-  "main": "index.html",
+  "description": "Everyday Rails is a blog about getting stuff done with Ruby on Rails. This is the source code for the blog, which is created with the Jekyll static site framework/generator.",
+  "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "postcss _css/tailwind.css -o css/tailwind.css"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/everydayrails/everyday-rails.git"
   },
-  "author": "A. Sumner",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/everydayrails/everyday-rails/issues"
   },
   "homepage": "https://github.com/everydayrails/everyday-rails#readme",
-  "devDependencies": {
-    "gulp": "^3.9.0",
-    "gulp-concat": "^2.6.0",
-    "gulp-sass": "^2.0.4",
-    "gulp-util": "^3.0.6"
+  "dependencies": {
+    "@fullhuman/postcss-purgecss": "^2.3.0",
+    "autoprefixer": "^9.8.6",
+    "postcss-cli": "^7.1.2",
+    "tailwindcss": "^1.8.6"
   }
 }

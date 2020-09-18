@@ -10,7 +10,9 @@ I'm still letting that sink in.
 
 That post, if you're interested, was about [bootstrapping a fresh Rails application]. It's horribly out of date now, but I appreciate it as a time capsule of how far Rails has come in those ten years, yet how similar my philosophy and approach to software development remain. My mission statement has never changed in these ten years:
 
-> Everyday Rails is about using the Ruby on Rails web application framework to get stuff done as a web developer.
+<blockquote class="mt-5 bg-gray-100 rounded-lg p-5 text-xl italic leading-tight">
+  Everyday Rails is about using the Ruby on Rails web application framework to get stuff done as a web developer.
+</blockquote>
 
 For a little perspective, I'd been writing software professionally for more than 15 years when I started Everyday Rails. In that time, I'd split my time across several languages and frameworks, moving on when my frustration with each one became too much. Back then, for the most part, I was lucky that I could call my shots and not only try new languages and ideas, but put them into production early. Rails came along at a particularly sweet spot in my career.
 
@@ -44,7 +46,7 @@ A funny thing happened a couple of years into Everyday Rails. I kicked off a ser
 
 I'm not exactly sure when I started, but once I felt comfortable with most of the rest of Rails, I decided to really focus on learning to test my applications. I read lots of books and blog posts, watched videos from Peepcode and Railscasts. Things started to gel as I read the first edition of Noel Rappin's _[Rails Test Prescriptions]_ (affiliate link), and I began applying what I learned to my own projects.
 
-![Everyday Rails Testing with RSpec cover](/images/rspec_book_large.jpg){: .decoration}
+<img src="/images/rspec_book_large.jpg" class="float-right border shadow ml-5 mb-5" alt="Everyday Rails Testing with RSpec book cover" />
 
 If you've read _[Everyday Rails Testing with RSpec]_, you know the drill: Take a codebase you know reasonably well, have tested a ton in the browser, maybe even shipped out into the world for real users. In theory, such a codebase should be bug-free enough that if there's a problem with a test, it's on the test and not the code under test. Start with the smaller, most isolated pieces of code--in a Rails app, models--and start writing tests for them. Test the easy stuff; then test the less easy stuff. When you're comfortable writing tests for models, move up to controllers, then to system-wide tests, then to everything else. Finally, the next time a feature request comes in, start by writing a system test that shows the code meets its requirements, then work your way down. Boom, you're doing outside-in, test-driven development!
 
