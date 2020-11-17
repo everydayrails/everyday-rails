@@ -1,10 +1,11 @@
 ---
 layout: default
 title: About Everyday Rails
-excerpt: "A blog about using the Ruby on Rails web application framework to get stuff done as a web developer. New content every week or so."
+excerpt: "A blog about writing software, usually using Ruby on Rails,
+but often not."
 ---
 
-_Everyday Rails_ is about using the Ruby on Rails web application framework to get stuff done as a web developer. It's about finding the best plugins, gems, and practices to get the most from Rails and help you get your apps to production.
+_Everyday Rails_ is about getting stuff done as a software developer. It's usually about using Ruby on Rails, but often times, it's not. It's about finding the best tools, libraries, and practices to help you get your apps to production. I try to write here at least once or twice a month, but don't hold me to that.
 
 ## Some background
 
@@ -16,10 +17,6 @@ For more background on Everyday Rails, you may enjoy
 [my reflections on this site's 10th birthday] from May, 2020.
 
 [my reflections on this site's 10th birthday]:/2020/05/18/everyday-rails-10th-birthday.html
-
-## The plan
-
-My goal is to share general, pragmatic tips to show how I use Rails (almost) every day to get stuff done on the job. I'll focus mostly on making things using Ruby on Rails, attempting to glean a better understanding of why the plugins, gems, and other Ruby parts do what they do to help me make as good an application as I can. If you learn something in the process, all the better.
 
 ## Colophon
 
