@@ -15,8 +15,12 @@
         <h1 class="leading-tight">{{ page.title }}</h1>
 
         <div class="my-5 text-sm">
-          <strong>{{ page.date | date: "%B %d, %Y" }}</strong>
-          <span class="ml-1">{{ page | tags }}</span>
+          By Aaron Sumner,
+          {{ page.date | date: "%B %d, %Y" }}.
+          {% assign t = page | tags %}
+          {% if t.size > 0 %}
+            File under: {{ page | tags }}.
+          {% endif %}
         </div>
 
         {{ content }}
