@@ -20,7 +20,8 @@ For more background on Everyday Rails, you may enjoy
 
 ## Colophon
 
-_Everyday Rails_ is published using the [Jekyll] static site generator and hosted on [Netlify].
+_Everyday Rails_ is published using the [Jekyll] static site generator and hosted on [Netlify]. Analytics are ethically gathered by [Plausible].
 
 [Jekyll]: https://github.com/jekyll/jekyll
 [Netlify]: https://www.netlify.com
+[Plausible]: https://plausible.io
