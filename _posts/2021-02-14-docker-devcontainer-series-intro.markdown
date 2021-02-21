@@ -3,6 +3,7 @@ layout: post
 title: "Docker containers for Rails development environments, part 1: Introduction"
 excerpt: "Let's experiment with building sensible devcontainers for Rails. Here's the plan."
 image: "/images/posts/docker/boxes.jpg"
+tags: docker legacy
 ---
 
 We need to talk about using Docker and containers as Rails development environments. Yes, they are super-convenient for setting up an environment in minutes--not hours, or days! And configurations kept in version control remove guesswork when rebuilding environments gone bad. I don’t need to tell you this; there are any number of blog posts, videos, tutorials, and books on leveraging the power of containers in your Rails apps.
@@ -47,4 +48,6 @@ In the end, we won’t have a one-size-fits-all configuration for Rails and cont
 
 ## Next steps
 
-With the basic tools installed, and a mindset for learning, we’ll be ready to move on to part two of this series: initial setup of our devcontainer in VS Code. Look for it in mid-February 2021. See you then.
+With the basic tools installed, and a mindset for learning, we’re ready to move on to part two of this series: [initial setup of our devcontainer in VS Code]. See you there.
+
+[initial setup of our devcontainer in VS Code]:/2021/02/21/docker-devcontainer-series-setup.html
