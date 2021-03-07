@@ -186,4 +186,4 @@ Let's reflect for a moment: With three generated files and a few tweaks, the app
   If you're following along with your own project and want to check your work, I've provided <a href="https://gist.github.com/ruralocity/ff0a562d360fafd689dc183a6cb79f3f">full versions of all the files we've experimented with so far</a>.
 </div>
 
-For now, I think we're at a good stopping point. Step away from the computer, go outside if you can, and reflect a bit on what we've accomplished and learned. See you in the next post, where we'll try connecting to a database from the container.
+For now, I think we're at a good stopping point. Step away from the computer, go outside if you can, and reflect a bit on what we've accomplished and learned. See you in the next post, where we'll try [connecting to a database from the container](/2021/03/07/docker-devcontainer-series-database-sqlite.html).
