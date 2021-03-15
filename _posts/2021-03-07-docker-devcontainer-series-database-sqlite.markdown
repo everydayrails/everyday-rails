@@ -79,4 +79,4 @@ Splitting work between Docker (underlying dependency installations) and Ruby (da
 
 ## Next steps
 
-As I mentioned in the intro to this article, using MySQL or Postgres in a container-based development environment adds complexity that we've been able to avoid so far. Let's celebrate this week's win for now. Next time, we'll set ourselves up to run multiple services inside the environment, including a database server. See you then.
+As I mentioned in the intro to this article, using MySQL or Postgres in a container-based development environment adds complexity that we've been able to avoid so far. Let's celebrate this week's win for now. Next time, we'll [set ourselves up to run multiple services inside the environment](/2021/03/14/docker-devcontainer-series-docker-compose.html), including a database server. See you then.
