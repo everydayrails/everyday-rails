@@ -1,8 +1,13 @@
 destination: ./_site
 lsi:         false
 port:        4000
-highlighter: pygments
-markdown:    kramdown
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    default_lang: html
+    css_class: "highlight"
 permalink:   date
 feed:         http://feeds.feedburner.com/EverydayRails
 twitter:      http://twitter.com/everydayrails

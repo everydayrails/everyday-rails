@@ -20,8 +20,11 @@ For more background on Everyday Rails, you may enjoy
 
 ## Colophon
 
-_Everyday Rails_ is published using the [Jekyll] static site generator and hosted on [Netlify]. Analytics are ethically gathered by [Plausible].
+_Everyday Rails_ is published using the [Jekyll] static site generator and hosted on [Netlify]. Code highlights use the [Tomorrow theme] by Chris Kempson, [adapted to Pygments] by Moz Morris.
+Analytics are ethically gathered by [Plausible].
 
 [Jekyll]: https://github.com/jekyll/jekyll
 [Netlify]: https://www.netlify.com
+[Tomorrow theme]: https://github.com/chriskempson/tomorrow-theme
+[adapted to Pygments]: https://github.com/MozMorris/tomorrow-pygments
 [Plausible]: https://plausible.io
