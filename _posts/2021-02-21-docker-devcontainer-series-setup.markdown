@@ -25,7 +25,7 @@ Even though the Remote-Container plugin offers the option to use existing Docker
 
 This yields a new directory, _.devcontainer_, with two files in it. First is a simple _Dockerfile_:
 
-```
+{% highlight text %}
 # [Choice] Ruby version: 2, 2.7, 2.6, 2.5
 ARG VARIANT=2
 FROM mcr.microsoft.com/vscode/devcontainers/ruby:0-${VARIANT}
@@ -45,11 +45,11 @@ RUN su vscode -c "source /usr/local/share/nvm/nvm.sh && nvm install ${NODE_VERSI
 
 # [Optional] Uncomment this line to install global node packages.
 # RUN su vscode -c "source /usr/local/share/nvm/nvm.sh && npm install -g <your-package-here>" 2>&1
-```
+{% endhighlight %}
 
 There's also a _devcontainer.json_ file, which will help VS Code integrate with the new container:
 
-```json
+{% highlight json %}
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.158.0/containers/ruby-rails
 {
@@ -82,7 +82,7 @@ There's also a _devcontainer.json_ file, which will help VS Code integrate with 
 	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "vscode"
 }
-```
+{% endhighlight %}
 
 For the rest of this experiment, and at least the immediate future, I want to see how far we can get by building off of these defaults.
 
@@ -93,18 +93,18 @@ Since this experiment targets an existing application, let's first remove the de
 
 I also like the idea of renaming the devcontainer to something besides the default "Ruby on Rails" in _devcontainer.json_--maybe name it to match the application's name, instead, or the name of its repository. VS Code shows this name in its UI, in the bottom left corner of the window, so make it something that's useful, without being too verbose. Everything else in the file can stay the same for now.
 
-```json
+{% highlight json %}
 {
   "name": "Yet Another To-do List App",
   // rest of file ...
 }
-```
+{% endhighlight %}
 
 Let's see how far we've gotten to this point! Back in the command palette, select _Reopen in Container_ to build the container. This can take a few moments, but once it's done, we'll hopefully see a new prompt in the VS Code terminal pane. Depending on your project's name and the state of its Git repository, it'll look something akin to this:
 
-```
+{% highlight text %}
 vscode ➜ /workspaces/my_project (main) $
-```
+{% endhighlight %}
 
 Typing `ls` confirms the container has access to the application's files. And thanks to Remote-Container, we've done this without typing `docker-compose run` this and `docker-compose run` that. I'm still deciding how I feel about that, but for now, it seems pretty neat. I like having to not type so much, if nothing else. Let's keep running with it a little longer, and get some gems installed.
 
@@ -115,7 +115,7 @@ Did you know that for years, a stock Rails installation has included a basic boo
 
 By default, _bin/setup_ installs gems, prepares databases, and does a tiny bit of housekeeping in the development environment. For now, let's just worry about the installing gems part.
 
-```ruby
+{% highlight ruby %}
 #!/usr/bin/env ruby
 require 'fileutils'
 include FileUtils
@@ -139,15 +139,15 @@ chdir APP_ROOT do
 
   # ...
 end
-```
+{% endhighlight %}
 
 Run the rails `bin/setup` script to install gem dependencies into the container. A quick `rails -v` should show that the version of Rails indicated in your project's _Gemfile_ should now be installed!
 
 I think we can do better, though. _devcontainer.json_ has a configuration option for `postCreateCommand`. What would happen if it were set to run `bin/setup` automatically on container creation? Too controversial? Let's find out. Make the change to _devcontainer.json_, and rebuild the container again.
 
-```
+{% highlight json %}
 "postCreateCommand": "bin/setup",
-```
+{% endhighlight %}
 
 Now, running `rails -v` and `gem list` should provide reasonable-looking output, based on the app's _Gemfile_, without manually running `bin/setup` first.
 
@@ -165,10 +165,10 @@ Before wrapping up this experiment, let's test one more thing--can we see our co
 
 I want to set this in _devcontainer.json_, at least for now. I know conventional wisdom suggests doing this in _Dockerfile_ (or _docker-compose.yml_), but the fact that Remote-Container suggests setting it in _devcontainer.json_ is intriguing. So humor me, please; we may change it later.
 
-```
+{% highlight json %}
 // Use 'forwardPorts' to make a list of ports inside the container available locally.
 "forwardPorts": [3000],
-```
+{% endhighlight %}
 
 Rebuild the devcontainer once more. Once it's started, fire up the app with `bin/rails server` in the VS Code terminal pane. Then hit <http://localhost:3000> in your favorite browser, and it may just work! Sort of, anyway--if the app relies on the database or some other service we haven't yet set up for its root page, you'll likely see an error. But trust me, this is progress.
 

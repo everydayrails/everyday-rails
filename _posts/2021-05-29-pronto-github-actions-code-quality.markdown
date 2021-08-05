@@ -22,7 +22,7 @@ Add a configuration file to tell GitHub Actions to scan code on each pull reques
 
 Put the file in the _.github/workflows_ directory. You can name the file whatever you want, as long as it ends in _.yml_.
 
-```yaml
+{% highlight yaml %}
 name: Code quality
 # Run this workflow when a pull request is created.
 on: [pull_request]
@@ -59,7 +59,7 @@ jobs:
         env:
           PRONTO_PULL_REQUEST_ID: ${{ github.event.pull_request.number }}
           PRONTO_GITHUB_ACCESS_TOKEN: "${{ github.token }}"
-```
+{% endhighlight %}
 
 <div class="alert alert-info">
   I've historically kept my Pronto setup outside of an application's <em>Gemfile</em> in order to limit crossover with the app's dependencies. This example follows suit--it does not use Bundler to install Pronto and its runners. I may revisit this someday.

@@ -35,7 +35,7 @@ I found a solution: Add a rake task that checks for the existence of a developme
 
 Here’s the task, courtesy of [penguincoder on Stack Overflow]. I put it in _lib/tasks/db.rake_.
 
-```ruby
+{% highlight ruby %}
 namespace :db do
   desc "Checks to see if the database exists"
   task :exists do
@@ -49,14 +49,14 @@ namespace :db do
     end
   end
 end
-```
+{% endhighlight %}
 
 Then, update _bin/setup_ with a little extra bash in the `system!` call that does the actual database setup: Check to see if a database already exists, and if it does, just run migrations to bring it up-to-speed with the current schema. If not, do a full setup, including rebuilding the database from the app's current schema definition.
 
-```ruby
+{% highlight ruby %}
 puts "\n== Preparing database =="
 system! 'bin/rails db:exists && bin/rails db:migrate || bin/rails db:setup'
-```
+{% endhighlight %}
 
 I like this approach for a couple of reasons. First, making it a rake task means I can reuse it in other workflows, and even extract to a gem. Second, it keeps _bin/setup_ close to its original spirit—just a lightweight Ruby script that performs lower-level requirements to prepare a development environment. As long as Ruby is installed, it should be able to do its work.
 

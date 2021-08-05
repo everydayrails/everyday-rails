@@ -27,7 +27,7 @@ job, for example, than in a web interface or API response.
 Let's say I've got a controller that, among other things, outputs to the
 Rails application log:
 
-```ruby
+{% highlight ruby %}
 class HomeController < ApplicationController
   def index
     # Does some stuff ...
@@ -35,13 +35,13 @@ class HomeController < ApplicationController
     # Does some more stuff ...
   end
 end
-```
+{% endhighlight %}
 
 Naively, let's just add a line indicating that the application logger
 (`Rails.logger`) should `expect` to `receive` the intended log message,
 and see what happens.
 
-```ruby
+{% highlight ruby %}
 it "logs a message" do
   visit root_path
 
@@ -49,11 +49,11 @@ it "logs a message" do
 
   expect(Rails.logger).to receive(:info).with("Someone visited the site!")
 end
-```
+{% endhighlight %}
 
 Hmm, that doesn't work. The test fails with:
 
-```
+{% highlight text %}
 Failures:
 
   1) HomeLogs logs a message
@@ -66,13 +66,13 @@ Failures:
 
 
      # ./spec/system/home_logs_spec.rb:12:in `block (2 levels) in <top (required)>'
- ```
+ {% endhighlight %}
 
 We need to stub out the Rails logger's `info` method, using RSpec's
 `allow` method. This lets us then use `expect` to watch for specific
 messages being passed to `info`:
 
-```ruby
+{% highlight ruby %}
 it "logs a message" do
   allow(Rails.logger).to receive(:info)
 
@@ -81,11 +81,11 @@ it "logs a message" do
   expect(page).to have_content "Welcome to my site!"
   expect(Rails.logger).to receive(:info).with("Someone visited the site!")
 end
-```
+{% endhighlight %}
 
 Wait, that still doesn't work:
 
-```
+{% highlight text %}
 Failures:
 
   1) HomeLogs logs a message
@@ -94,7 +94,7 @@ Failures:
        (#<ActiveSupport::Logger:0x00007fed5e70d110 @level=0, @progname=nil, @default_formatter=#<Logger::Formatter:0x00007fed5e70fa00 @datetime_format=nil>, @formatter=#<ActiveSupport::Logger::SimpleFormatter:0x00007fed5e70d0c0 @datetime_format=nil, @thread_key="activesupport_tagged_logging_tags:14360">, @logdev=#<Logger::LogDevice:0x00007fed5e70f9b0 @shift_period_suffix="%Y%m%d", @shift_size=1048576, @shift_age=0, @filename="/Users/asumner/code/examples/logging_test_demo/log/test.log", @dev=#<File:/Users/asumner/code/examples/logging_test_demo/log/test.log>, @binmode=false, @mon_data=#<Monitor:0x00007fed5e70f960>, @mon_data_owner_object_id=10440>>).info("Someone visited the site!")
            expected: 1 time with arguments: ("Someone visited the site!")
            received: 0 times
-```
+{% endhighlight %}
 
 
 ## Option 1: Expect, then act
@@ -104,7 +104,7 @@ a solution one day, while still relatively new to RSpec and desperately
 trying anything. Totally by accident, I put the expectation _before_
 triggering the case under test:
 
-```ruby
+{% highlight ruby %}
 it "logs a message" do
   allow(Rails.logger).to receive(:info)
   expect(Rails.logger).to receive(:info).with("Someone visited the site!")
@@ -113,7 +113,7 @@ it "logs a message" do
 
   expect(page).to have_content "Welcome to my site!"
 end
-```
+{% endhighlight %}
 
 Wait, why does that work? It's by design, as shown in the passing
 examples in RSpec's documentation on [expecting messages]. From an
@@ -137,7 +137,7 @@ us `expect`, or assert, after acting.
 
 Here's what it'd look like:
 
-```ruby
+{% highlight ruby %}
 it "logs a message" do
   allow(Rails.logger).to receive(:info)
 
@@ -146,7 +146,7 @@ it "logs a message" do
   expect(page).to have_content "Welcome to my site!"
   expect(Rails.logger).to have_received(:info).with("Someone visited the site!")
 end
-```
+{% endhighlight %}
 
 This passes just fine, and follows the Assemble, Act, Assert the
 pattern. It lets us arrange the example in such a way that assembly,

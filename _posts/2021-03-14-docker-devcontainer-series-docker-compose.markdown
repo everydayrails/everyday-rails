@@ -18,7 +18,7 @@ To make this all work, I'll need to break out of some of the default settings pr
 
 Right now, _.devcontainer/devcontainer.json_ does a lot of the lifting for our development container. The interesting part for this experiment is the `build` key:
 
-```json
+{% highlight json %}
 {
  	"name": "my-app",
 	"build": {
@@ -31,11 +31,11 @@ Right now, _.devcontainer/devcontainer.json_ does a lot of the lifting for our d
  	},
 	// ...
 }
-```
+{% endhighlight %}
 
 For more complicated builds, [VS Code supports integrating Docker Compose](https://code.visualstudio.com/docs/remote/create-dev-container#_use-docker-compose). Here's what my first pass looks like. Note that it sits inside the _.devcontainer_ directory, to communicate that it's specific to development environments.
 
-```yml
+{% highlight yml %}
 version: '3'
 
 services:
@@ -55,7 +55,7 @@ services:
 
     # don't shut down after the process ends
     command: sleep infinity
-```
+{% endhighlight %}
 
 This may look familiar if you've worked with Docker in the past:
 
@@ -69,7 +69,7 @@ This may look familiar if you've worked with Docker in the past:
 
 Now, I can replace `build`  in _.devcontainer/devcontainer.json_ to use the new Docker Compose setup:
 
-```json
+{% highlight json %}
 {
  	"name": "my-app",
 	"dockerComposeFile": "docker-compose.yml",
@@ -77,7 +77,7 @@ Now, I can replace `build`  in _.devcontainer/devcontainer.json_ to use the new 
  	"workspaceFolder": "/workspace",
 	// ...
 }
-```
+{% endhighlight %}
 
 Here's a rundown of the new keys:
 

@@ -39,10 +39,10 @@ I've posted my current [Starship configuration] as a gist. Keep in mind that cer
 
 I really like [exa] as an alternative to `ls`. In fact, it might be what kicked off my interest in modernizing my terminal to the degree that I have. Exa is colorful, fast, Git-aware, and super-configurable. I've aliased `ls` and `la` in bash to show files in a human-readable format (`la` includes hidden files:
 
-```shell
+{% highlight shell %}
 alias ls="exa -lhgbH --git"
 alias la="exa -lahgbH --git"
-```
+{% endhighlight %}
 
 Unfortunately, it looks like exa's maintenance status is unclear as I write this, with issues and pull requests piling up unanswered on GitHub. It still works just fine for almost all of my daily use, though I've seen errors with some features, like the `--tree` flag. I haven't found any suitable replacements, but am keeping my eyes open--though my preference would be for someone to take over maintenance of the project, because it's a really nice tool.
 
@@ -60,12 +60,12 @@ Unlike the strictly utilitarian `cat`, [bat] provides a ton of features--but I'm
 
 You may have sensed a theme so far: I like color in my terminal! I use terminal Git pretty much exclusively, and this includes viewing commits and diffs across branches via the command line. I've been using [diff-so-fancy] instead of `diff` for a few years now. I like its simple, clean output, especially as applied to Git. In my `.gitconfig`, I have diff-so-fancy configured like
 
-```
+{% highlight text %}
 [pager]
   diff = diff-so-fancy | less --tabs=1,5 -RFX
   show = diff-so-fancy | less --tabs=1,5 -RFX
   log = diff-so-fancy | less --tabs=1,5 -RFX
-```
+{% endhighlight %}
 
 For viewing differences outside of Git, I have the `diff` command aliased to use the alternative [icdiff], which provides both color and a side-by-side comparison I find easier to follow.
 

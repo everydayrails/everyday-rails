@@ -38,7 +38,7 @@ can also include it in your main _spec/rails_helper.rb_ file, as shown
 in [rspec-retry's README]. Whatever works for you. Here's the
 configuration that's made me happy so far:
 
-```ruby
+{% highlight ruby %}
 require "rspec/retry"
 
 RSpec.configure do |config|
@@ -55,7 +55,7 @@ RSpec.configure do |config|
     Capybara.reset!
   end
 end
-```
+{% endhighlight %}
 
 Let's walk through these configurations:
 

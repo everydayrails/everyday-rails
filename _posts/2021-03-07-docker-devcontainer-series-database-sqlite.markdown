@@ -29,7 +29,7 @@ It's good practice to store a sample version of _config/database.yml_, sensitive
 
 As discussed in part two of this series, it's also [good practice to automate setting up a new Rails development environment](/2021/02/21/docker-devcontainer-series-setup.html), using the _bin/setup_ script provided upon project creation. The steps to copy the sample file to a starter database configuration file that's readable by Rails are already in the script; we just need to uncomment them. So, in _bin/setup_:
 
-```
+{% highlight text %}
 chdir APP_ROOT do
 	# ...
 
@@ -41,16 +41,16 @@ chdir APP_ROOT do
 	# ...
 end
 
-```
+{% endhighlight %}
 
 Take a look at the sample file to make sure it's not expecting any environment-specific values or secrets. If it's not, you should be all set. In my case, I've yet to see a Rails database configuration for SQLite that needed extra setup.
 
 With the configuration file in place, let's add a schema and seed data! Rails has built-in support for this, too, and _bin/setup_ suggests it in these commented-out lines:
 
-```
+{% highlight ruby %}
 # puts "\n== Preparing database =="
 # system! 'bin/rails db:setup'
-```
+{% endhighlight  %}
 
 But be careful! The `db:setup` task will wipe out any existing data in the database when re-run, as would be the case when rebuilding a development container that already had data. I like a workaround I found to [only reset the database schema if no database exists](/2021/02/28/rails-db-setup-persist-data.html). (And I'm glad I learned about this behavior in a development environment and not production!)
 
@@ -61,11 +61,11 @@ In order to use the `rails dbconsole` utility to work with data using SQL instea
 
 The _Dockerfile_ we've been using so far includes a commented-out section for package installations. Uncomment it and add the `sqlite3` package:
 
-```
+{% highlight text %}
 # [Optional] Uncomment this section to install additional OS packages.
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends sqlite3
-```
+{% endhighlight %}
 
 Rebuild the development container, and when the now-familiar prompt appears in the VS Code terminal pane, type `bin/rails dbconsole` to confirm that the package has successfully installed. (Type `.quit` to exit the SQLite command line.)
 
