@@ -1,7 +1,8 @@
 source "https://rubygems.org"
 
-gem "jekyll"
+gem "jekyll", "~> 3.0"
 gem "rouge"
+gem "kramdown-parser-gfm"
 
 group :jekyll_plugins do
   gem "jekyll-tagging",
