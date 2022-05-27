@@ -9,6 +9,8 @@ _Everyday Rails_ is about getting stuff done as a software developer. It's usual
 
 ## Some background
 
+![Photo of the author](/images/mug2022.jpg){: .h-40 .float-right .border .ml-2 .mb-2 .shadow}
+
 My name is Aaron Sumner, and I've been using the Ruby on Rails web application framework since the relatively early days, after ten-plus years of doing web development the old-fashioned way with brittle, procedural spaghetti written mostly in Perl and PHP. Rails was my first actual framework, and I've never looked back. For the work I do it's been perfect, from the tool itself to the supporting cast of Rubyists and the expertise (and code) they share to get the most from the framework and the language.
 
 However, I feel like there's something missing in the multitude of existing Rails books, podcasts, blogs, and mailing lists. From my observations while helping other people get up and running with Rails, I can see how there would be a disconnect between the materials out there for the _very_ beginner and for developers who've got a laundry list of gems they've published on GitHub. I want to help those people who have figured out the basics but are looking for help with the next steps.
