@@ -43,6 +43,10 @@ It's still pretty new as I write this, but GitHub and Azure now support [reusing
 
 I've seen mixed results with this approach so far, especially when GitHub is unstable. But the simplified end result of one container setup for both local development and external CI feels worth the early adopter risk to me. I'll keep experimenting with this tooling, and may write more as I understand it better.
 
+<div class="alert alert-info" markdown="1">
+**Update:** I've had much better luck with [using devcontainers in CI](/2023/09/05/dev-containers-best-practices.html) lately!
+</div>
+
 ## Chrome can be tricky!
 
 I'll hopefully write about this in more depth someday, too, but getting Chrome (or Chromium) installed and running inside a container for the purposes of running Rails system tests has so far proven to be much more complicated than I would expected. I've seen plenty of tutorials out there on the subject, but I had trouble getting them to work with dev containers (or Microsoft's implementation of them, anyway).
