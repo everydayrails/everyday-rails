@@ -47,4 +47,4 @@ docs:
 
 Since `just` isn’t specific to Ruby, I also create just files for other languages. I can never remember the syntax to run a Go test suite with coverage reporting, but now it’s just `just test`. This (along with [adopting dev containers as default development environments](/2023/09/05/dev-containers-best-practices)) has greatly streamlined the process for any developer on my team to pick up a ticket, regardless of the code base it touches.
 
-`just` has a low learning curve but is quite powerful. I found a just cheat sheet I lean on for my work with it. It may simplify your workflows, too.
+`just` has a low learning curve but is quite powerful. I found a [just cheat sheet](https://cheatography.com/linux-china/cheat-sheets/justfile/) I lean on for my work with it. It may simplify your workflows, too.
