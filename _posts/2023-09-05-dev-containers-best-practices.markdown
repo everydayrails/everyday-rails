@@ -2,7 +2,7 @@
 layout: post
 title: "A few things I've learned to simplify working in dev containers"
 excerpt: "I'm still learning as I go, but here are some tidbits I've learned so far about using dev containers for most of my software projects these days."
-tags: docker
+tags: docker developer-experience
 ---
 
 After a few false starts (and a [perhaps premature, abandoned series of blog posts on the topic](/2021/02/14/docker-devcontainer-series-intro.html)), I'm all-in on development containers, my friends. I got a new computer a couple of months ago and made the decision to, as much as possible, do all my development work inside of containers. I love the idea of keeping my development projects' dependencies isolated from my laptop's operating system as much as possible, with the nice side effect of simpler onboarding for other developers.

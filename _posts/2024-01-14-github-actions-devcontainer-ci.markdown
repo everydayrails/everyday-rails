@@ -2,7 +2,7 @@
 layout: post
 title: "Using devcontainers in GitHub Actions CI workflows"
 excerpt: "It's simpler than ever to wire CI pipelines, thanks to devcontainers. Here's how I run Rails test suites these days in GitHub workflows."
-tags: rspec tdd docker
+tags: rspec tdd docker developer-experience
 ---
 
 I'm a big fan of [GitHub Actions](https://github.com/features/actions), especially the robust ecosystem of actions that can be included into continuous integration pipelines with just a few lines of configuration code. And thanks to the [devcontainers/ci](https://github.com/devcontainers/ci) action, using an existing development container setup could make running a test suite or other common CI processes much, much simpler than it might have been in the past.
