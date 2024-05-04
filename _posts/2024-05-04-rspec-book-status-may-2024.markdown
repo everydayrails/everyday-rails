@@ -2,6 +2,7 @@
 layout: post
 title: "Testing with RSpec book May 2024 status report"
 excerpt: "How it started, how it's going, what I've learned, and a revised delivery timeline for book updates."
+tags: rspec-book
 ---
 
 In February, I said I wanted to have at least a partial release of the updated [Everyday Rails Testing with RSpec](https://leanpub.com/everydayrailsrspec) book ready in time for Railsconf 2024. That time is here, but the updates, unfortunately, are not. Here's a short status report on how things are going, and an attempt at a more realistic timeline.
