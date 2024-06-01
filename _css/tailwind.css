@@ -43,6 +43,10 @@
     @apply my-2 ml-5;
   }
 
+  blockquote {
+    @apply p-5 text-gray-800 mt-3 mb-3;
+  }
+
   #tags a {
     @apply pr-3;
   }
