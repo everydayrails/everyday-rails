@@ -2,7 +2,7 @@
 layout: post
 title: "Replacing system tests with unit tests"
 excerpt: "Is your testing strategy too top-heavy? Here are some techniques to spread coverage down the testing pyramid."
-tags: tdd, rspec
+tags: tdd rspec
 ---
 
 It's amusing and affirming to me that [system testing (in Rails) has been declared a failure]. I could've told you that years ago! I've spent much of the past ten years working with test suites that are slow, brittle, and ultimately uninformative—almost always because they're overly reliant on testing end-to-end.
