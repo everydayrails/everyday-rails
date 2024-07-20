@@ -11,7 +11,7 @@ excerpt: "A simple approach to cutting through the confusion and testing your Ra
 The 2024 edition of *Everyday Rails Testing with RSpec* is the current, supported version. It's available for purchase via Leanpub, and is a free update for anyone who owns a license via Leanpub. Thank you for your support!
 
 - [Purchase Everyday Rails Testing with RSpec, Rails 7.1 edition on Leanpub](https://leanpub.com/everydayrailsrspec)
-- Source code (zip)
+- [Source code](./code.zip) (zip)
 - [Errata](https://github.com/everydayrails/rspec-sample-rails-7.1/issues)
 
 
