@@ -12,7 +12,7 @@ The 2024 edition of *Everyday Rails Testing with RSpec* is the current, supporte
 
 - [Purchase Everyday Rails Testing with RSpec, Rails 7.1 edition on Leanpub](https://leanpub.com/everydayrailsrspec)
 - [Source code](./code.zip) (zip)
-- [Errata](https://github.com/everydayrails/rspec-sample-rails-7.1/issues)
+- [Discussion](https://github.com/orgs/everydayrails/discussions)
 
 
 ## Rails 5.1 edition (2017)
@@ -23,4 +23,4 @@ The 2017 edition of *Everyday Rails Testing with RSpec* is provided as-is as ref
 
 - [Book](./everydayrailsrspec-5.1.zip) (PDF/EPUB)
 - [Source code (GitHub)](https://github.com/everydayrails/everydayrails-rspec-2017)
-- [Errata](https://github.com/everydayrails/everydayrails-rspec-2017/issues)
+- [Discussion](https://github.com/everydayrails/everydayrails-rspec-2017/issues)
