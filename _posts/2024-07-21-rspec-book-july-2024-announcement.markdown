@@ -2,6 +2,7 @@
 layout: post
 title: "Testing with RSpec book updates for July 2024"
 excerpt: "Finally, here's the first release of my RSpec testing book, updated for the latest Rails stack!"
+tags: rspec rspec-book
 ---
 
 <a href="https://leanpub.com/everydayrailsrspec"><img src="/images/rspec-book-2024-xl.jpg" class="h-40 float-right border ml-2 mb-2 shadow" alt="" /></a>
