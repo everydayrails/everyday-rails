@@ -1,6 +1,6 @@
 destination: ./_site
-lsi:         false
-port:        4000
+lsi: false
+port: 4000
 markdown: kramdown
 highlighter: rouge
 kramdown:
@@ -8,11 +8,23 @@ kramdown:
   syntax_highlighter_opts:
     default_lang: html
     css_class: "highlight"
-permalink:   date
-feed:         http://feeds.feedburner.com/EverydayRails
-twitter:      http://twitter.com/everydayrails
-facebook:     http://facebook.com/everydayrails
-exclude:      [node_modules, scss, tmp, bower_components, .ruby-version, bower.json, Rakefile, gulpfile.js, Gemfile, Gemfile.lock, Guardfile, drafts, public, src]
+permalink: date
+feed: http://feeds.feedburner.com/EverydayRails
+twitter: http://twitter.com/everydayrails
+facebook: http://facebook.com/everydayrails
+exclude:
+  [
+    node_modules,
+    scss,
+    tmp,
+    .ruby-version,
+    Gemfile,
+    Gemfile.lock,
+    drafts,
+    public,
+    src,
+    mise.toml,
+  ]
 tag_page_layout: tags
 tag_page_dir: tag
 plugins: [jekyll-gist]
