@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 3.0"
+gem "jekyll", "~> 4.4"
 gem "rouge"
 gem "kramdown-parser-gfm"
 gem "webrick"
