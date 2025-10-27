@@ -9,9 +9,9 @@ kramdown:
     default_lang: html
     css_class: "highlight"
 permalink: date
-feed: http://feeds.feedburner.com/EverydayRails
-twitter: http://twitter.com/everydayrails
-facebook: http://facebook.com/everydayrails
+feed: https://leftofthe.dev/atom.xml
+twitter: https://twitter.com/leftofthedev
+facebook: https://facebook.com/leftofthedev
 exclude:
   [
     node_modules,
