@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Everyday Rails is a blog about Ruby on Rails development, built using Jekyll static site generator. The blog features posts on Rails testing, development practices, and related topics. It uses Tailwind CSS for styling and is deployed via Netlify.
+Left of the Dev (formerly Everyday Rails) is a blog about Ruby on Rails development, built using Jekyll static site generator. The blog features posts on Rails testing, development practices, and related topics. It uses Tailwind CSS for styling and is deployed via Netlify.
 
 ## Technology Stack
 
