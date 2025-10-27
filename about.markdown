@@ -1,11 +1,11 @@
 ---
 layout: default
-title: About Everyday Rails
+title: About Left of the Dev
 excerpt: "A blog about writing software, usually using Ruby on Rails,
 but often not."
 ---
 
-_Everyday Rails_ is about getting stuff done as a software developer. It's usually about using Ruby on Rails, but often times, it's not. It's about finding the best tools, libraries, and practices to help you get your apps to production. I try to write here at least once or twice a month, but don't hold me to that.
+_Left of the Dev_ is about getting stuff done as a software developer. It's usually about using Ruby on Rails, but often times, it's not. It's about finding the best tools, libraries, and practices to help you get your apps to production. I try to write here at least once or twice a month, but don't hold me to that.
 
 ## Some background
 
@@ -15,14 +15,14 @@ My name is Aaron Sumner, and I've been using the Ruby on Rails web application f
 
 However, I feel like there's something missing in the multitude of existing Rails books, podcasts, blogs, and mailing lists. From my observations while helping other people get up and running with Rails, I can see how there would be a disconnect between the materials out there for the _very_ beginner and for developers who've got a laundry list of gems they've published on GitHub. I want to help those people who have figured out the basics but are looking for help with the next steps.
 
-For more background on Everyday Rails, you may enjoy
+For more background on Left of the Dev (formerly Everyday Rails), you may enjoy
 [my reflections on this site's 10th birthday] from May, 2020.
 
 [my reflections on this site's 10th birthday]:/2020/05/18/everyday-rails-10th-birthday.html
 
 ## Colophon
 
-_Everyday Rails_ is published using the [Jekyll] static site generator and hosted on [Netlify]. Code highlights use the [Tomorrow theme] by Chris Kempson, [adapted to Pygments] by Moz Morris.
+_Left of the Dev_ is published using the [Jekyll] static site generator and hosted on [Netlify]. Code highlights use the [Tomorrow theme] by Chris Kempson, [adapted to Pygments] by Moz Morris.
 Analytics are ethically gathered by [Plausible].
 
 [Jekyll]: https://github.com/jekyll/jekyll
