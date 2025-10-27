@@ -10,8 +10,6 @@ kramdown:
     css_class: "highlight"
 permalink: date
 feed: https://leftofthe.dev/atom.xml
-twitter: https://twitter.com/leftofthedev
-facebook: https://facebook.com/leftofthedev
 exclude:
   [
     node_modules,
