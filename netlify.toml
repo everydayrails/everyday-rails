@@ -1,0 +1,46 @@
+# Netlify configuration for Left of the Dev
+# Migration from everydayrails.com to leftofthe.dev
+
+[build]
+  command = "NODE_ENV=production npm run build && bundle exec jekyll build"
+  publish = "_site"
+
+# Redirect old domain to new domain with 301 (permanent redirect)
+# This preserves SEO rankings by telling search engines the site has permanently moved
+
+[[redirects]]
+  from = "https://everydayrails.com/*"
+  to = "https://leftofthe.dev/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://everydayrails.com/*"
+  to = "https://leftofthe.dev/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.everydayrails.com/*"
+  to = "https://leftofthe.dev/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.everydayrails.com/*"
+  to = "https://leftofthe.dev/:splat"
+  status = 301
+  force = true
+
+# Redirect www to non-www for new domain
+[[redirects]]
+  from = "https://www.leftofthe.dev/*"
+  to = "https://leftofthe.dev/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.leftofthe.dev/*"
+  to = "https://leftofthe.dev/:splat"
+  status = 301
+  force = true
