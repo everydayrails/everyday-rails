@@ -3,25 +3,25 @@ layout: null
 ---
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
- 
- <title>Everyday Rails</title>
- <link href="https://everydayrails.com/atom.xml" rel="self"/>
- <link href="https://everydayrails.com/"/>
+
+ <title>Left of the Dev</title>
+ <link href="https://leftofthe.dev/atom.xml" rel="self"/>
+ <link href="https://leftofthe.dev/"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>https://everydayrails.com/</id>
+ <id>https://leftofthe.dev/</id>
  <author>
    <name>Aaron Sumner</name>
-   <email>aaron@everydayrails.com</email>
+   <email>aaron@leftofthe.dev</email>
  </author>
- 
+
  {% for post in site.posts limit:10 %}
  <entry>
    <title>{{ post.title | xml_escape }}</title>
-   <link href="https://everydayrails.com{{ post.url }}"/>
+   <link href="https://leftofthe.dev{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
-   <id>http://www.everydayrails.com{{ post.id }}</id>
+   <id>https://leftofthe.dev{{ post.id }}</id>
    <content type="html">{{ post.excerpt | xml_escape }}</content>
  </entry>
  {% endfor %}
- 
+
 </feed>
