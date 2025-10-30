@@ -10,4 +10,5 @@ bottom_ads.html
 _drafts/*
 node_modules/*
 tmp/*
+css/tailwind.css
 mise.local.toml
