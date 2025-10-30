@@ -2,7 +2,7 @@
 # Migration from everydayrails.com to leftofthe.dev
 
 [build]
-  command = "NODE_ENV=production npm run build && bundle exec jekyll build"
+  command = "bundle exec jekyll build"
   publish = "_site"
 
 # Redirect old domain to new domain with 301 (permanent redirect)
