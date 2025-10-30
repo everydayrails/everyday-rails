@@ -1,9 +1,3 @@
-[build]
-  environment = { MISE_RUBY_SKIP = "1" }
-
-[build.environment]
-  RUBY_VERSION = "3.3.0"
-
 # Redirect old domain to new domain with 301 (permanent redirect)
 # This preserves SEO rankings by telling search engines the site has permanently moved
 
