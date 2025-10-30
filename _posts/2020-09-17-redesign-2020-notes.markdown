@@ -2,6 +2,7 @@
 layout: post
 title: "Thoughts on Everyday Rails 2020 redesign"
 excerpt: "Everyday Rails gets a fresh coat of paint after five years. Here's what went into the new look."
+tags: site-news
 ---
 
 I'm really excited to launch the first major visual update to
@@ -13,7 +14,7 @@ and I figured I'd do something similar this time around to talk about
 the tools I used, the decisions I made, and the plans I have going
 forward for the 2020 edition of Everyday Rails.
 
-[updated the site's design back in 2015]:/2015/08/09/redesign-2015-notes.html
+[updated the site's design back in 2015]: /2015/08/09/redesign-2015-notes.html
 
 ## Decisions
 
@@ -42,9 +43,8 @@ forward for the 2020 edition of Everyday Rails.
   GitHub issues as makeshift blog discussion tools, though, and may
   consider something like that at some point.
 
-[Bridgetown]:https://www.bridgetownrb.com
-[11ty]:https://www.11ty.dev
-
+[Bridgetown]: https://www.bridgetownrb.com
+[11ty]: https://www.11ty.dev
 
 ## Tools
 
@@ -66,10 +66,9 @@ forward for the 2020 edition of Everyday Rails.
   pull requests. I've also finally got a contact form on the site,
   thanks to their forms service. Netlify just works.
 
-[Tailwind CSS]:https://tailwindcss.com
-[screencast tutorial series]:https://tailwindcss.com/course
-[Netlify]:https://www.netlify.com
-
+[Tailwind CSS]: https://tailwindcss.com
+[screencast tutorial series]: https://tailwindcss.com/course
+[Netlify]: https://www.netlify.com
 
 ## Still to come
 
@@ -92,4 +91,4 @@ forward for the 2020 edition of Everyday Rails.
   to these as I find them, but if you see something that looks out of
   place in the new theme, please [let me know] so I can address it.
 
-[let me know]:/contact.html
+[let me know]: /contact.html

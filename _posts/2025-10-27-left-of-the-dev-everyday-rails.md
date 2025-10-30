@@ -2,6 +2,7 @@
 layout: post
 title: "Everyday Rails is now Left of the Dev"
 excerpt: I'm taking this site in a new direction! Here's why, and what to expect going forward.
+tags: site-news
 ---
 
 Hello friends! I'm excited to share that I've rebranded this site as **Left of the Dev**. As my career and life have evolved over the past few years, the time feels right to make this change and take the site in a new direction.
@@ -22,15 +23,13 @@ I basically hated the name _Everyday Rails_ a few months after my first post her
 
 This is a change I should have made years ago. I'm sorry it took so long, but at least I have a name I don't think I'll regret.
 
-
 ## Yeah, what about that name?
 
-_Left of the Dev_ is a nod to the music of my youth; in particular, the song "Left of the Dial" by the Replacements, from their 1985 album _Tim_. I grew up on a mix of 1970s country and rock,  But when I was a kid, most of the radio stations were in the lower numbers of the FM frequency--or, at the left end of the radio dial. This song pays homage to the music we had to search for (more realistically, [it's about one particular person in one particular band](https://faroutmagazine.co.uk/story-behind-left-of-the-dial-the-replacements/)). There were no streaming services, no algorithms to feed us.
+_Left of the Dev_ is a nod to the music of my youth; in particular, the song "Left of the Dial" by the Replacements, from their 1985 album _Tim_. I grew up on a mix of 1970s country and rock, But when I was a kid, most of the radio stations were in the lower numbers of the FM frequency--or, at the left end of the radio dial. This song pays homage to the music we had to search for (more realistically, [it's about one particular person in one particular band](https://faroutmagazine.co.uk/story-behind-left-of-the-dial-the-replacements/)). There were no streaming services, no algorithms to feed us.
 
 <iframe style="margin-top:30px" width="560" height="315" src="https://www.youtube.com/embed/mGz2DTEpj1o?si=9vhHZt0-Qeh3ZOWY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 I've been lucky in my career--with maybe one brief exception, I've avoided the type of "corporate" or "enterprise" type of work that never suited me. I've got a fierce independent, anti-authority streak to this day. I love doing things my own way. Now I don't get out to see live music like I used to, and my amp gathers dust behind me on video calls. But they are permanently ingrained in me, and will continue to influence my work here on Left of the Dev. Just more overtly.
-
 
 ## Work in progress
 

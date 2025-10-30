@@ -2,14 +2,14 @@
 layout: post
 title: "Everyday Rails now uses Plausible for analytics"
 excerpt: "Why I've moved to the simple, privacy-focused Plausible for my visitor analytics needs."
+tags: site-news
 ---
 
 After years of wrangling with Google Analytics to try to understand which content of mine was useful (or at least popular), I recently started using [Plausible] for web analytics on several projects, including Everyday Rails. If you're an independent tech author or software developer, or have the influence within your company to make the switch, Plausible's worth checking out.
 
 I've got no affiliation with Plausible. I'm just a paying customer who's really happy with the service, and want to help spread the word about it. If nothing else, I wanted to let you know what I'm doing to help protect your privacy online.
 
-[Plausible]:https://plausible.io
-
+[Plausible]: https://plausible.io
 
 ## Why switch?
 

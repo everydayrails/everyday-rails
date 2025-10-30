@@ -2,6 +2,7 @@
 layout: post
 title: "Happy 10th birthday to Everyday Rails!"
 excerpt: "Looking back on a decade of writing about Ruby on Rails."
+tags: site-news
 ---
 
 On May 19, 2010, I published my first post on Everyday Rails.
@@ -30,7 +31,6 @@ I'm not really sure how I came up with the name _Everyday Rails_. I know the int
 
 At times, I've wished I named it something different, to not tie it so closely to a single framework. Or maybe not named it at all, but publish content under my own name. But I don't regret it much in hindsight, nor do I feel like dealing with the SEO hassles of moving to [my personal blog] or something more generic.
 
-
 ## Cadence
 
 I laugh when looking back at how quickly I knocked out new posts here. My first six posts were in the wild in about two weeks. And that was on purpose, and I actually thought I could maintain that pace for the long haul. But over time, that pace drooped to once a week, to a couple times a month, to a few times a year. Fast-forward to now, and I just released my first post with actual content in ten months.
@@ -38,7 +38,6 @@ I laugh when looking back at how quickly I knocked out new posts here. My first 
 Starting hot out the gates is a rookie mistake in any distance or endurance sports event, and it's a total rookie mistake in writing. I imagine burnout could be blamed for some of the slowdown (or I could be blamed for letting myself burn out), but a change in job also took its toll on my ability to crank out the type of content I wanted. Instead of working on several small applications at once, and spinning up several new ones all the time, after moving to O'Reilly I focused on one large, mature codebase for nearly seven years. I was still learning things, but often not the kinds of things germane to a typical Rails application.
 
 That said, I was kind of shocked just now to see Markdown files for 111 articles in my posts folder, and I'm trying to build back up to a respectable cadence. Trying for weekly, but content with monthly.
-
 
 ## The RSpec book
 
@@ -54,21 +53,17 @@ Anyway, the original series of five blog posts got the most traction of anything
 
 The book evolved since those first five posts. Most of the original content has been replaced over time, but the structure and approach is the same. Those five blog posts have expanded to 242 pages, and almost 49,000 words. It's sold more than 6,700 copies, and is still one of [Leanpub's all-time top sellers]. Not bad for a book that started from a handful of blog posts!
 
-
 ## Career
 
 That career change I mentioned a moment ago? There's no evidence I know of to prove it, but I don't believe I would've had the opportunity to interview with O'Reilly, without having Everyday Rails and the book in my portfolio. Especially not from 2,000 miles away, as was the case at the time. Between this job and the nice side hustle that has been _Everyday Rails Testing with RSpec_, I owe much career-wise to this blog, and I remain convinced that establishing your name, your voice, and your authority through writing remains one of the most valuable things you can do to further your career.
-
 
 ## The future of Everyday Rails
 
 Let's come back full circle now. My job at O'Reilly has changed drastically in the past couple of months. I no longer work on that same large, legacy codebase I worked on for nearly seven years. I'm working with new teams with new (to me) ways of doing things, and introducing my ways of doing things to them, too. I'm working on several smaller, legacy-in-different-ways applications, and finding opportunities to improve them, modernize them, and make them more Rails-like. I've already written a post about introducing yourself to a legacy Rails application for the first time, and expect more content around this, security, and testing in the months to come. And again, I'm trying to get back to a respectable, maintainable publishing schedule. I've learned a lot in these past ten years, and even in the last several years when I didn't write here nearly as often. I am looking forward to sharing more again.
 
-
 ## Thank you
 
 Thank you for reading this non-technical, admittedly self-congratulatory post. Thank you for reading anything I've written in the past ten years. Thank you for buying my book, and telling your peers they should buy it, too. Thank you for your kind, constructive feedback. Thank you to my personal list of Ruby heroes, too long to list at this point. And thank you in advance for coming back to read my next post soon!
-
 
 [bootstrapping a fresh Rails application]: https://everydayrails.com/2010/05/19/bootstrapping-a-rails-app.html
 [Why's (Poignant) Guide to Ruby]: https://poignant.guide
@@ -79,4 +74,3 @@ Thank you for reading this non-technical, admittedly self-congratulatory post. T
 [Everyday Rails Testing with RSpec]: https://leanpub.com/everydayrailsrspec
 [Leanpub]: https://leanpub.com
 [Leanpub's all-time top sellers]: https://leanpub.com/bookstore/book?sort=lifetime_earnings
-

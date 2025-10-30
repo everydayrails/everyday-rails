@@ -2,6 +2,7 @@
 layout: post
 title: "Everyday Rails redesign for 2015: Initial notes and reflections"
 excerpt: "A behind-the-scenes look at the tools and decisions that led to the first major redesign of Everyday Rails in three years."
+tags: site-news
 ---
 
 I know you're not supposed to do Friday night deploys, but two nights ago I couldn't resist running my little script that builds this Jekyll site and rsyncs it to my server. And with that, the first major redesign of Everyday Rails in more than three years went live. Even though it's not a Rails project, I wanted to share a few reflections on the tools I used and decisions I made.
@@ -14,9 +15,10 @@ I know you're not supposed to do Friday night deploys, but two nights ago I coul
 ## Decisions
 
 - **Sticking with Jekyll:** When I first decided that Everyday Rails needed a facelift, I planned to switch out Jekyll for the Middleman static site generator. Nothing against Jekyll, but I like Middleman's tooling. I've used it for a few years on my personal blog now. In the end, I decided that Jekyll does what I need for Everyday Rails.
-- **Dropping the hero:** The previous redesign sort of coincided with the release of *[Everyday Rails Testing with RSpec](https://leanpub.com/everydayrailsrspec)*, so of course I wanted to feature it prominently. In 2012, Bootstrap's hero element was *the* way to do things like that. But that element was arguably the most dated part of the old site, and I always cringed a bit at how much real estate it took up (especially on mobile).
+- **Dropping the hero:** The previous redesign sort of coincided with the release of _[Everyday Rails Testing with RSpec](https://leanpub.com/everydayrailsrspec)_, so of course I wanted to feature it prominently. In 2012, Bootstrap's hero element was _the_ way to do things like that. But that element was arguably the most dated part of the old site, and I always cringed a bit at how much real estate it took up (especially on mobile).
 
   I like the sticky sidebar solution better--it allows me to keep some visibility on the book, but not as obtrusively. It's functionally still a work-in-progress (still tweaking pixel widths) but overall I'm happy with how it turned out.
+
 - <s>**No more comments:** I struggled with this one for a bit, but decided to remove comments functionality from Everyday Rails. This has less to do with the bad reputation that Internet comments sections have earned themselves, and more to do with reducing page clutter. I understand that Disqus needs to make money, and I was using their services for free, but I wasn't happy with add-ons they started applying a year ago or so. And it was one more thing to try to style correctly. So I pulled it.</s> I've re-enabled comments, per several requests.
 
   It's not that I don't want to hear from you, though. I do. My contact information is in the navigation bar, and I'm generally findable online.
