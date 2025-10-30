@@ -33,5 +33,6 @@ clean:
   echo "---" > "_posts/{{datetime('%Y-%m-%d')}}-{{kebabcase(lowercase(TITLE))}}.md"
   echo "layout: post" >> "_posts/{{datetime('%Y-%m-%d')}}-{{kebabcase(lowercase(TITLE))}}.md"
   echo "title: \"{{TITLE}}\"" >> "_posts/{{datetime('%Y-%m-%d')}}-{{kebabcase(lowercase(TITLE))}}.md"
+  echo "tags:" >> "_posts/{{datetime('%Y-%m-%d')}}-{{kebabcase(lowercase(TITLE))}}.md"
   echo "---" >> "_posts/{{datetime('%Y-%m-%d')}}-{{kebabcase(lowercase(TITLE))}}.md"
   echo "" >> "_posts/{{datetime('%Y-%m-%d')}}-{{kebabcase(lowercase(TITLE))}}.md"
