@@ -2,7 +2,7 @@
 layout: post
 title: "Rails authentication today: Options for 3.0 and 3.1"
 excerpt: "There's no shortage of approaches to adding password-based security to your Rails applications. Here's a look at the current lineup."
-tags: security
+tags: rails-auth legacy-rails
 ---
 
 Early on in _Everyday Rails_, I outlined [three options for adding authentication to your Rails applications](http://everydayrails.com/2010/06/06/rails-authentication-options.html). It's still a popular subject&mdash;and with two major releases of Rails and a number of new authentication options hitting the streets since I wrote my original list, it's due for a refresh. Here's a look at the current Rails authentication landscape.
@@ -33,8 +33,8 @@ For the record, this is the approach we took on our current big project at my da
 
 ### Other players
 
-* [Clearance](https://github.com/thoughtbot/clearance) is a solid authentication option that takes a simple approach, provides room for customization, and has the backing of the folks at thoughtbot. I've just never used it myself in a Rails project.
-* [Authlogic](https://github.com/binarylogic/authlogic) should work in Rails 3 apps; not sure about Rails 3.1. Frankly, it's never been my favorite approach to Rails authentication, but I know it's had its fans over the years.
-* [Restful Authentication](https://github.com/technoweenie/restful-authentication) shouldn't be used in new Rails apps. It served me well for a number of years, but time marches on.
-* **Update September 22:** [letmein](https://github.com/GBH/letmein) is another barebones approach to authentication. Thanks to Ash McKenzie for sharing.
-* There are a couple of other options in the [Ruby Toolbox authentication category](http://ruby-toolbox.com/categories/rails_authentication.html). I haven't tried them.
+- [Clearance](https://github.com/thoughtbot/clearance) is a solid authentication option that takes a simple approach, provides room for customization, and has the backing of the folks at thoughtbot. I've just never used it myself in a Rails project.
+- [Authlogic](https://github.com/binarylogic/authlogic) should work in Rails 3 apps; not sure about Rails 3.1. Frankly, it's never been my favorite approach to Rails authentication, but I know it's had its fans over the years.
+- [Restful Authentication](https://github.com/technoweenie/restful-authentication) shouldn't be used in new Rails apps. It served me well for a number of years, but time marches on.
+- **Update September 22:** [letmein](https://github.com/GBH/letmein) is another barebones approach to authentication. Thanks to Ash McKenzie for sharing.
+- There are a couple of other options in the [Ruby Toolbox authentication category](http://ruby-toolbox.com/categories/rails_authentication.html). I haven't tried them.

@@ -2,7 +2,7 @@
 layout: post
 title: "Status report: Everyday Rails Testing with RSpec updates for spring 2018"
 excerpt: "A progress report on the latest round of updates to my Rails testing book."
-tags: rspec rspec-book
+tags: rspec-book
 image: "/images/posts/astoria-sunset.jpg"
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title: "Testing with RSpec book updates for September 2025"
 excerpt: New content on top-down testing and covering your app's supporting features.
-tags: rspec rspec-book
+tags: rspec-book
 ---
 
 <a href="https://leanpub.com/everydayrailsrspec"><img src="/images/rspec-book-2024-xl.jpg" class="h-40 float-right border ml-2 mb-2 shadow" alt="" /></a>
@@ -17,13 +17,11 @@ New to my work? For a limited time, **get your copy of [Everyday Rails Testing w
 
 **For the most part, everything.** The sample application is all new. Some content is reorganized to reflect modern Rails application and test suite structures. But the core message is still there: Start simple and build up to more complex tests, with a focus on pragmatism.
 
-
 ## What's new since April
 
 - Rewrote the chapter on "testing the rest" to discuss **testing file uploads, email delivery, background jobs, and coverage measurement** (new to this edition)
 - Rewrote the "toward test-driven development" chapter to work through **top-down TDD on a new feature** to the sample application
 - Added **on-your-own exercises** to all chapters
-
 
 ## What's next
 

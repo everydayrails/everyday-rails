@@ -3,7 +3,7 @@ layout: post
 title: "Docker containers for Rails development environments, part 2: Setup"
 excerpt: "In our first experiment, let's see what it takes to get a Rails app to boot in a Visual Studio Code devcontainer."
 image:
-tags: docker legacy
+tags: docker legacy developer-experience
 ---
 
 I’m ready for my first experiment with Visual Studio Code’s Remote-Container extension, and a more pleasant container-based Rails development environment. As mentioned in [part one of this series], I won’t be building out a fully functioning environment in a single article, but rather, slowly build one up incrementally.

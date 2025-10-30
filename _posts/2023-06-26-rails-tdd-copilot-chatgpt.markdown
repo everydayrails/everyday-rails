@@ -2,7 +2,7 @@
 layout: post
 title: "Test-driven development in the age of artificial intelligence"
 excerpt: "How ChatGPT, GitHub Copilot, and TDD made me a professional Go programmer in less than an hour. Kind of."
-tags: artificial-intelligence tdd
+tags: artificial-intelligence tdd rspec
 ---
 
 A couple of weeks ago, I picked up a non-Ruby ticket at work. Since I’m not super-familiar with Go or its tooling, I decided to lean on generative artificial intelligence tooling to see if I could at least cobble together a draft pull request for someone who _is_ more familiar to review. At the same time, I didn’t want to abandon one of my favorite tools as a software engineer--test-driven development.

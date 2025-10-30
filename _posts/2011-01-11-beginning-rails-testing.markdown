@@ -2,6 +2,7 @@
 layout: post
 title: "Beginning Rails testing"
 excerpt: "Still not writing tests for your Rails applications? Here are a few suggestions from my own experiences to get you started."
+tags: tdd
 ---
 
 I admit that I was guilty for a long time of not writing _any_ tests for my Rails applications. My application testing consisted of an unhealthy reliance on in-browser testing, with nothing automated. I blame this on coming from a very unstructured way of developing code before I discovered Rails; I also think the early Rails demonstrations (15-minute blog) and tutorials focused on rapid application development more than the baked-in opportunities to test your code programatically.

@@ -2,7 +2,7 @@
 layout: post
 title: "Testing with RSpec book updates for April 2025"
 excerpt: "Fresh takes on all things mocking!"
-tags: rspec rspec-book
+tags: rspec-book
 ---
 
 I just shipped a new chapter for the current edition of [Everyday Rails Testing with RSpec](https://leanpub.com/everydayrailsrspec). In this release, I've totally replaced my introduction to testing in isolation with mocks (and stubs, and fakes, and spies, and doubles, oh my). My beliefs on when and how to mock have changed a lot since the last major release of the book, and this updated chapter reflect my newer opinions. I hope you find it useful.

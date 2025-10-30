@@ -2,6 +2,7 @@
 layout: post
 title: "Work around flaky test failures in Rails with rspec-retry"
 excerpt: "Nobody likes an intermittently failing test. Here's one way to keep your test suite running green, even when a test sometimes fails."
+tags: rspec
 ---
 
 Most of the time, a failing test is a good thing. It points to something

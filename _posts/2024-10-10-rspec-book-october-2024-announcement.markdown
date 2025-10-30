@@ -2,6 +2,7 @@
 layout: post
 title: "Testing with RSpec book updates for October 2024"
 excerpt: "Brand new chapter on testing controllers via request specs, and more!"
+tags: rspec-book
 ---
 
 <a href="https://leanpub.com/everydayrailsrspec"><img src="/images/rspec-book-2024-xl.jpg" class="h-40 float-right border ml-2 mb-2 shadow" alt="" /></a>

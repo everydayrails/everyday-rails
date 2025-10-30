@@ -2,7 +2,7 @@
 layout: post
 title: "Simple data transfer with YamlDB"
 excerpt: "Ever need to transfer data from one database to another? Here's a solution that worked for me."
-tags: data-migration
+tags: data-migration legacy-rails
 ---
 
 I've got a very small side project going. So far, it's only been for my benefit--but last night I decided I'd like to go ahead and deploy it at some point soon, so I'd need to switch out the simple SQLite database with something more robust. I also had test data I wanted to migrate over, though. What was the simplest way to get data out of my preliminary SQLite database and into something I could eventually move up to my production server?

@@ -2,7 +2,7 @@
 layout: post
 title: "A general guide to upgrading Ruby in your Rails applications"
 excerpt: "It's the middle of December, which means a new version of Ruby will be released in just a few days. Even if you don't plan on upgrading your Rails applications to the latest version on day one, it's never a bad time to begin planning your next upgrade."
-tags: security upgrading ruby
+tags: rails-upgrades
 ---
 
 It's the middle of December, which means **a new version of Ruby will be released in just a few days**. Even if you don't plan on upgrading your Rails applications to the latest version on day one, it's never a bad time to begin planning your next upgrade.

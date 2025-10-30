@@ -2,7 +2,7 @@
 layout: post
 title: "2017 edition of Everyday Rails Testing with RSpec is content-complete!"
 excerpt: "The final chapter of my Rails testing book is now available for download. Here's what's new, and what's coming next."
-tags: rspec-book rspec
+tags: rspec-book
 ---
 
 I'm happy to announce that chapter 11 of my book, _[Everyday Rails Testing with RSpec](https://leanpub.com/everydayrailsrspec)_, is available for download. This chapter, "Toward test-driven development," was the final chapter of the book I needed to update for 2017. In it, I take you through  step-by-step development of a feature, TDD-style, with commentary on outside-in testing and the red-green-refactor cycle.

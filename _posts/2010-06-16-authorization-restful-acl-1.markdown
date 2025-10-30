@@ -2,6 +2,7 @@
 layout: post
 title: "Adding authorization to your Rails app with RESTful_ACL, part 1: Setup"
 excerpt: "Need easy-to-use authorization in your application? Check out this useful alternative to other, better known options."
+tags: legacy-rails rails-auth
 ---
 
 Rails authorization systems like [CanCan](http://github.com/ryanb/cancan), [Declarative Authorization](http://github.com/stffn/declarative_authorization) and [role_requirement](http://github.com/timcharper/role_requirement) get most of the attention, but they are by no means your only options for adding permission systems to your applications. My current favorite is none of these (in fact, it's not even listed in the [list of authorization options in Ruby Toolbox](http://www.ruby-toolbox.com/categories/rails_authorization.html)). I've been using [RESTful_ACL](http://github.com/mdarby/restful_acl) by Matt Darby. Its approach to an access control layer is different than other solutions. 

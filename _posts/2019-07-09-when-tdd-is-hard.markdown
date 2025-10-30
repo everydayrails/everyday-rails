@@ -2,6 +2,7 @@
 layout: post
 title: "How to TDD when TDD is hard"
 excerpt: "Sometimes, TDD gets in the way, does more to confuse than guide, or generally just slows development to a monotonous crawl. Here's a set of five go-to strategies I use to get out of test-fueled frustration, and back to productivity."
+tags: tdd rspec
 ---
 
 When test-driven development works well, it's smooth and fluid, guiding you back and forth between test code and application code. It hints at what you need to do next—what to add, what to change, what to remove. And it does so quickly. The process is an asset, not a liability.

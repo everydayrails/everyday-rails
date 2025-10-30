@@ -2,6 +2,7 @@
 layout: post
 title: "7 reasons why learning SQL is still important for Rails developers"
 excerpt: "Active Record abstracts away much of the need to use SQL on a daily basis. But understanding what's going on behind the scenes is still important. Here's how understanding SQL can make you a better Rails developer."
+tags: learning
 ---
 
 I remember when I first learned SQL, back when I was writing Perl CGI scripts in a cave with my dinosaur friends. It was magical; a transformative step in my career as a software engineer. Without that initial understanding how to break business concepts down into discrete tables, then link and search across those tables with plain English (well, sort of) syntax, I wouldn't be where I am today.

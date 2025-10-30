@@ -2,6 +2,7 @@
 layout: post
 title: "Adding authorization to your Rails app with RESTful_ACL, part 3: Parent and child objects"
 excerpt: "Leverage your applications' model relationships to write complex, but clean, authorization rules."
+tags: legacy-rails rails-auth
 ---
 
 I've been covering [RESTful_ACL](http://github.com/mdarby/restful_acl), an alternative to role-based authorization systems like CanCan and Declarative Authorization, for Rails applications needing to protect actions within controllers. So far we've set up the gem to work with our application and added authorization settings to two distinct models. This time we'll add a new model, which is a child of one of the existing models, and look at how that affects our ACL settings.

@@ -2,6 +2,7 @@
 layout: post
 title: "Learning Ruby and Rails"
 excerpt: "There's been a lot of conversation recently about the best ways to get started with Ruby. Here's my take on the subject, based on how I learned Ruby back in 2005 and what I'd do differently today."
+tags: learning
 ---
 
 I live in a town dominated by Python, PHP, and Java developers, so hiring someone who can come in and write Ruby code from day one is a challenge. I've been thinking about how I learned Ruby myself, how I've gone about helping others learn it, and what I would do differently if I had to do it all over. Meanwhile, last week Mashable [polled several notable Rubyists about how newcomers should get started with the language](http://mashable.com/2011/01/14/ruby-on-rails-for-beginners/). Since the topic has been on my mind, too, and I'm not notable enough for major tech blogs, I'm going to share my thoughts here. I'd be interested in your feedback, as I hope to eventually have a set of go-to resources for new employees and other would-be Ruby and Rails developers.

@@ -2,13 +2,12 @@
 layout: post
 title: "Deprecating code in a Rails application"
 excerpt: "Here's how to add good deprecation warnings to your Rails applications, and why it might be a good idea."
-tags: legacy upgrading
+tags: legacy rails-upgrades
 ---
 
 When upgrading a Rails application to a newer version of the framework, you'll often see deprecation warnings pop up in your application logs and test suite output. Deprecation warnings give you time to fix an issue before it becomes an outright error. _Good_ deprecation warnings also give you a hint on _where_ and _how_ to address them.
 
 Rails makes it pretty simple to add _good_ deprecation warnings to your actual application code, too. Let's first look at how to do this, then talk for a moment about when it might be a good idea.
-
 
 ## Adding the deprecation
 
@@ -16,11 +15,13 @@ Inside the method you want to deprecate, use `ActiveSupport::Deprecation.warn`, 
 
 {% highlight ruby %}
 def process_widget
-  ActiveSupport::Deprecation.warn(
-    "#process_widget is deprecated. " \
-    "Use #send_widget_to_processor instead."
-  )
-  # other code ...
+ActiveSupport::Deprecation.warn(
+"#process_widget is deprecated. " \
+ "Use #send_widget_to_processor instead."
+)
+
+# other code ...
+
 end
 {% endhighlight %}
 
@@ -33,7 +34,6 @@ my_app/app/controllers/widgets_controller.rb:55)
 {% endhighlight %}
 
 The deprecation warning clearly marks _where_ in your application you're still using outdated code. If you _don't_ see the deprecation in your test output, and you're confident in your test coverage, then it's safe to remove the outdated code!
-
 
 ## Why you might deprecate your code
 

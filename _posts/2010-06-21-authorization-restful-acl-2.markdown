@@ -2,6 +2,7 @@
 layout: post
 title: "Adding authorization to your Rails app with RESTful_ACL, part 2: Basic ACLs"
 excerpt: "Here's how to protect your application's data through an easy-to-apply access control layer."
+tags: legacy-rails rails-auth
 ---
 
 In [part one of this series on the RESTful_ACL gem](http://everydayrails.com/2010/06/16/authorization-restful-acl-1.html), I walked through the steps required to prepare an app to use this handy, albeit overshadowed, mechanism for adding authorization to a Rails application. Now let's dive into the actual ACL settings themselves. In the interest of simplicity and familiarity, we'll go with a basic blogging app with categories, posts, and comments. Let's say that admins can create and edit categories, regular users can write posts and edit posts they've written. In this part I'll cover categories and posts; we'll use some more advanced features to protect our comments in a later tutorial.

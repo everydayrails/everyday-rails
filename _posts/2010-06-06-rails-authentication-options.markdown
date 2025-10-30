@@ -2,6 +2,7 @@
 layout: post
 title: "3 Rails authentication options"
 excerpt: "It's almost inevitable that your Rails application will ultimately need some sort of login mechanism to protect access to certain parts. This post begins a series of looks at various options for authorization in Rails."
+tags: legacy-rails rails-auth
 ---
 
 Today's post serves mostly to set up what I'm planning to write about next in _Everyday Rails_. Upon request, I'll be covering how I handle authentication and authorization in my Rails applications. These are topics that have evolved a great deal from the early days of Rails, and even if you've got a go-to solution for either it's worth spending a little time to check on the latest and greatest.

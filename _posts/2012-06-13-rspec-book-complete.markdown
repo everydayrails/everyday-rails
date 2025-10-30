@@ -2,7 +2,7 @@
 layout: post
 title: "Everyday Rails Testing with RSpec: The Book is complete"
 excerpt: "The expanded version of my series on learning to test is ready for non-early adopters. Here's more information on the Rails 3.2 version of the book, and what's to come later."
-tags: rspec rspec-book
+tags: rspec-book
 ---
 
 On Monday I posted the final, edited version of _[Everyday Rails Testing with RSpec](http://leanpub.com/everydayrailsrspec)_, available now on Leanpub for $12 US.

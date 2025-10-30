@@ -2,7 +2,7 @@
 layout: post
 title: "Everyday Rails Testing with RSpec now updated for RSpec 3"
 excerpt: "RSpec 3.1, Rails 4.1 (and beyond), testing services, and more: Here's what's new."
-tags: rspec rspec-book
+tags: rspec-book
 ---
 
 After a long summer, I'm happy to announce that *[Everyday Rails Testing with RSpec](https://leanpub.com/everydayrailsrspec)* has been updated for RSpec 3 and Rails 4.1 (and beyond). If you've already purchased the book, head over to Leanpub to download the latest edition for free. If you're new to the book, I hope you'll check it out.

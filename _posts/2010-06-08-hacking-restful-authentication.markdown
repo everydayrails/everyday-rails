@@ -2,6 +2,7 @@
 layout: post
 title: "Hacking Restful Authentication"
 excerpt: "Edit user accounts and add administrator users to your legacy Rails apps using the popular Restful Authentication login system."
+tags: legacy-rails rails-auth
 ---
 
 As I mentioned, I've used [Restful Authentication](http://github.com/technoweenie/restful-authentication) to add login functionality to several Rails applications over the last four years. While newer methods for authentication have come along, you may have a legacy application still using Restful Authentication, and swapping out your login system may be more trouble than a whole rewrite. However, if you want to stick with your existing code, and add a few features to extend the usefulness of Restful Authentication, read on. I'll be making the following changes:

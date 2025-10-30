@@ -2,6 +2,7 @@
 layout: post
 title: "My recent appearances on Ruby podcasts"
 excerpt: "In case you missed it, I've guested on a couple of podcasts in 2018."
+tags: site-news
 ---
 
 I've been a guest on a couple of podcasts over the past few months, and I can't tell you how weird it is to be refreshing your podcast feed, and see your name pop up in the new episodes to download. I hope you'll give these shows a listen. Are there other podcasts I should try to appear on?

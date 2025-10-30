@@ -2,7 +2,7 @@
 layout: post
 title: "Notes from migrating from Minitest to RSpec, with help from GitHub Copilot"
 excerpt: "Artificial intelligence hasn't replaced us yet, but how does it handle the boring parts of our jobs?"
-tags: artificial-intelligence rspec developer-experience
+tags: rspec artificial-intelligence
 ---
 
 After some discussion, my team at work decided to port our newest Ruby on Rails application's test suite from the default Minitest to RSpec. I picked up the ticket not because I enjoy tedious work, but because I thought it'd be a good excuse to test generative AI's ability to do the boring parts for me. Here are some observations and takeaways from the task.

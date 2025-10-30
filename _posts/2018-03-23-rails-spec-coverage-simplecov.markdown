@@ -2,7 +2,7 @@
 layout: post
 title: "Rails test coverage: Measuring what matters with SimpleCov"
 excerpt: "Many developers strive for 100% test coverage in their Rails applications, but what does that mean? And does it matter? Here's how I use the wonderful SimpleCov to help guide my testing."
-tags: rspec
+tags: rspec tdd
 image: "/images/posts/simplecov-header.jpg"
 ---
 

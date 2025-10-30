@@ -2,7 +2,7 @@
 layout: post
 title: "Everyday Rails Testing with RSpec: Upcoming updates for 2014"
 excerpt: "It's getting time for the book's annual-ish update. Here's a look at what's planned for the next version."
-tags: rspec rspec-book
+tags: rspec-book
 ---
 
 Big changes are afoot for Rails and RSpec, which means it's almost time for another update to *Everyday Rails Testing with RSpec.* Here's a list of things I'm planning to address in this release.

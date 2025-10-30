@@ -2,7 +2,7 @@
 layout: post
 title: "Everyday Rails Testing with RSpec: Get advance access to my new book now"
 excerpt: "I'm happy to announce that the extended, DRM-free ebook version of my RSpec series is now available for purchase through Leanpub. Here's a rundown of what's there now and what's to come."
-tags: rspec rspec-book
+tags: rspec-book
 ---
 
 ![book cover](/images/rspec_book_large.jpg){: .decoration}
