@@ -1,10 +1,3 @@
-# Netlify configuration for Left of the Dev
-# Migration from everydayrails.com to leftofthe.dev
-
-[build]
-  command = "bundle exec jekyll build"
-  publish = "_site"
-
 # Redirect old domain to new domain with 301 (permanent redirect)
 # This preserves SEO rankings by telling search engines the site has permanently moved
 
