@@ -17,6 +17,7 @@ serve:
 # Build site
 [group("maintenance")]
 build:
+  npm run build
   bundle exec jekyll build
 
 # Clean up generated site files
