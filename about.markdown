@@ -1,24 +1,54 @@
 ---
 layout: default
-title: About Left of the Dev
-excerpt: "A blog about writing software, usually using Ruby on Rails,
+title: About Left of the Dev (formerly Everyday Rails)
+excerpt: "A blog about writing software for fun, good, and sometimes profit.
 but often not."
 ---
 
-_Left of the Dev_ is about getting stuff done as a software developer. It's usually about using Ruby on Rails, but often times, it's not. It's about finding the best tools, libraries, and practices to help you get your apps to production. I try to write here at least once or twice a month, but don't hold me to that.
+**Left of the Dev is about writing software for fun, good, and sometimes profit.** Historically,
+it focused on the Ruby on Rails web framework, but these days it can and will touch on any
+software-related topic, including testing, Django, game development, agentic coding,
+security practices, and developer experience.
 
 ## Some background
 
 ![Photo of the author](/images/mug2022.jpg){: .h-40 .float-right .border .ml-2 .mb-2 .shadow}
 
-My name is Aaron Sumner, and I've been using the Ruby on Rails web application framework since the relatively early days, after ten-plus years of doing web development the old-fashioned way with brittle, procedural spaghetti written mostly in Perl and PHP. Rails was my first actual framework, and I've never looked back. For the work I do it's been perfect, from the tool itself to the supporting cast of Rubyists and the expertise (and code) they share to get the most from the framework and the language.
+My name is Aaron Sumner. I've been writing software professionally for more than thirty years,
+in (to name a few languages, in roughly chronological order) BASIC, AppleScript, Perl, PHP,
+Ruby, Python, Go, Lua, and others. I've shared my thoughts and experiences as a developer
+since 2010, starting this site as Everyday Rails before rebranding as Left of the Dev in 2025.
 
-However, I feel like there's something missing in the multitude of existing Rails books, podcasts, blogs, and mailing lists. From my observations while helping other people get up and running with Rails, I can see how there would be a disconnect between the materials out there for the _very_ beginner and for developers who've got a laundry list of gems they've published on GitHub. I want to help those people who have figured out the basics but are looking for help with the next steps.
+**Philosophies and personality quirks** behind the articles you'll read here:
+
+- **I'm a strong believer in the net good of open source.** It is far from perfect. But I admire
+  people who share openly in the software world, and do my best to emulate them.
+- **I do not learn well from first principles.** I usually need to start with a real problem,
+  get a good-enough solution together, pick out the key concepts, and deep dive into those
+  concepts as need or interest apply. Don't expect a lot of _Hello World_ tutorials here.
+- **If someone else open-sourced code that does what I want, I'll run with it.** I'm busy and
+  don't have time to reinvent wheels. I'm guessing you don't, either. If you can do it
+  better? Sure. If you really want to learn a thing? Go for it. Those traits don't usually
+  apply to me (see: learning from first principles).
+- **Developer experience matters.** Down with redundant boilerplate code and arcane command
+  line flags. In with code generators and savvy command aliasing! I'm old and only have so
+  may keyboard taps left in me. Let's automate the mundane and save our fingers for work
+  that matters (and/or is fun).
+- **I am pragmatically bullish on AI-assisted software development.** I get a lot of mileage
+  out of agentic tools in my daily work. I also have legit concerns about artificial
+  intelligence (ethical use or lack thereof, environmental effects, etc.). I know we're in a bubble.
+  I am balancing personally, and while I'll share things I've learned, I
+  also won't make you feel bad if you're not using Claude or Codex or whatever tomorrow's
+  hot new robot is. And I don't care to hear from people on the extremes of this discussion.
+- **Shiny things are fun, but don't roll them straight into production.** I try to keep up
+  on emerging tools and trends. Sometimes I have a quiet Friday afternoon to noodle around
+  with them, and share my impressions here. These are not endorsements!
 
 For more background on Left of the Dev (formerly Everyday Rails), you may enjoy
-[my reflections on this site's 10th birthday] from May, 2020.
+[my reflections on this site's 15th birthday] from May, 2025, and the [Left of the Dev re-brand announcement] from October, 2025.
 
-[my reflections on this site's 10th birthday]:/2020/05/18/everyday-rails-10th-birthday.html
+[my reflections on this site's 15th birthday]: /2025/05/18/happy-birthday.html
+[Left of the Dev re-brand announcement]: /2025/10/27/left-of-the-dev-everyday-rails.html
 
 ## Colophon
 
