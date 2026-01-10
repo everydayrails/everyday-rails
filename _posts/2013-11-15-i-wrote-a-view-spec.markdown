@@ -13,7 +13,18 @@ In this case, I needed to test-drive some inline JavaScript (inline because it i
 
 Here's the general idea:
 
-{% gist 7490444 %}
+```ruby
+require 'spec_helper'
+
+describe 'path/to/view.html.erb' do
+  it "renders JavaScript to connect to a pretend API" do
+    render
+
+    expect(rendered).to match("api_key: '#{ENV['API_KEY']}',")
+    expect(rendered).to match("api_endpoint: '#{ENV['API_ENDPOINT']}',")
+  end
+end
+```
 
 In this case, the environment variables are loaded into Rails via [dotenv](https://github.com/bkeepers/dotenv). If a developer (or continuous integration tool) doesn't have these variables set, the test will fail. It also served as a guide as I wrote the actual code to make it pass. All this in a spec that took about two minutes to write, and runs in an instant.
 

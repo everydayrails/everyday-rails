@@ -25,4 +25,3 @@ exclude:
   ]
 tag_page_layout: tags
 tag_page_dir: tag
-plugins: [jekyll-gist]
