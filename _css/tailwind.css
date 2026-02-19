@@ -3,20 +3,24 @@
 @tailwind utilities;
 
 @layer base {
+  body {
+    @apply text-lg;
+  }
+
   h1 {
-    @apply text-4xl font-semibold mt-10;
+    @apply text-5xl font-semibold mt-10;
   }
 
   h2 {
-    @apply text-xl font-semibold mt-10;
+    @apply text-2xl font-semibold mt-10;
   }
 
   h3 {
-    @apply text-lg font-semibold mt-10;
+    @apply text-xl font-semibold mt-10;
   }
 
   h4 {
-    @apply font-semibold;
+    @apply text-lg font-semibold;
   }
 
   p {
