@@ -4,14 +4,14 @@ title: "Everyday Rails Testing with RSpec sample code"
 excerpt: "A simple approach to cutting through the confusion and testing your Rails applications."
 ---
 
-## Rails 7.1 edition (2024)
+## Rails 8.1 edition (2026)
 
-![Everyday Rails Testing with RSpec 2024 cover](/images/rspec-book-2024-xl.jpg){: .h-40 .float-right .border .ml-2 .mb-2 .shadow}
+![Everyday Rails Testing with RSpec 2026 cover](/images/rspec-book-2024-xl.jpg){: .h-40 .float-right .border .ml-2 .mb-2 .shadow}
 
-The 2024 edition of *Everyday Rails Testing with RSpec* is the current, supported version. It's available for purchase via Leanpub, and is a free update for anyone who owns a license via Leanpub. Thank you for your support!
+The 2026 edition of *Everyday Rails Testing with RSpec* is the current, supported version. It's available for purchase via Leanpub, and is a free update for anyone who owns a license via Leanpub. Thank you for your support!
 
-- [Purchase Everyday Rails Testing with RSpec, Rails 7.1 edition on Leanpub](https://leanpub.com/everydayrailsrspec)
-- [Source code](./code.zip) (zip)
+- [Purchase Everyday Rails Testing with RSpec, Rails 8.1 edition on Leanpub](https://leanpub.com/everydayrailsrspec)
+- [Source code](./code-8.1.zip) (zip)
 - [Discussion](https://github.com/orgs/everydayrails/discussions)
 
 
