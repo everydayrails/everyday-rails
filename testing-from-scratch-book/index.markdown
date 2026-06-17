@@ -10,5 +10,5 @@ excerpt: "A practical, (mostly) out-of-the-box approach to test-driven developme
 
 The 2026 edition of _Testing Rails from Scratch_ is the current, supported version. It's available for purchase via Leanpub. Thank you for your support!
 
-- [Purchase Testing Rails from Scratch, Rails 8.1 edition on Leanpub](https://leanpub.com/everydayrailsrspec)
+- [Purchase Testing Rails from Scratch, Rails 8.1 edition on Leanpub](https://leanpub.com/everydayrails-testing-from-scratch)
 - [Source code](./code-8.1.zip) (zip)
