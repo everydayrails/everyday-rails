@@ -5,6 +5,7 @@ module.exports = {
     process.env.NODE_ENV === 'production' && require("@fullhuman/postcss-purgecss")({
       content: [
         "./_posts/*.markdown",
+        "./_posts/*.md",
         "./_layouts/*.html",
         "./_includes/*.html",
         "./*.html",
