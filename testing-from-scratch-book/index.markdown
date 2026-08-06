@@ -12,3 +12,4 @@ The 2026 edition of _Testing Rails from Scratch_ is the current, supported versi
 
 - [Purchase Testing Rails from Scratch, Rails 8.1 edition on Leanpub](https://leanpub.com/everydayrails-testing-from-scratch)
 - [Source code](./code-8.1.zip) (zip)
+- [Discussion](https://leanpub.com/forum/everydayrails-testing-from-scratch)

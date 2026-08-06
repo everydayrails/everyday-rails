@@ -12,7 +12,7 @@ The 2026 edition of *Everyday Rails Testing with RSpec* is the current, supporte
 
 - [Purchase Everyday Rails Testing with RSpec, Rails 8.1 edition on Leanpub](https://leanpub.com/everydayrailsrspec)
 - [Source code](./code-8.1.zip) (zip)
-- [Discussion](https://github.com/orgs/everydayrails/discussions)
+- [Discussion](https://leanpub.com/forum/everydayrailsrspec)
 
 
 ## Rails 5.1 edition (2017)
