@@ -11,7 +11,9 @@ module.exports = {
         "./*.html",
       ],
       defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || [],
-      whitelist: ["pre"]
+      whitelist: ["pre", "html", "light", "dark"],
+      // Theme classes are applied by the switcher at runtime
+      whitelistPatterns: [/^theme-/, /^data-theme-choice/]
     }),
   ]
 }

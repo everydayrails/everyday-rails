@@ -2,9 +2,105 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+ * Theme tokens.
+ *
+ * Light values live on `html`. Dark values are applied twice: once for
+ * `prefers-color-scheme: dark` (unless the reader has explicitly chosen
+ * light), and once for an explicit `html.dark`. The toggle in the nav sets
+ * those classes; with no class present, the system setting wins.
+ */
+html {
+  color-scheme: light;
+
+  --bg: #ffffff;
+  --fg: #1a202c;
+  --fg-muted: #718096;
+  --quote-fg: #2d3748;
+  --link: #742a2a;
+  --surface: #edf2f7;
+  --border: #e2e8f0;
+  --nav-bg: #742a2a;
+  --nav-fg: #ffffff;
+  --btn-bg: #742a2a;
+  --btn-fg: #ffffff;
+  --btn-hover-bg: #cbd5e0;
+  --btn-hover-fg: #2d3748;
+  --pre-bg: #2d3748;
+  --pre-fg: #edf2f7;
+  --field-bg: #ffffff;
+  --alert-info-bg: #c6f6d5;
+  --alert-info-fg: #276749;
+  --alert-danger-bg: #fed7d7;
+  --alert-danger-fg: #9b2c2c;
+  --alert-warning-bg: #fffaf0;
+  --alert-warning-fg: #9c4221;
+  --logo-invert: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not(.light) {
+    color-scheme: dark;
+
+    --bg: #1a202c;
+    --fg: #e2e8f0;
+    --fg-muted: #a0aec0;
+    --quote-fg: #cbd5e0;
+    --link: #a0aec0;
+    --surface: #2d3748;
+    --border: #4a5568;
+    --nav-bg: #742a2a;
+    --nav-fg: #ffffff;
+    --btn-bg: #742a2a;
+    --btn-fg: #ffffff;
+    --btn-hover-bg: #4a5568;
+    --btn-hover-fg: #edf2f7;
+    --pre-bg: #11151c;
+    --pre-fg: #e2e8f0;
+    --field-bg: #2d3748;
+    --alert-info-bg: #22543d;
+    --alert-info-fg: #c6f6d5;
+    --alert-danger-bg: #5b2121;
+    --alert-danger-fg: #fed7d7;
+    --alert-warning-bg: #5f370e;
+    --alert-warning-fg: #feebc8;
+    --logo-invert: 1;
+  }
+}
+
+html.dark {
+  color-scheme: dark;
+
+  --bg: #1a202c;
+  --fg: #e2e8f0;
+  --fg-muted: #a0aec0;
+  --quote-fg: #cbd5e0;
+  --link: #a0aec0;
+  --surface: #2d3748;
+  --border: #4a5568;
+  --nav-bg: #742a2a;
+  --nav-fg: #ffffff;
+  --btn-bg: #742a2a;
+  --btn-fg: #ffffff;
+  --btn-hover-bg: #4a5568;
+  --btn-hover-fg: #edf2f7;
+  --pre-bg: #11151c;
+  --pre-fg: #e2e8f0;
+  --field-bg: #2d3748;
+  --alert-info-bg: #22543d;
+  --alert-info-fg: #c6f6d5;
+  --alert-danger-bg: #5b2121;
+  --alert-danger-fg: #fed7d7;
+  --alert-warning-bg: #5f370e;
+  --alert-warning-fg: #feebc8;
+  --logo-invert: 1;
+}
+
 @layer base {
   body {
     @apply text-lg;
+    background-color: var(--bg);
+    color: var(--fg);
   }
 
   h1 {
@@ -28,11 +124,14 @@
   }
 
   a {
-    @apply text-red-900 underline;
+    @apply underline;
+    color: var(--link);
   }
 
   pre {
-    @apply my-5 p-3 bg-gray-800 text-gray-200 rounded overflow-scroll;
+    @apply my-5 p-3 rounded overflow-scroll;
+    background-color: var(--pre-bg);
+    color: var(--pre-fg);
   }
 
   ul {
@@ -48,7 +147,15 @@
   }
 
   blockquote {
-    @apply p-5 text-gray-800 mt-3 mb-3 ml-6;
+    @apply p-5 mt-3 mb-3 ml-6;
+    color: var(--quote-fg);
+  }
+
+  input,
+  textarea {
+    background-color: var(--field-bg);
+    color: var(--fg);
+    border-color: var(--border);
   }
 
   #tags a {
@@ -72,14 +179,93 @@
   }
 
   .alert-info {
-    @apply bg-green-200 text-green-800;
+    background-color: var(--alert-info-bg);
+    color: var(--alert-info-fg);
   }
 
   .alert-danger {
-    @apply bg-red-200 text-red-800;
+    background-color: var(--alert-danger-bg);
+    color: var(--alert-danger-fg);
   }
 
   .alert-warning {
-    @apply bg-orange-100 text-orange-800;
+    background-color: var(--alert-warning-bg);
+    color: var(--alert-warning-fg);
+  }
+}
+
+@layer components {
+  /* Site header bar */
+  .site-nav {
+    background-color: var(--nav-bg);
+  }
+
+  .site-nav a {
+    color: var(--nav-fg);
+  }
+
+  /* Sidebar promo panels */
+  .card {
+    background-color: var(--surface);
+  }
+
+  /* Call-to-action buttons and button-styled links */
+  .btn {
+    @apply text-sm no-underline font-semibold px-3 py-2 rounded-lg;
+    background-color: var(--btn-bg);
+    color: var(--btn-fg);
+  }
+
+  .btn:hover {
+    background-color: var(--btn-hover-bg);
+    color: var(--btn-hover-fg);
+  }
+
+  .muted {
+    color: var(--fg-muted);
+  }
+
+  .site-footer {
+    border-color: var(--border);
+  }
+
+  /* Monochrome badges that need to flip with the theme */
+  .theme-invert {
+    filter: invert(var(--logo-invert));
+  }
+
+  /*
+   * Theme switcher: a segmented pill showing all three choices, with the
+   * active one highlighted. The highlight is driven by the `data-theme-choice`
+   * attribute the head script sets, so it's correct on first paint; the
+   * script in the include keeps `aria-pressed` in step for screen readers.
+   */
+  .theme-switch {
+    @apply inline-flex items-center rounded-full p-1;
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+
+  .theme-switch-option {
+    @apply rounded-full p-2;
+    color: var(--nav-fg);
+    line-height: 0;
+    opacity: 0.65;
+  }
+
+  .theme-switch-option:hover,
+  .theme-switch-option:focus-visible {
+    opacity: 1;
+  }
+
+  .theme-switch-option svg {
+    height: 1.125rem;
+    width: 1.125rem;
+  }
+
+  html[data-theme-choice="light"] .theme-switch-option[data-theme-choice="light"],
+  html[data-theme-choice="system"] .theme-switch-option[data-theme-choice="system"],
+  html[data-theme-choice="dark"] .theme-switch-option[data-theme-choice="dark"] {
+    background-color: rgba(255, 255, 255, 0.22);
+    opacity: 1;
   }
 }

@@ -11,7 +11,7 @@ I'm still letting that sink in.
 
 That post, if you're interested, was about [bootstrapping a fresh Rails application]. It's horribly out of date now, but I appreciate it as a time capsule of how far Rails has come in those ten years, yet how similar my philosophy and approach to software development remain. My mission statement has never changed in these ten years:
 
-<blockquote class="mt-5 bg-gray-100 rounded-lg p-5 text-xl italic leading-tight">
+<blockquote class="card mt-5 rounded-lg p-5 text-xl italic leading-tight">
   Everyday Rails is about using the Ruby on Rails web application framework to get stuff done as a web developer.
 </blockquote>
 
