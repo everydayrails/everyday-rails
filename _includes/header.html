@@ -29,9 +29,42 @@
   </title>
 
   <meta name="author" content="Aaron Sumner" />
-  <meta name="description" content="{{ page.excerpt }}">
-  <meta property="og:image" content="https://leftofthe.dev/images/logo-square.png" />
-  <link rel="image_src" href="https://leftofthe.dev/images/logo-square.png" />
+
+  {% comment %}
+    Sharing metadata. Bluesky and Mastodon both build their link cards from
+    these tags, so a post shared without them shows up as a bare URL.
+  {% endcomment %}
+  {% capture page_title %}{% if page.title %}{{ page.title }} | Left of the Dev{% else %}Left of the Dev{% endif %}{% endcapture %}
+  {% capture page_description %}{% if page.excerpt %}{{ page.excerpt | strip_html | normalize_whitespace | truncate: 200 }}{% else %}A blog about Ruby on Rails, testing, and getting things done as a web developer.{% endif %}{% endcapture %}
+  {% if page.image %}
+    {% assign share_image = page.image | absolute_url %}
+  {% else %}
+    {% assign share_image = "/images/logo-square.png" | absolute_url %}
+  {% endif %}
+
+  <meta name="description" content="{{ page_description | escape }}">
+  <meta property="og:site_name" content="Left of the Dev" />
+  <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}" />
+  <meta property="og:title" content="{{ page_title | escape }}" />
+  <meta property="og:description" content="{{ page_description | escape }}" />
+  <meta property="og:url" content="{{ page.url | absolute_url }}" />
+  <meta property="og:image" content="{{ share_image }}" />
+  <meta name="twitter:card" content="summary_large_image" />
+  {% if page.layout == 'post' %}
+    <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}" />
+  {% endif %}
+  {% if site.social.mastodon %}
+    {% assign mastodon_parts = site.social.mastodon | remove_first: "@" | split: "@" %}
+    <!--
+      Mastodon credits the author on a link card only when the profile holds a
+      verified link to this domain, and it verifies a profile field by looking
+      for a rel="me" link pointing back. That's what the second tag is for.
+    -->
+    <meta name="fediverse:creator" content="{{ site.social.mastodon }}" />
+    <link rel="me" href="https://{{ mastodon_parts[1] }}/@{{ mastodon_parts[0] }}" />
+  {% endif %}
+  <link rel="canonical" href="{{ page.url | absolute_url }}" />
+  <link rel="image_src" href="{{ share_image }}" />
 
 
   <link href="/css/tailwind.css" rel="stylesheet">

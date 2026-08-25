@@ -54,7 +54,7 @@ just create-post "Post Title"   # Create new post with proper naming and frontma
 
 - **_posts/**: Blog posts in Markdown format with YAML frontmatter. Named as `YYYY-MM-DD-slug.markdown`
 - **_layouts/**: HTML templates for different page types (default, post, wide, tags, main)
-- **_includes/**: Reusable HTML partials (header, footer, nav, sidebar, social, book_cta, disqus, referrals)
+- **_includes/**: Reusable HTML partials (header, footer, nav, sidebar, theme_toggle, book_cta, discuss, referrals)
 - **_plugins/**: Custom Jekyll plugins (loads jekyll-tagging)
 - **_css/**: Tailwind source CSS (`tailwind.css`)
 - **css/**: Compiled CSS output (generated, not committed)
@@ -92,6 +92,42 @@ This ensures CSS is optimized and purged before Jekyll generates the final site.
 - **postcss.config.js**: PostCSS pipeline including Tailwind, Autoprefixer, and conditional PurgeCSS
 - **mise.toml**: Ruby version management (Ruby 3.1)
 - **justfile**: Task automation recipes
+
+## Sharing and Comments
+
+Posts end with a "Discuss this post" block (`_includes/discuss.html`, behavior in
+`js/discuss.js`), which does two things:
+
+1. **Share links** to Bluesky and Mastodon. Bluesky is a plain intent URL.
+   Mastodon has no central address, so that control asks the reader which
+   instance they're on and remembers it in `localStorage`.
+2. **Comments**, which are the public replies to the post's own Bluesky and
+   Mastodon threads, fetched in the reader's browser from
+   `public.api.bsky.app` and the instance's `/api/v1/statuses/:id/context`.
+   Both APIs are unauthenticated and CORS-enabled — there is no key to manage
+   and no build step involved.
+
+The accounts shared to are configured under `social:` in `_config.yml`. A post
+opts into comments by adding either thread URL to its frontmatter:
+
+```yaml
+discuss_bluesky: https://bsky.app/profile/you.bsky.social/post/3abc123
+discuss_mastodon: https://your.instance/@you/113456789
+```
+
+Workflow: publish the post, announce it on Bluesky and/or Mastodon, then paste
+those thread URLs back into the frontmatter. Posts with neither key still get
+the share buttons. Nothing here blocks publishing — the block degrades to share
+links if an API is unreachable.
+
+Replies arrive as untrusted input. Bluesky text is rebuilt from its facets
+(whose offsets are UTF-8 byte positions, not character indexes); Mastodon HTML
+goes through the allowlist sanitizer in `js/discuss.js`. Keep new rendering
+inside those paths rather than assigning to `innerHTML`.
+
+Classes for the comment markup are generated at runtime, so `js/discuss.js` is
+in the PurgeCSS `content` list in `postcss.config.js`. Adding a class in that
+file without it being scanned means it gets purged from production CSS.
 
 ## Tagging System
 

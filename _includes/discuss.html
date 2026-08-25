@@ -1,0 +1,102 @@
+{% comment %}
+  Share and comment block for posts.
+
+  Sharing is a plain link for Bluesky; Mastodon needs the reader's own instance,
+  so that control asks once and remembers the answer in localStorage.
+
+  Comments are the public replies to the post's own Bluesky and/or Mastodon
+  threads, fetched in the browser from each service's public API. Opt a post in
+  by adding the thread URL to its frontmatter:
+
+    discuss_bluesky: https://bsky.app/profile/you.bsky.social/post/3abc123
+    discuss_mastodon: https://your.instance/@you/113456789
+
+  Posts without either key get the share buttons and nothing else.
+{% endcomment %}
+
+{% assign post_url = page.url | absolute_url %}
+{% assign share_text = page.title %}
+
+<section class="discuss mt-10 pt-5" aria-labelledby="discuss-heading">
+  <div class="share-actions mt-5">
+    {% if site.social.bluesky %}
+      <a
+        class="btn"
+        href="https://bsky.app/intent/compose?text={{ share_text | url_encode }}%0A%0A{{ post_url | url_encode }}"
+        >Share on Bluesky</a
+      >
+    {% endif %}
+
+    {% if site.social.mastodon %}
+      <details
+        class="share-mastodon"
+        data-share-title="{{ share_text | escape }}"
+        data-share-url="{{ post_url }}"
+      >
+        <summary class="btn">Share on Mastodon</summary>
+        <div class="share-mastodon-body card mt-3 p-5 rounded-lg">
+          <form class="share-mastodon-form">
+            <label class="block font-semibold" for="mastodon-instance"
+              >Your Mastodon instance</label
+            >
+            <p class="mt-2 text-base muted">
+              Mastodon has no single address to send you to, so tell me where
+              your account lives. I'll remember it in this browser for next
+              time.
+            </p>
+            <input
+              type="text"
+              id="mastodon-instance"
+              name="instance"
+              class="border rounded w-full p-1 mt-3"
+              placeholder="ruby.social"
+              autocapitalize="none"
+              autocorrect="off"
+              spellcheck="false"
+            />
+            <div class="mt-3">
+              <button type="submit" class="btn">Open the composer</button>
+              <button type="button" class="btn-link ml-3 share-mastodon-forget" hidden>
+                Forget my instance
+              </button>
+            </div>
+          </form>
+        </div>
+      </details>
+    {% endif %}
+  </div>
+
+  {% if page.discuss_bluesky or page.discuss_mastodon %}
+    <div
+      id="post-comments"
+      class="mt-10"
+      {% if page.discuss_bluesky %}data-bluesky="{{ page.discuss_bluesky }}"{% endif %}
+      {% if page.discuss_mastodon %}data-mastodon="{{ page.discuss_mastodon }}"{% endif %}
+    >
+      <h3 class="mt-0">Comments</h3>
+
+      <p class="text-base">
+        {% if page.discuss_bluesky %}
+          <a href="{{ page.discuss_bluesky }}">Reply on Bluesky</a>
+        {% endif %}
+        {% if page.discuss_bluesky and page.discuss_mastodon %}
+          <span class="muted"> or </span>
+        {% endif %}
+        {% if page.discuss_mastodon %}
+          <a href="{{ page.discuss_mastodon }}">Reply on Mastodon</a>
+        {% endif %}
+        <span class="muted">
+          &mdash; public replies to those threads appear below.</span
+        >
+      </p>
+
+      <p class="comments-status muted text-base" role="status">
+        Loading replies&hellip;
+      </p>
+
+      <div class="comments-list"></div>
+    </div>
+  {% endif %}
+</section>
+
+<script src="/js/discuss.js" defer></script>

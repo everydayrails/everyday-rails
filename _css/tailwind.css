@@ -268,4 +268,124 @@ html.dark {
     background-color: rgba(255, 255, 255, 0.22);
     opacity: 1;
   }
+
+  /* Share and comment block at the foot of a post */
+  .discuss {
+    border-top-width: 2px;
+    border-color: var(--border);
+  }
+
+  .share-actions {
+    @apply flex flex-wrap items-start;
+  }
+
+  .share-actions > * {
+    @apply mr-3 mb-3;
+  }
+
+  /*
+   * The Mastodon control is a <details> so it still reveals its instance form
+   * without JavaScript. Its <summary> is styled as a button, which means
+   * dropping the disclosure triangle browsers add by default.
+   */
+  .share-mastodon summary {
+    @apply cursor-pointer inline-block;
+    list-style: none;
+  }
+
+  .share-mastodon summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .share-mastodon-body {
+    max-width: 26rem;
+  }
+
+  /* A button that reads as a plain link, for secondary actions */
+  .btn-link {
+    @apply text-sm underline;
+    color: var(--link);
+  }
+
+  .comment-list {
+    @apply list-none my-5;
+  }
+
+  .comment-list li {
+    @apply ml-0;
+  }
+
+  .comment {
+    @apply mt-5 pt-5;
+    border-top-width: 1px;
+    border-color: var(--border);
+  }
+
+  /* Nested replies indent and lose the divider, so a thread reads as a unit */
+  .comment .comment-list {
+    @apply mt-3 mb-0 pl-5;
+    border-left-width: 2px;
+    border-color: var(--border);
+  }
+
+  .comment .comment-list .comment {
+    @apply pt-3;
+    border-top-width: 0;
+  }
+
+  .comment-header {
+    @apply flex items-center;
+  }
+
+  .comment-avatar {
+    @apply rounded-full mr-3 flex-shrink-0;
+    height: 2.5rem;
+    width: 2.5rem;
+    background-color: var(--surface);
+  }
+
+  /* Without this a long display name or handle overflows the flex row */
+  .comment-byline {
+    min-width: 0;
+  }
+
+  .comment-author {
+    @apply font-semibold text-base;
+  }
+
+  .comment-handle {
+    @apply ml-2 text-sm;
+    color: var(--fg-muted);
+  }
+
+  .comment-meta {
+    @apply text-sm;
+  }
+
+  .comment-permalink {
+    @apply no-underline;
+    color: var(--fg-muted);
+  }
+
+  .comment-permalink:hover {
+    @apply underline;
+  }
+
+  .comment-body {
+    @apply text-base;
+  }
+
+  /* Replies are short; the post-wide paragraph spacing is too airy for them */
+  .comment-body p {
+    @apply mt-2;
+  }
+
+  .comment-body p:first-child {
+    @apply mt-2;
+  }
+
+  .comment-body ul,
+  .comment-body ol {
+    @apply my-2;
+  }
 }

@@ -9,7 +9,15 @@ kramdown:
     default_lang: html
     css_class: "highlight"
 permalink: date
+url: https://leftofthe.dev
 feed: https://leftofthe.dev/atom.xml
+
+# Accounts readers can share to and reply from. `mastodon` needs the full
+# @user@instance form: the instance half is used to credit link cards and to
+# build API URLs. Leave either blank to drop it from the share controls.
+social:
+  bluesky: ruralocity.bsky.social
+  mastodon: "@ruralocity@mastodon.social"
 exclude:
   [
     node_modules,
