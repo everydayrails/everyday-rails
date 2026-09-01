@@ -4,8 +4,8 @@ title: "Testing Rails from Scratch: Early September 2026 book updates"
 tags: testing-from-scratch tdd minitest
 excerpt: The latest updates cover integration testing and revisions to the test data chapters, available now on Leanpub.
 # Paste the thread URLs after announcing the post to pull replies in as comments:
-# discuss_bluesky:
-# discuss_mastodon:
+discuss_bluesky: https://bsky.app/profile/ruralocity.bsky.social/post/3mugyt27xsc2m
+discuss_mastodon: https://mastodon.social/@ruralocity/117194835470663832
 ---
 
 The latest updates to **[Testing Rails from Scratch](https://leanpub.com/everydayrails-testing-from-scratch/c/CDD5705EB0DE)**, my new book exploring the framework's default (mostly) testing tools, are now available for download on Leanpub. Here's what's new since last time:
